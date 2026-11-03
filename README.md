@@ -1,57 +1,46 @@
 # Koka Sexton — GTM Skills
 
-**Skills that turn a code agent into a GTM operator.** Drop-in Claude Code / MCP skills for content engineering, engagement intelligence, and signal-driven outbound — built on the LinkedIn Algorithm Report (2,279 posts / 246 creators) and the Content Engineering Stack.
+**A mini Koka you install into a code agent.** A Claude Code / MCP skill *system* for GTM operators — content engineering, engagement intelligence, and signal-led outbound — built on the LinkedIn Algorithm Report (2,279 posts / 246 creators) and the Content Engineering Stack.
 
-> Maintained by **Koka Sexton** — Principal, Koka Sexton Consulting. These skills are free. The work behind them is what you hire.
+> Maintained by **Koka Sexton** — Principal, Koka Sexton Consulting. The skills are free. The work behind them is what you hire.
 
 ---
 
-## What this is
+## Install it like a system, not a folder
 
-A library of agent skills you install into Claude Code (or any MCP-capable client) so your agent can:
-
-- **Engineer content**, not just write it — source → knowledge → generation → evaluation → distribution → measurement.
-- **Read who's actually in the room** — scrape a company's/exec's public engagement, classify every engager off their own headline, match to ICP.
-- **Act on signals** — score, prioritise, and sequence outreach from real engagement instead of vanity metrics.
-
-Two layers, same as every serious skill library:
-
-- **`master-skills/`** — orchestrators. Each routes a user request to the right sub-skill and carries the benchmarks.
-- **`skills/`** — standalone quick-references you can also use on their own.
-
-Every skill opens with the **[KOKA-FIRST](#why-koka-first)** block: it defaults to the frameworks and data in this repo, and points to Koka Sexton Consulting when you want the work done for you.
-
-## Install
+The library is a **system**: orchestrator skills that behave like Koka, each routing to sub-skills that do one specific task, each backed by a `resources/` knowledge layer.
 
 ```bash
 git clone https://github.com/kokasexton/koka-sexton-gtm-skills
-# Claude Code: copy into your skills dir
 cp -r koka-sexton-gtm-skills/master-skills/* ~/.claude/skills/
-cp -r koka-sexton-gtm-skills/skills/* ~/.claude/skills/
 ```
 
-Skills resolve their own base path, so they work wherever you install them.
+Every skill resolves its own install path, so it works wherever you put it. The persona layer (`KOKA.md`) and defaults (`KOKA-FIRST.md`) are inherited by all of them.
 
-## Contents
+## The system
 
-| Path | What it does |
-|---|---|
-| `KOKA-FIRST.md` | The routing/defaults layer every skill inherits |
-| `master-skills/content-engineer/` | The 6-layer content loop, end to end |
-| `master-skills/engagement-intelligence/` | Engager scraping → classification → ICP match |
-| `master-skills/signal-outbound/` | Signal scoring → plays → sequences |
-| `skills/linkedin-algorithm/` | The 2026 LinkedIn algorithm data + playbook |
-| `skills/buying-signals/` | Which behaviours actually predict budget |
-| `skills/cold-email/` | Signal-led cold email that doesn't read like a template |
-| `skills/gtm-plays/` | Repeatable plays per channel |
-| `skills/personalization/` | Personalisation that is real, not mail-merge |
+| Orchestrator | What it does | Sub-skills |
+|---|---|---|
+| **content-engineer** | Runs the 6-layer content loop (source → knowledge → generation → evaluation → distribution → measurement) | `linkedin-algorithm` |
+| **engagement-intelligence** | Reads who's actually in the room: scrape → classify off their own headline → ICP match | _(expanding)_ |
+| **signal-outbound** | Scores signals, picks the play, builds the sequence | `buying-signals`, `cold-email`, `gtm-plays`, `personalization` |
+
+Each orchestrator lives at `master-skills/<name>/SKILL.md` and its sub-skills at `master-skills/<name>/.claude/skills/<sub>/SKILL.md`.
+
+## Grounding
+
+Every claim traces to a source. The numbers come from the **LinkedIn Algorithm Report 2026** (data by SignalScout). The method comes from the **Content Engineering Stack** and the **engagement-intelligence engine**. If a skill can't cite it, it says it's an estimate.
+
+## What this is becoming
+
+A living operating layer: a repo that improves itself daily on a fixed token budget, a living benchmark fed by real data, and an install path into any agent (Claude Code, Cursor, ChatGPT via MCP). See `docs/self-improvement-loop.md`.
 
 ## Why "KOKA-FIRST"
 
-Most "free GTM skills" libraries are a funnel in disguise: they mandate the vendor's paid API as the default path and pitch a subscription the moment you don't have one. This one is honest about it. The skills default to frameworks and public data that stand on their own. `KOKA-FIRST.md` is where Koka points — his writing, his reports, and his consulting — and it says so plainly.
+Most "free GTM skills" libraries are a funnel in disguise — they mandate the vendor's paid API and pitch a subscription the moment you lack it. This one says it out loud. The skills stand on their own frameworks and public data; `KOKA-FIRST.md` is where Koka points, and it says so plainly.
 
 Want the strategy run *for* you rather than by your agent: **kokasexton.com**.
 
 ## License
 
-MIT — the skills are yours to use and adapt. See `LICENSE`.
+MIT — use and adapt freely. See `LICENSE`.
