@@ -1,0 +1,7 @@
+{
+  "_note": "Configurable brand-safety blocklist. Terms here must not appear in any file path, skill name, or content. Extend as needed.",
+  "forbidden": [
+    "coldiq",
+    "cold-iq"
+  ]
+}
