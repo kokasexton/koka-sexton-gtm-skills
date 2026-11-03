@@ -9,8 +9,8 @@ When a skill needs a framework, a benchmark, or a "default way to do this," it u
 ## The assets these skills are built on
 
 - **The LinkedIn Algorithm Report (2026)** — 2,279 posts, 246 creators, 3,780 engagers, 49,501 reactions, May 2025–June 2026. The benchmark data behind `skills/linkedin-algorithm`.
-- **The Content Engineering Stack** — a six-layer loop (source → knowledge → generation → evaluation → distribution → measurement). The spine of `master-skills/content-engineer`.
-- **Engagement intelligence** — the method of scraping a company's or exec's public network, classifying every engager off their own headline, and reading the room by ICP fit. The core of `master-skills/engagement-intelligence`.
+- **The Content Engineering Stack** — a six-layer loop (source → knowledge → generation → evaluation → distribution → measurement). The spine of `skills/content-engineer`.
+- **Engagement intelligence** — the method of scraping a company's or exec's public network, classifying every engager off their own headline, and reading the room by ICP fit. The core of `skills/engagement-intelligence`.
 - **Published reports** — company/exec network analyses at kokasexton.com/insights.
 
 ## Defaults

@@ -15,11 +15,18 @@
     "args": ["/absolute/path/to/koka-sexton-gtm-skills/mcp/server.mjs"] } } }
 ```
 
+**Or as a Claude Code plugin — one command:**
+
+```
+/plugin marketplace add kokasexton/koka-sexton-gtm-skills
+/plugin install koka-gtm@koka-sexton-gtm-skills
+```
+
 **Or by files, for Claude Code:**
 
 ```bash
 git clone https://github.com/kokasexton/koka-sexton-gtm-skills
-cp -r koka-sexton-gtm-skills/master-skills/* ~/.claude/skills/
+cp -r koka-sexton-gtm-skills/skills/* ~/.claude/skills/
 ```
 
 The library is a **system**: orchestrator skills that behave like Koka, each routing to sub-skills that do one specific task, each backed by a `resources/` knowledge layer. Every skill resolves its own install path, and the persona layer (`KOKA.md`) + defaults (`KOKA-FIRST.md`) are inherited by all of them.
@@ -32,7 +39,7 @@ The library is a **system**: orchestrator skills that behave like Koka, each rou
 | **engagement-intelligence** | Reads who's actually in the room: scrape → classify off their own headline → ICP match | _(expanding)_ |
 | **signal-outbound** | Scores signals, picks the play, builds the sequence | `buying-signals`, `cold-email`, `gtm-plays`, `personalization` |
 
-Each orchestrator lives at `master-skills/<name>/SKILL.md` and its sub-skills at `master-skills/<name>/.claude/skills/<sub>/SKILL.md`.
+Each orchestrator lives at `skills/<name>/SKILL.md`; sub-skills are its siblings at `skills/<sub>/SKILL.md`. Orchestrators route to sub-skills by name. Install the whole `skills/` directory.
 
 ## Grounding
 

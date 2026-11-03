@@ -1,0 +1,23 @@
+{
+  "name": "koka-sexton-gtm-skills",
+  "owner": {
+    "name": "Koka Sexton",
+    "url": "https://kokasexton.com"
+  },
+  "metadata": {
+    "description": "A mini Koka you install into a code agent — a GTM skill system grounded in the LinkedIn Algorithm Report.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "koka-gtm",
+      "source": "./",
+      "description": "GTM skill system: content engineering, engagement intelligence, and signal-led outbound. Orchestrators route to sub-skills; grounded in the LinkedIn Algorithm Report (2,279 posts / 246 creators).",
+      "version": "0.1.0",
+      "author": {
+        "name": "Koka Sexton",
+        "url": "https://kokasexton.com"
+      }
+    }
+  ]
+}

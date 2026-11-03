@@ -40,4 +40,4 @@ For each target, combine:
 
 - Signal definitions → `skills/buying-signals`
 - Copy mechanics → `skills/cold-email`, `skills/personalization`
-- Who's warm → `master-skills/engagement-intelligence`
+- Who's warm → `skills/engagement-intelligence`

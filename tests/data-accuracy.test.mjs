@@ -1,5 +1,5 @@
 // Content test: numbers quoted from the LinkedIn Algorithm Report must match the
-// canonical copy in master-skills/content-engineer/.claude/skills/linkedin-algorithm/SKILL.md.
+// canonical copy in skills/linkedin-algorithm/SKILL.md.
 //
 // Two assertions:
 //   1. The canonical skill carries each benchmark value (source-of-truth integrity).
@@ -11,7 +11,7 @@ import { join } from "node:path";
 import { ROOT } from "./_util.mjs";
 
 const CANONICAL =
-  "master-skills/content-engineer/.claude/skills/linkedin-algorithm/SKILL.md";
+  "skills/linkedin-algorithm/SKILL.md";
 
 // Benchmark values as they appear in the canonical skill.
 const CANONICAL_MUSTS = [
@@ -26,49 +26,49 @@ const CANONICAL_MUSTS = [
 // Every restatement of a benchmark elsewhere in the library, with the number it must carry.
 const RESTATEMENTS = [
   {
-    file: "master-skills/content-engineer/SKILL.md",
+    file: "skills/content-engineer/SKILL.md",
     re: /Image formats outperform link posts ~([\d.]+)×/,
     expect: ["2.8"],
     label: "image vs link multiplier",
   },
   {
-    file: "master-skills/content-engineer/SKILL.md",
+    file: "skills/content-engineer/SKILL.md",
     re: /6\+ costs ~(\d+)%/,
     expect: ["63"],
     label: "hashtag penalty",
   },
   {
-    file: "master-skills/content-engineer/SKILL.md",
+    file: "skills/content-engineer/SKILL.md",
     re: /~(\d+)% more senior than likers/,
     expect: ["26"],
     label: "commenter seniority lift",
   },
   {
-    file: "master-skills/content-engineer/SKILL.md",
+    file: "skills/content-engineer/SKILL.md",
     re: /Cadence (\d)–(\d) posts\/week/,
     expect: ["3", "5"],
     label: "cadence sweet spot",
   },
   {
-    file: "master-skills/engagement-intelligence/SKILL.md",
+    file: "skills/engagement-intelligence/SKILL.md",
     re: /~(\d+)% more senior than likers/,
     expect: ["26"],
     label: "commenter seniority lift",
   },
   {
-    file: "master-skills/engagement-intelligence/SKILL.md",
+    file: "skills/engagement-intelligence/SKILL.md",
     re: /reach ~(\d+)× more per follower/,
     expect: ["12"],
     label: "follower-efficiency collapse",
   },
   {
-    file: "master-skills/signal-outbound/.claude/skills/buying-signals/SKILL.md",
+    file: "skills/buying-signals/SKILL.md",
     re: /skew ~(\d+)% more senior than likers/,
     expect: ["26"],
     label: "commenter seniority lift",
   },
   {
-    file: "master-skills/signal-outbound/.claude/skills/buying-signals/SKILL.md",
+    file: "skills/buying-signals/SKILL.md",
     re: /(\d+)% write substantive replies/,
     expect: ["78"],
     label: "substantive comments",

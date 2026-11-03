@@ -35,4 +35,4 @@ A ranked, tiered warm list with the engagement evidence for each person — not 
 ## Routing
 
 - Benchmarks → `skills/linkedin-algorithm`
-- Turning the list into outreach → `master-skills/signal-outbound`
+- Turning the list into outreach → `skills/signal-outbound`

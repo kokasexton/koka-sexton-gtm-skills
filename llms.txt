@@ -13,7 +13,7 @@
 
 Tools: `list_skills`, `get_skill`, `search_skills`, `get_persona`. Every `SKILL.md` is also a resource (`skill://<name>`).
 
-**Claude Code, by files:** `cp -r koka-sexton-gtm-skills/master-skills/* ~/.claude/skills/`
+**Claude Code, by files:** `cp -r koka-sexton-gtm-skills/skills/* ~/.claude/skills/`
 
 ## Skills
 

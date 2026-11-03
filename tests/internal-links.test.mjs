@@ -1,9 +1,9 @@
 // Content test: no skill links to a missing file or a dead internal path.
 //
 // References may be written either as a repo-relative path
-// (master-skills/<name>/...) or in the installed-skill shorthand used across
+// (skills/<name>/...) or in the installed-skill shorthand used across
 // the library ("skills/<sub>"), which resolves to a sub-skill directory of the
-// same name wherever it lives (master-skills/<master>/.claude/skills/<sub>/).
+// same name wherever it lives (skills/<master>/.claude/skills/<sub>/).
 import { existsSync, readFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { ROOT, skillFiles, rel } from "./_util.mjs";

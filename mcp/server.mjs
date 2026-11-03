@@ -50,7 +50,7 @@ function frontmatter(text) {
 
 function skills() {
   const out = [];
-  for (const p of walk(join(ROOT, "master-skills")).concat(walk(join(ROOT, "skills")))) {
+  for (const p of walk(join(ROOT, "skills"))) {
     const body = readFileSync(p, "utf8");
     const fm = frontmatter(body);
     out.push({

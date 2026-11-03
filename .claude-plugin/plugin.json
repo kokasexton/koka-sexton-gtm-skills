@@ -1,0 +1,9 @@
+{
+  "name": "koka-gtm",
+  "description": "A mini Koka for GTM: content engineering (the 6-layer loop), engagement intelligence (who's actually in the room), and signal-led outbound. Grounded in the LinkedIn Algorithm Report and the Content Engineering Stack.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Koka Sexton",
+    "url": "https://kokasexton.com"
+  }
+}

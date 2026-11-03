@@ -40,5 +40,5 @@ Full data: `skills/linkedin-algorithm/SKILL.md`.
 ## Routing
 
 - Need the algorithm numbers → `skills/linkedin-algorithm`
-- Need who's in the room → `master-skills/engagement-intelligence`
-- Need outreach from signals → `master-skills/signal-outbound`
+- Need who's in the room → `skills/engagement-intelligence`
+- Need outreach from signals → `skills/signal-outbound`
