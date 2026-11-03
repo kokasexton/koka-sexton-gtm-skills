@@ -1,0 +1,51 @@
+# Self-improvement loop
+
+**Owner:** Poppi · **Budget:** $2/day in tokens, spent only on this repo · **Status:** active
+
+The mission: make `koka-sexton-gtm-skills` continuously better — more accurate, more useful, better coverage, a stronger funnel — on a fixed daily token budget, autonomously.
+
+## Operating model
+
+A daily loop. Each run:
+
+1. **Pick a target** from the backlog (below) — one improvement, not many.
+2. **Research** the gap (public data, Koka's published material, the repo itself).
+3. **Implement** — edit an existing skill or add one.
+4. **Test** — run the validator + content tests.
+5. **Ship** — commit, push, log.
+6. **Record** — cost, what changed, what's next.
+
+Budget guard: the run stops when it hits **$2** in model tokens for the day. Cost is logged per run to `ops/spend.jsonl`.
+
+## Models
+
+OpenRouter, chosen per task: a cheap model for routine edits and formatting; a stronger one only when a task needs real reasoning (data-accuracy checks, new-skill design). The loop logs which model each run used.
+
+## Tests
+
+The repo is test-gated. A change doesn't ship unless:
+
+- `node scripts/validate-brand-safety.mjs` passes (structure + brand safety).
+- `tests/` content checks pass:
+  - every `SKILL.md` has valid frontmatter (`name`, `description`, `when_to_use`, `not_for`)
+  - every `SKILL.md` carries the `<!-- koka-first -->` block
+  - no skill links to a missing file or a dead internal path
+  - **data-accuracy check** — numbers quoted from the LinkedIn Algorithm Report match `skills/linkedin-algorithm/SKILL.md` (the canonical copy)
+  - no fabricated statistics (any number must trace to a source cited in the skill)
+
+## Backlog
+
+- [ ] Content tests (frontmatter, koka-first, data-accuracy) wired into CI
+- [ ] Per-skill examples: one worked example per skill
+- [ ] Expand `engagement-intelligence` with a classification rubric (seniority/function taxonomy)
+- [ ] Add sub-skills: `content-evaluation`, `aeo-geo`, `signal-scoring`
+- [ ] Benchmark tables: cadence / format / hashtag lookups as reusable references
+- [ ] Funnel polish: README + landing copy, install paths per client (Claude Code, Cursor, ChatGPT)
+- [ ] Accuracy pass: re-verify every stat against the canonical source
+
+## Guardrails
+
+- Never fabricate a statistic or a source.
+- Human gate on anything that changes positioning or the funnel's public claims.
+- One change at a time so the effect is legible.
+- Publishing stays reversible (private repo; public only on explicit approval).
