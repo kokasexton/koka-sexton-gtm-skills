@@ -38,8 +38,8 @@ The repo is test-gated. A change doesn't ship unless:
 
 - [x] Content tests (frontmatter, koka-first, data-accuracy) wired into CI — `tests/run.mjs` (frontmatter + internal links + data accuracy), run by `brand-safety.yml`
 - [ ] Extend internal-link test to flag references to files outside the skill layer (README/landing copy)
-- [ ] Per-skill examples: one worked example per skill
-- [ ] Expand `engagement-intelligence` with a classification rubric (seniority/function taxonomy)
+- [ ] Per-skill examples: one worked example per skill (done: engagement-intelligence)
+- [x] Expand `engagement-intelligence` with a classification rubric (seniority/function taxonomy) — done 2026-11-03
 - [ ] Add sub-skills: `content-evaluation`, `aeo-geo`, `signal-scoring`
 - [ ] Benchmark tables: cadence / format / hashtag lookups as reusable references
 - [ ] Funnel polish: README + landing copy, install paths per client (Claude Code, Cursor, ChatGPT)

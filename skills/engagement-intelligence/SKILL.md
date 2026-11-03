@@ -28,6 +28,45 @@ The method: capture a public network, classify every engager **off their own hea
 - **Behaviour over labels.** Almost nobody self-describes as "social selling"; almost everyone who buys behaves that way. Target the behaviour.
 - **Follower efficiency collapses with size** — 2K–5K accounts reach ~12× more per follower than 50K+. Reach is not the metric; fit is.
 
+## Classification rubric
+
+Classify from the person's **own headline** only. If the headline doesn't support a call, label it `unclassified` — never guess.
+
+**Seniority** (take the highest level the headline states; ties go to the higher level):
+
+| Tier | Headline signals |
+|---|---|
+| Founder / CEO | Founder, Co-founder, CEO, Owner, Managing Partner |
+| C-suite | CMO, CRO, CFO, CTO, COO, "Chief …" |
+| VP | VP, SVP, EVP, "Head of" |
+| Director | Director, Senior Director, "Group …" lead of a function |
+| Manager | Manager, Lead, Principal |
+| IC | Specialist, Analyst, Strategist, Consultant, Engineer, Coordinator |
+
+"Director+" = Founder/CEO, C-suite, VP, and Director combined. This is the cut the LinkedIn Algorithm Report uses (see `skills/linkedin-algorithm`).
+
+**Function** (primary function wins; a "Founder" keeps the Founder seniority tier and still gets a function when the headline names one):
+
+- Marketing — marketing, brand, content, demand gen, growth, comms
+- Sales / Revenue — sales, revenue, BD, account exec, partnerships, RevOps
+- Engineering / Product — engineer, developer, product, data, ML
+- Operations / Other — ops, finance, HR, legal, agency/consulting, unclassified
+
+For reference, the report's person mix for Koka's audience is Marketing 21.6% and Sales/Revenue 18.7%, with Founders/CEOs the largest single seniority tier at 16.5%. Treat these as a baseline to compare a new network against, not a target.
+
+**Tiering for the warm list** — combine ICP match with behaviour:
+
+1. **A** — ICP match + Director+ + repeat person or commenter
+2. **B** — ICP match + (Director+ or repeat person)
+3. **C** — ICP match, single like
+4. **Out** — no ICP match (peers, vendors, students) — keep for the room-read, drop from outreach
+
+## Worked example
+
+Headline: "VP Demand Gen @ Acme | B2B SaaS". Seniority = VP, function = Marketing. Commented on 3 of the last 8 posts. Acme's ICP fit is yes, so the tier is **A**. The evidence line reads: "Commented 3/8 posts; VP Marketing at an ICP-fit account."
+
+Headline: "Helping founders scale". The seniority and function are unstated, so label it `unclassified`, tier **Out** unless other evidence exists.
+
 ## Output
 
 A ranked, tiered warm list with the engagement evidence for each person — not a CSV of names. Always: how they engaged, how often, and why they fit the ICP.
