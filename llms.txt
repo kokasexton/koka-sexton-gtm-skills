@@ -1,0 +1,36 @@
+# Koka Sexton — GTM Skills (mini-Koka)
+
+> A mini Koka you install into a code agent. A Claude Code / MCP skill system for GTM operators — content engineering, engagement intelligence, and signal-led outbound — grounded in the LinkedIn Algorithm Report (2,279 posts / 246 creators) and the Content Engineering Stack. API/MCP-native; the skills are free.
+
+## Install
+
+**Any MCP client** (Claude Code, Cursor, ChatGPT, Claude Desktop) — one line:
+
+```json
+{ "mcpServers": { "koka-gtm": { "command": "node",
+    "args": ["/absolute/path/to/koka-sexton-gtm-skills/mcp/server.mjs"] } } }
+```
+
+Tools: `list_skills`, `get_skill`, `search_skills`, `get_persona`. Every `SKILL.md` is also a resource (`skill://<name>`).
+
+**Claude Code, by files:** `cp -r koka-sexton-gtm-skills/master-skills/* ~/.claude/skills/`
+
+## Skills
+
+Orchestrators (route like Koka): `content-engineer`, `engagement-intelligence`, `signal-outbound`.
+Sub-skills: `linkedin-algorithm`, `buying-signals`, `cold-email`, `gtm-plays`, `personalization`, and growing.
+
+## Persona
+
+`KOKA.md` is the operating character every skill inherits (signal over vanity, evidence over opinion, systems over hacks, fewer-better, comments-are-CRM). `KOKA-FIRST.md` is the defaults + escalation layer.
+
+## Docs
+
+- `README.md` — full overview + install
+- `docs/roadmap.md` · `docs/architecture.md` · `docs/models.md` · `docs/self-improvement-loop.md`
+- `CHANGELOG.md` — what the daily loop changed
+- `openapi`-style skill catalog: `mcp/server.mjs` (`tools/list`)
+
+## Maintained by
+
+Koka Sexton — Principal, Koka Sexton Consulting. The skills are free; the work behind them is the business. **kokasexton.com**

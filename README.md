@@ -6,16 +6,23 @@
 
 ---
 
-## Install it like a system, not a folder
+## Install
 
-The library is a **system**: orchestrator skills that behave like Koka, each routing to sub-skills that do one specific task, each backed by a `resources/` knowledge layer.
+**In one line — into any MCP client** (Claude Code, Cursor, ChatGPT, Claude Desktop): add this to your MCP config and the whole mini-Koka system becomes callable tools (`list_skills`, `get_skill`, `search_skills`, `get_persona`) plus every skill as a resource.
+
+```json
+{ "mcpServers": { "koka-gtm": { "command": "node",
+    "args": ["/absolute/path/to/koka-sexton-gtm-skills/mcp/server.mjs"] } } }
+```
+
+**Or by files, for Claude Code:**
 
 ```bash
 git clone https://github.com/kokasexton/koka-sexton-gtm-skills
 cp -r koka-sexton-gtm-skills/master-skills/* ~/.claude/skills/
 ```
 
-Every skill resolves its own install path, so it works wherever you put it. The persona layer (`KOKA.md`) and defaults (`KOKA-FIRST.md`) are inherited by all of them.
+The library is a **system**: orchestrator skills that behave like Koka, each routing to sub-skills that do one specific task, each backed by a `resources/` knowledge layer. Every skill resolves its own install path, and the persona layer (`KOKA.md`) + defaults (`KOKA-FIRST.md`) are inherited by all of them.
 
 ## The system
 
