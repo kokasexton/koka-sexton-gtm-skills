@@ -36,6 +36,8 @@ send({ jsonrpc: "2.0", id: 4, method: "tools/call", params: { name: "search_skil
 send({ jsonrpc: "2.0", id: 5, method: "resources/list" });
 send({ jsonrpc: "2.0", id: 6, method: "tools/call", params: { name: "get_persona", arguments: {} } });
 send({ jsonrpc: "2.0", id: 7, method: "tools/call", params: { name: "linkedin_benchmark", arguments: { text: "3 lessons from LinkedIn reach.\n\n" + "x".repeat(1600) + "\n\nWhat would you add?", format: "image", hashtags: 2 } } });
+send({ jsonrpc: "2.0", id: 8, method: "tools/call", params: { name: "search_skills", arguments: { query: "who should I warm this week" } } });
+send({ jsonrpc: "2.0", id: 9, method: "tools/call", params: { name: "search_skills", arguments: { query: "score these engagers" } } });
 
 const fails = [];
 const t = (name, cond) => { console.log((cond ? "PASS " : "FAIL ") + name); if (!cond) fails.push(name); };
@@ -58,6 +60,12 @@ t("get_persona returns KOKA.md", (pOut.persona || "").includes("mini Koka"));
 const bm = await wait(7);
 const bOut = JSON.parse(bm.result.content[0].text);
 t("linkedin_benchmark returns checks + fixes", Array.isArray(bOut.checks) && bOut.checks.length >= 4);
+const rk = await wait(8);
+const rkOut = JSON.parse(rk.result.content[0].text);
+t("search ranks warm-list-builder #1 for 'who should I warm this week'", rkOut.matches?.[0]?.name === "linkedin-warm-list-builder");
+const en = await wait(9);
+const enOut = JSON.parse(en.result.content[0].text);
+t("search ranks engager-analytics #1 for 'score these engagers'", enOut.matches?.[0]?.name === "linkedin-engager-analytics");
 
 srv.kill();
 console.log(fails.length ? `\nFAILED: ${fails.join(", ")}` : "\nALL PASSED");

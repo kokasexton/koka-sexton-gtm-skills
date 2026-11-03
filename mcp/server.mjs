@@ -72,6 +72,19 @@ function readDoc(name) {
   }
 }
 
+const STOP = new Set(("a an the and or of to for in on at with is are do does what when how " +
+  "i you we it my me your this that these those who whom whose can help use using asks").split(/\s+/));
+function stem(w) { return w.length > 3 && w.endsWith("s") ? w.slice(0, -1) : w; }
+function tokenize(s) {
+  return String(s || "").toLowerCase().replace(/[^a-z0-9\s]/g, " ")
+    .split(/\s+/).filter((w) => w.length > 1 && !STOP.has(w)).map(stem);
+}
+function countOcc(hay, w) {
+  let n = 0, i = 0;
+  while ((i = hay.indexOf(w, i)) >= 0) { n++; i += w.length; }
+  return n;
+}
+
 const TOOLS = [
   {
     name: "list_skills",
@@ -125,15 +138,24 @@ function call(name, args = {}) {
     return s ? { name: s.name, path: s.path, content: s.body } : { error: `no skill named ${args.name}` };
   }
   if (name === "search_skills") {
-    const q = String(args.query || "").toLowerCase();
+    const tokens = tokenize(args.query);
+    const phrase = String(args.query || "").toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
     const scored = all
       .map((s) => {
-        const hay = (s.name + " " + s.description + " " + s.body).toLowerCase();
-        const hits = q.split(/\s+/).filter(Boolean).reduce((n, w) => n + (hay.split(w).length - 1), 0);
-        return { name: s.name, description: s.description, path: s.path, hits };
+        const nm = s.name.toLowerCase();
+        const desc = s.description.toLowerCase();
+        const body = s.body.toLowerCase();
+        let score = 0;
+        for (const w of tokens) {
+          if (nm.includes(w)) score += 5;      // name is the strongest signal
+          if (desc.includes(w)) score += 3;    // description next
+          score += countOcc(body, w);          // body last
+        }
+        if (phrase && (nm.includes(phrase) || desc.includes(phrase))) score += 10; // exact phrase bonus
+        return { name: s.name, description: s.description, path: s.path, score };
       })
-      .filter((s) => s.hits > 0)
-      .sort((a, b) => b.hits - a.hits);
+      .filter((s) => s.score > 0)
+      .sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
     return { query: args.query, matches: scored };
   }
   if (name === "get_persona") {
