@@ -4,11 +4,13 @@
 import { run as frontmatter } from "./frontmatter.test.mjs";
 import { run as internalLinks } from "./internal-links.test.mjs";
 import { run as dataAccuracy } from "./data-accuracy.test.mjs";
+import { run as benchmark } from "./benchmark.test.mjs";
 
 const suites = [
   ["frontmatter", frontmatter],
   ["internal-links", internalLinks],
   ["data-accuracy", dataAccuracy],
+  ["benchmark", benchmark],
 ];
 
 let failed = false;

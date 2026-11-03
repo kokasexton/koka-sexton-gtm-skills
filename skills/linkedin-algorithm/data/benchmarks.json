@@ -1,0 +1,33 @@
+{
+  "source": "LinkedIn Algorithm Report 2026 (data by SignalScout) — 2,279 posts, 246 creators, 3,780 engagers, 49,501 reactions, 15,517 comments, May 2025–June 2026",
+  "overall_median_engagements": 58,
+  "power_law": { "median": 58, "top10pct": 326, "top1pct": 2000, "top10x_median": 5.6, "top1x_median": 35 },
+  "cadence": { "optimal_per_week": [3, 5], "optimal_median": 195, "vs_daily_multiple": 2.4, "overload_per_week": 7, "overload_median": 80 },
+  "format_median_engagements": { "image": 70, "link_or_article": 25, "overall": 58, "image_vs_link_multiple": 2.8 },
+  "format_comment_share_pct": { "image": 22.5, "document": 21.7, "text": 21.4, "video": 14.7, "article": 12.6 },
+  "timing": { "peak_days": ["Mon", "Tue", "Wed"], "peak_window_utc": [12, 16], "worst": "Fri afternoon" },
+  "craft": {
+    "length_threshold_chars": 1500,
+    "length_median_long": 74,
+    "length_median_short": 40,
+    "length_multiple": 2.0,
+    "hashtag_optimal": [1, 2],
+    "hashtag_optimal_median": 91,
+    "hashtag_overload": 6,
+    "hashtag_overload_median": 33,
+    "hashtag_overload_drop_pct": 63,
+    "linebreaks_median": 62,
+    "wall_of_text_median": 36,
+    "linebreaks_gain_pct": 72,
+    "question_median": 59,
+    "number_lead_median": 57
+  },
+  "engagement_mix_pct": { "likes": 76.9, "comments": 20.7, "shares": 2.3, "comment_to_like_ratio": 0.27 },
+  "reactions_pct": { "like": 78, "empathy": 6.9, "celebrate": 6.2, "insightful": 3.9 },
+  "audience": { "director_plus_share": 0.333, "founder_ceo_pct": 16.5, "marketing_pct": 21.6, "sales_revenue_pct": 18.7, "us_pct": 61.7 },
+  "follower_efficiency_per_1k": { "2k_5k": 9.7, "50k_plus": 0.8, "collapse_multiple": 12 },
+  "super_engagers": { "single_creator_pct": 91.9, "multi_creator_pct": 8.1 },
+  "comments": { "commenter_director_plus_pct": 44.2, "liker_director_plus_pct": 35.1, "seniority_lift_pct": 26, "substantive_share_pct": 78, "avg_chars": 154 },
+  "topics_median_engagements": { "ai_automation": 76, "how_to_tactical": 69, "personal_story": 64, "hot_take_contrarian": 54, "hot_take_vs_ai_pct": -29 },
+  "viral_top1pct": { "image_share_pct": 78, "normal_image_share_pct": 47, "typical_hashtags": 0 }
+}

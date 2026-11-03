@@ -8,7 +8,7 @@
 
 ## Install
 
-**In one line — into any MCP client** (Claude Code, Cursor, ChatGPT, Claude Desktop): add this to your MCP config and the whole mini-Koka system becomes callable tools (`list_skills`, `get_skill`, `search_skills`, `get_persona`) plus every skill as a resource.
+**In one line — into any MCP client** (Claude Code, Cursor, ChatGPT, Claude Desktop): add this to your MCP config and the whole mini-Koka system becomes callable tools — `list_skills`, `get_skill`, `search_skills`, `get_persona`, plus the **benchmark engine** (`linkedin_benchmark` evaluates a draft against the report; `linkedin_benchmarks` returns the data) — with every skill also readable as a resource.
 
 ```json
 { "mcpServers": { "koka-gtm": { "command": "node",

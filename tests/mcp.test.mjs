@@ -35,6 +35,7 @@ send({ jsonrpc: "2.0", id: 3, method: "tools/call", params: { name: "list_skills
 send({ jsonrpc: "2.0", id: 4, method: "tools/call", params: { name: "search_skills", arguments: { query: "cold email" } } });
 send({ jsonrpc: "2.0", id: 5, method: "resources/list" });
 send({ jsonrpc: "2.0", id: 6, method: "tools/call", params: { name: "get_persona", arguments: {} } });
+send({ jsonrpc: "2.0", id: 7, method: "tools/call", params: { name: "linkedin_benchmark", arguments: { text: "3 lessons from LinkedIn reach.\n\n" + "x".repeat(1600) + "\n\nWhat would you add?", format: "image", hashtags: 2 } } });
 
 const fails = [];
 const t = (name, cond) => { console.log((cond ? "PASS " : "FAIL ") + name); if (!cond) fails.push(name); };
@@ -42,7 +43,7 @@ const t = (name, cond) => { console.log((cond ? "PASS " : "FAIL ") + name); if (
 const init = await wait(1);
 t("initialize -> koka-gtm", init?.result?.serverInfo?.name === "koka-gtm");
 const tl = await wait(2);
-t("tools/list has 4 tools", tl?.result?.tools?.length === 4);
+t("tools/list has 6 tools", tl?.result?.tools?.length === 6);
 const ls = await wait(3);
 const listOut = JSON.parse(ls.result.content[0].text);
 t("list_skills returns skills", listOut.skills?.length >= 8);
@@ -54,6 +55,9 @@ t("resources/list non-empty", rl?.result?.resources?.length >= 8);
 const gp = await wait(6);
 const pOut = JSON.parse(gp.result.content[0].text);
 t("get_persona returns KOKA.md", (pOut.persona || "").includes("mini Koka"));
+const bm = await wait(7);
+const bOut = JSON.parse(bm.result.content[0].text);
+t("linkedin_benchmark returns checks + fixes", Array.isArray(bOut.checks) && bOut.checks.length >= 4);
 
 srv.kill();
 console.log(fails.length ? `\nFAILED: ${fails.join(", ")}` : "\nALL PASSED");

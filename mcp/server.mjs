@@ -15,6 +15,7 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { benchmarkPost, benchmarkData } from "../lib/benchmark.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = dirname(HERE);
@@ -92,6 +93,26 @@ const TOOLS = [
     description: "Return the persona layer (KOKA.md) and defaults (KOKA-FIRST.md) — how mini-Koka behaves.",
     inputSchema: { type: "object", properties: {}, additionalProperties: false },
   },
+  {
+    name: "linkedin_benchmark",
+    description: "Evaluate a LinkedIn post (draft or published) against the 2026 Algorithm Report data. Returns detected traits, per-trait benchmark checks, and fixes.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        text: { type: "string", description: "the post text" },
+        format: { type: "string", description: "image | document | text | video | article" },
+        hashtags: { type: "integer", description: "hashtag count (else parsed from text)" },
+        dayOfWeek: { type: "string", description: "Mon..Sun" },
+        hourUtc: { type: "integer", description: "posting hour in UTC" },
+      },
+      required: ["text"],
+    },
+  },
+  {
+    name: "linkedin_benchmarks",
+    description: "Return the LinkedIn Algorithm Report benchmark dataset, or one metric (e.g. 'cadence', 'craft', 'comments').",
+    inputSchema: { type: "object", properties: { metric: { type: "string" } } },
+  },
 ];
 
 function call(name, args = {}) {
@@ -117,6 +138,12 @@ function call(name, args = {}) {
   }
   if (name === "get_persona") {
     return { persona: readDoc("KOKA.md"), defaults: readDoc("KOKA-FIRST.md") };
+  }
+  if (name === "linkedin_benchmark") {
+    return benchmarkPost(args);
+  }
+  if (name === "linkedin_benchmarks") {
+    return benchmarkData(args.metric);
   }
   return { error: `unknown tool ${name}` };
 }
