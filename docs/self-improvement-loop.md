@@ -25,6 +25,7 @@ OpenRouter, chosen per task: a cheap model for routine edits and formatting; a s
 
 The repo is test-gated. A change doesn't ship unless:
 
+- `node scripts/scan-secrets.mjs` passes — no credential, key, token, or sensitive filename. This repo is public; a leaked secret is the one unrecoverable failure.
 - `node scripts/validate-brand-safety.mjs` passes (structure + brand safety).
 - `tests/` content checks pass:
   - every `SKILL.md` has valid frontmatter (`name`, `description`, `when_to_use`, `not_for`)

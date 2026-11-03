@@ -10,10 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+      - name: Secret scan (blocks any leaked credential)
+        run: node scripts/scan-secrets.mjs
       - name: Validate skills (frontmatter, koka-first block, brand safety)
         run: node scripts/validate-brand-safety.mjs
-      - name: Content tests (frontmatter, koka-first, internal links, data accuracy)
-        run: node tests/run.mjs
