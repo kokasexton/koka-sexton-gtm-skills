@@ -36,8 +36,8 @@ The library is a **system**: orchestrator skills that behave like Koka, each rou
 | Orchestrator | What it does | Sub-skills |
 |---|---|---|
 | **content-engineer** | Runs the 6-layer content loop (source → knowledge → generation → evaluation → distribution → measurement) | `linkedin-algorithm` |
-| **engagement-intelligence** | Reads who's actually in the room: scrape → classify off their own headline → ICP match | _(expanding)_ |
-| **signal-outbound** | Scores signals, picks the play, builds the sequence | `buying-signals`, `cold-email`, `gtm-plays`, `personalization` |
+| **engagement-intelligence** | Reads who's actually in the room: scrape → classify off their own headline → ICP match | `linkedin-engager-analytics`, `linkedin-warm-list-builder`, `linkedin-signal-stack` |
+| **signal-outbound** | Scores signals, picks the play, builds the sequence | `linkedin-icp-definer`, `outbound-pipeline`, `linkedin-comment-warmer`, `buying-signals`, `cold-email`, `gtm-plays`, `personalization` |
 
 Each orchestrator lives at `skills/<name>/SKILL.md`; sub-skills are its siblings at `skills/<sub>/SKILL.md`. Orchestrators route to sub-skills by name. Install the whole `skills/` directory.
 

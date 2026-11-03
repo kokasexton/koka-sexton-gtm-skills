@@ -35,4 +35,8 @@ A ranked, tiered warm list with the engagement evidence for each person — not 
 ## Routing
 
 - Benchmarks → `skills/linkedin-algorithm`
+- Define who counts as a buyer → `skills/linkedin-icp-definer`
+- Score a post's engagers → `skills/linkedin-engager-analytics`
+- Rank who to work this week → `skills/linkedin-warm-list-builder`
+- Research one target → `skills/linkedin-signal-stack`
 - Turning the list into outreach → `skills/signal-outbound`

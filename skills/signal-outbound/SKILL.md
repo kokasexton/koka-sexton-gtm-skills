@@ -38,6 +38,10 @@ For each target, combine:
 
 ## Routing
 
+- Define the buyer first → `skills/linkedin-icp-definer`
 - Signal definitions → `skills/buying-signals`
-- Copy mechanics → `skills/cold-email`, `skills/personalization`
 - Who's warm → `skills/engagement-intelligence`
+- Full list run (signals → sequences) → `skills/outbound-pipeline`
+- Warm one target with a comment → `skills/linkedin-comment-warmer`
+- Plays → `skills/gtm-plays`
+- Copy mechanics → `skills/cold-email`, `skills/personalization`
