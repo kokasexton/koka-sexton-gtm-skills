@@ -38,5 +38,7 @@ A ranked top-10, each with the reason it ranks where it does and a one-line next
 - Never auto-send.
 
 ## Routing
+- Score post engagers with the engine → `warm-list`
+- Add in-market accounts → `multi-signal`
 - Research a target → `linkedin-signal-stack`
 - Turn the list into outreach → `outbound-pipeline`

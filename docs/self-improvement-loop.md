@@ -38,11 +38,15 @@ The repo is test-gated. A change doesn't ship unless:
 
 - [x] Content tests (frontmatter, koka-first, data-accuracy) wired into CI — `tests/run.mjs` (frontmatter + internal links + data accuracy), run by `brand-safety.yml`
 - [ ] Extend internal-link test to flag references to files outside the skill layer (README/landing copy)
-- [ ] Per-skill examples: one worked example per skill (done: engagement-intelligence)
+- [x] Worked examples for every skill that ships a tool (`examples/`), pinned by `tests/tools.test.mjs`
+- [ ] Worked examples for prose-only skills (ATL/BTL messaging, ads, LinkedIn outreach)
 - [x] Expand `engagement-intelligence` with a classification rubric (seniority/function taxonomy) — done 2026-11-03
-- [ ] Add sub-skills: `content-evaluation`, `aeo-geo`, `signal-scoring`
+- [x] `content-evaluation`, `ai-search-visibility` (`prompt-panel`, `citation-check`), signal scoring (`multi-signal`, `warm-list`)
+- [x] v2 full stack: 13 orchestrators, 8 tools, `system.json`, `no-unsourced-stats` gate
+- [ ] Expose the 8 tools through the MCP server (so MCP clients can run them, not just read the skills)
+- [ ] Make `lint-post.mjs` read thresholds from `skills/linkedin-algorithm/data/benchmarks.json`
 - [ ] Benchmark tables: cadence / format / hashtag lookups as reusable references
-- [ ] Funnel polish: README + landing copy, install paths per client (Claude Code, Cursor, ChatGPT)
+- [x] Install paths: MCP server, Claude Code plugin + marketplace, `scripts/install.mjs`
 - [ ] Accuracy pass: re-verify every stat against the canonical source
 
 ## Guardrails

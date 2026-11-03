@@ -31,5 +31,6 @@ For a target, assemble at least five specific, sourced signals — the raw mater
 A signal stack per target: 5+ sourced signals, plus two or three angles they unlock for outreach.
 
 ## Routing
+- Where each kind of signal comes from → `personalization-sources`, `signal-sourcer`
 - Write with the stack → `personalization`, `cold-email`
 - Warm them first → `linkedin-comment-warmer`

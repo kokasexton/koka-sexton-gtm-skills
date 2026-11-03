@@ -2,7 +2,7 @@
 name: linkedin-algorithm
 description: The 2026 LinkedIn algorithm data and playbook — cadence, formats, timing, hashtags, comment strategy, funnel metrics, and the 6-rule operating guide. Use for any LinkedIn reach or engagement question. Sourced from the VCO LinkedIn Algorithm Report 2026 (data by SignalScout).
 when_to_use: "Use for LinkedIn strategy, reach/engagement diagnosis, content mix, posting cadence, and client guidance."
-not_for: "Drafting a specific post in Koka's voice — use the writing skills. This is the data and playbook layer."
+not_for: "Drafting a specific post — use skills/linkedin-content and its sub-skills. This is the data and playbook layer."
 ---
 
 <!-- koka-first -->
@@ -10,7 +10,7 @@ Source: **LinkedIn Algorithm Report 2026** (data by SignalScout) — 2,279 posts
 
 # LinkedIn Algorithm 2026
 
-> **Don't just read this — run it.** These numbers power a benchmark engine: the MCP tool `linkedin_benchmark` evaluates any draft against them (length, hashtags, format, line breaks, timing) and returns fixes; `linkedin_benchmarks` returns the raw dataset. Data: `data/benchmarks.json`; engine: `lib/benchmark.mjs`.
+> **Don't just read this — run it.** These numbers power a benchmark engine: the MCP tool `linkedin_benchmark` evaluates any draft against them (length, hashtags, format, line breaks, timing) and returns fixes; `linkedin_benchmarks` returns the raw dataset. Data: `data/benchmarks.json`; engine: `lib/benchmark.mjs`. For a pre-publish gate that also checks voice, slop, and engagement bait, run `lint-post.mjs` in `skills/content-evaluation`.
 
 ## The 5 truths
 

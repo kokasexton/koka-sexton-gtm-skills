@@ -29,5 +29,7 @@ Come with a draft, not a blank page: propose defaults for each section, then ask
 A single ICP document with the five sections plus a scoring rubric (how to grade a prospect A–F). Every other skill reads this and nothing else.
 
 ## Routing
+- Build it from evidence (won/lost deals, 100-point fit score) → `define-icp`
+- Tier accounts against it → `qualify-accounts`
 - Who to warm first → `linkedin-warm-list-builder`
 - Score a post's engagers → `linkedin-engager-analytics`

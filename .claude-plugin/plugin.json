@@ -1,9 +1,28 @@
 {
   "name": "koka-gtm",
-  "description": "A mini Koka for GTM: content engineering (the 6-layer loop), engagement intelligence (who's actually in the room), and signal-led outbound. Grounded in the LinkedIn Algorithm Report and the Content Engineering Stack.",
-  "version": "0.1.0",
+  "description": "A mini Koka for your code agent: the full B2B GTM stack — strategy, LinkedIn content and ads, buying signals, list building, cold email, personalization, SDR tools, and AI search — 78 skills with 8 runnable tools and a benchmark engine, grounded in the LinkedIn Algorithm Report 2026.",
+  "version": "2.0.0",
   "author": {
     "name": "Koka Sexton",
     "url": "https://kokasexton.com"
-  }
+  },
+  "displayName": "Koka Sexton GTM Skills",
+  "homepage": "https://kokasexton.com",
+  "repository": "https://github.com/kokasexton/koka-sexton-gtm-skills",
+  "license": "MIT",
+  "keywords": [
+    "gtm",
+    "b2b-marketing",
+    "linkedin",
+    "linkedin-ads",
+    "cold-email",
+    "list-building",
+    "buying-signals",
+    "personalization",
+    "sdr",
+    "abm",
+    "content-engineering",
+    "aeo",
+    "geo"
+  ]
 }

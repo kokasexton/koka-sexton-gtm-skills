@@ -1,0 +1,14 @@
+Subject: Quick question for {{first_name}}!!
+
+Hi {{first_name}},
+
+I hope this email finds you well! My name is Alex and I'm reaching out because I've been following your company and I love what you're doing at [Company].
+
+We are a best-in-class, cutting-edge platform that helps revenue teams unlock pipeline and leverage our AI to revolutionize outbound. Our customers see amazing results across every metric you can imagine, and we'd love to show you how we can do the same for your team, whether you're focused on growth, efficiency, or both.
+
+Are you the right person to talk to? If not, who is? Would you be open to a 30-minute demo next week? Does Tuesday or Thursday work?
+
+Book a time here: https://calendly.com/alex-demo/30min
+
+Best,
+Alex

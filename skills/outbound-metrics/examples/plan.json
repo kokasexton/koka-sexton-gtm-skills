@@ -1,0 +1,7 @@
+{
+  "_note": "Rates measured from examples/counts.json with `pipeline-math.mjs rates`. Replace with yours.",
+  "target": { "pipeline": 900000, "avg_opportunity": 30000 },
+  "rates": { "deliverable": 0.985, "reply": 0.051, "positive": 0.4, "booked": 0.5, "held": 0.8, "opportunity": 0.5 },
+  "touches_per_person": 3,
+  "capacity": { "sends_per_rep_per_day": 50, "working_days": 60 }
+}

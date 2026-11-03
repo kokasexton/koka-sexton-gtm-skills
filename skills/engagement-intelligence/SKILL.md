@@ -1,6 +1,6 @@
 ---
 name: engagement-intelligence
-description: Scrape a company's or executive's public LinkedIn network, classify every engager off their own headline, and read the room by ICP fit, seniority, industry, and geography. Use for audience audits, ABM signal, and warm-list building. Do not use for internal product/competitive research.
+description: Capture a company's or executive's public LinkedIn network, classify every engager off their own headline, and read the room by ICP fit, seniority, industry, and geography. Use for audience audits, ABM signal, and warm-list building. Do not use for internal product/competitive research.
 when_to_use: "Use when the ask is 'who actually engages with this person/company, and are they buyers?' — audience audits, network reports, ABM clusters, warm lists."
 not_for: "Internal product roadmap or competitor feature analysis — use a product-intelligence skill."
 ---
@@ -69,13 +69,15 @@ Headline: "Helping founders scale". The seniority and function are unstated, so 
 
 ## Output
 
-A ranked, tiered warm list with the engagement evidence for each person — not a CSV of names. Always: how they engaged, how often, and why they fit the ICP.
+Got an engagement export? Run `skills/warm-list`. Its `warm-list.mjs` engine applies this rubric (as `taxonomy.json`), scores depth × recency × ICP fit, and returns P0–P3 (≈ A/B/C/Out) with the evidence for each person. Either way, the output is a ranked, tiered warm list with the engagement evidence for each person — not a CSV of names. Always: how they engaged, how often, and why they fit the ICP.
 
 ## Routing
 
+- Classify, score, and tier an export (runnable) → `skills/warm-list`
 - Benchmarks → `skills/linkedin-algorithm`
 - Define who counts as a buyer → `skills/linkedin-icp-definer`
 - Score a post's engagers → `skills/linkedin-engager-analytics`
 - Rank who to work this week → `skills/linkedin-warm-list-builder`
 - Research one target → `skills/linkedin-signal-stack`
+- Who's in-market, not just engaged → `skills/signal-sourcer`
 - Turning the list into outreach → `skills/signal-outbound`

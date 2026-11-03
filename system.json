@@ -1,0 +1,25 @@
+{
+  "_note": "The skill system's shape. Skills live flat at skills/<name>/SKILL.md (so every agent can discover them); this file records which orchestrator owns which sub-skill. Tests enforce that every skill appears exactly once, that each orchestrator routes to its sub-skills, and that koka routes to everything. The README catalog is generated from it.",
+  "entry": "koka",
+  "stages": [
+    { "stage": "Decide", "orchestrators": ["gtm-strategy"] },
+    { "stage": "Attention", "orchestrators": ["linkedin-content", "linkedin-ads", "content-engineer", "ai-search-visibility"] },
+    { "stage": "Who's ready", "orchestrators": ["engagement-intelligence", "signal-sourcer"] },
+    { "stage": "Reach", "orchestrators": ["list-building", "personalization", "cold-email", "linkedin", "sdr-tools", "signal-outbound"] }
+  ],
+  "orchestrators": {
+    "gtm-strategy": ["gtm-principles", "outreach-motions", "sales-triggers", "gtm-plays"],
+    "linkedin-content": ["linkedin-algorithm", "post-hooks", "post-storytelling", "post-formats", "post-scheduling", "post-engagement", "post-cta", "repurposing"],
+    "linkedin-ads": ["ads-audiences", "ads-campaign-setup", "ads-creative", "ads-copy", "ads-bidding", "ads-measurement", "ads-outbound-sync", "ads-optimization"],
+    "content-engineer": ["content-evaluation"],
+    "ai-search-visibility": ["prompt-panel", "citation-check"],
+    "engagement-intelligence": ["warm-list", "linkedin-engager-analytics", "linkedin-warm-list-builder", "linkedin-signal-stack"],
+    "signal-sourcer": ["job-changes", "funding-signals", "hiring-signals", "website-visitors", "company-events", "tech-changes", "competitor-signals", "content-engagement", "multi-signal"],
+    "list-building": ["define-icp", "source-companies", "find-contacts", "qualify-accounts", "clean-validate", "deduplicate"],
+    "personalization": ["personalization-sources", "personalization-hooks", "personalization-at-scale", "personalization-qa"],
+    "cold-email": ["atl-messaging", "btl-messaging", "first-touch", "follow-up", "email-personalization", "re-engagement", "subject-lines"],
+    "linkedin": ["linkedin-profile", "linkedin-outreach-campaign", "linkedin-comment-warmer", "linkedin-safety"],
+    "sdr-tools": ["sdr-prompts", "sdr-writing-rules", "cold-call-scripts", "outbound-metrics"],
+    "signal-outbound": ["buying-signals", "linkedin-icp-definer", "outbound-pipeline"]
+  }
+}

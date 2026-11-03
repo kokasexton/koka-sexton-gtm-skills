@@ -9,6 +9,7 @@
  * sample posts against the 2026 Algorithm Report.
  */
 import { spawn } from "node:child_process";
+import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -44,10 +45,14 @@ line("  🧠  mini-Koka — live demo");
 line("  (the real MCP server, driven like a client)");
 rule();
 
-// 1. What's installed
+// 1. What's installed, grouped the way the system routes
 const skills = (await call("list_skills")).skills;
-line(`\n1) ${skills.length} skills installed:`);
-for (const s of skills) line(`   • ${s.name}`);
+const system = JSON.parse(readFileSync(join(ROOT, "system.json"), "utf8"));
+line(`\n1) ${skills.length} skills installed. Front door: ${system.entry}`);
+for (const st of system.stages) {
+  line(`   ${st.stage}`);
+  for (const o of st.orchestrators) line(`     • ${o.padEnd(24)} → ${system.orchestrators[o].length} sub-skill${system.orchestrators[o].length === 1 ? "" : "s"}`);
+}
 
 // 2. Routing: ask a question, get the right skill
 line("\n2) Ask a question → the agent picks the right skill:");
@@ -56,6 +61,8 @@ const asks = [
   "score these engagers",
   "run outbound on my list",
   "review my draft post",
+  "which accounts are in market",
+  "clean and dedupe my contact list",
 ];
 for (const q of asks) {
   const top = (await call("search_skills", { query: q })).matches[0];
@@ -76,10 +83,16 @@ for (const p of posts) {
   line();
 }
 
-// 4. Persona
+// 4. The runnable tools that ship inside the skills
+line("4) Runnable tools inside the skills (node <skill>/scripts/<tool>.mjs --help):");
+for (const [skill, tool] of [["content-evaluation", "lint-post"], ["cold-email", "lint-email"], ["warm-list", "warm-list"], ["multi-signal", "signal-score"], ["list-building", "list-clean"], ["outbound-metrics", "pipeline-math"], ["citation-check", "citation-check"], ["prompt-panel", "panel-score"]])
+  line(`   • ${(tool + ".mjs").padEnd(20)} skills/${skill}/scripts/`);
+line();
+
+// 5. Persona
 const persona = (await call("get_persona")).persona || "";
 const principle = (persona.match(/signal over vanity[^\n]*/i) || [""])[0];
-line(`4) Persona loaded (KOKA.md): ${principle || "signal over vanity"}`);
+line(`5) Persona loaded (KOKA.md): ${principle || "signal over vanity"}`);
 rule();
 line("  That's the system: install → route → compute. kokasexton.com\n");
 

@@ -33,5 +33,6 @@ If nothing fits, replying where the target is commenting on someone else's post 
 - One comment per target per cycle. Reply to every response.
 
 ## Routing
+- The full comment-first routine → `post-engagement`, `linkedin-outreach-campaign`
 - Angle from research → `linkedin-signal-stack`
 - Full sequence → `gtm-plays`

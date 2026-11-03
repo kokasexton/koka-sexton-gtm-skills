@@ -174,7 +174,7 @@ function handle(req) {
   const { method, id, params } = req;
   if (method === "initialize") {
     return { protocolVersion: PROTOCOL, capabilities: { tools: {}, resources: {} },
-      serverInfo: { name: "koka-gtm", version: "0.1.0" } };
+      serverInfo: { name: "koka-gtm", version: "2.0.0" } };
   }
   if (method === "tools/list") return { tools: TOOLS };
   if (method === "tools/call") {

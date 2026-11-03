@@ -1,0 +1,7 @@
+{
+  "min_seniority": "director",
+  "functions": ["marketing", "sales"],
+  "keywords": ["b2b", "saas", "revenue", "demand gen", "marketing"],
+  "exclude_companies": ["Koka Sexton Consulting"],
+  "exclude_keywords": ["student", "recruiter"]
+}

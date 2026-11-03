@@ -1,6 +1,6 @@
 ---
 name: linkedin-engager-analytics
-description: Analyze who engaged with a LinkedIn post — compute ICP match rate and surface the top buyer-fit profiles. Use for "who engaged with my post", "did any buyers see this", "ICP match rate". Do not use to rank a whole candidate pool.
+description: Analyze and score the engagers on a LinkedIn post — compute ICP match rate and surface the top buyer-fit profiles. Use for "who engaged with my post", "did any buyers see this", "ICP match rate". Do not use to rank a whole candidate pool.
 when_to_use: "Use when a user shares a post (or asks about a recent one) and wants the engagers scored against their ICP."
 not_for: "Ranking a full candidate pool — use linkedin-warm-list-builder."
 ---
@@ -31,5 +31,6 @@ Turn reactions and comments into buyer intelligence: what share of engagers matc
 A ranked engager list with per-person evidence — not just a match percentage.
 
 ## Routing
+- Run it on an export (classify, score, tier) → `warm-list`
 - Rank them into a weekly plan → `linkedin-warm-list-builder`
 - Research a top target → `linkedin-signal-stack`

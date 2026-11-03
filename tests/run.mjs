@@ -1,16 +1,28 @@
 #!/usr/bin/env node
-// Content test runner — frontmatter, koka-first block, internal links, data accuracy.
+// Test runner — frontmatter, internal links, data accuracy, no unsourced stats,
+// the benchmark engine, tool behaviour, system structure, a real install, and
+// README catalog sync. (The MCP server has its own runner: tests/mcp.test.mjs.)
 // Run: node tests/run.mjs   (exit 1 on any failure)
 import { run as frontmatter } from "./frontmatter.test.mjs";
 import { run as internalLinks } from "./internal-links.test.mjs";
 import { run as dataAccuracy } from "./data-accuracy.test.mjs";
+import { run as noUnsourcedStats } from "./no-unsourced-stats.test.mjs";
 import { run as benchmark } from "./benchmark.test.mjs";
+import { run as tools } from "./tools.test.mjs";
+import { run as structure } from "./structure.test.mjs";
+import { run as install } from "./install.test.mjs";
+import { run as catalog } from "./catalog.test.mjs";
 
 const suites = [
   ["frontmatter", frontmatter],
   ["internal-links", internalLinks],
   ["data-accuracy", dataAccuracy],
+  ["no-unsourced-stats", noUnsourcedStats],
   ["benchmark", benchmark],
+  ["tools", tools],
+  ["structure", structure],
+  ["install", install],
+  ["catalog", catalog],
 ];
 
 let failed = false;

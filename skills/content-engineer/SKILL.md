@@ -2,7 +2,7 @@
 name: content-engineer
 description: Design and run the system that produces, evaluates, distributes, and improves content — the six-layer content loop. Use when the job is to build or operate a content system, not to write one post. Do not use for a single ad-hoc draft — use the standalone writing skills instead.
 when_to_use: "Use when Koka (or a client) wants a repeatable content system: source → knowledge → generation → evaluation → distribution → measurement."
-not_for: "A one-off post or email. Reach for skills/linkedin-algorithm, skills/cold-email, or a plain draft."
+not_for: "A one-off post or email. Reach for skills/linkedin-content or skills/cold-email."
 ---
 
 <!-- koka-first -->
@@ -17,8 +17,8 @@ A content marketer produces content. A content engineer designs the system that 
 1. **Source** — where signal comes from: primary research, data pulls, engagement intelligence, customer conversations. Not "ideas."
 2. **Knowledge** — brand facts made machine-legible: voice, positioning, proof points, do/don't lists, in a form the agent can retrieve.
 3. **Generation** — LLM pipelines that respect voice and componentise output (hook, body, CTA as parts, not one blob).
-4. **Evaluation** — verifiers and editorial gates *before* publish: voice check, slop check, fact pass. Nothing ships un-gated.
-5. **Distribution** — channel systems and franchises, not one-off posts. Native formats. AEO/GEO for discovery.
+4. **Evaluation** — verifiers and editorial gates *before* publish: voice check, slop check, fact pass. Nothing ships un-gated. Run `skills/content-evaluation`.
+5. **Distribution** — channel systems and franchises, not one-off posts. Native formats. AEO/GEO for discovery (`skills/ai-search-visibility`).
 6. **Measurement** — audience *quality*, not impressions. Who engaged, at what seniority, from which accounts.
 
 ## How to run it
@@ -35,10 +35,14 @@ The failure mode is always the same: a team that has generation and nothing else
 - Long beats short: 1,500+ char posts ≈ 2× the median of short ones.
 - Comments are the signal: commenters are ~26% more senior than likers.
 
-Full data: `skills/linkedin-algorithm/SKILL.md`.
+Full data: `skills/linkedin-algorithm`. Channel craft for LinkedIn: `skills/linkedin-content`.
 
 ## Routing
 
 - Need the algorithm numbers → `skills/linkedin-algorithm`
+- Need to write and run LinkedIn posts → `skills/linkedin-content`
+- Need paid distribution → `skills/linkedin-ads`
+- Need to gate a draft before it ships → `skills/content-evaluation`
+- Need AI assistants to find and cite it → `skills/ai-search-visibility`
 - Need who's in the room → `skills/engagement-intelligence`
 - Need outreach from signals → `skills/signal-outbound`

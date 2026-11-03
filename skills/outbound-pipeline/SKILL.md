@@ -34,6 +34,9 @@ Validate the input before spending effort:
 - One change at a time so the effect is legible.
 
 ## Routing
+- Score signals at account level (runnable) → `multi-signal`
+- Clean and de-dupe the list first (runnable) → `list-building`
+- Lint each draft (runnable) → `cold-email`
 - Signals → `buying-signals`
 - Copy → `cold-email`, `personalization`
 - Who's warm already → `linkedin-warm-list-builder`

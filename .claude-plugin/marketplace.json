@@ -5,15 +5,15 @@
     "url": "https://kokasexton.com"
   },
   "metadata": {
-    "description": "A mini Koka you install into a code agent — a GTM skill system grounded in the LinkedIn Algorithm Report.",
-    "version": "0.1.0"
+    "description": "A mini Koka you install into a code agent — the full B2B GTM stack as skills, grounded in the LinkedIn Algorithm Report.",
+    "version": "2.0.0"
   },
   "plugins": [
     {
       "name": "koka-gtm",
       "source": "./",
-      "description": "GTM skill system: content engineering, engagement intelligence, and signal-led outbound. Orchestrators route to sub-skills; grounded in the LinkedIn Algorithm Report (2,279 posts / 246 creators).",
-      "version": "0.1.0",
+      "description": "78 GTM skills (13 orchestrators + the koka front door) with 8 runnable tools: strategy, LinkedIn content and ads, signals, list building, cold email, personalization, SDR tools, AI search. Grounded in the LinkedIn Algorithm Report (2,279 posts / 246 creators).",
+      "version": "2.0.0",
       "author": {
         "name": "Koka Sexton",
         "url": "https://kokasexton.com"

@@ -19,8 +19,9 @@ export function allFiles() {
   return walk(ROOT);
 }
 
+/** Shipped skills only — everything under skills/ (templates/ is not a skill). */
 export function skillFiles() {
-  return allFiles().filter((f) => f.endsWith("SKILL.md"));
+  return walk(join(ROOT, "skills")).filter((f) => f.endsWith("SKILL.md"));
 }
 
 export function rel(p) {

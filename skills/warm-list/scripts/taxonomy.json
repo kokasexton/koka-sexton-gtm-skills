@@ -1,0 +1,189 @@
+{
+  "_note": "Headline classification rubric — the machine-readable form of the rubric in skills/engagement-intelligence (the canonical source). Seniority is read off the person's own role segment, never off who they say they help; the classifier takes the highest rank that matches. If nothing in the headline supports a call, the result is 'unclassified' — never a guess. Patterns are case-insensitive regex sources.",
+  "seniority": [
+    {
+      "level": "founder-ceo",
+      "rank": 5,
+      "patterns": [
+        "\\bco-?founder\\b",
+        "\\bfounder\\b",
+        "\\bceo\\b",
+        "\\bchief executive\\b",
+        "\\bowner\\b",
+        "\\bmanaging partner\\b",
+        "\\bfounding partner\\b"
+      ]
+    },
+    {
+      "level": "c-suite",
+      "rank": 4,
+      "patterns": [
+        "\\bc[otmfrpi]o\\b",
+        "\\bchief (?!executive)[a-z]+ officer\\b",
+        "\\bpresident\\b",
+        "\\bmanaging director\\b",
+        "\\bgeneral partner\\b"
+      ]
+    },
+    {
+      "level": "vp",
+      "rank": 3,
+      "patterns": [
+        "\\b(s|e)?vp\\b",
+        "\\bvice president\\b",
+        "\\bhead of\\b"
+      ]
+    },
+    {
+      "level": "director",
+      "rank": 2,
+      "patterns": [
+        "\\bdirector\\b",
+        "\\bgm\\b",
+        "\\bgeneral manager\\b"
+      ]
+    },
+    {
+      "level": "manager",
+      "rank": 1,
+      "patterns": [
+        "\\bmanager\\b",
+        "\\blead\\b(?! ?gen)",
+        "\\bprincipal\\b",
+        "\\bsupervisor\\b"
+      ]
+    },
+    {
+      "level": "ic",
+      "rank": 0,
+      "patterns": [
+        "\\bspecialist\\b",
+        "\\banalyst\\b",
+        "\\bstrategist\\b",
+        "\\bconsultant\\b",
+        "\\bengineer\\b",
+        "\\bcoordinator\\b",
+        "\\bassociate\\b",
+        "\\brepresentative\\b",
+        "\\b(account|sales) executive\\b",
+        "\\bdesigner\\b",
+        "\\bdeveloper\\b",
+        "\\bwriter\\b",
+        "\\bmarketer\\b",
+        "\\b(sdr|bdr)\\b"
+      ]
+    }
+  ],
+  "default_seniority": {
+    "level": "unclassified",
+    "rank": 0
+  },
+  "function": [
+    {
+      "name": "marketing",
+      "patterns": [
+        "\\bmarketing\\b",
+        "\\bcmo\\b",
+        "\\bbrand\\b",
+        "\\bdemand gen",
+        "\\bgrowth\\b",
+        "\\bcontent\\b",
+        "\\bcommunications\\b",
+        "\\bseo\\b",
+        "\\bpmm\\b",
+        "\\bproduct marketing\\b"
+      ]
+    },
+    {
+      "name": "sales",
+      "patterns": [
+        "\\bsales\\b",
+        "\\bcro\\b",
+        "\\brevenue\\b",
+        "\\baccount executive\\b",
+        "\\b(sdr|bdr|ae)\\b",
+        "\\bbusiness development\\b",
+        "\\bgo-to-market\\b",
+        "\\bgtm\\b",
+        "\\brevops\\b",
+        "\\bpartnerships\\b"
+      ]
+    },
+    {
+      "name": "customer-success",
+      "patterns": [
+        "\\bcustomer success\\b",
+        "\\bcustomer experience\\b",
+        "\\baccount manage",
+        "\\bsupport\\b"
+      ]
+    },
+    {
+      "name": "engineering-product",
+      "patterns": [
+        "\\bengineer",
+        "\\bcto\\b",
+        "\\bdeveloper\\b",
+        "\\bproduct\\b",
+        "\\bdata\\b",
+        "\\bsoftware\\b",
+        "\\bcpo\\b"
+      ]
+    },
+    {
+      "name": "operations",
+      "patterns": [
+        "\\boperations\\b",
+        "\\bcoo\\b",
+        "\\bops\\b",
+        "\\bchief of staff\\b"
+      ]
+    },
+    {
+      "name": "finance",
+      "patterns": [
+        "\\bfinance\\b",
+        "\\bcfo\\b",
+        "\\bcontroller\\b",
+        "\\baccounting\\b"
+      ]
+    },
+    {
+      "name": "people",
+      "patterns": [
+        "\\bpeople\\b",
+        "\\bhr\\b",
+        "\\btalent\\b",
+        "\\brecruit",
+        "\\bchro\\b"
+      ]
+    },
+    {
+      "name": "executive",
+      "patterns": [
+        "\\bceo\\b",
+        "\\bfounder\\b",
+        "\\bpresident\\b",
+        "\\bowner\\b"
+      ]
+    }
+  ],
+  "ignore_segment_patterns": [
+    "^\\s*(i |we )?help(ing|s)?\\b",
+    "^\\s*(for|to) (founders|ceos|cmos|cros|leaders|teams|b2b)",
+    "\\b(coach|advisor|adviser|consultant) (to|for) ",
+    "^\\s*(ex|former|formerly|prev(iously)?)\\b",
+    "\\bex-",
+    "\\b(aspiring|future|seeking|open to work|looking for)\\b"
+  ],
+  "demote_patterns": [
+    "\\b(executive |personal )?assistant (to|of)\\b",
+    "\\bea to\\b",
+    "\\bintern\\b",
+    "\\bstudent\\b"
+  ],
+  "flags": {
+    "fractional": "\\b(fractional|interim)\\b",
+    "agency_or_consultant": "\\b(agency|consultant|consulting|freelance)\\b"
+  }
+}

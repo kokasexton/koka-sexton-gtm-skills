@@ -1,6 +1,6 @@
 # Koka Sexton — GTM Skills (mini-Koka)
 
-> A mini Koka you install into a code agent. A Claude Code / MCP skill system for GTM operators — content engineering, engagement intelligence, and signal-led outbound — grounded in the LinkedIn Algorithm Report (2,279 posts / 246 creators) and the Content Engineering Stack. API/MCP-native; the skills are free.
+> A mini Koka you install into a code agent. A Claude Code / MCP skill system for B2B GTM operators — strategy, LinkedIn content and ads, buying signals, list building, cold email, personalization, SDR tools, and AI search — 78 skills, 8 runnable tools, and a benchmark engine, grounded in the LinkedIn Algorithm Report (2,279 posts / 246 creators). No API keys; the skills are free.
 
 ## Install
 
@@ -13,12 +13,36 @@
 
 Tools: `list_skills`, `get_skill`, `search_skills`, `get_persona`, `linkedin_benchmark` (evaluate a draft against the 2026 report), `linkedin_benchmarks` (raw data). Every `SKILL.md` is also a resource (`skill://<name>`).
 
-**Claude Code, by files:** `cp -r koka-sexton-gtm-skills/skills/* ~/.claude/skills/`
+**Claude Code plugin:** `/plugin marketplace add kokasexton/koka-sexton-gtm-skills` then `/plugin install koka-gtm@koka-sexton-gtm-skills`
+
+**Claude Code, by files:** `node koka-sexton-gtm-skills/scripts/install.mjs` (or `cp -r koka-sexton-gtm-skills/skills/* ~/.claude/skills/`)
 
 ## Skills
 
-Orchestrators (route like Koka): `content-engineer`, `engagement-intelligence`, `signal-outbound`.
-Sub-skills: `linkedin-algorithm`, `buying-signals`, `cold-email`, `gtm-plays`, `personalization`, and growing.
+Front door: `koka` (routes any GTM ask). The system's shape is in `system.json`.
+
+**Decide**
+- `gtm-strategy` → `gtm-principles`, `outreach-motions`, `sales-triggers`, `gtm-plays`
+
+**Attention**
+- `linkedin-content` → `linkedin-algorithm`, `post-hooks`, `post-storytelling`, `post-formats`, `post-scheduling`, `post-engagement`, `post-cta`, `repurposing`
+- `linkedin-ads` → `ads-audiences`, `ads-campaign-setup`, `ads-creative`, `ads-copy`, `ads-bidding`, `ads-measurement`, `ads-outbound-sync`, `ads-optimization`
+- `content-engineer` → `content-evaluation`
+- `ai-search-visibility` → `prompt-panel`, `citation-check`
+
+**Who's ready**
+- `engagement-intelligence` → `warm-list`, `linkedin-engager-analytics`, `linkedin-warm-list-builder`, `linkedin-signal-stack`
+- `signal-sourcer` → `job-changes`, `funding-signals`, `hiring-signals`, `website-visitors`, `company-events`, `tech-changes`, `competitor-signals`, `content-engagement`, `multi-signal`
+
+**Reach**
+- `list-building` → `define-icp`, `source-companies`, `find-contacts`, `qualify-accounts`, `clean-validate`, `deduplicate`
+- `personalization` → `personalization-sources`, `personalization-hooks`, `personalization-at-scale`, `personalization-qa`
+- `cold-email` → `atl-messaging`, `btl-messaging`, `first-touch`, `follow-up`, `email-personalization`, `re-engagement`, `subject-lines`
+- `linkedin` → `linkedin-profile`, `linkedin-outreach-campaign`, `linkedin-comment-warmer`, `linkedin-safety`
+- `sdr-tools` → `sdr-prompts`, `sdr-writing-rules`, `cold-call-scripts`, `outbound-metrics`
+- `signal-outbound` → `buying-signals`, `linkedin-icp-definer`, `outbound-pipeline`
+
+Runnable tools (zero dependencies): `lint-post.mjs` (content-evaluation), `lint-email.mjs` (cold-email), `warm-list.mjs` (warm-list), `signal-score.mjs` (multi-signal), `list-clean.mjs` (list-building), `pipeline-math.mjs` (outbound-metrics), `citation-check.mjs` (citation-check), `panel-score.mjs` (prompt-panel). Each lives at `skills/<skill>/scripts/`.
 
 ## Persona
 
