@@ -19,7 +19,7 @@ built on real data, enforced by tests, and backed by tools your agent can run.</
 <a href="#install">Install</a> ·
 <a href="#ask-it-anything">Ask it anything</a> ·
 <a href="#the-tools">The tools</a> ·
-<a href="#whats-inside">What's inside</a> ·
+<a href="#the-system">The system</a> ·
 <a href="#why-its-different">Why it's different</a> ·
 <a href="#catalog">Full catalog</a> ·
 <a href="#faq">FAQ</a>
@@ -187,36 +187,206 @@ Better signals beat more reps. The tool has no built-in "industry average" rates
 
 </details>
 
-## What's inside
+## The system
 
-| Area | Orchestrator | Sub-skills | Tool |
-|---|---|---|---|
-| **GTM Strategy** | `gtm-strategy` | 4: principles · outreach motions · sales triggers · GTM plays | — |
-| **LinkedIn Content** | `linkedin-content` | 7 + the canonical data: hooks · storytelling · formats · scheduling · engagement · CTA · repurposing · linkedin-algorithm | `lint-post.mjs` |
-| **LinkedIn Ads** | `linkedin-ads` | 8: audiences · campaign setup · creative · copy · bidding · measurement · ads→outbound sync · optimization | — |
-| **LinkedIn** | `linkedin` | 3: profile · outreach campaign · safety and limits | — |
-| **Signal Sourcer** | `signal-sourcer` | 9: job changes · funding · hiring · website visitors · company events · tech changes · competitor signals · content engagement · multi-signal | `signal-score.mjs` |
-| **List Building** | `list-building` | 6: define ICP · source companies · find contacts · qualify accounts · clean & validate · deduplicate | `list-clean.mjs` |
-| **Cold Email** | `cold-email` | 7: ATL messaging · BTL messaging · first touch · follow-up · email personalization · re-engagement · subject lines | `lint-email.mjs` |
-| **Personalization** | `personalization` | 4: sources · hooks · at scale (AI, no fabrication) · QA | — |
-| **SDR Tools** | `sdr-tools` | 4: agent prompts · writing rules · cold-call scripts · outbound metrics | `pipeline-math.mjs` |
-| Engagement intelligence | `engagement-intelligence` | warm list | `warm-list.mjs` |
-| Signal → pipeline | `signal-outbound` | buying signals (chains every outbound skill end to end) | — |
-| Content system | `content-engineer` | content evaluation (the six-layer content loop) | — |
-| AI search (AEO/GEO) | `ai-search-visibility` | prompt panel · citation check | `panel-score.mjs`, `citation-check.mjs` |
+Most GTM tooling covers one step and leaves you to stitch the rest together. This is one loop: **decide → earn attention → see who's ready → reach them well → measure → repeat**. Every skill knows where it sits in that loop and hands off to the next.
 
 ```
- gtm-strategy ─ decides the motion, the ICP, the plays
-      │
- linkedin-content · content-engineer · linkedin-ads · ai-search-visibility ──▶ attention
-      │                                                                          │
-      │                    engagement-intelligence + signal-sourcer ◀────────────┘
-      │                    (who's in the room · who's in-market now)
-      │                                  │
-      │        list-building → personalization → cold-email · linkedin · sdr-tools
-      │                                  │
-      └───────────── measurement: who engaged, who replied, what became pipeline
+ ① DECIDE     gtm-strategy ─ the motion, the ICP, the plays
+                   │
+ ② ATTENTION  linkedin-content · linkedin-ads · content-engineer · ai-search-visibility
+                   │                                                        │
+ ③ WHO'S READY     └──▶ engagement-intelligence (who's in the room) ◀───────┘
+                        signal-sourcer          (who's in-market now)
+                                   │
+ ④ REACH      list-building → personalization → cold-email · linkedin · sdr-tools
+                        (signal-outbound runs this chain end to end)
+                                   │
+ ⑤ MEASURE    who engaged · who replied · what became pipeline ──▶ back to ①
 ```
+
+`koka` is the front door. Describe the problem in plain words and it routes to the right orchestrator. Every skill inherits the same persona (`KOKA.md`) and defaults (`KOKA-FIRST.md`), so advice on Monday's post and Thursday's cold call comes from the same operator.
+
+---
+
+### ① Decide: strategy before tactics
+
+#### `gtm-strategy` · 4 sub-skills
+Decide what *not* to do. Most teams run every motion at half strength. This sets the ICP, the motion mix, and the plays, then diagnoses weak pipeline by finding the earliest broken link.
+
+**You get:** a GTM plan your team can argue with and agree on, and a diagnostic that tells you which one thing to fix first.
+
+- **`gtm-principles`**: the ten Koka operating rules (signal over vanity, evidence over opinion, one change at a time…), each turned into a decision rule for settling debates
+- **`outreach-motions`**: inbound vs. warm vs. triggered vs. cold, what each needs, and why most teams leave the warm motion unworked
+- **`sales-triggers`**: a library of true, checkable "why now" reasons, grouped by source, each with an opening-line pattern
+- **`gtm-plays`**: 8 repeatable plays, each with its input signal, its sequence, and the metric that proves it worked
+
+---
+
+### ② Attention: earn it, don't buy it blindly
+
+#### `linkedin-content` · 7 sub-skills + the canonical data
+Write, publish, and work LinkedIn posts the way the data says wins. It owns **`linkedin-algorithm`**, the single source of truth for every benchmark in the repo.
+
+**You get:** posts built on numbers, not hunches. Image formats beat link posts 2.8×, 3–5 posts a week beat daily, and 1,500+ characters with whitespace beats short. Plus a gate that blocks a bad post before it costs you reach.
+
+- **`post-hooks`**: eight patterns for the line before "…see more", and the openers the data says lose (hot takes −29%)
+- **`post-storytelling`**: one lesson per post, three proven structures, long-form with whitespace (+72%)
+- **`post-formats`**: image, document, text, video, or link, chosen by median engagement and comment share
+- **`post-scheduling`**: cadence and timing (Mon–Wed, 12:00–16:00 UTC) and the first-hours routine
+- **`post-engagement`**: run the comment section like a CRM, since commenters are 26% more senior than likers
+- **`post-cta`**: questions that earn substantive comments instead of penalised "comment YES" bait
+- **`repurposing`**: turn one proven idea into a carousel, image, video, newsletter, ad, and citable page
+
+🛠 `lint-post.mjs` checks every draft against the report: SHIP / SHIP WITH EDITS / BLOCK.
+
+#### `linkedin-ads` · 8 sub-skills
+Run LinkedIn Ads as part of an account-based motion: narrow audiences, a three-layer funnel, creative that teaches, and engagement handed to sales as a signal.
+
+**You get:** ad spend aimed at the buying committee of your actual target accounts, measured by pipeline rather than clicks, and turned into conversations.
+
+- **`ads-audiences`**: account lists, buying-committee targeting, exclusions, retargeting pools, and expansion settings that don't dilute ABM
+- **`ads-campaign-setup`**: campaign groups by funnel layer and tier, one objective each, a naming convention, and a pre-launch checklist
+- **`ads-creative`**: Thought Leader Ads, document ads, and promoting organic winners, plus spotting creative fatigue early
+- **`ads-copy`**: copy written from a voice-of-customer bank, one idea and one offer per ad
+- **`ads-bidding`**: automated vs. cost cap vs. manual bids, and budget across layers and tiers
+- **`ads-measurement`**: Insight Tag + Conversions API, KPIs ranked from pipeline down to CTR, and attribution that admits what it can't see
+- **`ads-outbound-sync`**: export engaged accounts weekly, score them with other signals, and route them to SDRs with the ad's story attached
+- **`ads-optimization`**: a 7-step diagnostic ladder (tracking → delivery → audience → creative → offer → quality → bid)
+
+#### `content-engineer` · 1 sub-skill
+The six-layer content loop (source → knowledge → generation → evaluation → distribution → measurement) for teams building a content *system*, not one post.
+
+**You get:** a map of where your content engine is broken, which is usually that the team has generation and nothing else.
+
+- **`content-evaluation`**: the evaluation gate. Nothing ships un-gated.
+
+#### `ai-search-visibility` · 2 sub-skills
+Get found, named, and cited when buyers ask ChatGPT, Perplexity, Gemini, or Claude. AEO/GEO as a measured loop, not a vibe.
+
+**You get:** a real number for "do AI assistants recommend us?", the exact prompts where competitors appear and you don't, and the pages and sources to fix.
+
+- **`prompt-panel`**: a fixed panel of buyer questions run across engines and scored for mention rate, citation rate, share of voice, and gaps
+- **`citation-check`**: a structural readiness check for pages you want quoted, with specific fixes
+
+🛠 `panel-score.mjs` · `citation-check.mjs`
+
+---
+
+### ③ Who's ready: read the room, then read the market
+
+#### `engagement-intelligence` · 1 sub-skill
+Find out who actually engages with a person or company. Each engager is classified from their own headline, never from a label they picked.
+
+**You get:** the buyers hiding in your audience, ranked, with the evidence for each, and an honest read on whether your content attracts buyers or peers.
+
+- **`warm-list`**: seniority and function classification that handles the traps ("I help CEOs…" isn't a CEO, "Ex-VP" isn't a VP), scoring on depth × recency × ICP fit, P0–P3 tiers, regulars, and account clusters
+
+🛠 `warm-list.mjs`
+
+#### `signal-sourcer` · 9 sub-skills
+Find the accounts in-market *right now* and know how fast to act. A list ages; a signal is current.
+
+**You get:** a weekly ACT NOW / WARM UP / WATCH list, each account with its lead signal and the play to run. Your team works who's ready, not who's next on a spreadsheet.
+
+- **`job-changes`**: new leaders in your function, champions who moved, and contacts who left, plus the timing window
+- **`funding-signals`**: read the use of funds and reach the leader the money is for
+- **`hiring-signals`**: job descriptions as signals: role, "first hire", named tools, team trajectory
+- **`website-visitors`**: which pages carry intent, and outreach that never mentions the tracking
+- **`company-events`**: M&A, expansion, launches, and IPO prep, and which events open a window and which freeze budgets
+- **`tech-changes`**: adoptions, drops, migrations, and how to treat a competitor's new customer
+- **`competitor-signals`**: comparison-stage buyers, public dissatisfaction, renewal windows, met with honesty rather than attack
+- **`content-engagement`**: engagement ranked by depth, commenters and regulars first
+- **`multi-signal`**: stacks every signal at account level, decays old ones, rewards three or more kinds, and combines with ICP fit
+
+🛠 `signal-score.mjs`
+
+---
+
+### ④ Reach: the right people, the right words, a human hand
+
+#### `list-building` · 6 sub-skills
+Build a target list that deserves outreach: small, accurate, tiered, and clean.
+
+**You get:** an ICP drawn from your won deals rather than your wishlist, accounts tiered by effort, and a list that won't bounce or email the same person twice.
+
+- **`define-icp`**: three layers (firmographic, situational, behavioural) and a 100-point fit score
+- **`source-companies`**: the right source for each ICP shape, starting with your own CRM
+- **`find-contacts`**: buying-committee mapping, Boolean title search, people with signals first
+- **`qualify-accounts`**: fit × timing into tier 1/2/3, with an effort budget for each
+- **`clean-validate`**: normalise, flag, verify, suppress, and keep a hygiene schedule
+- **`deduplicate`**: match on email, LinkedIn URL, and name + domain; merge without losing data; keep provenance
+
+🛠 `list-clean.mjs`
+
+#### `personalization` · 4 sub-skills
+Personalisation built on a real observation, not a merge field. That includes doing it at scale with AI without inventing anything.
+
+**You get:** opening lines that could only have been written to that person, and a pipeline that refuses to fake it when there's nothing real to say.
+
+- **`personalization-sources`**: six buckets ranked by strength, how long each stays fresh, and what's off-limits
+- **`personalization-hooks`**: strong vs. light hooks, when each fits, and the bridge to your reason for writing
+- **`personalization-at-scale`**: prompts constrained to supplied facts that output `NO_LINE` when facts are missing
+- **`personalization-qa`**: the review gate covering true, specific, connected, fresh, respectful, and clean, with a sampling plan for AI batches
+
+#### `cold-email` · 7 sub-skills
+Signal-led cold email from first touch to re-engagement: one observation, one idea, one ask.
+
+**You get:** emails that read like a person wrote them to one person, sequences where every touch adds value, and a linter that stops template tells before they reach an inbox.
+
+- **`atl-messaging`**: VPs, C-level, and founders. Lead with an outcome or a risk; ask for an opinion, not a meeting.
+- **`btl-messaging`**: managers and practitioners. Lead with the task that hurts, give something useful, and arm the champion.
+- **`first-touch`**: four frameworks matched to the signal you have, plus a pre-send checklist
+- **`follow-up`**: a value-rotation plan, no guilt, stop on any reply
+- **`email-personalization`**: where the personal line goes, how long it is, and merge-field hygiene
+- **`re-engagement`**: revive closed-lost or ghosted deals only when something real has changed
+- **`subject-lines`**: patterns that read as human, and A/B tests that measure replies rather than opens
+
+🛠 `lint-email.mjs`
+
+#### `linkedin` · 3 sub-skills
+LinkedIn as a relationship channel: a profile that converts, outreach that continues a real exchange, and an account kept safe.
+
+**You get:** connection requests that get accepted, DMs that get answered, and a LinkedIn account you never put at risk.
+
+- **`linkedin-profile`**: the profile as a landing page, with a headline formula, Featured, and a five-second test
+- **`linkedin-outreach-campaign`**: engage first, connect with a reason, a value-first DM, one follow-up
+- **`linkedin-safety`**: what triggers restrictions, a conservative warm-up ramp, and why automation is out
+
+#### `sdr-tools` · 4 sub-skills
+The SDR's working kit, plus the math that sets targets and capacity.
+
+**You get:** faster research, a consistent team voice, calls that open honestly, and targets built on your own conversion rates rather than someone's blog post.
+
+- **`sdr-prompts`**: agent prompts for research briefs, signal-to-message drafts, reply triage, objections, and meeting prep, all constrained to supplied facts
+- **`sdr-writing-rules`**: ten rules, a 30-second self-edit, and before/after rewrites
+- **`cold-call-scripts`**: a permission opener built on the signal, discovery questions, objections, voicemail, and no-show recovery
+- **`outbound-metrics`**: the funnel from send to opportunity, health thresholds, and which rate to fix first
+
+🛠 `pipeline-math.mjs`
+
+#### `signal-outbound` · 1 sub-skill
+The conductor. It chains warm list → signals → list → play → personalisation → message → metrics into one outbound motion.
+
+**You get:** end-to-end outbound in which every touch traces back to a real signal and a human approves every send.
+
+- **`buying-signals`**: which behaviours predict budget, how to score depth × recency × fit, and the anti-signals that don't
+
+---
+
+### ⑤ Measure: then change one thing
+
+Measurement is built into every stage, not a separate step:
+
+| Stage | What's measured | Where |
+|---|---|---|
+| Content | Who engaged, how senior, from which accounts, vs. the report baseline | `warm-list`, `linkedin-algorithm` |
+| Ads | Pipeline from target accounts and engaged accounts that took meetings, not CTR | `ads-measurement` |
+| AI search | Mention and citation rate, share of voice, gaps over time | `prompt-panel` |
+| Signals | Which signal types turned into meetings, so you can re-weight them | `multi-signal` |
+| Outbound | Every stage rate from send to opportunity, and the most sensitive lever | `outbound-metrics` |
+
+The rule everywhere: **compare to your own baseline, change one lever, measure again.**
 
 ## Why it's different
 
