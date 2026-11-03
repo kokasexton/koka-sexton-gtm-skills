@@ -35,7 +35,8 @@ The repo is test-gated. A change doesn't ship unless:
 
 ## Backlog
 
-- [ ] Content tests (frontmatter, koka-first, data-accuracy) wired into CI
+- [x] Content tests (frontmatter, koka-first, data-accuracy) wired into CI — `tests/run.mjs` (frontmatter + internal links + data accuracy), run by `brand-safety.yml`
+- [ ] Extend internal-link test to flag references to files outside the skill layer (README/landing copy)
 - [ ] Per-skill examples: one worked example per skill
 - [ ] Expand `engagement-intelligence` with a classification rubric (seniority/function taxonomy)
 - [ ] Add sub-skills: `content-evaluation`, `aeo-geo`, `signal-scoring`

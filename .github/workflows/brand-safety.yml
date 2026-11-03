@@ -15,3 +15,5 @@ jobs:
           node-version: "20"
       - name: Validate skills (frontmatter, koka-first block, brand safety)
         run: node scripts/validate-brand-safety.mjs
+      - name: Content tests (frontmatter, koka-first, internal links, data accuracy)
+        run: node tests/run.mjs
