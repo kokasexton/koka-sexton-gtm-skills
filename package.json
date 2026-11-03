@@ -1,0 +1,12 @@
+{
+  "name": "koka-gtm-skills",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A mini Koka you install into a code agent — GTM skill system (MCP + Claude Code plugin).",
+  "type": "module",
+  "scripts": {
+    "demo": "node demo.mjs",
+    "test": "node tests/run.mjs && node tests/mcp.test.mjs",
+    "validate": "node scripts/scan-secrets.mjs && node scripts/validate-brand-safety.mjs"
+  }
+}
