@@ -1,70 +1,113 @@
-<p align="center"><img src=".claude-plugin/icon.png" width="96" alt=""></p>
+<p align="center"><img src=".claude-plugin/icon.png" width="104" alt=""></p>
 
 <h1 align="center">Koka Sexton — GTM Skills</h1>
 
-<p align="center"><b>A mini Koka you install into your code agent.</b><br>
-The full B2B go-to-market stack as agent skills: strategy, LinkedIn content and ads, signals, list building, cold email, personalization, SDR tools, and AI search. Every benchmark is sourced and tested, and every tool runs.</p>
+<p align="center"><b>The whole B2B go-to-market stack, installed into your AI agent.</b><br>
+Strategy, LinkedIn content and ads, buying signals, list building, cold email, personalization, SDR work, and AI search,<br>
+built on real data, enforced by tests, and backed by tools your agent can run.</p>
 
 <p align="center">
 <a href="https://github.com/kokasexton/koka-sexton-gtm-skills/actions/workflows/ci.yml"><img src="https://github.com/kokasexton/koka-sexton-gtm-skills/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
 <img src="https://img.shields.io/badge/skills-72-6366f1" alt="72 skills">
 <img src="https://img.shields.io/badge/runnable%20tools-8-ec4899" alt="8 tools">
 <img src="https://img.shields.io/badge/dependencies-0-38bdf8" alt="zero dependencies">
+<img src="https://img.shields.io/badge/API%20keys%20required-0-22c55e" alt="no API keys">
 <img src="https://img.shields.io/badge/license-MIT-111827" alt="MIT">
+</p>
+
+<p align="center">
+<a href="#install">Install</a> ·
+<a href="#ask-it-anything">Ask it anything</a> ·
+<a href="#the-tools">The tools</a> ·
+<a href="#whats-inside">What's inside</a> ·
+<a href="#why-its-different">Why it's different</a> ·
+<a href="#catalog">Full catalog</a> ·
+<a href="#faq">FAQ</a>
 </p>
 
 ---
 
-Most GTM skill libraries hand you opinions in a nice font, then ask for an API key. This one is different in four ways:
+## A mini Koka for your agent
 
-1. **Every number has a source, and a test enforces it.** Benchmarks come from the *LinkedIn Algorithm Report 2026* (2,279 posts, 246 creators, 3,780 engagers). Any % or × figure in any skill that isn't in the canonical report fails CI, unless it's registered with a reason (a worked example's output, or a labelled Koka default). Where there's no data, such as ads or reply rates, the skills tell you to measure your own and give you the tool to do it.
-2. **Skills that do the work.** Eight zero-dependency Node tools ship inside the skills: a post linter, an email linter, a warm-list engine, a multi-signal account scorer, a list cleaner and de-duplicator, a pipeline calculator, an AI-citation checker, and a prompt-panel scorer.
-3. **A system, not a folder.** A front-door `koka` skill sends each ask to one of thirteen orchestrators, and each orchestrator calls focused sub-skills. They share one persona (`KOKA.md`) and one set of defaults (`KOKA-FIRST.md`).
-4. **No vendor lock-in.** No paid API, no account, and no "upgrade to unlock". Tools are named only as examples of a category. Where the work goes beyond a skill run, it says so plainly and points to Koka.
+Install it, and your agent stops giving generic marketing advice. It starts working the way Koka Sexton works:
 
-## What's inside
+> **Signal over vanity.** Who engaged, how senior, from which account. Not impressions.
+> **Evidence over opinion.** Every number has a source. If there's no data, it says so.
+> **Systems over hacks.** One good post is luck. A system that produces them is the job.
+> **Comments are the CRM.** Commenters are 26% more senior than likers. Work the thread.
 
-| Area | Orchestrator | Sub-skills | Tool |
-|---|---|---|---|
-| **Cold Email** | `cold-email` | 7: ATL and BTL messaging, first touch, follow-up, email personalization, re-engagement, subject lines | `lint-email.mjs` |
-| **LinkedIn Ads** | `linkedin-ads` | 8: audiences, campaign setup, creative, copy, bidding, measurement, ads→outbound sync, optimization | — |
-| **LinkedIn Content** | `linkedin-content` | 7 + the canonical data: hooks, storytelling, formats, scheduling, engagement, CTA, repurposing, linkedin-algorithm | `lint-post.mjs` |
-| **List Building** | `list-building` | 6: define ICP, source companies, find contacts, qualify accounts, clean & validate, deduplicate | `list-clean.mjs` |
-| **Signal Sourcer** | `signal-sourcer` | 9: job changes, funding, hiring, website visitors, company events, tech changes, competitor signals, content engagement, multi-signal | `signal-score.mjs` |
-| **GTM Strategy** | `gtm-strategy` | 4: principles, outreach motions, sales triggers, GTM plays | — |
-| **Personalization** | `personalization` | 4: sources, hooks, at scale (AI, no fabrication), QA | — |
-| **LinkedIn** | `linkedin` | 3: profile, outreach campaign, safety and limits | — |
-| **SDR Tools** | `sdr-tools` | 4: agent prompts, writing rules, cold-call scripts, outbound metrics | `pipeline-math.mjs` |
-| Engagement intelligence | `engagement-intelligence` | warm list | `warm-list.mjs` |
-| Signal → pipeline | `signal-outbound` | buying signals | — |
-| Content system | `content-engineer` | content evaluation | — |
-| AI search (AEO/GEO) | `ai-search-visibility` | prompt panel, citation check | `panel-score.mjs`, `citation-check.mjs` |
+It's **72 skills** in one system. A front-door `koka` skill routes every ask to one of **13 orchestrators**, each with focused sub-skills, and **8 zero-dependency tools** do the work on your data: lint the draft, clean the list, score the accounts, plan the pipeline.
 
 ## Install
 
-**Claude Code plugin (recommended)**
+**As a Claude Code plugin** (recommended):
 
 ```
 /plugin marketplace add kokasexton/koka-sexton-gtm-skills
 /plugin install koka-gtm@koka-sexton
 ```
 
-**Any agent with a skills folder** (Claude Code, Cursor, Codex, or your own harness):
+**Into any agent that reads skill folders** (Claude Code, or any harness that loads `SKILL.md` folders):
 
 ```bash
 git clone https://github.com/kokasexton/koka-sexton-gtm-skills
-node koka-sexton-gtm-skills/scripts/install.mjs                     # → ~/.claude/skills
-node koka-sexton-gtm-skills/scripts/install.mjs --project           # → ./.claude/skills
-node koka-sexton-gtm-skills/scripts/install.mjs --target <dir>      # → anywhere
+node koka-sexton-gtm-skills/scripts/install.mjs                  # → ~/.claude/skills (every project)
+node koka-sexton-gtm-skills/scripts/install.mjs --project        # → ./.claude/skills (this project)
+node koka-sexton-gtm-skills/scripts/install.mjs --target <dir>   # → anywhere
 ```
 
-The installer flattens the nested source layout so every skill is discoverable, and it copies the persona layer into `koka/`. Requires Node 18+. There's no `npm install`, because there are no dependencies.
+You need Node 18 or newer. There's no `npm install`, no account, and no API key. Then start a session and say:
 
-Then ask your agent: *"Use the koka skill. Here's our engager export: who do we talk to first?"*
+> *"Use the koka skill. Where should we start?"*
 
-## Try the tools in 60 seconds
+## Ask it anything
 
-Clone the repo, then run the tools on the worked examples bundled with the skills (fictional companies, real benchmarks).
+Talk to your agent the way you'd talk to a GTM lead. The right skill picks up the request, and where there's a tool, it runs it on your file.
+
+| You say… | What happens |
+|---|---|
+| *"Our pipeline from content is flat. Where do we start?"* | `gtm-strategy` runs the diagnostic (ICP → signal → room → warm audience → one change) and names the earliest broken link |
+| *"Is this LinkedIn post ready?"* (paste it) | `content-evaluation` runs **`lint-post.mjs`**: SHIP / SHIP WITH EDITS / BLOCK, every rule citing the report |
+| *"Rewrite the hook. It's not landing."* | `post-hooks`: eight patterns, and the data on which openers win (numbers 57, questions 59, hot takes −29%) |
+| *"Here's our engager export. Who do we talk to first?"* | `warm-list` runs **`warm-list.mjs`**: P0–P3 with evidence, regulars, account clusters, and Director+ vs. the report baseline |
+| *"Which accounts are in-market this week?"* (signals sheet) | `multi-signal` runs **`signal-score.mjs`**: ACT NOW / WARM UP / WATCH, signals decayed and stacked, with the play for each |
+| *"We merged three exports. Clean it before we sequence."* | `list-building` runs **`list-clean.mjs`**: dedupe across email, LinkedIn URL, and name + domain; role, free-mail, and stale-job flags |
+| *"Write the first email to this new VP Marketing."* | `job-changes` → `atl-messaging` → `first-touch`, then **`lint-email.mjs`** before you send |
+| *"Personalize 400 emails, but don't make anything up."* | `personalization-at-scale`: constrained prompts that only use supplied facts and output `NO_LINE` otherwise, then `personalization-qa` |
+| *"Set up LinkedIn ads for our tier-1 accounts."* | `linkedin-ads`: a 3-layer funnel, audiences, structure, Thought Leader Ads, and honest measurement |
+| *"How many SDRs do we need to hit $900k pipeline?"* | `outbound-metrics` runs **`pipeline-math.mjs`** on *your* rates: sends, people, reps, and the most sensitive lever |
+| *"Give me a cold-call opener for Dana."* | `cold-call-scripts`: a permission opener built on the signal, objections, voicemail, and the no-show script |
+| *"Does ChatGPT recommend us over competitors?"* | `prompt-panel` runs **`panel-score.mjs`** (share of answer, gaps, and cited sources), then `citation-check` fixes the pages |
+
+## A week with Koka
+
+| Day | The agent helps you… | Skills |
+|---|---|---|
+| **Mon** | Pick 3–5 post ideas from real signal, then write, lint, and publish the strongest | `linkedin-content`, `post-hooks`, `content-evaluation` |
+| **Tue** | Score the week's signals and research the ACT NOW accounts | `signal-sourcer`, `multi-signal`, `find-contacts` |
+| **Wed** | Write signal-led emails and DMs, lint them, and a human sends | `cold-email`, `personalization`, `linkedin-outreach-campaign` |
+| **Thu** | Promote the best organic post as a Thought Leader Ad to tier-1 accounts | `linkedin-ads`, `ads-creative`, `ads-audiences` |
+| **Fri** | Turn the week's engagers into a warm list, check the numbers, and change one thing | `warm-list`, `outbound-metrics`, `gtm-principles` |
+
+Content earns attention. Engagement and signals show who's ready. Outreach is written to the signal. Measurement decides next week.
+
+## The tools
+
+Eight Node scripts ship inside the skills. They have no dependencies, run offline, and support `--json` for automation. Each one has a worked example (fictional companies, real benchmarks) and tests pinned to its output.
+
+| Tool | Skill | In → out |
+|---|---|---|
+| `lint-post.mjs` | content-evaluation | LinkedIn draft → verdict + fixes, each rule citing the report |
+| `lint-email.mjs` | cold-email | Cold email → DO NOT SEND / READY: merge fields, template openers, fake familiarity, asks, calendar links, spammy subjects |
+| `warm-list.mjs` | warm-list | Engagement CSV + ICP → P0–P3 people with evidence, regulars, account clusters, a read of the room |
+| `signal-score.mjs` | multi-signal | Signals CSV → accounts ranked ACT NOW / WARM UP / WATCH / IGNORE, decayed and stacked |
+| `list-clean.mjs` | list-building | Messy multi-source contacts → one record per person, with a status |
+| `pipeline-math.mjs` | outbound-metrics | Your counts → baseline rates; target + rates → sends, people, reps, best lever |
+| `citation-check.mjs` | citation-check | Page (md/html) → AI-citation readiness score + fixes |
+| `panel-score.mjs` | prompt-panel | AI answer log → mention and citation rate, share of voice, gaps, cited sources |
+
+<details open>
+<summary><b>See them run</b> (clone the repo, then paste any of these)</summary>
 
 **Is this cold email ready to send?**
 
@@ -81,6 +124,8 @@ Verdict: DO NOT SEND  (7 fail, 1 warn)
 ✗ FAIL  [asks] 4 questions. One email, one ask.
 ✗ FAIL  [calendar] Calendar link or 'book a time' in touch one. Earn the reply first.
 ```
+
+The same offer, rebuilt on a real signal (`examples/after.txt`), comes back `READY`.
 
 **Which accounts are in-market this week?**
 
@@ -108,7 +153,20 @@ node master-skills/engagement-intelligence/.claude/skills/warm-list/scripts/warm
 | P0 | Tom Becker | c-suite · marketing | 0.8 | 1 comment (1 substantive) · FRACTIONAL | Warm-signal DM … |
 ```
 
-It reads headlines the way a person would: *"I help founders scale | Fractional CMO | Ex-VP Sales"* is c-suite and flagged fractional, not VP. *"Executive Assistant to the CEO"* is not the CEO.
+It reads headlines the way a person would. *"I help founders scale | Fractional CMO | Ex-VP Sales"* is c-suite and flagged fractional, not VP. *"Executive Assistant to the CEO"* is not the CEO. *"Great post!"* from a founder is not a P0.
+
+**Is our list safe to send?**
+
+```bash
+node master-skills/list-building/scripts/list-clean.mjs master-skills/list-building/examples/contacts.csv
+```
+
+```
+12 rows in → 8 unique people (4 duplicate rows merged)
+- Dana Okafor — rows 2, 3, 4 · sources: database, event-list, sales-nav
+- José Núñez — rows 8, 9 · sources: database, event-list
+ready 4 · hold free-mail 1 · review stale domain 1 · drop role 1 · drop invalid 1
+```
 
 **What will it take to hit the number, and what should we fix first?**
 
@@ -122,11 +180,30 @@ Plan: 30 opportunities → 7465 sends · 2489 people · 2.5 reps
 Where one point matters most: delivered → replied (now 5.1%): 1224 fewer sends
 ```
 
-It has no built-in "industry average" rates, so it won't plan until you give it your own numbers.
+Better signals beat more reps. The tool has no built-in "industry average" rates, so it won't plan until you give it yours.
 
-Also included: `lint-post.mjs` (LinkedIn drafts vs. the report), `list-clean.mjs` (merges the same person across email, LinkedIn URL, and name + domain, even with accents), `citation-check.mjs`, and `panel-score.mjs` (AI search).
+**Is this LinkedIn post ready?** `lint-post.mjs` gives `before.md` a **BLOCK** (7 hashtags, a body link, "Comment YES" bait, slop) and `after.md` a **SHIP**.
+**Will AI assistants quote this page?** `citation-check.mjs` scores `before.md` 2/10 and `after.md` 10/10.
 
-## The system
+</details>
+
+## What's inside
+
+| Area | Orchestrator | Sub-skills | Tool |
+|---|---|---|---|
+| **GTM Strategy** | `gtm-strategy` | 4: principles · outreach motions · sales triggers · GTM plays | — |
+| **LinkedIn Content** | `linkedin-content` | 7 + the canonical data: hooks · storytelling · formats · scheduling · engagement · CTA · repurposing · linkedin-algorithm | `lint-post.mjs` |
+| **LinkedIn Ads** | `linkedin-ads` | 8: audiences · campaign setup · creative · copy · bidding · measurement · ads→outbound sync · optimization | — |
+| **LinkedIn** | `linkedin` | 3: profile · outreach campaign · safety and limits | — |
+| **Signal Sourcer** | `signal-sourcer` | 9: job changes · funding · hiring · website visitors · company events · tech changes · competitor signals · content engagement · multi-signal | `signal-score.mjs` |
+| **List Building** | `list-building` | 6: define ICP · source companies · find contacts · qualify accounts · clean & validate · deduplicate | `list-clean.mjs` |
+| **Cold Email** | `cold-email` | 7: ATL messaging · BTL messaging · first touch · follow-up · email personalization · re-engagement · subject lines | `lint-email.mjs` |
+| **Personalization** | `personalization` | 4: sources · hooks · at scale (AI, no fabrication) · QA | — |
+| **SDR Tools** | `sdr-tools` | 4: agent prompts · writing rules · cold-call scripts · outbound metrics | `pipeline-math.mjs` |
+| Engagement intelligence | `engagement-intelligence` | warm list | `warm-list.mjs` |
+| Signal → pipeline | `signal-outbound` | buying signals (chains every outbound skill end to end) | — |
+| Content system | `content-engineer` | content evaluation (the six-layer content loop) | — |
+| AI search (AEO/GEO) | `ai-search-visibility` | prompt panel · citation check | `panel-score.mjs`, `citation-check.mjs` |
 
 ```
  gtm-strategy ─ decides the motion, the ICP, the plays
@@ -141,9 +218,31 @@ Also included: `lint-post.mjs` (LinkedIn drafts vs. the report), `list-clean.mjs
       └───────────── measurement: who engaged, who replied, what became pipeline
 ```
 
-Content earns attention. Engagement and signals show who's ready. Outreach is written to the signal. Measurement feeds back into what you publish and who you target. `koka` is the front door to all of it.
+## Why it's different
+
+| | Typical GTM prompt library | This repo |
+|---|---|---|
+| **Numbers** | "Best practices" and stats with no source | From a real dataset: 2,279 posts, 246 creators, 3,780 engagers. **CI fails on any % or × figure that isn't sourced.** |
+| **Where there's no data** | Invented benchmarks | Says so, and gives you a tool to measure your own |
+| **Output** | Prose you have to apply yourself | 8 tools that run on your data and return a verdict |
+| **Lock-in** | "Connect our API" / "requires a subscription" | **No API keys, no account, no dependencies.** Tools are named only as examples. |
+| **Structure** | A flat folder of prompts | An entry point → 13 orchestrators → 58 sub-skills, with routing tested in CI |
+| **Personalization** | "AI writes a personal line for every lead" | AI may only use supplied facts, and outputs `NO_LINE` when there are none |
+| **Outbound** | Automate everything | A human approves everything before it sends. LinkedIn automation is ruled out. |
+| **Voice** | Whatever the model defaults to | One persona (`KOKA.md`), enforced by linters that block slop and fake familiarity |
+
+## Built on
+
+- **The LinkedIn Algorithm Report 2026**: 2,279 posts, 246 creators, 3,780 engagers, 49,501 reactions, 15,517 comments, May 2025–June 2026 (data by SignalScout). The canonical numbers live in [`linkedin-algorithm`](master-skills/linkedin-content/.claude/skills/linkedin-algorithm/SKILL.md), and every other skill must match them. Full report: [kokasexton.com/insights](https://kokasexton.com/insights).
+- **The Content Engineering Stack**: a six-layer loop (source → knowledge → generation → evaluation → distribution → measurement).
+- **Engagement intelligence**: classify every engager off their own headline, then read the room by ICP fit.
+
+Where there's no data, the skills say so. Scoring weights, timing windows, and thresholds are labelled *Koka's defaults, not report data*. The ads, outbound, and AI-search skills quote no industry statistics: you measure your own, and the tools do the math.
 
 ## Catalog
+
+<details>
+<summary><b>All 72 skills</b>, generated from the skill files themselves, so this list can't drift</summary>
 
 <!-- catalog:start -->
 
@@ -226,17 +325,11 @@ _72 skills · 13 orchestrators + 1 entry point · 8 runnable tools · generated 
 
 <!-- catalog:end -->
 
-## Built on
-
-- **The LinkedIn Algorithm Report 2026**: 2,279 posts, 246 creators, 3,780 engagers, 49,501 reactions, 15,517 comments, May 2025–June 2026 (data by SignalScout). The canonical numbers live in [`linkedin-algorithm`](master-skills/linkedin-content/.claude/skills/linkedin-algorithm/SKILL.md), and every other skill must match them. Full report: [kokasexton.com/insights](https://kokasexton.com/insights).
-- **The Content Engineering Stack**: a six-layer loop (source → knowledge → generation → evaluation → distribution → measurement).
-- **Engagement intelligence**: classify every engager off their own headline, then read the room by ICP fit.
-
-Where there's no data, the skills say so. Scoring weights, timing windows, and thresholds are labelled *Koka's defaults, not report data*. The ads, outbound, and AI-search skills quote no industry statistics: you measure your own, and the tools do the math.
+</details>
 
 ## Quality bar
 
-`npm test` runs every gate CI runs:
+`npm test` runs every gate CI runs, on Node 18, 20, and 22:
 
 | Gate | What it enforces |
 |---|---|
@@ -246,18 +339,34 @@ Where there's no data, the skills say so. Scoring weights, timing windows, and t
 | `internal-links` | No skill routes to a skill or file that doesn't exist |
 | `data-accuracy` | Every restated benchmark, including the thresholds inside the tools, matches the canonical report |
 | `no-unsourced-stats` | Every % and × figure in every skill and tool is in the canonical report, or registered with a reason |
-| `tools` | Each tool's behaviour on its worked examples, including the classification traps |
-| `structure` | Every sub-skill is routed from its parent, every tool has a worked example, and the plugin manifest covers every skill |
+| `tools` | Each tool's behaviour on its worked examples, including the classification and dedupe traps |
+| `structure` | Every sub-skill is routed from its parent and from `koka`, every tool has a worked example, and the plugin manifest covers every skill |
 | `install` | A real install into a temp dir: every skill is flattened and discoverable, and the persona travels |
-| `catalog` | This README's catalog matches the skills that ship |
+| `catalog` | This README's catalog and badge counts match the skills that ship |
 
-## Contributing
+## FAQ
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md). The short version: one skill, one job. Cite the number or call it an estimate. Ship a worked example. `npm test` must pass.
+**Do I need an API key or a paid tool?**
+No. The skills and tools run on files you already have: an engagement export, a contacts CSV, a signals sheet. Vendors are mentioned only as examples of a category.
+
+**Does it scrape LinkedIn or send messages?**
+No. It never scrapes, never automates LinkedIn, and never sends anything. It ranks, drafts, checks, and plans. A person reads and sends.
+
+**Where do the numbers come from?**
+From the LinkedIn Algorithm Report 2026 and nowhere else. A test fails the build on any % or × figure that isn't in the report, unless it's registered with a reason. Where the report has no data (ads, reply rates, AI search), the skills tell you to measure your own.
+
+**Can I change the scoring?**
+Yes. The headline rubric is a JSON file (`warm-list/scripts/taxonomy.json`), signal weights take `--weights`, and the ICP is a JSON file. Everything labelled a default is meant to be tuned to your won and lost deals.
+
+**Does it work outside Claude Code?**
+Every skill is a plain `SKILL.md` folder, and the installer can put them in any directory (`--target`). The tools are plain Node scripts that run anywhere.
+
+**Can I contribute a skill?**
+Yes. See [CONTRIBUTING.md](CONTRIBUTING.md) and the template in `templates/skill/`. One skill, one job. Cite the number or call it an estimate. Ship a worked example. `npm test` must pass.
 
 ## Want it run *for* you?
 
-The skills are free. The work behind them is what you hire. Content engineering, audience and engagement audits, and AEO/GEO teardowns: **[kokasexton.com](https://kokasexton.com)**.
+The skills are free. The work behind them is what you hire. Content engineering, audience and engagement audits, signal-led outbound design, and AEO/GEO teardowns: **[kokasexton.com](https://kokasexton.com)**.
 
 ## License
 
