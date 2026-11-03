@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: test (node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ["18", "20", "22"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Secret scan (blocks any leaked credential)
+        run: node scripts/scan-secrets.mjs
+      - name: Validate skills (frontmatter, koka-first block, brand safety)
+        run: node scripts/validate-brand-safety.mjs
+      - name: Content, tool, structure, install, and catalog tests
+        run: node tests/run.mjs
+      - name: Tools run end-to-end on their worked examples
+        run: |
+          set -e
+          CE=master-skills/content-engineer/.claude/skills/content-evaluation
+          WL=master-skills/engagement-intelligence/.claude/skills/warm-list
+          CC=master-skills/ai-search-visibility/.claude/skills/citation-check
+          PP=master-skills/ai-search-visibility/.claude/skills/prompt-panel
+          node $CE/scripts/lint-post.mjs $CE/examples/after.md --format image
+          ! node $CE/scripts/lint-post.mjs $CE/examples/before.md
+          node $WL/scripts/warm-list.mjs $WL/examples/engagement.csv --icp $WL/examples/icp.json --as-of 2026-10-31 > /dev/null
+          node $CC/scripts/citation-check.mjs $CC/examples/after.md > /dev/null
+          node $PP/scripts/panel-score.mjs $PP/examples/panel.csv --brand Northwind > /dev/null
+          node scripts/install.mjs --target "$RUNNER_TEMP/skills"

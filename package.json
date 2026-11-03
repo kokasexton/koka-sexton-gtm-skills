@@ -1,0 +1,15 @@
+{
+  "name": "koka-sexton-gtm-skills",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A mini Koka for your code agent: data-grounded B2B GTM skills with runnable, zero-dependency tools.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Koka Sexton (https://kokasexton.com)",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "node scripts/scan-secrets.mjs && node scripts/validate-brand-safety.mjs && node tests/run.mjs",
+    "catalog": "node scripts/build-catalog.mjs",
+    "install-skills": "node scripts/install.mjs"
+  }
+}

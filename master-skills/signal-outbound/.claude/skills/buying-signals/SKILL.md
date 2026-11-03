@@ -24,7 +24,7 @@ A signal is a behaviour that changes the odds of a purchase soon. Prefer behavio
 
 ## Scoring
 
-Combine **depth** (comment > like > view) × **recency** × **ICP fit** into tiers P0–P3. Sequence only P0/P1. A cold-but-perfect-fit account is not a signal — it's a name without a trigger.
+Combine **depth** (comment > like > view) × **recency** × **ICP fit** into tiers P0–P3. Sequence only P0/P1. The `skills/warm-list` engine implements this scoring on a real engagement export. A cold-but-perfect-fit account is not a signal — it's a name without a trigger.
 
 ## Anti-signals
 

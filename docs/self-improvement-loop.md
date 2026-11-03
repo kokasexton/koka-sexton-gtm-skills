@@ -27,22 +27,25 @@ The repo is test-gated. A change doesn't ship unless:
 
 - `node scripts/scan-secrets.mjs` passes — no credential, key, token, or sensitive filename. This repo is public; a leaked secret is the one unrecoverable failure.
 - `node scripts/validate-brand-safety.mjs` passes (structure + brand safety).
-- `tests/` content checks pass:
+- `tests/` checks pass (`npm test` runs everything):
   - every `SKILL.md` has valid frontmatter (`name`, `description`, `when_to_use`, `not_for`)
   - every `SKILL.md` carries the `<!-- koka-first -->` block
   - no skill links to a missing file or a dead internal path
-  - **data-accuracy check** — numbers quoted from the LinkedIn Algorithm Report match `skills/linkedin-algorithm/SKILL.md` (the canonical copy)
+  - **data-accuracy check** — numbers quoted from the LinkedIn Algorithm Report — in prose and inside the tools — match `skills/linkedin-algorithm/SKILL.md` (the canonical copy)
   - no fabricated statistics (any number must trace to a source cited in the skill)
+  - tool behaviour on worked examples, system structure/routing, a real install, README catalog sync
 
 ## Backlog
 
 - [x] Content tests (frontmatter, koka-first, data-accuracy) wired into CI — `tests/run.mjs` (frontmatter + internal links + data accuracy), run by `brand-safety.yml`
 - [ ] Extend internal-link test to flag references to files outside the skill layer (README/landing copy)
-- [ ] Per-skill examples: one worked example per skill
-- [ ] Expand `engagement-intelligence` with a classification rubric (seniority/function taxonomy)
-- [ ] Add sub-skills: `content-evaluation`, `aeo-geo`, `signal-scoring`
+- [x] Worked examples for every skill that ships a tool (`examples/`), pinned by `tests/tools.test.mjs`
+- [ ] Worked examples for the prose-only skills (cold-email, personalization, gtm-plays)
+- [x] Classification rubric (seniority/function taxonomy) — `warm-list/scripts/taxonomy.json` + `warm-list.mjs`
+- [x] `content-evaluation` (post linter), `ai-search-visibility` orchestrator (`prompt-panel`, `citation-check`), signal scoring (in `warm-list`)
 - [ ] Benchmark tables: cadence / format / hashtag lookups as reusable references
-- [ ] Funnel polish: README + landing copy, install paths per client (Claude Code, Cursor, ChatGPT)
+- [x] Install paths: Claude Code plugin + marketplace, `scripts/install.mjs` for any skills folder
+- [ ] Install path for ChatGPT / non-file agents (MCP server exposing the tools)
 - [ ] Accuracy pass: re-verify every stat against the canonical source
 
 ## Guardrails

@@ -19,6 +19,8 @@ For each target, combine:
 - **ICP fit** — title, company, industry, region.
 - **Fit × recency × depth** → a priority tier (P0–P3). Never sequence a P3.
 
+Got an engagement export? `skills/warm-list` does this scoring for you and shows the evidence for every tier.
+
 ## Pick the play
 
 - **Deep commenter, ICP fit** → warm DM referencing the exact exchange.
@@ -39,5 +41,6 @@ For each target, combine:
 ## Routing
 
 - Signal definitions → `skills/buying-signals`
+- The full play library (signal → sequence → metric) → `skills/gtm-plays`
 - Copy mechanics → `skills/cold-email`, `skills/personalization`
-- Who's warm → `master-skills/engagement-intelligence`
+- Who's warm → `master-skills/engagement-intelligence` (scored list: `skills/warm-list`)

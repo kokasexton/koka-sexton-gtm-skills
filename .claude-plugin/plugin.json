@@ -1,0 +1,18 @@
+{
+  "name": "koka-gtm",
+  "displayName": "Koka Sexton GTM Skills",
+  "version": "1.0.0",
+  "description": "A mini Koka for your code agent: data-grounded B2B GTM skills for content engineering, LinkedIn, engagement intelligence, signal-led outbound, and AI search visibility, with runnable zero-dependency tools.",
+  "author": { "name": "Koka Sexton", "url": "https://kokasexton.com" },
+  "homepage": "https://kokasexton.com",
+  "repository": "https://github.com/kokasexton/koka-sexton-gtm-skills",
+  "license": "MIT",
+  "keywords": ["gtm", "b2b-marketing", "linkedin", "content-engineering", "aeo", "geo", "outbound", "abm", "engagement-intelligence"],
+  "skills": [
+    "./master-skills/",
+    "./master-skills/ai-search-visibility/.claude/skills/",
+    "./master-skills/content-engineer/.claude/skills/",
+    "./master-skills/engagement-intelligence/.claude/skills/",
+    "./master-skills/signal-outbound/.claude/skills/"
+  ]
+}

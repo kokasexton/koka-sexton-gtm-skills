@@ -17,8 +17,8 @@ A content marketer produces content. A content engineer designs the system that 
 1. **Source** — where signal comes from: primary research, data pulls, engagement intelligence, customer conversations. Not "ideas."
 2. **Knowledge** — brand facts made machine-legible: voice, positioning, proof points, do/don't lists, in a form the agent can retrieve.
 3. **Generation** — LLM pipelines that respect voice and componentise output (hook, body, CTA as parts, not one blob).
-4. **Evaluation** — verifiers and editorial gates *before* publish: voice check, slop check, fact pass. Nothing ships un-gated.
-5. **Distribution** — channel systems and franchises, not one-off posts. Native formats. AEO/GEO for discovery.
+4. **Evaluation** — verifiers and editorial gates *before* publish: voice check, slop check, fact pass. Nothing ships un-gated. Run `skills/content-evaluation`.
+5. **Distribution** — channel systems and franchises, not one-off posts. Native formats. AEO/GEO for discovery (`master-skills/ai-search-visibility`).
 6. **Measurement** — audience *quality*, not impressions. Who engaged, at what seniority, from which accounts.
 
 ## How to run it
@@ -40,5 +40,7 @@ Full data: `skills/linkedin-algorithm/SKILL.md`.
 ## Routing
 
 - Need the algorithm numbers → `skills/linkedin-algorithm`
+- Need to gate a draft before it ships → `skills/content-evaluation`
+- Need AI assistants to find and cite it → `master-skills/ai-search-visibility`
 - Need who's in the room → `master-skills/engagement-intelligence`
 - Need outreach from signals → `master-skills/signal-outbound`

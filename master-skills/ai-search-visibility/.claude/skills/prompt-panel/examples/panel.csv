@@ -1,0 +1,10 @@
+prompt,stage,engine,date,mentioned,cited,competitors,cited_urls
+how do I find out which buyers engage with my linkedin posts,problem,chatgpt,2026-10-30,y,y,Rivalscope,https://northwind.example/blog/engagement;https://g2.example/category/social
+how do I find out which buyers engage with my linkedin posts,problem,perplexity,2026-10-30,y,n,Rivalscope;Signalbase,https://reddit.example/r/sales/123;https://g2.example/category/social
+how do I find out which buyers engage with my linkedin posts,problem,gemini,2026-10-30,n,n,Signalbase,https://signalbase.example/guide
+best tools to turn linkedin engagement into pipeline,solution,chatgpt,2026-10-30,n,n,Rivalscope;Signalbase,https://g2.example/category/social
+best tools to turn linkedin engagement into pipeline,solution,perplexity,2026-10-30,n,n,Rivalscope,https://reddit.example/r/sales/456;https://rivalscope.example/pricing
+best tools to turn linkedin engagement into pipeline,solution,gemini,2026-10-30,n,n,Signalbase,https://g2.example/category/social
+northwind vs rivalscope for engagement intelligence,vendor,chatgpt,2026-10-30,y,y,Rivalscope,https://northwind.example/compare/rivalscope
+northwind vs rivalscope for engagement intelligence,vendor,perplexity,2026-10-30,y,y,Rivalscope,https://northwind.example/compare/rivalscope;https://g2.example/compare
+northwind vs rivalscope for engagement intelligence,vendor,gemini,2026-10-30,y,n,Rivalscope,https://rivalscope.example/vs-northwind

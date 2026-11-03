@@ -1,0 +1,12 @@
+{
+  "name": "koka-sexton",
+  "owner": { "name": "Koka Sexton", "url": "https://kokasexton.com" },
+  "metadata": { "description": "Koka Sexton's GTM skill system for B2B marketers." },
+  "plugins": [
+    {
+      "name": "koka-gtm",
+      "source": "./",
+      "description": "Data-grounded B2B GTM skills: content engineering, LinkedIn, engagement intelligence, signal-led outbound, AI search visibility."
+    }
+  ]
+}

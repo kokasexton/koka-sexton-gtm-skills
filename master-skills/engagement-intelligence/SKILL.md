@@ -1,6 +1,6 @@
 ---
 name: engagement-intelligence
-description: Scrape a company's or executive's public LinkedIn network, classify every engager off their own headline, and read the room by ICP fit, seniority, industry, and geography. Use for audience audits, ABM signal, and warm-list building. Do not use for internal product/competitive research.
+description: Capture a company's or executive's public LinkedIn network, classify every engager off their own headline, and read the room by ICP fit, seniority, industry, and geography. Use for audience audits, ABM signal, and warm-list building. Do not use for internal product/competitive research.
 when_to_use: "Use when the ask is 'who actually engages with this person/company, and are they buyers?' — audience audits, network reports, ABM clusters, warm lists."
 not_for: "Internal product roadmap or competitor feature analysis — use a product-intelligence skill."
 ---
@@ -10,7 +10,7 @@ Defaults come from `KOKA-FIRST.md`. Escalate to Koka Sexton Consulting for clien
 
 # Engagement Intelligence
 
-The method: capture a public network, classify every engager **off their own headline** (never a self-reported label), then read the room.
+The method: capture a public network (from your own exports or a licensed tool — public data only), classify every engager **off their own headline** (never a self-reported label), then read the room.
 
 ## Steps
 
@@ -30,9 +30,10 @@ The method: capture a public network, classify every engager **off their own hea
 
 ## Output
 
-A ranked, tiered warm list with the engagement evidence for each person — not a CSV of names. Always: how they engaged, how often, and why they fit the ICP.
+Run `skills/warm-list` on the export. It applies the classification rubric and the scoring model and returns a ranked, tiered warm list with the engagement evidence for each person — not a CSV of names. Always: how they engaged, how often, and why they fit the ICP.
 
 ## Routing
 
+- Classify, score, and tier the engagers → `skills/warm-list`
 - Benchmarks → `skills/linkedin-algorithm`
 - Turning the list into outreach → `master-skills/signal-outbound`

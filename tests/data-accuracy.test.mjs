@@ -21,6 +21,12 @@ const CANONICAL_MUSTS = [
   { value: "12×", re: /12× collapse/ },
   { value: "3–5 posts/week", re: /3–5 posts\/week/ },
   { value: "78%", re: /78% of comments are substantive/ },
+  { value: "40+ chars", re: /substantive \(40\+ chars\)/ },
+  { value: "6+ hashtags → 33", re: /6\+ → 33/ },
+  { value: "+72%", re: /\+72% \(62 vs 36\)/ },
+  { value: "−29%", re: /hot takes underperform \(54, −29%\)/i },
+  { value: "1,500+ chars", re: /1,500\+ chars ≈ 2× short/ },
+  { value: "1 in 3 Director+", re: /1 in 3 engagers is Director\+/ },
 ];
 
 // Every restatement of a benchmark elsewhere in the library, with the number it must carry.
@@ -72,6 +78,73 @@ const RESTATEMENTS = [
     re: /(\d+)% write substantive replies/,
     expect: ["78"],
     label: "substantive comments",
+  },
+  // Thresholds baked into the runnable tools — code drifts too.
+  {
+    file: "master-skills/content-engineer/.claude/skills/content-evaluation/scripts/lint-post.mjs",
+    re: /6\+ drops median engagement to (\d+) \(−(\d+)%\)/,
+    expect: ["33", "63"],
+    label: "lint-post hashtag penalty",
+  },
+  {
+    file: "master-skills/content-engineer/.claude/skills/content-evaluation/scripts/lint-post.mjs",
+    re: /if \(h >= (\d+)\) add\("hashtags", "fail"/,
+    expect: ["6"],
+    label: "lint-post hashtag fail threshold",
+  },
+  {
+    file: "master-skills/content-engineer/.claude/skills/content-evaluation/scripts/lint-post.mjs",
+    re: /if \(chars >= (\d+)\) add\("length", "pass"/,
+    expect: ["1500"],
+    label: "lint-post long-form threshold",
+  },
+  {
+    file: "master-skills/content-engineer/.claude/skills/content-evaluation/scripts/lint-post.mjs",
+    re: /earn \+(\d+)% \(62 vs 36\)/,
+    expect: ["72"],
+    label: "lint-post whitespace lift",
+  },
+  {
+    file: "master-skills/content-engineer/.claude/skills/content-evaluation/scripts/lint-post.mjs",
+    re: /\(median 54, −(\d+)%\)/,
+    expect: ["29"],
+    label: "lint-post hot-take penalty",
+  },
+  {
+    file: "master-skills/content-engineer/.claude/skills/content-evaluation/scripts/lint-post.mjs",
+    re: /median of 25 vs 70 for image \(([\d.]+)× gap\)/,
+    expect: ["2.8"],
+    label: "lint-post image vs link",
+  },
+  {
+    file: "master-skills/content-engineer/.claude/skills/content-evaluation/scripts/lint-post.mjs",
+    re: /commenters are (\d+)% more senior/,
+    expect: ["26"],
+    label: "lint-post commenter seniority",
+  },
+  {
+    file: "master-skills/content-engineer/.claude/skills/content-evaluation/SKILL.md",
+    re: /6\+ → (\d+) \(−(\d+)%\)/,
+    expect: ["33", "63"],
+    label: "content-evaluation hashtag penalty",
+  },
+  {
+    file: "master-skills/engagement-intelligence/.claude/skills/warm-list/scripts/warm-list.mjs",
+    re: /SUBSTANTIVE_CHARS = (\d+);/,
+    expect: ["40"],
+    label: "warm-list substantive comment length",
+  },
+  {
+    file: "master-skills/engagement-intelligence/.claude/skills/warm-list/scripts/warm-list.mjs",
+    re: /BASELINE_DIRECTOR_PLUS = (\d+) \/ (\d+);/,
+    expect: ["1", "3"],
+    label: "warm-list Director+ baseline",
+  },
+  {
+    file: "master-skills/engagement-intelligence/.claude/skills/warm-list/SKILL.md",
+    re: /commenters skew (\d+)% more senior/,
+    expect: ["26"],
+    label: "warm-list commenter seniority",
   },
 ];
 
