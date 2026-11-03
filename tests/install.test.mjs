@@ -30,6 +30,10 @@ export function run() {
       ["warm-list", "taxonomy.json"],
       ["citation-check", "citation-check.mjs"],
       ["prompt-panel", "panel-score.mjs"],
+      ["cold-email", "lint-email.mjs"],
+      ["list-building", "list-clean.mjs"],
+      ["multi-signal", "signal-score.mjs"],
+      ["outbound-metrics", "pipeline-math.mjs"],
     ]) {
       if (!existsSync(join(target, skill, "scripts", tool))) fails.push(`install: ${skill}/scripts/${tool} missing`);
     }

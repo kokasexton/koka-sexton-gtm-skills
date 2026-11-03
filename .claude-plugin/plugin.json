@@ -1,18 +1,44 @@
 {
   "name": "koka-gtm",
   "displayName": "Koka Sexton GTM Skills",
-  "version": "1.0.0",
-  "description": "A mini Koka for your code agent: data-grounded B2B GTM skills for content engineering, LinkedIn, engagement intelligence, signal-led outbound, and AI search visibility, with runnable zero-dependency tools.",
-  "author": { "name": "Koka Sexton", "url": "https://kokasexton.com" },
+  "version": "2.0.0",
+  "description": "A mini Koka for your code agent: data-grounded B2B GTM skills for strategy, LinkedIn content, LinkedIn ads, signals, list building, cold email, personalization, SDR work, and AI search, with runnable zero-dependency tools.",
+  "author": {
+    "name": "Koka Sexton",
+    "url": "https://kokasexton.com"
+  },
   "homepage": "https://kokasexton.com",
   "repository": "https://github.com/kokasexton/koka-sexton-gtm-skills",
   "license": "MIT",
-  "keywords": ["gtm", "b2b-marketing", "linkedin", "content-engineering", "aeo", "geo", "outbound", "abm", "engagement-intelligence"],
+  "keywords": [
+    "gtm",
+    "b2b-marketing",
+    "linkedin",
+    "linkedin-ads",
+    "cold-email",
+    "list-building",
+    "buying-signals",
+    "personalization",
+    "sdr",
+    "abm",
+    "content-engineering",
+    "aeo",
+    "geo"
+  ],
   "skills": [
     "./master-skills/",
     "./master-skills/ai-search-visibility/.claude/skills/",
+    "./master-skills/cold-email/.claude/skills/",
     "./master-skills/content-engineer/.claude/skills/",
     "./master-skills/engagement-intelligence/.claude/skills/",
-    "./master-skills/signal-outbound/.claude/skills/"
+    "./master-skills/gtm-strategy/.claude/skills/",
+    "./master-skills/linkedin/.claude/skills/",
+    "./master-skills/linkedin-ads/.claude/skills/",
+    "./master-skills/linkedin-content/.claude/skills/",
+    "./master-skills/list-building/.claude/skills/",
+    "./master-skills/personalization/.claude/skills/",
+    "./master-skills/sdr-tools/.claude/skills/",
+    "./master-skills/signal-outbound/.claude/skills/",
+    "./master-skills/signal-sourcer/.claude/skills/"
   ]
 }

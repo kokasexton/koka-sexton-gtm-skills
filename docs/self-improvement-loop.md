@@ -40,7 +40,10 @@ The repo is test-gated. A change doesn't ship unless:
 - [x] Content tests (frontmatter, koka-first, data-accuracy) wired into CI — `tests/run.mjs` (frontmatter + internal links + data accuracy), run by `brand-safety.yml`
 - [ ] Extend internal-link test to flag references to files outside the skill layer (README/landing copy)
 - [x] Worked examples for every skill that ships a tool (`examples/`), pinned by `tests/tools.test.mjs`
-- [ ] Worked examples for the prose-only skills (cold-email, personalization, gtm-plays)
+- [x] Full GTM stack (v2): gtm-strategy, linkedin-content, linkedin-ads, linkedin, signal-sourcer, list-building, cold-email, personalization, sdr-tools — 13 orchestrators, 58 sub-skills, 8 tools
+- [x] `no-unsourced-stats` test: every % / × figure must be canonical or registered with a reason
+- [ ] Worked examples for prose-only skills (ATL/BTL messaging, ads, LinkedIn outreach)
+- [ ] Optional tool: ads-audience overlap / account-list match-rate checker
 - [x] Classification rubric (seniority/function taxonomy) — `warm-list/scripts/taxonomy.json` + `warm-list.mjs`
 - [x] `content-evaluation` (post linter), `ai-search-visibility` orchestrator (`prompt-panel`, `citation-check`), signal scoring (in `warm-list`)
 - [ ] Benchmark tables: cadence / format / hashtag lookups as reusable references

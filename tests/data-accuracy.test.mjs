@@ -1,5 +1,5 @@
 // Content test: numbers quoted from the LinkedIn Algorithm Report must match the
-// canonical copy in master-skills/content-engineer/.claude/skills/linkedin-algorithm/SKILL.md.
+// canonical copy in master-skills/linkedin-content/.claude/skills/linkedin-algorithm/SKILL.md.
 //
 // Two assertions:
 //   1. The canonical skill carries each benchmark value (source-of-truth integrity).
@@ -11,7 +11,7 @@ import { join } from "node:path";
 import { ROOT } from "./_util.mjs";
 
 const CANONICAL =
-  "master-skills/content-engineer/.claude/skills/linkedin-algorithm/SKILL.md";
+  "master-skills/linkedin-content/.claude/skills/linkedin-algorithm/SKILL.md";
 
 // Benchmark values as they appear in the canonical skill.
 const CANONICAL_MUSTS = [
@@ -78,6 +78,36 @@ const RESTATEMENTS = [
     re: /(\d+)% write substantive replies/,
     expect: ["78"],
     label: "substantive comments",
+  },
+  {
+    file: "master-skills/linkedin-content/SKILL.md",
+    re: /3–5 posts\/week \(~(\d+) median\); 7\+\/week collapses to ~(\d+)/,
+    expect: ["195", "80"],
+    label: "linkedin-content cadence medians",
+  },
+  {
+    file: "master-skills/linkedin-content/SKILL.md",
+    re: /Image median (\d+) vs link\/article (\d+) \(([\d.]+)×\)/,
+    expect: ["70", "25", "2.8"],
+    label: "linkedin-content image vs link",
+  },
+  {
+    file: "master-skills/linkedin-content/.claude/skills/post-engagement/SKILL.md",
+    re: /\*\*([\d.]+)% Director\+ vs ([\d.]+)% of likers\*\*/,
+    expect: ["44.2", "35.1"],
+    label: "post-engagement commenter vs liker seniority",
+  },
+  {
+    file: "master-skills/linkedin-content/.claude/skills/post-scheduling/SKILL.md",
+    re: /about (\d+) median engagements, ([\d.]+)× the daily cohort/,
+    expect: ["195", "2.4"],
+    label: "post-scheduling cadence",
+  },
+  {
+    file: "master-skills/linkedin-content/.claude/skills/post-storytelling/SKILL.md",
+    re: /\+(\d+)% \((\d+) vs (\d+)\)/,
+    expect: ["72", "62", "36"],
+    label: "post-storytelling whitespace lift",
   },
   // Thresholds baked into the runnable tools — code drifts too.
   {

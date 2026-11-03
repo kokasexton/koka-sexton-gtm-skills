@@ -1,0 +1,13 @@
+first_name,last_name,email,company,domain,linkedin_url,title,source
+Dana,Okafor,dana.okafor@northwind.example,Northwind Analytics,northwind.example,https://www.linkedin.com/in/danaokafor/,VP Marketing,database
+Dana,Okafor,DANA.OKAFOR@northwind.example ,Northwind Analytics,,,,sales-nav
+Dana,Okafor,,Northwind,www.northwind.example,https://linkedin.com/in/DanaOkafor?trk=abc,VP Marketing,event-list
+Raj,Patel,raj@northwind.example,Northwind Analytics,northwind.example,,Head of Demand Gen,database
+Omar,Haddad,omar.haddad@bluepeak.example,Bluepeak,bluepeak.example,https://linkedin.com/in/omarhaddad,Director RevOps,database
+Omar,Haddad,,Bluepeak Inc.,bluepeak.example,https://www.linkedin.com/in/omarhaddad/,,sales-nav
+José,Núñez,jose.nunez@quillstack.example,Quillstack,quillstack.example,,CRO,database
+Jose,Nunez,,Quillstack,quillstack.example,,Chief Revenue Officer,event-list
+Mia,Chen,mia.chen@@northwind.example,Northwind Analytics,northwind.example,,PMM,database
+Sales,Team,sales@fernway.example,Fernway,fernway.example,,,database
+Lena,Vogel,lena.vogel@gmail.com,Fernway,fernway.example,,Founder,event-list
+Tom,Becker,tom@oldjob.example,Kestrel Labs,kestrel.example,,Fractional CMO,sales-nav

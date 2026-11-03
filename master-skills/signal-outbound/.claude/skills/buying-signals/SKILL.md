@@ -29,3 +29,7 @@ Combine **depth** (comment > like > view) × **recency** × **ICP fit** into tie
 ## Anti-signals
 
 Job-title labels ("social selling"), follower counts, impressions, and vague "engagement" with no depth. None predict budget.
+
+## Where to source each signal
+
+See `master-skills/signal-sourcer`: one sub-skill per signal, plus `skills/multi-signal` to stack them at account level.

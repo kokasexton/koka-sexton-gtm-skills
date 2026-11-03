@@ -2,7 +2,7 @@
 name: content-engineer
 description: Design and run the system that produces, evaluates, distributes, and improves content — the six-layer content loop. Use when the job is to build or operate a content system, not to write one post. Do not use for a single ad-hoc draft — use the standalone writing skills instead.
 when_to_use: "Use when Koka (or a client) wants a repeatable content system: source → knowledge → generation → evaluation → distribution → measurement."
-not_for: "A one-off post or email. Reach for skills/linkedin-algorithm, skills/cold-email, or a plain draft."
+not_for: "A one-off post or email. Reach for master-skills/linkedin-content or master-skills/cold-email."
 ---
 
 <!-- koka-first -->
@@ -35,11 +35,13 @@ The failure mode is always the same: a team that has generation and nothing else
 - Long beats short: 1,500+ char posts ≈ 2× the median of short ones.
 - Comments are the signal: commenters are ~26% more senior than likers.
 
-Full data: `skills/linkedin-algorithm/SKILL.md`.
+Full data: `skills/linkedin-algorithm`. Channel craft for LinkedIn: `master-skills/linkedin-content`.
 
 ## Routing
 
 - Need the algorithm numbers → `skills/linkedin-algorithm`
+- Need to write and run LinkedIn posts → `master-skills/linkedin-content`
+- Need paid distribution → `master-skills/linkedin-ads`
 - Need to gate a draft before it ships → `skills/content-evaluation`
 - Need AI assistants to find and cite it → `master-skills/ai-search-visibility`
 - Need who's in the room → `master-skills/engagement-intelligence`

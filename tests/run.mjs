@@ -9,11 +9,13 @@ import { run as tools } from "./tools.test.mjs";
 import { run as structure } from "./structure.test.mjs";
 import { run as install } from "./install.test.mjs";
 import { run as catalog } from "./catalog.test.mjs";
+import { run as noUnsourcedStats } from "./no-unsourced-stats.test.mjs";
 
 const suites = [
   ["frontmatter", frontmatter],
   ["internal-links", internalLinks],
   ["data-accuracy", dataAccuracy],
+  ["no-unsourced-stats", noUnsourcedStats],
   ["tools", tools],
   ["structure", structure],
   ["install", install],

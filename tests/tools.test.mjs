@@ -8,11 +8,19 @@ import { lintPost } from "../master-skills/content-engineer/.claude/skills/conte
 import { buildWarmList, classifyHeadline, parseCsv } from "../master-skills/engagement-intelligence/.claude/skills/warm-list/scripts/warm-list.mjs";
 import { citationCheck } from "../master-skills/ai-search-visibility/.claude/skills/citation-check/scripts/citation-check.mjs";
 import { scorePanel, parseCsv as parsePanel } from "../master-skills/ai-search-visibility/.claude/skills/prompt-panel/scripts/panel-score.mjs";
+import { lintEmail } from "../master-skills/cold-email/scripts/lint-email.mjs";
+import { cleanList, parseCsv as parseContacts, normLinkedIn } from "../master-skills/list-building/scripts/list-clean.mjs";
+import { scoreSignals, parseCsv as parseSignals } from "../master-skills/signal-sourcer/.claude/skills/multi-signal/scripts/signal-score.mjs";
+import { ratesFromCounts, plan } from "../master-skills/sdr-tools/.claude/skills/outbound-metrics/scripts/pipeline-math.mjs";
 
 const CE = "master-skills/content-engineer/.claude/skills/content-evaluation";
 const WL = "master-skills/engagement-intelligence/.claude/skills/warm-list";
 const CC = "master-skills/ai-search-visibility/.claude/skills/citation-check";
 const PP = "master-skills/ai-search-visibility/.claude/skills/prompt-panel";
+const CEM = "master-skills/cold-email";
+const LB = "master-skills/list-building";
+const MS = "master-skills/signal-sourcer/.claude/skills/multi-signal";
+const OM = "master-skills/sdr-tools/.claude/skills/outbound-metrics";
 const read = (p) => readFileSync(join(ROOT, p), "utf8");
 
 export function run() {
@@ -89,6 +97,48 @@ export function run() {
   eq(panel.shareOfVoice[0].name, "Rivalscope", "panel share-of-voice leader");
   eq(panel.topDomains[0].domain, "g2.example", "panel top cited domain");
   eq(panel.gaps.map((g) => g.stage), ["solution"], "panel gaps");
+
+  /* ---------------------------------------------------------- lint-email */
+  const eb = lintEmail(read(`${CEM}/examples/before.txt`));
+  eq(eb.verdict, "DO NOT SEND", "lint-email before.txt verdict");
+  for (const id of ["merge-field", "opener", "fake-familiarity", "asks", "calendar", "subject", "slop"]) {
+    expect(eb.findings.some((f) => f.id === id && f.level === "fail"), `lint-email before.txt should FAIL "${id}"`);
+  }
+  const ea = lintEmail(read(`${CEM}/examples/after.txt`));
+  eq(ea.verdict, "READY", "lint-email after.txt verdict");
+  eq(lintEmail("Subject: hi\n\nMaria,\n\nJust following up on my last note. Any thoughts?", { touch: 2 }).findings.find((f) => f.id === "guilt")?.level, "fail", "guilt follow-up fails on touch 2");
+  eq(lintEmail("Hi Sam,\n\nI wanted to reach out about X. Open to it?").findings.find((f) => f.id === "opener").level, "fail", "template opener after greeting");
+
+  /* ---------------------------------------------------------- list-clean */
+  const lc = cleanList(parseContacts(read(`${LB}/examples/contacts.csv`)));
+  eq([lc.counts.input, lc.counts.unique, lc.counts.duplicates_removed], [12, 8, 4], "list-clean counts");
+  eq([lc.counts.ready, lc.counts["hold-free-mail"], lc.counts["review-domain"], lc.counts["drop-role"], lc.counts["drop-invalid"]], [4, 1, 1, 1, 1], "list-clean statuses");
+  const dana = lc.people.find((p) => p.name === "Dana Okafor");
+  eq(dana?.rows, [2, 3, 4], "list-clean merges Dana across email, LinkedIn URL, and name+domain");
+  eq(dana?.sources.sort(), ["database", "event-list", "sales-nav"], "list-clean keeps provenance");
+  expect(lc.people.some((p) => p.rows.join() === "8,9"), "list-clean merges accented and unaccented names on the same domain");
+  eq(normLinkedIn("https://www.LinkedIn.com/in/DanaOkafor/?trk=x"), "linkedin.com/in/danaokafor", "LinkedIn URL normalisation");
+
+  /* -------------------------------------------------------- signal-score */
+  const ss = scoreSignals(parseSignals(read(`${MS}/examples/signals.csv`)), { asOf: "2026-10-31" });
+  eq(ss.counts, { "ACT NOW": 1, "WARM UP": 2, WATCH: 2, IGNORE: 1 }, "signal-score counts");
+  const act = (n) => ss.accounts.find((a) => a.account === n)?.action;
+  eq(act("Northwind Analytics"), "ACT NOW", "Northwind (3 stacked signals) action");
+  expect(ss.accounts.find((a) => a.account === "Northwind Analytics").stacked, "Northwind is stacked");
+  eq(act("Quillstack"), "WATCH", "Quillstack (old signals decay) action");
+  eq(act("Kestrel Labs"), "IGNORE", "Kestrel (low fit) action");
+  eq(ss.accounts[0].account, "Northwind Analytics", "signal-score ranks Northwind first");
+
+  /* -------------------------------------------------------- pipeline-math */
+  const rt = ratesFromCounts(JSON.parse(read(`${OM}/examples/counts.json`)));
+  eq([rt.rates.deliverable, rt.rates.reply, rt.rates.positive], [0.985, 0.051, 0.4], "pipeline-math rates");
+  eq(rt.sends_per_opportunity, 250, "pipeline-math sends per opportunity");
+  const pl = plan(JSON.parse(read(`${OM}/examples/plan.json`)));
+  eq([pl.target_opportunities, pl.funnel.sends, pl.people_to_contact, pl.reps_needed], [30, 7465, 2489, 2.5], "pipeline-math plan");
+  eq(pl.levers[0].rate, "reply", "pipeline-math: reply rate is the most sensitive lever");
+  let threw = false;
+  try { plan({ target: { opportunities: 5 }, rates: {} }); } catch { threw = true; }
+  expect(threw, "pipeline-math refuses to plan without the user's own rates");
 
   return fails;
 }

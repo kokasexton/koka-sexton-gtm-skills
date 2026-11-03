@@ -15,7 +15,7 @@ const REPO = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const README = join(REPO, "README.md");
 const START = "<!-- catalog:start -->";
 const END = "<!-- catalog:end -->";
-const ORDER = ["koka", "content-engineer", "engagement-intelligence", "signal-outbound", "ai-search-visibility"];
+const ORDER = ["koka", "gtm-strategy", "content-engineer", "linkedin-content", "linkedin-ads", "linkedin", "engagement-intelligence", "signal-sourcer", "list-building", "cold-email", "personalization", "signal-outbound", "sdr-tools", "ai-search-visibility"];
 
 function meta(dir) {
   const body = readFileSync(join(dir, "SKILL.md"), "utf8");
