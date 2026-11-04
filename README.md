@@ -54,7 +54,7 @@ It's **78 skills** in one system. A front-door `koka` skill routes every ask to 
     "args": ["/absolute/path/to/koka-sexton-gtm-skills/mcp/server.mjs"] } } }
 ```
 
-Your agent gets `list_skills`, `get_skill`, `search_skills`, `get_persona`, plus the benchmark engine: `linkedin_benchmark` scores a draft against the report, and `linkedin_benchmarks` returns the data. Every skill is also readable as a `skill://` resource.
+Your agent gets `list_skills`, `get_skill`, `search_skills`, `get_persona`, plus the benchmark engine: `linkedin_benchmark` scores a draft against the report, and `linkedin_benchmarks` returns the data. The 8 tools run over MCP too, on text you pass in (no file paths): `lint_post`, `lint_email`, `citation_check`, `pipeline_rates`, `pipeline_plan`, `clean_list`, `score_signals`, `warm_list`, `panel_score`. Every skill is also readable as a `skill://` resource.
 
 **By files**, into any agent that reads `SKILL.md` folders:
 

@@ -1,3 +1,4 @@
 {"date":"2026-11-03","model":"openrouter/deepseek/deepseek-v4.1-flash","target":"bootstrap","summary":"seeded ops log; daily loop created"}
 {"date":"2026-11-03","model":"openrouter/deepseek/deepseek-v4.1-flash","target":"content-tests","summary":"added tests/ (frontmatter, internal-link integrity, data-accuracy vs canonical linkedin-algorithm) + wired into CI; verified gate catches drifted numbers"}
 {"date":"2026-11-03","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"engagement-intelligence classification rubric","summary":"added seniority/function rubric, A/B/C tiering, worked examples; backlog updated"}
+{"date": "2026-11-04", "models_used": ["openrouter/anthropic/claude-sonnet-5.5"], "target": "expose 8 tools via MCP", "summary": "lib/tools.mjs bridge + 9 MCP tools + 11 tests; docs updated"}

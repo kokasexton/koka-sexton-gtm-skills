@@ -45,7 +45,7 @@ const t = (name, cond) => { console.log((cond ? "PASS " : "FAIL ") + name); if (
 const init = await wait(1);
 t("initialize -> koka-gtm", init?.result?.serverInfo?.name === "koka-gtm");
 const tl = await wait(2);
-t("tools/list has 6 tools", tl?.result?.tools?.length === 6);
+t("tools/list has 15 tools", tl?.result?.tools?.length === 15);
 const ls = await wait(3);
 const listOut = JSON.parse(ls.result.content[0].text);
 t("list_skills returns skills", listOut.skills?.length >= 8);
@@ -66,6 +66,36 @@ t("search ranks warm-list-builder #1 for 'who should I warm this week'", rkOut.m
 const en = await wait(9);
 const enOut = JSON.parse(en.result.content[0].text);
 t("search ranks engager-analytics #1 for 'score these engagers'", enOut.matches?.[0]?.name === "linkedin-engager-analytics");
+
+// Skill tools over MCP, fed the shipped examples.
+import { readFileSync as rf } from "node:fs";
+const ex = (p) => rf(join(ROOT, "skills", p), "utf8");
+const calls = [
+  [10, "lint_post", { text: ex("content-evaluation/examples/before.md") }],
+  [11, "lint_email", { text: ex("cold-email/examples/before.txt") }],
+  [12, "citation_check", { page: ex("citation-check/examples/before.md") }],
+  [13, "pipeline_rates", { counts: JSON.parse(ex("outbound-metrics/examples/counts.json")) }],
+  [14, "pipeline_plan", { plan: ex("outbound-metrics/examples/plan.json") }],
+  [15, "clean_list", { csv: ex("list-building/examples/contacts.csv") }],
+  [16, "score_signals", { csv: ex("multi-signal/examples/signals.csv") }],
+  [17, "warm_list", { csv: ex("warm-list/examples/engagement.csv"), icp: JSON.parse(ex("warm-list/examples/icp.json")) }],
+  [18, "panel_score", { csv: ex("prompt-panel/examples/panel.csv"), brand: "Acme" }],
+  [19, "lint_post", {}],
+  [20, "nonexistent_tool", {}],
+];
+for (const [id, name, args] of calls) send({ jsonrpc: "2.0", id, method: "tools/call", params: { name, arguments: args } });
+const out = async (id) => { const r = await wait(id); return { err: r.result.isError, v: JSON.parse(r.result.content[0].text) }; };
+const lp = await out(10); t("lint_post returns verdict + findings", !lp.err && !!lp.v.verdict && lp.v.findings.length > 0);
+const le = await out(11); t("lint_email returns verdict", !le.err && !!le.v.verdict);
+const cc = await out(12); t("citation_check returns checks", !cc.err && Array.isArray(cc.v.checks));
+const pr = await out(13); t("pipeline_rates returns an object", !pr.err && typeof pr.v === "object");
+const pp = await out(14); t("pipeline_plan accepts a JSON string", !pp.err && pp.v.people_to_contact > 0);
+const cl = await out(15); t("clean_list returns people + counts", !cl.err && Array.isArray(cl.v.people) && !!cl.v.counts);
+const sg = await out(16); t("score_signals returns accounts", !sg.err && Array.isArray(sg.v.accounts) && sg.v.accounts.length > 0);
+const wl = await out(17); t("warm_list returns people + room", !wl.err && Array.isArray(wl.v.people) && !!wl.v.room);
+const ps = await out(18); t("panel_score returns byEngine", !ps.err && !!ps.v.byEngine);
+const bad = await out(19); t("missing input is a clean error, not a crash", bad.err === true && /required/.test(bad.v.error));
+const unk = await out(20); t("unknown tool is an error", unk.err === true);
 
 srv.kill();
 console.log(fails.length ? `\nFAILED: ${fails.join(", ")}` : "\nALL PASSED");

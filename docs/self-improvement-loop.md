@@ -43,10 +43,11 @@ The repo is test-gated. A change doesn't ship unless:
 - [x] Expand `engagement-intelligence` with a classification rubric (seniority/function taxonomy) — done 2026-11-03
 - [x] `content-evaluation`, `ai-search-visibility` (`prompt-panel`, `citation-check`), signal scoring (`multi-signal`, `warm-list`)
 - [x] v2 full stack: 13 orchestrators, 8 tools, `system.json`, `no-unsourced-stats` gate
-- [ ] Expose the 8 tools through the MCP server (so MCP clients can run them, not just read the skills)
+- [x] Expose the 8 tools through the MCP server (so MCP clients can run them, not just read the skills)
 - [ ] Make `lint-post.mjs` read thresholds from `skills/linkedin-algorithm/data/benchmarks.json`
 - [ ] Benchmark tables: cadence / format / hashtag lookups as reusable references
 - [x] Install paths: MCP server, Claude Code plugin + marketplace, `scripts/install.mjs`
+- [ ] Next: `lint_post` / `linkedin_benchmark` share one threshold source (benchmarks.json)
 - [ ] Accuracy pass: re-verify every stat against the canonical source
 
 ## Guardrails

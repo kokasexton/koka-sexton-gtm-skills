@@ -9,12 +9,15 @@
  *   { "mcpServers": { "koka-gtm": { "command": "node",
  *       "args": ["/abs/path/koka-sexton-gtm-skills/mcp/server.mjs"] } } }
  *
- * Tools: list_skills · get_skill · search_skills · get_persona
+ * Tools: list_skills · get_skill · search_skills · get_persona · linkedin_benchmark(s)
+ *        · lint_post · lint_email · citation_check · pipeline_rates · pipeline_plan
+ *        · clean_list · score_signals · warm_list · panel_score
  * Resources: skill://<name> for every SKILL.md, plus persona://koka
  */
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { SKILL_TOOLS, runSkillTool } from "../lib/tools.mjs";
 import { benchmarkPost, benchmarkData } from "../lib/benchmark.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -126,9 +129,12 @@ const TOOLS = [
     description: "Return the LinkedIn Algorithm Report benchmark dataset, or one metric (e.g. 'cadence', 'craft', 'comments').",
     inputSchema: { type: "object", properties: { metric: { type: "string" } } },
   },
+  ...SKILL_TOOLS,
 ];
 
 function call(name, args = {}) {
+  const skillTool = runSkillTool(name, args);
+  if (skillTool !== null) return skillTool;
   const all = skills();
   if (name === "list_skills") {
     return { skills: all.map(({ name, description, path }) => ({ name, description, path })) };

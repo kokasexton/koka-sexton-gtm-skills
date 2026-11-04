@@ -5,6 +5,15 @@ Machine-readable cost/run log: `ops/spend.jsonl`.
 
 ---
 
+## 2026-11-04 — the tools now run over MCP
+
+**Model: claude-sonnet-5.5 (single run, no bulk work needed).**
+- The MCP server used to only *read* skills and score posts. It now also *runs* the 8 tools (9 MCP tools: post lint, email lint, citation check, pipeline rates and plan, list clean, signal score, warm list, panel score). Pass the draft or CSV as text; get the same result the CLI gives.
+- Why: an agent-native install should let Cursor or Claude Desktop lint a draft or build a warm list directly, without shell access or file paths. Bad input returns a clean error rather than crashing the server.
+- New `lib/tools.mjs` bridge, 11 new MCP tests fed from the shipped worked examples (15 tools total).
+
+---
+
 ## 2026-11-03 — v2.0: the full GTM stack
 
 **Manual build** (Claude Code session).
