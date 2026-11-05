@@ -109,49 +109,7 @@ const RESTATEMENTS = [
     expect: ["72", "62", "36"],
     label: "post-storytelling whitespace lift",
   },
-  // Thresholds baked into the runnable tools — code drifts too.
-  {
-    file: "skills/content-evaluation/scripts/lint-post.mjs",
-    re: /6\+ drops median engagement to (\d+) \(−(\d+)%\)/,
-    expect: ["33", "63"],
-    label: "lint-post hashtag penalty",
-  },
-  {
-    file: "skills/content-evaluation/scripts/lint-post.mjs",
-    re: /if \(h >= (\d+)\) add\("hashtags", "fail"/,
-    expect: ["6"],
-    label: "lint-post hashtag fail threshold",
-  },
-  {
-    file: "skills/content-evaluation/scripts/lint-post.mjs",
-    re: /if \(chars >= (\d+)\) add\("length", "pass"/,
-    expect: ["1500"],
-    label: "lint-post long-form threshold",
-  },
-  {
-    file: "skills/content-evaluation/scripts/lint-post.mjs",
-    re: /earn \+(\d+)% \(62 vs 36\)/,
-    expect: ["72"],
-    label: "lint-post whitespace lift",
-  },
-  {
-    file: "skills/content-evaluation/scripts/lint-post.mjs",
-    re: /\(median 54, −(\d+)%\)/,
-    expect: ["29"],
-    label: "lint-post hot-take penalty",
-  },
-  {
-    file: "skills/content-evaluation/scripts/lint-post.mjs",
-    re: /median of 25 vs 70 for image \(([\d.]+)× gap\)/,
-    expect: ["2.8"],
-    label: "lint-post image vs link",
-  },
-  {
-    file: "skills/content-evaluation/scripts/lint-post.mjs",
-    re: /commenters are (\d+)% more senior/,
-    expect: ["26"],
-    label: "lint-post commenter seniority",
-  },
+  // lint-post.mjs no longer restates numbers: it reads benchmarks.json (pinned by threshold-source.test.mjs).
   {
     file: "skills/content-evaluation/SKILL.md",
     re: /6\+ → (\d+) \(−(\d+)%\)/,

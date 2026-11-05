@@ -12,6 +12,7 @@ import { run as tools } from "./tools.test.mjs";
 import { run as structure } from "./structure.test.mjs";
 import { run as install } from "./install.test.mjs";
 import { run as catalog } from "./catalog.test.mjs";
+import { run as thresholdSource } from "./threshold-source.test.mjs";
 
 const suites = [
   ["frontmatter", frontmatter],
@@ -23,6 +24,7 @@ const suites = [
   ["structure", structure],
   ["install", install],
   ["catalog", catalog],
+  ["threshold-source", thresholdSource],
 ];
 
 let failed = false;

@@ -5,6 +5,10 @@ Machine-readable cost/run log: `ops/spend.jsonl`.
 
 ---
 
+## 2026-11-05
+
+`lint_post` now reads every threshold (hashtag band, overload point, long-form length, whitespace lift, hot-take and format medians) from `skills/linkedin-algorithm/data/benchmarks.json` instead of restating numbers in code. The linter and the benchmark engine share one source, so they can't disagree. New test `threshold-source` pins this; the old per-number restatement checks for lint-post were retired. Model: anthropic/claude-sonnet-5.5.
+
 ## 2026-11-04 — the tools now run over MCP
 
 **Model: claude-sonnet-5.5 (single run, no bulk work needed).**

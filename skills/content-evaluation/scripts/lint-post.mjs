@@ -16,19 +16,32 @@
  * Zero dependencies. Node 18+.
  */
 import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+
+// Single threshold source: skills/linkedin-algorithm/data/benchmarks.json.
+// lint_post and linkedin_benchmark both read it, so the numbers cannot drift.
+const HERE = dirname(fileURLToPath(import.meta.url));
+export const BENCH = JSON.parse(
+  readFileSync(join(HERE, "..", "..", "linkedin-algorithm", "data", "benchmarks.json"), "utf8"),
+);
+const C = BENCH.craft;
+const FM = BENCH.format_median_engagements;
+const FC = BENCH.format_comment_share_pct;
+const [HT_LO, HT_HI] = C.hashtag_optimal;
 
 const REPORT = "LinkedIn Algorithm Report 2026";
 const VOICE = "KOKA.md voice rules";
 
 // Format medians from the canonical skill (median engagements).
+const LINK_NOTE = `Link/article posts have a median of ${FM.link_or_article} vs ${FM.image} for image (${FM.image_vs_link_multiple}× gap). Move the link out of the post.`;
 const FORMAT_NOTES = {
-  image: "Image is the strongest format (median 70; 78% of top-1% posts are image-based).",
-  document: "Document posts earn a high comment share (21.7%) — good for conversation.",
-  text: "Text posts hold a solid comment share (21.4%). Consider an image or document to lift reach.",
-  video: "Video has a lower comment share (14.7%). Lead with an image or document if conversation is the goal.",
-  link: "Link/article posts have a median of 25 vs 70 for image (2.8× gap). Move the link out of the post.",
-  article: "Link/article posts have a median of 25 vs 70 for image (2.8× gap). Move the link out of the post.",
+  image: `Image is the strongest format (median ${FM.image}; ${BENCH.viral_top1pct.image_share_pct}% of top-1% posts are image-based).`,
+  document: `Document posts earn a high comment share (${FC.document}%) — good for conversation.`,
+  text: `Text posts hold a solid comment share (${FC.text}%). Consider an image or document to lift reach.`,
+  video: `Video has a lower comment share (${FC.video}%). Lead with an image or document if conversation is the goal.`,
+  link: LINK_NOTE,
+  article: LINK_NOTE,
 };
 
 const HOT_TAKE = /\b(unpopular opinion|hot take|controversial take|nobody wants to hear this|i'?ll probably get (hate|flak) for this)\b/i;
@@ -79,17 +92,17 @@ export function lintPost(text, opts = {}) {
   const add = (id, level, message, source) => findings.push({ id, level, message, source });
 
   // Length — 1,500+ chars ≈ 2× short (74 vs ~40).
-  if (chars >= 1500) add("length", "pass", `${chars} chars — in the long-form band (1,500+).`, REPORT);
+  if (chars >= C.length_threshold_chars) add("length", "pass", `${chars} chars — in the long-form band (${C.length_threshold_chars.toLocaleString("en-US")}+).`, REPORT);
   else if (chars >= 900)
-    add("length", "warn", `${chars} chars. Long posts (1,500+) earn ~2× the median of short ones (74 vs ~40).`, REPORT);
+    add("length", "warn", `${chars} chars. Long posts (${C.length_threshold_chars.toLocaleString("en-US")}+) earn ~${C.length_multiple}× the median of short ones (${C.length_median_long} vs ~${C.length_median_short}).`, REPORT);
   else
-    add("length", "warn", `${chars} chars — short. 1,500+ char posts earn ~2× the median of short ones. Add the lesson, not filler.`, REPORT);
+    add("length", "warn", `${chars} chars — short. ${C.length_threshold_chars.toLocaleString("en-US")}+ char posts earn ~${C.length_multiple}× the median of short ones. Add the lesson, not filler.`, REPORT);
 
   // Hashtags — 1–2 best (median 91); 6+ → 33 (−63%); top 1% ≈ 0.
   const h = hashtags.length;
-  if (h >= 6) add("hashtags", "fail", `${h} hashtags. 6+ drops median engagement to 33 (−63%). Use 1–2.`, REPORT);
-  else if (h >= 3) add("hashtags", "warn", `${h} hashtags. 1–2 is the best band (median 91). Cut to two.`, REPORT);
-  else if (h >= 1) add("hashtags", "pass", `${h} hashtag${h > 1 ? "s" : ""} — in the 1–2 band.`, REPORT);
+  if (h >= C.hashtag_overload) add("hashtags", "fail", `${h} hashtags. ${C.hashtag_overload}+ drops median engagement to ${C.hashtag_overload_median} (−${C.hashtag_overload_drop_pct}%). Use ${HT_LO}–${HT_HI}.`, REPORT);
+  else if (h > HT_HI) add("hashtags", "warn", `${h} hashtags. ${HT_LO}–${HT_HI} is the best band (median ${C.hashtag_optimal_median}). Cut to two.`, REPORT);
+  else if (h >= HT_LO) add("hashtags", "pass", `${h} hashtag${h > 1 ? "s" : ""} — in the ${HT_LO}–${HT_HI} band.`, REPORT);
   else add("hashtags", "pass", "No hashtags — fine; top-1% posts use ~0.", REPORT);
 
   // Links in body get buried.
@@ -99,14 +112,14 @@ export function lintPost(text, opts = {}) {
 
   // Whitespace — line breaks +72% (62 vs 36).
   if (paragraphs.length <= 1 && chars > 300)
-    add("whitespace", "warn", "One wall of text. Posts with line breaks earn +72% (62 vs 36). Break it up.", REPORT);
+    add("whitespace", "warn", `One wall of text. Posts with line breaks earn +${C.linebreaks_gain_pct}% (${C.linebreaks_median} vs ${C.wall_of_text_median}). Break it up.`, REPORT);
   else if (longestParagraph > 600)
-    add("whitespace", "warn", `Longest paragraph is ${longestParagraph} chars. Break it — whitespace is +72%.`, REPORT);
+    add("whitespace", "warn", `Longest paragraph is ${longestParagraph} chars. Break it — whitespace is +${C.linebreaks_gain_pct}%.`, REPORT);
   else add("whitespace", "pass", `${paragraphs.length} paragraphs, longest ${longestParagraph} chars.`, REPORT);
 
   // Hot takes underperform (54, −29%).
   if (HOT_TAKE.test(body))
-    add("hot-take", "warn", "Reads as a hot take. Hot takes underperform (median 54, −29%). Teach the shift, don't provoke.", REPORT);
+    add("hot-take", "warn", `Reads as a hot take. Hot takes underperform (median ${BENCH.topics_median_engagements.hot_take_contrarian}, ${BENCH.topics_median_engagements.hot_take_vs_ai_pct}%). Teach the shift, don't provoke.`, REPORT);
 
   // Engagement bait / formulaic CTAs are penalised.
   const bait = ENGAGEMENT_BAIT.map((re) => body.match(re)).find(Boolean);
@@ -122,7 +135,7 @@ export function lintPost(text, opts = {}) {
 
   // Conversation is the signal — invite a substantive comment.
   if (!/\?\s*$/m.test(body))
-    add("conversation", "info", "No question in the post. Comments are the strongest signal (commenters are 26% more senior) — invite a real reply.", REPORT);
+    add("conversation", "info", `No question in the post. Comments are the strongest signal (commenters are ${BENCH.comments.seniority_lift_pct}% more senior) — invite a real reply.`, REPORT);
 
   // Voice: slop phrases.
   const lower = body.toLowerCase();
