@@ -13,6 +13,7 @@ import { run as structure } from "./structure.test.mjs";
 import { run as install } from "./install.test.mjs";
 import { run as catalog } from "./catalog.test.mjs";
 import { run as thresholdSource } from "./threshold-source.test.mjs";
+import { run as emailThreshold } from "./email-threshold.test.mjs";
 
 const suites = [
   ["frontmatter", frontmatter],
@@ -25,6 +26,7 @@ const suites = [
   ["install", install],
   ["catalog", catalog],
   ["threshold-source", thresholdSource],
+  ["email-threshold", emailThreshold],
 ];
 
 let failed = false;

@@ -15,10 +15,15 @@
  */
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+
+const HERE = dirname(fileURLToPath(import.meta.url));
+/** House-rule thresholds live in ../data/thresholds.json (single source). */
+export const THRESHOLDS = JSON.parse(readFileSync(join(HERE, "..", "data", "thresholds.json"), "utf8"));
 
 const RULES = "cold-email skill";
 const VOICE = "KOKA.md voice rules";
-const DEFAULT = "Koka default (not benchmark data)";
+const DEFAULT = THRESHOLDS.source;
 
 const TEMPLATE_OPENERS = [
   /^i hope (this|you)/i,
@@ -51,7 +56,7 @@ const SPAM_SUBJECT = /(\bfree\b|\bguarantee|act now|limited time|\$\$|!{2,}|% of
 const MERGE_FIELD = /\{\{[^}]*\}\}|\[(first ?name|name|company|company name|title|industry)\]|<(first_?name|company)>/i;
 const CALENDAR = /\b(calendly\.com|cal\.com|hubspot\.com\/meetings|chili ?piper|savvycal|book a (time|slot|call|meeting)|grab (some )?time on my calendar)\b/i;
 const LINK = /\bhttps?:\/\/\S+|\bwww\.\S+/gi;
-const SLOP = ["in today's fast-paced", "game-changer", "game changer", "unlock", "revolutionize", "synergy", "cutting-edge", "best-in-class", "world-class", "leverage our", "touch base", "circle back"];
+const SLOP = THRESHOLDS.slop_phrases;
 
 /** Split an email into { subject, body }. */
 export function parseEmail(text) {
@@ -74,8 +79,8 @@ export function lintEmail(text, opts = {}) {
   const add = (id, level, message, source) => findings.push({ id, level, message, source });
 
   // Length — Koka defaults: first touch < ~120 words, follow-ups shorter.
-  const limit = touch === 1 ? 120 : 90;
-  if (words > limit * 1.5) add("length", "fail", `${words} words. Touch ${touch} should be under ~${limit}. Cut to one observation, one idea, one ask.`, DEFAULT);
+  const limit = touch === 1 ? THRESHOLDS.first_touch_words : THRESHOLDS.followup_words;
+  if (words > limit * THRESHOLDS.fail_multiplier) add("length", "fail", `${words} words. Touch ${touch} should be under ~${limit}. Cut to one observation, one idea, one ask.`, DEFAULT);
   else if (words > limit) add("length", "warn", `${words} words. Aim for under ~${limit} on touch ${touch}.`, DEFAULT);
   else add("length", "pass", `${words} words.`, DEFAULT);
 
@@ -112,7 +117,7 @@ export function lintEmail(text, opts = {}) {
   if (subject) {
     const sw = (subject.match(/\S+/g) || []).length;
     if (SPAM_SUBJECT.test(subject)) add("subject", "fail", `Subject "${subject}" uses spam or fake-thread patterns.`, RULES);
-    else if (sw > 7) add("subject", "warn", `Subject is ${sw} words. 2–5 words reads like a colleague.`, DEFAULT);
+    else if (sw > THRESHOLDS.subject_max_words) add("subject", "warn", `Subject is ${sw} words (max ${THRESHOLDS.subject_max_words}). 2–5 words reads like a colleague.`, DEFAULT);
     else if (subject === subject.toUpperCase() && /[A-Z]/.test(subject)) add("subject", "fail", "ALL-CAPS subject.", RULES);
     else add("subject", "pass", `Subject: "${subject}"`, RULES);
   } else add("subject", "info", 'No subject line found. Put "Subject: …" on the first line to check it.', RULES);

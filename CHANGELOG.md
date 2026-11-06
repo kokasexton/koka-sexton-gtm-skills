@@ -5,6 +5,12 @@ Machine-readable cost/run log: `ops/spend.jsonl`.
 
 ---
 
+## 2026-11-06
+
+`lint-email` no longer hides its rules in code. Word limits (first touch 120, follow-up 90), the fail multiplier, the subject-length cap and the slop-phrase list now live in `skills/cold-email/data/thresholds.json`, labelled as Koka house rules, not benchmark data. New test `email-threshold` pins the behaviour. `warm-list` already reads its `taxonomy.json`, so that backlog item is closed. Model: anthropic/claude-sonnet-5.5 (single run).
+
+---
+
 ## 2026-11-05
 
 `lint_post` now reads every threshold (hashtag band, overload point, long-form length, whitespace lift, hot-take and format medians) from `skills/linkedin-algorithm/data/benchmarks.json` instead of restating numbers in code. The linter and the benchmark engine share one source, so they can't disagree. New test `threshold-source` pins this; the old per-number restatement checks for lint-post were retired. Model: anthropic/claude-sonnet-5.5.

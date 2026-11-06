@@ -1,0 +1,10 @@
+{
+  "_note": "Koka defaults for lint-email. These are house rules (KOKA.md / cold-email skill), NOT benchmark data.",
+  "source": "Koka default (not benchmark data)",
+  "first_touch_words": 120,
+  "followup_words": 90,
+  "fail_multiplier": 1.5,
+  "subject_max_words": 7,
+  "max_questions_warn": 2,
+  "slop_phrases": ["in today's fast-paced", "game-changer", "game changer", "unlock", "revolutionize", "synergy", "cutting-edge", "best-in-class", "world-class", "leverage our", "touch base", "circle back"]
+}

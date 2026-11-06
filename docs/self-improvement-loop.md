@@ -48,7 +48,7 @@ The repo is test-gated. A change doesn't ship unless:
 - [ ] Benchmark tables: cadence / format / hashtag lookups as reusable references
 - [x] Install paths: MCP server, Claude Code plugin + marketplace, `scripts/install.mjs`
 - [x] (2026-11-05, pinned by tests/threshold-source.test.mjs) `lint_post` / `linkedin_benchmark` share one threshold source (benchmarks.json)
-- [ ] Port `lint-email.mjs` / `warm-list.mjs` baked thresholds to a data file the same way
+- [x] (2026-11-06) `lint-email` thresholds + slop list in `skills/cold-email/data/thresholds.json`, pinned by tests/email-threshold.test.mjs; `warm-list` already reads `taxonomy.json`
 - [ ] Accuracy pass: re-verify every stat against the canonical source
 
 ## Guardrails
