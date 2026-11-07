@@ -41,3 +41,4 @@ If they reply, give them what they need to sell upward: the one-line business ca
 
 - Executive version → `skills/atl-messaging`
 - Lint it → `skills/cold-email`
+- Worked before/after: `skills/btl-messaging/examples/`

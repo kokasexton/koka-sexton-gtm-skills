@@ -52,3 +52,4 @@ Keep it under ~80 words. Executives read on phones.
 - Practitioner version → `skills/btl-messaging`
 - Make it real → `skills/personalization`
 - Lint it → `skills/cold-email` (`lint-email.mjs`)
+- Worked before/after: `skills/atl-messaging/examples/`

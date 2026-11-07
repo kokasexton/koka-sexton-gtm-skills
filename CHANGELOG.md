@@ -5,6 +5,12 @@ Machine-readable cost/run log: `ops/spend.jsonl`.
 
 ---
 
+## 2026-11-07
+
+ATL and BTL messaging now ship worked before/after emails (`skills/atl-messaging/examples/`, `skills/btl-messaging/examples/`). Each "before" is the vendor-style email the linter blocks; each "after" follows the skill and lints READY. New test `messaging-examples` pins both, plus the word caps and the 26% figure's trace to the canonical algorithm skill. Names and posts are illustrative; no new statistics. Model: anthropic/claude-sonnet-5.5 (single run).
+
+---
+
 ## 2026-11-06
 
 `lint-email` no longer hides its rules in code. Word limits (first touch 120, follow-up 90), the fail multiplier, the subject-length cap and the slop-phrase list now live in `skills/cold-email/data/thresholds.json`, labelled as Koka house rules, not benchmark data. New test `email-threshold` pins the behaviour. `warm-list` already reads its `taxonomy.json`, so that backlog item is closed. Model: anthropic/claude-sonnet-5.5 (single run).

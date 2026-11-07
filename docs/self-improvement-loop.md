@@ -39,7 +39,8 @@ The repo is test-gated. A change doesn't ship unless:
 - [x] Content tests (frontmatter, koka-first, data-accuracy) wired into CI — `tests/run.mjs` (frontmatter + internal links + data accuracy), run by `brand-safety.yml`
 - [ ] Extend internal-link test to flag references to files outside the skill layer (README/landing copy)
 - [x] Worked examples for every skill that ships a tool (`examples/`), pinned by `tests/tools.test.mjs`
-- [ ] Worked examples for prose-only skills (ATL/BTL messaging, ads, LinkedIn outreach)
+- [x] (2026-11-07, pinned by tests/messaging-examples.test.mjs) Worked examples for ATL/BTL messaging
+- [ ] Worked examples for remaining prose-only skills (ads, LinkedIn outreach, cold-call-scripts)
 - [x] Expand `engagement-intelligence` with a classification rubric (seniority/function taxonomy) — done 2026-11-03
 - [x] `content-evaluation`, `ai-search-visibility` (`prompt-panel`, `citation-check`), signal scoring (`multi-signal`, `warm-list`)
 - [x] v2 full stack: 13 orchestrators, 8 tools, `system.json`, `no-unsourced-stats` gate
