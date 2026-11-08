@@ -5,3 +5,4 @@
 {"date":"2026-11-05","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"lint_post single threshold source","summary":"lint-post reads benchmarks.json; threshold-source test added; backlog updated"}
 {"date":"2026-11-06","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"lint-email thresholds to data file","summary":"thresholds.json + email-threshold test; backlog updated"}
 {"date":"2026-11-07","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"worked examples for ATL/BTL messaging","summary":"before/after examples + messaging-examples test; backlog updated"}
+{"date":"2026-11-08","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"worked examples for cold-call-scripts","summary":"before/after call script + voicemail + call-examples test; backlog updated"}

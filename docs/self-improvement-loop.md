@@ -40,7 +40,8 @@ The repo is test-gated. A change doesn't ship unless:
 - [ ] Extend internal-link test to flag references to files outside the skill layer (README/landing copy)
 - [x] Worked examples for every skill that ships a tool (`examples/`), pinned by `tests/tools.test.mjs`
 - [x] (2026-11-07, pinned by tests/messaging-examples.test.mjs) Worked examples for ATL/BTL messaging
-- [ ] Worked examples for remaining prose-only skills (ads, LinkedIn outreach, cold-call-scripts)
+- [x] (2026-11-08, tests/call-examples.test.mjs) Worked examples for cold-call-scripts
+- [ ] Worked examples for remaining prose-only skills (ads, LinkedIn outreach)
 - [x] Expand `engagement-intelligence` with a classification rubric (seniority/function taxonomy) — done 2026-11-03
 - [x] `content-evaluation`, `ai-search-visibility` (`prompt-panel`, `citation-check`), signal scoring (`multi-signal`, `warm-list`)
 - [x] v2 full stack: 13 orchestrators, 8 tools, `system.json`, `no-unsourced-stats` gate

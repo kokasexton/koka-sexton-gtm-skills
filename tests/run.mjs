@@ -15,6 +15,7 @@ import { run as catalog } from "./catalog.test.mjs";
 import { run as thresholdSource } from "./threshold-source.test.mjs";
 import { run as emailThreshold } from "./email-threshold.test.mjs";
 import { run as messagingExamples } from "./messaging-examples.test.mjs";
+import { run as callExamples } from "./call-examples.test.mjs";
 
 const suites = [
   ["frontmatter", frontmatter],
@@ -29,6 +30,7 @@ const suites = [
   ["threshold-source", thresholdSource],
   ["email-threshold", emailThreshold],
   ["messaging-examples", messagingExamples],
+  ["call-examples", callExamples],
 ];
 
 let failed = false;

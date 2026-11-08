@@ -51,3 +51,4 @@ One follow-up. If there's no reply, go back to the signal-based cadence.
 
 - The email that pairs with the voicemail → `skills/first-touch`
 - Track connect and conversation rates → `skills/outbound-metrics`
+- Worked before/after: `skills/cold-call-scripts/examples/`
