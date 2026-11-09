@@ -45,3 +45,4 @@ Acceptance rate → reply rate → positive conversations → meetings. If accep
 - Pace and safety → `skills/linkedin-safety`
 - Who to target → `skills/warm-list`, `skills/multi-signal`
 - Comments that start it → `skills/post-engagement`
+- Worked before/after: `skills/linkedin-outreach-campaign/examples/`

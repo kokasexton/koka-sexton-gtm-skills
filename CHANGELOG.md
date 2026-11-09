@@ -5,6 +5,12 @@ Machine-readable cost/run log: `ops/spend.jsonl`.
 
 ---
 
+## 2026-11-09
+
+`linkedin-outreach-campaign` now ships a worked example (`skills/linkedin-outreach-campaign/examples/`): a pitch-in-the-first-message request next to a sub-200-character connection note with a real reason and a value-first first DM with no meeting ask. New test `outreach-examples` pins the rules. Illustrative names, no statistics. Model: anthropic/claude-sonnet-5.5 (single run, well under budget).
+
+---
+
 ## 2026-11-08
 
 `cold-call-scripts` now ships a worked example (`skills/cold-call-scripts/examples/`): a pitch-at-you opener next to a rewrite that says it's a cold call, asks for 30 seconds, leads with a signal and ends on a question, plus a sub-20-second voicemail. New test `call-examples` pins the rules. Illustrative names, no statistics. Model: anthropic/claude-sonnet-5.5 (single run).
