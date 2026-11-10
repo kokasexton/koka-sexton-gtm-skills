@@ -17,6 +17,7 @@ import { run as emailThreshold } from "./email-threshold.test.mjs";
 import { run as messagingExamples } from "./messaging-examples.test.mjs";
 import { run as callExamples } from "./call-examples.test.mjs";
 import { run as outreachExamples } from "./outreach-examples.test.mjs";
+import { run as adsExamples } from "./ads-examples.test.mjs";
 
 const suites = [
   ["frontmatter", frontmatter],
@@ -33,6 +34,7 @@ const suites = [
   ["messaging-examples", messagingExamples],
   ["call-examples", callExamples],
   ["outreach-examples", outreachExamples],
+  ["ads-examples", adsExamples],
 ];
 
 let failed = false;

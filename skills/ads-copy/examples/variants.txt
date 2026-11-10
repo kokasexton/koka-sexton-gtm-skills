@@ -1,0 +1,3 @@
+A (hook): "We have 40 accounts in the CRM and no idea which ones are looking."
+B (hook): "Our reps work the list top to bottom. Nobody knows who is actually in-market."
+Both variants keep the same turn, the same proof line and the same offer: Get the 1-page teardown.

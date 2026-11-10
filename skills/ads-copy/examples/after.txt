@@ -1,0 +1,5 @@
+"We have 40 accounts in the CRM and no idea which ones are looking."
+
+That is how a RevOps lead described it on a recent call. It happens because intent lives in places the CRM never sees: comments, post reactions, job changes.
+
+Get the 1-page teardown of how to turn those signals into a ranked list.

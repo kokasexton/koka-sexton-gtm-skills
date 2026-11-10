@@ -7,3 +7,4 @@
 {"date":"2026-11-07","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"worked examples for ATL/BTL messaging","summary":"before/after examples + messaging-examples test; backlog updated"}
 {"date":"2026-11-08","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"worked examples for cold-call-scripts","summary":"before/after call script + voicemail + call-examples test; backlog updated"}
 {"date":"2026-11-09","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"worked examples for linkedin-outreach-campaign","summary":"before/after connect + DM examples + outreach-examples test; backlog updated"}
+{"date":"2026-11-10","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"worked examples for ads-copy","summary":"before/after ad + variants + ads-examples test; backlog updated"}

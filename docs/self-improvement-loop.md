@@ -42,7 +42,7 @@ The repo is test-gated. A change doesn't ship unless:
 - [x] (2026-11-07, pinned by tests/messaging-examples.test.mjs) Worked examples for ATL/BTL messaging
 - [x] (2026-11-08, tests/call-examples.test.mjs) Worked examples for cold-call-scripts
 - [x] (2026-11-09, tests/outreach-examples.test.mjs) Worked examples for linkedin-outreach-campaign
-- [ ] Worked examples for remaining prose-only skills (ads)
+- [x] (2026-11-10, tests/ads-examples.test.mjs) Worked examples for ads-copy; other ads-* skills remain
 - [x] Expand `engagement-intelligence` with a classification rubric (seniority/function taxonomy) — done 2026-11-03
 - [x] `content-evaluation`, `ai-search-visibility` (`prompt-panel`, `citation-check`), signal scoring (`multi-signal`, `warm-list`)
 - [x] v2 full stack: 13 orchestrators, 8 tools, `system.json`, `no-unsourced-stats` gate

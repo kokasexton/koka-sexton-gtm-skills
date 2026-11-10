@@ -5,6 +5,12 @@ Machine-readable cost/run log: `ops/spend.jsonl`.
 
 ---
 
+## 2026-11-10
+
+`ads-copy` now ships a worked example (`skills/ads-copy/examples/`): a superlative-and-"Learn more" ad next to a rewrite that opens on a customer's own words, explains why in one sentence and makes one specific offer, plus two variants that change only the hook. New test `ads-examples` pins the rules. Illustrative quote, no statistics. Model: anthropic/claude-sonnet-5.5 (single run, well under budget).
+
+---
+
 ## 2026-11-09
 
 `linkedin-outreach-campaign` now ships a worked example (`skills/linkedin-outreach-campaign/examples/`): a pitch-in-the-first-message request next to a sub-200-character connection note with a real reason and a value-first first DM with no meeting ask. New test `outreach-examples` pins the rules. Illustrative names, no statistics. Model: anthropic/claude-sonnet-5.5 (single run, well under budget).
