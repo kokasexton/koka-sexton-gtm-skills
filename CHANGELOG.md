@@ -5,6 +5,12 @@ Machine-readable cost/run log: `ops/spend.jsonl`.
 
 ---
 
+## 2026-11-11
+
+`ads-creative` now ships a worked example (`skills/ads-creative/examples/`): a stock-photo, single-version, never-refreshed plan next to one that sponsors an organic winner as a Thought Leader Ad, adds a teaching document ad, keeps message ads for warm audiences and sets a fatigue trigger. New test `creative-examples` pins the rules. Illustrative, no statistics. Model: anthropic/claude-sonnet-5.5 (single run, well under budget).
+
+---
+
 ## 2026-11-10
 
 `ads-copy` now ships a worked example (`skills/ads-copy/examples/`): a superlative-and-"Learn more" ad next to a rewrite that opens on a customer's own words, explains why in one sentence and makes one specific offer, plus two variants that change only the hook. New test `ads-examples` pins the rules. Illustrative quote, no statistics. Model: anthropic/claude-sonnet-5.5 (single run, well under budget).
