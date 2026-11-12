@@ -9,3 +9,4 @@
 {"date":"2026-11-09","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"worked examples for linkedin-outreach-campaign","summary":"before/after connect + DM examples + outreach-examples test; backlog updated"}
 {"date":"2026-11-10","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"worked examples for ads-copy","summary":"before/after ad + variants + ads-examples test; backlog updated"}
 {"date":"2026-11-11","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"worked examples for ads-creative","summary":"before/after creative plan + creative-examples test; backlog updated"}
+{"date":"2026-11-12","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"worked examples for ads-audiences","summary":"before/after audience plan + audience-examples test; backlog updated"}

@@ -5,6 +5,12 @@ Machine-readable cost/run log: `ops/spend.jsonl`.
 
 ---
 
+## 2026-11-12
+
+`ads-audiences` now ships a worked example (`skills/ads-audiences/examples/`): a title-list, expansion-on, single-campaign setup next to one that starts from a company list, layers function plus seniority, adds exclusions and retargeting pools, turns expansion off and checks the demographics report. New test `audience-examples` pins the rules. Illustrative, no statistics. Model: anthropic/claude-sonnet-5.5 (single run, well under budget).
+
+---
+
 ## 2026-11-11
 
 `ads-creative` now ships a worked example (`skills/ads-creative/examples/`): a stock-photo, single-version, never-refreshed plan next to one that sponsors an organic winner as a Thought Leader Ad, adds a teaching document ad, keeps message ads for warm audiences and sets a fatigue trigger. New test `creative-examples` pins the rules. Illustrative, no statistics. Model: anthropic/claude-sonnet-5.5 (single run, well under budget).

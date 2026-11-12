@@ -1,0 +1,7 @@
+Audience plan (ABM campaign):
+1. Accounts first: upload the tiered ICP account list as a company list. Tier 1 runs as its own campaign so its cost is visible.
+2. People inside them: job function plus seniority for the buying committee (decision-maker, champion, influencer), not job-title lists, which miss variants.
+3. Exclusions: customers, open opportunities, competitors, our own employees, and entry-level roles.
+4. Retargeting pools: website visitors, video viewers, document openers, lead-form openers, company-page engagers.
+Guardrails: audience expansion off and the off-LinkedIn audience network off. If the forecast says the audience is too small, widen by adding accounts, not by loosening the persona. Re-upload the account list as it changes.
+After launch: check the demographics report, because the functions, seniorities, and companies reached must match the ones targeted.
