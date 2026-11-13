@@ -1,0 +1,7 @@
+Bidding plan (new ABM program):
+1. New campaign, no history: start on automated maximum delivery to get a cost baseline. Move to a cost cap only once you know your acceptable cost per result.
+2. Small tier-1 audience that must be reached in full: use a manual bid, because you control competitiveness for a narrow, high-value audience.
+3. Budget by layer: most early spend goes to layer 1, which fills the retargeting pools. Retargeting budgets stay small because the pools are small. Tier-1 accounts get disproportionate spend per account.
+4. Fewer, better campaigns: do not spread thin, because campaigns without enough delivery never learn.
+When costs spike: check audience size and frequency, then creative fatigue, then competition such as end of quarter. Only then change the bid, in one step, and wait before judging.
+Confirm bid options and minimums in Campaign Manager. Use your own account history for cost targets.

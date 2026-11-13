@@ -5,6 +5,12 @@ Machine-readable cost/run log: `ops/spend.jsonl`.
 
 ---
 
+## 2026-11-13
+
+`ads-bidding` now ships a worked example (`skills/ads-bidding/examples/`): an inflated manual bid, even budget split and bid-raise-on-spike setup next to one that picks strategy by situation, budgets by layer and tier, avoids thin spread and diagnoses before touching the bid. New test `bidding-examples` pins the rules. Illustrative, no statistics. Model: anthropic/claude-sonnet-5.5 (single run, well under budget).
+
+---
+
 ## 2026-11-12
 
 `ads-audiences` now ships a worked example (`skills/ads-audiences/examples/`): a title-list, expansion-on, single-campaign setup next to one that starts from a company list, layers function plus seniority, adds exclusions and retargeting pools, turns expansion off and checks the demographics report. New test `audience-examples` pins the rules. Illustrative, no statistics. Model: anthropic/claude-sonnet-5.5 (single run, well under budget).
