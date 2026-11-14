@@ -1,0 +1,1 @@
+Setup: one campaign group called "LinkedIn Q4" holding six campaigns with mixed objectives (lead gen, brand awareness, website visits) all aimed at the same job-title audience, named "Campaign 1" through "Campaign 6". No Insight Tag check, no exclusions, one creative each, and the lead-gen form asks for ten fields.

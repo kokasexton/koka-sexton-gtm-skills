@@ -21,6 +21,7 @@ import { run as adsExamples } from "./ads-examples.test.mjs";
 import { run as creativeExamples } from "./creative-examples.test.mjs";
 import { run as audienceExamples } from "./audience-examples.test.mjs";
 import { run as biddingExamples } from "./bidding-examples.test.mjs";
+import { run as setupExamples } from "./setup-examples.test.mjs";
 
 const suites = [
   ["frontmatter", frontmatter],
@@ -41,6 +42,7 @@ const suites = [
   ["creative-examples", creativeExamples],
   ["audience-examples", audienceExamples],
   ["bidding-examples", biddingExamples],
+  ["setup-examples", setupExamples],
 ];
 
 let failed = false;

@@ -5,6 +5,12 @@ Machine-readable cost/run log: `ops/spend.jsonl`.
 
 ---
 
+## 2026-11-14
+
+`ads-campaign-setup` now ships a worked example (`skills/ads-campaign-setup/examples/`): a tangle of mixed-objective campaigns on one audience next to a layered, tiered structure with one objective per campaign, wired retargeting, naming convention and pre-launch checklist. New test `setup-examples` pins the rules. Illustrative, no statistics. Model: anthropic/claude-sonnet-5.5 (single run, well under budget).
+
+---
+
 ## 2026-11-13
 
 `ads-bidding` now ships a worked example (`skills/ads-bidding/examples/`): an inflated manual bid, even budget split and bid-raise-on-spike setup next to one that picks strategy by situation, budgets by layer and tier, avoids thin spread and diagnoses before touching the bid. New test `bidding-examples` pins the rules. Illustrative, no statistics. Model: anthropic/claude-sonnet-5.5 (single run, well under budget).

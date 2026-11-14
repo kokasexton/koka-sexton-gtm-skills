@@ -1,0 +1,3 @@
+Setup: campaign groups by funnel layer and account tier. L1 Attention for tier-1 accounts holds a TLA campaign and a document campaign, each with one objective. L2 Consideration retargets L1 engagers with case-study documents. L3 Conversion targets L2 engagers plus site visitors with a 1:1 teardown offer, and excludes converted leads.
+Naming: layer_tier_format_angle_yyyymm, for example L1_T1_TLA_sdr-hiring_202611.
+Pre-launch checklist: Insight Tag firing and conversions defined, account list match rate checked, exclusions applied (customers, competitors, employees), audience expansion chosen on purpose, 2-4 creatives per campaign, minimal lead-gen form fields with campaign name in a hidden field, UTMs on every destination URL, and sales told the campaign is live.
