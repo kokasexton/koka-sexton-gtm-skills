@@ -1,0 +1,1 @@
+Report: the Q4 LinkedIn campaign delivered a strong quarter on impressions, clicks and CTR, with a low CPM. The Insight Tag is on the landing page only, there are no conversions defined beyond "page view", and URLs carry no UTMs. Attribution is whatever LinkedIn's view-through number says.

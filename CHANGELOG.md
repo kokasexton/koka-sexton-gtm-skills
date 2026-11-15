@@ -5,6 +5,10 @@ Machine-readable cost/run log: `ops/spend.jsonl`.
 
 ---
 
+## 2026-11-15
+
+`ads-measurement` now ships a worked example (`skills/ads-measurement/examples/`): a vanity-metric report next to full tracking setup, KPIs ordered outcome to input, both attribution views, a holdout and self-reported attribution. New test `measurement-examples` pins the rules. Illustrative, no statistics. Model: anthropic/claude-sonnet-5.5 (single run, well under budget).
+
 ## 2026-11-14
 
 `ads-campaign-setup` now ships a worked example (`skills/ads-campaign-setup/examples/`): a tangle of mixed-objective campaigns on one audience next to a layered, tiered structure with one objective per campaign, wired retargeting, naming convention and pre-launch checklist. New test `setup-examples` pins the rules. Illustrative, no statistics. Model: anthropic/claude-sonnet-5.5 (single run, well under budget).
