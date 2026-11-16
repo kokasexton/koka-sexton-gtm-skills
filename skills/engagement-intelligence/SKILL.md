@@ -74,6 +74,7 @@ Got an engagement export? Run `skills/warm-list`. Its `warm-list.mjs` engine app
 ## Routing
 
 - Classify, score, and tier an export (runnable) → `skills/warm-list`
+- Run the whole daily pass in one go → `skills/social-selling-routine`
 - Benchmarks → `skills/linkedin-algorithm`
 - Define who counts as a buyer → `skills/linkedin-icp-definer`
 - Score a post's engagers → `skills/linkedin-engager-analytics`

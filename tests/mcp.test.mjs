@@ -45,7 +45,7 @@ const t = (name, cond) => { console.log((cond ? "PASS " : "FAIL ") + name); if (
 const init = await wait(1);
 t("initialize -> koka-gtm", init?.result?.serverInfo?.name === "koka-gtm");
 const tl = await wait(2);
-t("tools/list has 15 tools", tl?.result?.tools?.length === 15);
+t("tools/list has 16 tools", tl?.result?.tools?.length === 16);
 const ls = await wait(3);
 const listOut = JSON.parse(ls.result.content[0].text);
 t("list_skills returns skills", listOut.skills?.length >= 8);
@@ -82,6 +82,7 @@ const calls = [
   [18, "panel_score", { csv: ex("prompt-panel/examples/panel.csv"), brand: "Acme" }],
   [19, "lint_post", {}],
   [20, "nonexistent_tool", {}],
+  [21, "social_selling_routine", { csv: ex("social-selling-routine/examples/pool.csv"), icp: JSON.parse(ex("social-selling-routine/examples/icp.json")), as_of: "2026-11-15" }],
 ];
 for (const [id, name, args] of calls) send({ jsonrpc: "2.0", id, method: "tools/call", params: { name, arguments: args } });
 const out = async (id) => { const r = await wait(id); return { err: r.result.isError, v: JSON.parse(r.result.content[0].text) }; };
@@ -96,6 +97,7 @@ const wl = await out(17); t("warm_list returns people + room", !wl.err && Array.
 const ps = await out(18); t("panel_score returns byEngine", !ps.err && !!ps.v.byEngine);
 const bad = await out(19); t("missing input is a clean error, not a crash", bad.err === true && /required/.test(bad.v.error));
 const unk = await out(20); t("unknown tool is an error", unk.err === true);
+const rt = await out(21); t("social_selling_routine returns a ranked digest", !rt.err && Array.isArray(rt.v.ranked) && typeof rt.v.markdown === "string" && rt.v.ranked.every((p) => p.fit >= 0.5));
 
 srv.kill();
 console.log(fails.length ? `\nFAILED: ${fails.join(", ")}` : "\nALL PASSED");

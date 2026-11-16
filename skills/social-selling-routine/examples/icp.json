@@ -1,0 +1,7 @@
+{
+  "min_seniority": "director",
+  "functions": ["marketing", "sales"],
+  "keywords": ["b2b", "saas", "demand gen"],
+  "exclude_companies": ["Your Own Co"],
+  "exclude_keywords": ["student", "recruiter", "executive assistant"]
+}
