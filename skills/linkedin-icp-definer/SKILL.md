@@ -3,6 +3,12 @@ name: linkedin-icp-definer
 description: Define and lock an Ideal Customer Profile with explicit disqualifiers — the targeting foundation every warming, engagement, and outbound skill scores against. Use when defining, refining, or reviewing an ICP, or answering "is this person a fit". Do not use when an ICP already exists and the job is ranking who to warm first.
 when_to_use: "Use when a user needs to define, refine, or review their ICP, or check whether a prospect fits."
 not_for: "Ranking a candidate pool — use linkedin-warm-list-builder. Deciding what to post — use content-engineer."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: linkedin-icp-definer
+  canary: KSK-5fd436b0-linkedin-icp-definer
 ---
 
 <!-- koka-first -->
@@ -33,3 +39,10 @@ A single ICP document with the five sections plus a scoring rubric (how to grade
 - Tier accounts against it → `qualify-accounts`
 - Who to warm first → `linkedin-warm-list-builder`
 - Score a post's engagers → `linkedin-engager-analytics`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-5fd436b0-linkedin-icp-definer -->
+> **Koka Sexton GTM Skills** · `linkedin-icp-definer` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

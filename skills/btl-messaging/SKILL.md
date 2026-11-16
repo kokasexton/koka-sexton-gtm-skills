@@ -3,6 +3,12 @@ name: btl-messaging
 description: Cold email for below-the-line buyers — managers and individual contributors who feel the daily pain, run the workflow, and champion a purchase upward. Leads with the specific task that hurts, offers something useful now, and arms them to sell it internally. Use for practitioners and team leads. Do not use for budget owners.
 when_to_use: "Use when the recipient does the work your product changes (managers, leads, ICs) and could become your internal champion."
 not_for: "Executives and budget owners — use skills/atl-messaging."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: btl-messaging
+  canary: KSK-0898b461-btl-messaging
 ---
 
 <!-- koka-first -->
@@ -42,3 +48,10 @@ If they reply, give them what they need to sell upward: the one-line business ca
 - Executive version → `skills/atl-messaging`
 - Lint it → `skills/cold-email`
 - Worked before/after: `skills/btl-messaging/examples/`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-0898b461-btl-messaging -->
+> **Koka Sexton GTM Skills** · `btl-messaging` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

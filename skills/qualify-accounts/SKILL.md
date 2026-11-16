@@ -3,6 +3,12 @@ name: qualify-accounts
 description: Score and tier target accounts — ICP fit plus live signals — into Tier 1 (1:1), Tier 2 (1:few), and Tier 3 (1:many) with a play and an effort budget for each. Use after sourcing companies and before finding contacts. Do not use to rank individual engagers.
 when_to_use: "Use when deciding which accounts get the most effort, ABM tiering, or a quarterly re-prioritisation."
 not_for: "Ranking people who engaged — use skills/warm-list."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: qualify-accounts
+  canary: KSK-2e675a22-qualify-accounts
 ---
 
 <!-- koka-first -->
@@ -40,3 +46,10 @@ Weekly for signals (a Tier 2 account that just hired a new VP moves up), and qua
 - Signals → `skills/signal-sourcer`
 - Ads for tiers 2–3 → `skills/linkedin-ads`
 - Contacts → `skills/find-contacts`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-2e675a22-qualify-accounts -->
+> **Koka Sexton GTM Skills** · `qualify-accounts` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

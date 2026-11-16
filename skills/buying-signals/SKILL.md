@@ -3,6 +3,12 @@ name: buying-signals
 description: Which observable behaviours actually predict budget — engagement depth, seniority of engagement, hiring, funding, tech changes, and comment behaviour. Use to prioritise accounts and people. Do not use for brand awareness work.
 when_to_use: "Use when deciding who to prioritise and why now — signal scoring and account prioritisation."
 not_for: "Awareness/reach campaigns with no buying decision attached."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: buying-signals
+  canary: KSK-cdbc5dc4-buying-signals
 ---
 
 <!-- koka-first -->
@@ -33,3 +39,10 @@ Job-title labels ("social selling"), follower counts, impressions, and vague "en
 ## Where to source each signal
 
 See `skills/signal-sourcer`: one sub-skill per signal, plus `skills/multi-signal` to stack them at account level.
+
+<!-- provenance:begin -->
+<!-- canary: KSK-cdbc5dc4-buying-signals -->
+> **Koka Sexton GTM Skills** · `buying-signals` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

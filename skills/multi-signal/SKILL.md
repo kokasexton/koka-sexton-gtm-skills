@@ -3,6 +3,12 @@ name: multi-signal
 description: Stack and score account-level buying signals into one action list — each signal weighted by type, decayed by age, bonus for three or more kinds, combined with ICP fit into ACT NOW / WARM UP / WATCH / IGNORE with the play for the lead signal. Runs a zero-dependency scorer (scripts/signal-score.mjs). Use weekly to decide which accounts get worked. Do not use to rank individual post engagers — that's skills/warm-list.
 when_to_use: "Use when you have signals from several sources and need one prioritised account list with a reason and a play for each."
 not_for: "Ranking people who engaged with your posts (skills/warm-list) or defining the ICP (skills/define-icp)."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: multi-signal
+  canary: KSK-162b20e8-multi-signal
 ---
 
 <!-- koka-first -->
@@ -56,3 +62,10 @@ Content signals rank high because they're the only ones with data behind them: c
 - Each signal → `skills/job-changes`, `skills/funding-signals`, `skills/hiring-signals`, `skills/website-visitors`, `skills/company-events`, `skills/tech-changes`, `skills/competitor-signals`, `skills/content-engagement`
 - Person-level ranking → `skills/warm-list`
 - Tiering → `skills/qualify-accounts`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-162b20e8-multi-signal -->
+> **Koka Sexton GTM Skills** · `multi-signal` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

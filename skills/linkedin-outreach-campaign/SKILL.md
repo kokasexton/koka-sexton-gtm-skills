@@ -3,6 +3,12 @@ name: linkedin-outreach-campaign
 description: Run a LinkedIn outreach campaign the warm way — target list from signals, engage first, connection request with a real reason, a value-first first DM, and a short follow-up — with message templates and the metrics to watch. Use when planning connection and DM outreach. Do not use for automated sequences that send as you.
 when_to_use: "Use when building a LinkedIn connection-plus-DM campaign for a list of prospects, warm engagers, or triggered accounts."
 not_for: "Automated mass connection blasts or pitch-in-the-first-DM sequences."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: linkedin-outreach-campaign
+  canary: KSK-a49ea6f8-linkedin-outreach-campaign
 ---
 
 <!-- koka-first -->
@@ -46,3 +52,10 @@ Acceptance rate → reply rate → positive conversations → meetings. If accep
 - Who to target → `skills/warm-list`, `skills/multi-signal`
 - Comments that start it → `skills/post-engagement`
 - Worked before/after: `skills/linkedin-outreach-campaign/examples/`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-a49ea6f8-linkedin-outreach-campaign -->
+> **Koka Sexton GTM Skills** · `linkedin-outreach-campaign` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

@@ -3,6 +3,12 @@ name: find-contacts
 description: Find the right people inside target accounts — map the buying committee, search by function and seniority with Boolean title logic, prefer people who show signals, and get contact data from compliant sources. Use when you have target accounts and need names. Do not use to mass-collect every employee.
 when_to_use: "Use when building the contact layer for tiered accounts: who to reach, and how to find them."
 not_for: "Sourcing companies (skills/source-companies) or verifying emails (skills/clean-validate)."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: find-contacts
+  canary: KSK-d1b08b56-find-contacts
 ---
 
 <!-- koka-first -->
@@ -47,3 +53,10 @@ Inside an account, prioritise the person who **engaged** with your content, **re
 
 - Clean and verify → `skills/clean-validate`
 - De-dupe → `skills/deduplicate`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-d1b08b56-find-contacts -->
+> **Koka Sexton GTM Skills** · `find-contacts` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

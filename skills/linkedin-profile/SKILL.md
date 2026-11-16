@@ -3,6 +3,12 @@ name: linkedin-profile
 description: Turn a LinkedIn profile into a landing page for the people your content attracts — a headline that says who you help and how, a banner and About that prove it, a Featured section with one clear next step, and activity that matches the claim. Use when posts get engagement but no follows, connection requests, or DMs. Do not use for a job-seeker profile.
 when_to_use: "Use when auditing or rewriting a B2B seller's, founder's, or marketer's LinkedIn profile for conversion."
 not_for: "Job-search profiles, which optimise for recruiters, not buyers."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: linkedin-profile
+  canary: KSK-7d595d10-linkedin-profile
 ---
 
 <!-- koka-first -->
@@ -38,3 +44,10 @@ Ask someone in your ICP to look at the profile for five seconds, then tell you w
 
 - Posts that bring people here → `skills/linkedin-content`
 - The CTA on posts → `skills/post-cta`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-7d595d10-linkedin-profile -->
+> **Koka Sexton GTM Skills** · `linkedin-profile` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

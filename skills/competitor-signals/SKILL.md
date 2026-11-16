@@ -3,6 +3,12 @@ name: competitor-signals
 description: Use competitor-related signals — accounts comparing vendors on review sites, negative reviews or public complaints about a competitor, competitor customers nearing renewal, and people engaging with competitor content — and respond with help, not attack ads. Use for displacement and comparison-stage plays. Do not use to badmouth competitors.
 when_to_use: "Use when an account is evaluating your category, a competitor's customers show dissatisfaction, or a renewal window is near."
 not_for: "Negative campaigning, or contacting reviewers in ways the review site's terms forbid."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: competitor-signals
+  canary: KSK-49d8a5c5-competitor-signals
 ---
 
 <!-- koka-first -->
@@ -37,3 +43,10 @@ The buyer comparing vendors is the most in-market buyer there is. Treat them lik
 
 - AI-answer comparisons → `skills/ai-search-visibility`
 - Score → `skills/multi-signal`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-49d8a5c5-competitor-signals -->
+> **Koka Sexton GTM Skills** · `competitor-signals` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

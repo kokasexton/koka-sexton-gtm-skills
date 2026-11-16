@@ -3,6 +3,12 @@ name: social-selling-routine
 description: Run the full daily social-selling routine end to end — read who viewed your profile, who engaged your recent posts in the last 24h, who engaged your company page, new followers, and whether key-account people posted recently — then return one prioritized digest of who to connect with, comment on, and DM, with drafts ready. Use for "run my social selling routine", "run my daily LinkedIn routine", "what should I do on LinkedIn today". Do not use to scrape, bulk-message, or automate sending.
 when_to_use: "Use when the user wants their whole daily social-selling pass run for them in one go, ending in a prioritized, draft-ready digest."
 not_for: "Scraping LinkedIn at volume, mass connection requests, or automated messaging. This reads a small, ICP-filtered set of pages a human would look at anyway, and every outbound action stays human-gated."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: social-selling-routine
+  canary: KSK-b9463b13-social-selling-routine
 ---
 
 <!-- koka-first -->
@@ -137,3 +143,10 @@ The routine is designed to run on a schedule (e.g. every weekday morning) or on 
 - ICP source of truth → `skills/linkedin-icp-definer`
 - Add in-market accounts → `skills/multi-signal`
 - Account safety → `skills/linkedin-safety`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-b9463b13-social-selling-routine -->
+> **Koka Sexton GTM Skills** · `social-selling-routine` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

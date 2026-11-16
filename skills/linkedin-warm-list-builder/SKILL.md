@@ -3,6 +3,12 @@ name: linkedin-warm-list-builder
 description: Build a prioritized warming list — rank a candidate pool by ICP fit, warmth, and signal recency to decide who to work this week. Use for "who should I warm first", "prioritize these leads", "build my target list". Do not use to analyze a single post's engagers.
 when_to_use: "Use when a user has a pool of prospects and needs a ranked order to work this week."
 not_for: "Analyzing one post's engagers — use linkedin-engager-analytics. Writing the outreach — use cold-email or linkedin-comment-warmer."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: linkedin-warm-list-builder
+  canary: KSK-1ced02d6-linkedin-warm-list-builder
 ---
 
 <!-- koka-first -->
@@ -42,3 +48,10 @@ A ranked top-10, each with the reason it ranks where it does and a one-line next
 - Add in-market accounts → `multi-signal`
 - Research a target → `linkedin-signal-stack`
 - Turn the list into outreach → `outbound-pipeline`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-1ced02d6-linkedin-warm-list-builder -->
+> **Koka Sexton GTM Skills** · `linkedin-warm-list-builder` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

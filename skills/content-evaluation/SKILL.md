@@ -3,6 +3,12 @@ name: content-evaluation
 description: The evaluation gate in the content loop — lint a LinkedIn draft against the 2026 benchmark data and Koka's voice rules before it ships, then fix exactly what fails. Runs a zero-dependency linter (scripts/lint-post.mjs) where every rule cites its source. Use before publishing any LinkedIn post. Do not use to write the post from scratch.
 when_to_use: "Use when a draft exists and the question is 'is this ready to ship, and what exactly should change?' — pre-publish review, editorial gates, team QA."
 not_for: "Generating a post from nothing, or judging a post's performance after it ran — that is measurement, use skills/linkedin-algorithm."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: content-evaluation
+  canary: KSK-f8088add-content-evaluation
 ---
 
 <!-- koka-first -->
@@ -56,3 +62,10 @@ Return the verdict (`SHIP` / `SHIP WITH EDITS` / `BLOCK`), then the **smallest s
 
 - The benchmark numbers → `skills/linkedin-algorithm`
 - The full content system → `skills/content-engineer`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-f8088add-content-evaluation -->
+> **Koka Sexton GTM Skills** · `content-evaluation` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

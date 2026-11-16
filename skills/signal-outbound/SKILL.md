@@ -3,6 +3,12 @@ name: signal-outbound
 description: Turn signals into pipeline end to end — score who's warm and who's in-market, pick the play, and run the sequence across email, LinkedIn, and calls, with a human gate on every touch. The orchestrator that chains signal-sourcer, list-building, personalization, cold-email, linkedin, and sdr-tools. Use when the ask is "who should we reach, why now, and with what message". Do not use for a single cold email with no signal behind it.
 when_to_use: "Use when the ask spans the whole outbound motion: signal scoring, prioritisation, play selection, multichannel sequencing."
 not_for: "A single outbound copy request with no signal context — use skills/cold-email."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: signal-outbound
+  canary: KSK-e60b615b-signal-outbound
 ---
 
 <!-- koka-first -->
@@ -57,3 +63,10 @@ Have an engagement export? `skills/warm-list` does this scoring and shows the ev
 - The full play library (signal → sequence → metric) → `skills/gtm-plays`
 - Who's warm → `skills/engagement-intelligence` (scored list: `skills/warm-list`)
 - Copy → `skills/cold-email`, `skills/personalization`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-e60b615b-signal-outbound -->
+> **Koka Sexton GTM Skills** · `signal-outbound` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

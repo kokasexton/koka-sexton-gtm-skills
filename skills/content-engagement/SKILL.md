@@ -3,6 +3,12 @@ name: content-engagement
 description: Treat engagement with content — comments, repeat engagement, document reads, webinar attendance, engagement with posts about the problem you solve — as buying signals, ranked by depth, with commenters first. Grounded in the LinkedIn Algorithm Report. Use when turning content engagement into outreach priorities. Do not use to message everyone who liked a post.
 when_to_use: "Use when deciding which content engagers (yours or on topic posts) are worth outreach, and how."
 not_for: "Messaging likers en masse, or anyone who engaged once with something unrelated."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: content-engagement
+  canary: KSK-434fdffe-content-engagement
 ---
 
 <!-- koka-first -->
@@ -41,3 +47,10 @@ Reference the **exchange**, not the act of engaging:
 - Rank engagers → `skills/warm-list`
 - Score with other signals → `skills/multi-signal`
 - Comment-to-DM → `skills/post-engagement`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-434fdffe-content-engagement -->
+> **Koka Sexton GTM Skills** · `content-engagement` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

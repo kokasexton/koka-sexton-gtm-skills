@@ -3,6 +3,12 @@ name: linkedin-engager-analytics
 description: Analyze and score the engagers on a LinkedIn post — compute ICP match rate and surface the top buyer-fit profiles. Use for "who engaged with my post", "did any buyers see this", "ICP match rate". Do not use to rank a whole candidate pool.
 when_to_use: "Use when a user shares a post (or asks about a recent one) and wants the engagers scored against their ICP."
 not_for: "Ranking a full candidate pool — use linkedin-warm-list-builder."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: linkedin-engager-analytics
+  canary: KSK-557a676e-linkedin-engager-analytics
 ---
 
 <!-- koka-first -->
@@ -34,3 +40,10 @@ A ranked engager list with per-person evidence — not just a match percentage.
 - Run it on an export (classify, score, tier) → `warm-list`
 - Rank them into a weekly plan → `linkedin-warm-list-builder`
 - Research a top target → `linkedin-signal-stack`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-557a676e-linkedin-engager-analytics -->
+> **Koka Sexton GTM Skills** · `linkedin-engager-analytics` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

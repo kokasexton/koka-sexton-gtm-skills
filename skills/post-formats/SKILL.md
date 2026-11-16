@@ -3,6 +3,12 @@ name: post-formats
 description: Choose the right LinkedIn post format — image, document/carousel, text, video, or link — using the 2026 medians and comment shares, and keep links out of the post body. Use when deciding how a post should be packaged. Do not use for ad formats.
 when_to_use: "Use when choosing a format for an idea, or diagnosing why a format underperformed."
 not_for: "Paid formats — use skills/ads-creative."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: post-formats
+  canary: KSK-c2560e79-post-formats
 ---
 
 <!-- koka-first -->
@@ -33,3 +39,10 @@ The platform wants people to stay on the platform. Native formats travel; links 
 
 - Gate (checks for body links) → `skills/content-evaluation`
 - Repurpose one idea into several formats → `skills/repurposing`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-c2560e79-post-formats -->
+> **Koka Sexton GTM Skills** · `post-formats` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

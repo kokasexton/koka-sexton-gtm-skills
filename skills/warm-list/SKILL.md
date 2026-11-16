@@ -3,6 +3,12 @@ name: warm-list
 description: Turn a raw export of post engagement into a ranked, tiered warm list. Classifies every engager off their own headline (seniority + function), scores depth × recency × ICP fit, flags regulars and account clusters, and reads the room against the 2026 report baseline. Runs a zero-dependency engine (scripts/warm-list.mjs). Use when you have engagers and need to know who to talk to first. Do not use to scrape LinkedIn.
 when_to_use: "Use when you have an engagement export (reactions, comments, reposts) and the ask is 'who are the buyers in here, ranked, and what do I do with each?'"
 not_for: "Scraping or automating LinkedIn, or bulk-messaging the output. This ranks people; a human writes to them."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: warm-list
+  canary: KSK-0ab46ef8-warm-list
 ---
 
 <!-- koka-first -->
@@ -92,3 +98,10 @@ The report header compares your audience to the **LinkedIn Algorithm Report** ba
 - The canonical rubric and tiers → `skills/engagement-intelligence`
 - Rank across all pools (engagers, followers, leads) → `skills/linkedin-warm-list-builder`
 - Benchmarks → `skills/linkedin-algorithm`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-0ab46ef8-warm-list -->
+> **Koka Sexton GTM Skills** · `warm-list` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

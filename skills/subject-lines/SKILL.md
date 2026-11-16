@@ -3,6 +3,12 @@ name: subject-lines
 description: Subject lines that read like a colleague wrote them — short, specific, lowercase-friendly, about the recipient — plus a clean A/B testing method that tests one variable at a time against reply rate, not opens. Use when writing or testing subject lines. Do not use to write clickbait.
 when_to_use: "Use when writing the subject for a cold email or designing a subject-line test."
 not_for: "Newsletters or marketing email, where different rules apply."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: subject-lines
+  canary: KSK-e1f777d9-subject-lines
 ---
 
 <!-- koka-first -->
@@ -45,3 +51,10 @@ The linter in `skills/cold-email` flags the worst of these.
 
 - The email → `skills/first-touch`
 - Metrics → `skills/outbound-metrics`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-e1f777d9-subject-lines -->
+> **Koka Sexton GTM Skills** · `subject-lines` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

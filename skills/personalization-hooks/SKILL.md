@@ -3,6 +3,12 @@ name: personalization-hooks
 description: Turn an observation into an opening line — strong hooks (their words or actions, tied to your reason for writing) vs. light hooks (segment- or company-level, honest about being so) — and know when each is appropriate. Use when writing the first line of a personal message. Do not use to dress a template up as personal.
 when_to_use: "Use when converting a researched observation into an opener for email, DM, or a connection note."
 not_for: "Messages with no observation — see skills/personalization-sources first."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: personalization-hooks
+  canary: KSK-9861c4f0-personalization-hooks
 ---
 
 <!-- koka-first -->
@@ -41,3 +47,10 @@ Every hook needs a second sentence that says **why it matters to what you're off
 
 - At scale → `skills/personalization-at-scale`
 - QA → `skills/personalization-qa`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-9861c4f0-personalization-hooks -->
+> **Koka Sexton GTM Skills** · `personalization-hooks` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

@@ -3,6 +3,12 @@ name: outbound-pipeline
 description: Run a staged outbound pipeline on a target list — signals → prioritize → profile → hooks → sequences, behind a pre-flight data-quality gate. Use for "run the outbound pipeline", "build sequences for these companies", "enrich and score these leads". Do not use for a single email.
 when_to_use: "Use when a user has a list of target companies or people and wants a full research → score → sequence run."
 not_for: "One-off copy — use cold-email. Defining the ICP — use linkedin-icp-definer."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: outbound-pipeline
+  canary: KSK-11224575-outbound-pipeline
 ---
 
 <!-- koka-first -->
@@ -40,3 +46,10 @@ Validate the input before spending effort:
 - Signals → `buying-signals`
 - Copy → `cold-email`, `personalization`
 - Who's warm already → `linkedin-warm-list-builder`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-11224575-outbound-pipeline -->
+> **Koka Sexton GTM Skills** · `outbound-pipeline` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

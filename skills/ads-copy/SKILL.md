@@ -3,6 +3,12 @@ name: ads-copy
 description: Write LinkedIn ad copy from the voice of the customer — mined from sales calls, reviews, and comments — that leads with their problem in their words, earns attention in the first line, and makes one offer. Use when writing intro text, headlines, and CTAs for LinkedIn ads. Do not use for organic posts.
 when_to_use: "Use when drafting or rewriting LinkedIn ad copy, or building a voice-of-customer bank for ads."
 not_for: "Organic posts (skills/linkedin-content) or cold email (skills/cold-email)."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: ads-copy
+  canary: KSK-f4103ccd-ads-copy
 ---
 
 <!-- koka-first -->
@@ -40,3 +46,10 @@ Tag each phrase: *pain*, *trigger*, *desired outcome*, *objection*. Write from t
 
 - Formats → `skills/ads-creative`
 - Hooks that work organically → `skills/post-hooks`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-f4103ccd-ads-copy -->
+> **Koka Sexton GTM Skills** · `ads-copy` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

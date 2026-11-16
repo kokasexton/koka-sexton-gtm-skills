@@ -3,6 +3,12 @@ name: linkedin-comment-warmer
 description: Draft value-add comments on a target's LinkedIn posts — comments that get noticed because they add something. Use for "comment on this post", "warm up X with a comment", "execute today's touches". Do not use to design a full multi-touch sequence.
 when_to_use: "Use when a user wants a comment on a prospect's post as a warming touch."
 not_for: "Designing a full sequence — use outbound-pipeline or gtm-plays."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: linkedin-comment-warmer
+  canary: KSK-e27f908c-linkedin-comment-warmer
 ---
 
 <!-- koka-first -->
@@ -36,3 +42,10 @@ If nothing fits, replying where the target is commenting on someone else's post 
 - The full comment-first routine → `post-engagement`, `linkedin-outreach-campaign`
 - Angle from research → `linkedin-signal-stack`
 - Full sequence → `gtm-plays`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-e27f908c-linkedin-comment-warmer -->
+> **Koka Sexton GTM Skills** · `linkedin-comment-warmer` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

@@ -3,6 +3,12 @@ name: gtm-strategy
 description: Set the go-to-market strategy before the tactics — the operating principles, which outreach motion fits (inbound, warm, triggered, cold), the trigger library that says why now, and the repeatable plays with a signal, a sequence, and a metric each. Use when choosing what motion to run, or when a team is busy but not producing pipeline. Do not use for a single message.
 when_to_use: "Use for GTM planning, choosing motions and plays, diagnosing an underperforming go-to-market, or aligning marketing and sales on one system."
 not_for: "Writing one email or one post — go to skills/cold-email or skills/linkedin-content."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: gtm-strategy
+  canary: KSK-9f22653f-gtm-strategy
 ---
 
 <!-- koka-first -->
@@ -42,3 +48,10 @@ The answer is usually the earliest "no".
 - Signals → `skills/signal-sourcer`
 - Content → `skills/linkedin-content`
 - Outbound → `skills/cold-email`, `skills/linkedin`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-9f22653f-gtm-strategy -->
+> **Koka Sexton GTM Skills** · `gtm-strategy` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

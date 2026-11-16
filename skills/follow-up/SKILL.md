@@ -3,6 +3,12 @@ name: follow-up
 description: Touches 2 and 3 of a cold sequence — each adds something new (a data point, a teardown, a different angle) instead of "bumping this to the top of your inbox". Includes the value-rotation plan and a break-up note that doesn't guilt. Use after a first touch got no reply. Do not use after any reply — that's a conversation now.
 when_to_use: "Use when email 1 got no reply and you're writing the next 1–2 touches."
 not_for: "Anyone who replied, even with 'not now'. Respond to what they said instead."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: follow-up
+  canary: KSK-108576b9-follow-up
 ---
 
 <!-- koka-first -->
@@ -34,3 +40,10 @@ Default spacing is 3–5 business days between touches. Reply in the same thread
 
 - Revive later → `skills/re-engagement`
 - Lint each touch → `skills/cold-email` (`--touch 2`, `--touch 3`)
+
+<!-- provenance:begin -->
+<!-- canary: KSK-108576b9-follow-up -->
+> **Koka Sexton GTM Skills** · `follow-up` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

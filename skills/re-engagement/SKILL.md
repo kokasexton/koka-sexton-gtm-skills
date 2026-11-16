@@ -3,6 +3,12 @@ name: re-engagement
 description: Revive cold, stalled, or closed-lost leads with a reason that's new — a new signal, a new person, or a changed situation — instead of "circling back". Covers the 3 revival plays, timing, and when to let go. Use for leads that went quiet or said not now. Do not use on anyone who asked not to be contacted.
 when_to_use: "Use for closed-lost deals, ghosted opportunities, old inbound leads, or 'not now' prospects whose timing may have changed."
 not_for: "Anyone who opted out or said no clearly. Respect it and remove them."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: re-engagement
+  canary: KSK-9da81cda-re-engagement
 ---
 
 <!-- koka-first -->
@@ -34,3 +40,10 @@ They opted out, said no twice, or the account no longer fits the ICP. Remove the
 
 - Find the new signal → `skills/signal-sourcer`
 - Write it → `skills/first-touch`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-9da81cda-re-engagement -->
+> **Koka Sexton GTM Skills** · `re-engagement` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

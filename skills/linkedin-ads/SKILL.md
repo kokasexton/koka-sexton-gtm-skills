@@ -3,6 +3,12 @@ name: linkedin-ads
 description: Run LinkedIn Ads as part of an account-based GTM motion — tight audiences, a 3-layer funnel, Thought Leader and document creative, honest measurement, and ad engagement handed to sales as a signal. Use when planning, launching, auditing, or fixing LinkedIn ad campaigns. Do not use for organic posting — that's skills/linkedin-content.
 when_to_use: "Use for LinkedIn Campaign Manager work: audience design, campaign structure, creative and copy, bidding, measurement, optimisation, and ads-to-outbound handoff."
 not_for: "Organic content (skills/linkedin-content) or other ad platforms."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: linkedin-ads
+  canary: KSK-996c6b47-linkedin-ads
 ---
 
 <!-- koka-first -->
@@ -43,3 +49,10 @@ The same principle runs through the whole repo: **signal over vanity**. LinkedIn
 - Which accounts → `skills/list-building`
 - Engagement as a signal → `skills/signal-sourcer`
 - The sub-skills → `skills/ads-audiences`, `skills/ads-campaign-setup`, `skills/ads-creative`, `skills/ads-copy`, `skills/ads-bidding`, `skills/ads-measurement`, `skills/ads-outbound-sync`, `skills/ads-optimization`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-996c6b47-linkedin-ads -->
+> **Koka Sexton GTM Skills** · `linkedin-ads` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

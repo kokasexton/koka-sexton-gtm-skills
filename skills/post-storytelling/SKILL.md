@@ -3,6 +3,12 @@ name: post-storytelling
 description: Structure the body of a LinkedIn post so people keep reading — one lesson, three proven structures (Problem→Agitate→Solve, Before→After→Bridge, Attention→Interest→Desire→Action), long-form with whitespace, and a close that invites a real reply. Use when a post has a hook and needs its body. Do not use for long-form articles off LinkedIn.
 when_to_use: "Use when writing or restructuring the body of a LinkedIn post."
 not_for: "Blog posts and pages built to be cited by AI (skills/ai-search-visibility)."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: post-storytelling
+  canary: KSK-7937fcb6-post-storytelling
 ---
 
 <!-- koka-first -->
@@ -45,3 +51,10 @@ Say it in one sentence before you write. If you can't, you don't have a post yet
 - Hook → `skills/post-hooks`
 - Close → `skills/post-cta`
 - Gate → `skills/content-evaluation`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-7937fcb6-post-storytelling -->
+> **Koka Sexton GTM Skills** · `post-storytelling` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

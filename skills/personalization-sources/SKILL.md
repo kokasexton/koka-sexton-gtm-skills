@@ -3,6 +3,12 @@ name: personalization-sources
 description: Where real personalisation comes from, in six buckets ranked by strength — their own words, their engagement with you, a change at their company, their team's public work, a shared context, and their company's public story — with where to find each and how long it stays fresh. Use when researching a prospect before writing. Do not use to scrape private data.
 when_to_use: "Use when you need a true, specific observation about a person or account before outreach."
 not_for: "Private or non-public information. If it isn't public or given to you, don't use it."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: personalization-sources
+  canary: KSK-9ae3827d-personalization-sources
 ---
 
 <!-- koka-first -->
@@ -37,3 +43,10 @@ Personal life details, family, private social accounts, location tracking, or an
 
 - Build a full 5+ signal stack on one prospect → `skills/linkedin-signal-stack`
 - Turn it into a hook → `skills/personalization-hooks`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-9ae3827d-personalization-sources -->
+> **Koka Sexton GTM Skills** · `personalization-sources` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

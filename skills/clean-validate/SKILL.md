@@ -3,6 +3,12 @@ name: clean-validate
 description: Clean and verify contact data before it touches a sending domain — normalise fields, flag invalid syntax, role and free-mail addresses, verify mailboxes, handle catch-alls, and keep a hygiene schedule so bounces stay low. Use before any sequence launches and on a schedule after. Do not skip because a vendor said the data is verified.
 when_to_use: "Use before importing a list into a sequencer, when bounce rates rise, or on a regular hygiene schedule."
 not_for: "Finding new contacts — use skills/find-contacts."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: clean-validate
+  canary: KSK-6020c263-clean-validate
 ---
 
 <!-- koka-first -->
@@ -38,3 +44,10 @@ Track the bounce rate per send (`skills/outbound-metrics`). If it rises, **stop 
 
 - De-dupe → `skills/deduplicate`
 - The cleaner → `skills/list-building`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-6020c263-clean-validate -->
+> **Koka Sexton GTM Skills** · `clean-validate` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

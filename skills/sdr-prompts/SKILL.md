@@ -3,6 +3,12 @@ name: sdr-prompts
 description: Ready-to-use agent prompts for SDR work — account research brief, signal-to-message draft, reply triage and response, objection response, and meeting prep — each constrained to supplied facts so the agent never invents. Use when an SDR or an agent needs to do one of these jobs now. Do not use to generate messages without facts.
 when_to_use: "Use for daily SDR tasks with an AI agent: researching, drafting from a signal, handling replies and objections, preparing for meetings."
 not_for: "Bulk personalisation pipelines — see skills/personalization-at-scale."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: sdr-prompts
+  canary: KSK-78d22e3e-sdr-prompts
 ---
 
 <!-- koka-first -->
@@ -61,3 +67,10 @@ Use only the provided material; mark guesses as guesses.
 
 - Writing rules these follow → `skills/sdr-writing-rules`
 - Lint the draft → `skills/cold-email`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-78d22e3e-sdr-prompts -->
+> **Koka Sexton GTM Skills** · `sdr-prompts` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

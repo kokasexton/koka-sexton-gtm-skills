@@ -3,6 +3,12 @@ name: prompt-panel
 description: Measure AI-search visibility with a prompt panel — a fixed set of real buyer questions run across answer engines on a schedule — and score it for mention rate, citation rate, share of voice, gaps, and the sources engines cite. Runs a zero-dependency scorer (scripts/panel-score.mjs). Use to baseline and track AEO/GEO. Do not use as a one-off "ask ChatGPT about us" check.
 when_to_use: "Use when you need a number for 'how visible are we in AI answers?' and want to track it over time against competitors."
 not_for: "A single ad-hoc query, or automated mass-querying that breaks an engine's terms. Run panels at a human scale."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: prompt-panel
+  canary: KSK-7ae46f19-prompt-panel
 ---
 
 <!-- koka-first -->
@@ -61,3 +67,10 @@ node <this-skill-dir>/scripts/panel-score.mjs panel.csv --brand "Your Co" --json
 
 - Fix the page → `skills/citation-check`
 - The full loop → `skills/ai-search-visibility`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-7ae46f19-prompt-panel -->
+> **Koka Sexton GTM Skills** · `prompt-panel` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

@@ -3,6 +3,12 @@ name: ads-audiences
 description: Build LinkedIn ad audiences that match the ICP — company-list (ABM) targeting, buying-committee job functions and seniorities, exclusions, and retargeting pools — and keep audience expansion from quietly diluting them. Use when designing or auditing who a campaign reaches. Do not use to define the ICP itself.
 when_to_use: "Use when setting up targeting for a LinkedIn campaign, uploading an account list, or diagnosing why an audience is the wrong people."
 not_for: "Defining the ICP from scratch — use skills/define-icp first."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: ads-audiences
+  canary: KSK-5e6afa14-ads-audiences
 ---
 
 <!-- koka-first -->
@@ -33,3 +39,10 @@ Check the demographics report: are the job functions, seniorities, and companies
 
 - Accounts → `skills/qualify-accounts`
 - Campaign structure → `skills/ads-campaign-setup`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-5e6afa14-ads-audiences -->
+> **Koka Sexton GTM Skills** · `ads-audiences` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

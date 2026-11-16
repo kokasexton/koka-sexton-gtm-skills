@@ -3,6 +3,12 @@ name: signal-sourcer
 description: Find the accounts and people who are in-market right now — job changes, funding, hiring, website visits, company events, tech changes, competitor signals, and content engagement — then stack and score them so the team works who's ready, not who's on a list. Ships a zero-dependency scorer (multi-signal/scripts/signal-score.mjs). Use when deciding who to reach this week and why now. Do not use to justify cold outreach with no trigger.
 when_to_use: "Use when the ask is 'who's in-market now?', 'what triggers should we monitor?', or 'turn these signals into a priority list'."
 not_for: "Defining the ICP (skills/define-icp) or writing the message (skills/cold-email)."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: signal-sourcer
+  canary: KSK-1492fb12-signal-sourcer
 ---
 
 <!-- koka-first -->
@@ -46,3 +52,10 @@ A signal is an observable behaviour or event that changes the odds of a purchase
 - Signal definitions and anti-signals → `skills/buying-signals`
 - Who's engaging with you → `skills/engagement-intelligence`
 - The sub-skills → `skills/job-changes`, `skills/funding-signals`, `skills/hiring-signals`, `skills/website-visitors`, `skills/company-events`, `skills/tech-changes`, `skills/competitor-signals`, `skills/content-engagement`, `skills/multi-signal`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-1492fb12-signal-sourcer -->
+> **Koka Sexton GTM Skills** · `signal-sourcer` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

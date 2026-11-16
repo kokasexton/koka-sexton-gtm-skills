@@ -3,6 +3,12 @@ name: citation-check
 description: Check a page (markdown or HTML) for citation-readiness — the structure that makes it easy for answer engines to extract and quote — and get specific fixes. Runs a zero-dependency checker (scripts/citation-check.mjs) covering answer-first openings, definitions, question headings, tables/lists, FAQ, sourced stats, original data, freshness, byline, and JSON-LD. Use before publishing or when a page is mentioned but not cited. Do not treat the score as a citation prediction.
 when_to_use: "Use when writing or fixing a page you want AI assistants to quote — category pages, comparisons, guides, glossary entries, research."
 not_for: "Predicting whether you'll be cited (measure that with skills/prompt-panel), or keyword-density SEO."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: citation-check
+  canary: KSK-e342217c-citation-check
 ---
 
 <!-- koka-first -->
@@ -54,3 +60,10 @@ Don't pad. A short page that answers cleanly beats a long one that circles.
 
 - Measure whether it worked → `skills/prompt-panel`
 - The full loop → `skills/ai-search-visibility`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-e342217c-citation-check -->
+> **Koka Sexton GTM Skills** · `citation-check` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

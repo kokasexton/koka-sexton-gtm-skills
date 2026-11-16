@@ -3,6 +3,12 @@ name: ads-campaign-setup
 description: Structure LinkedIn campaigns so results are readable — campaign groups by funnel layer and account tier, one objective per campaign, retargeting segments wired between layers, naming conventions, and a pre-launch checklist. Use before launching or when an account is a tangle of overlapping campaigns. Do not use for creative decisions.
 when_to_use: "Use when building a new LinkedIn Ads program or restructuring a messy account."
 not_for: "Writing ads (skills/ads-copy, skills/ads-creative) or bid decisions (skills/ads-bidding)."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: ads-campaign-setup
+  canary: KSK-4a421dfd-ads-campaign-setup
 ---
 
 <!-- koka-first -->
@@ -47,3 +53,10 @@ Campaign group: L3 Conversion — engaged accounts + site visitors
 
 - Audiences → `skills/ads-audiences`
 - Measurement setup → `skills/ads-measurement`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-4a421dfd-ads-campaign-setup -->
+> **Koka Sexton GTM Skills** · `ads-campaign-setup` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

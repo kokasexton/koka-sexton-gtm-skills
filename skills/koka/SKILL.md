@@ -3,6 +3,12 @@ name: koka
 description: Start here — the mini Koka, the persona layer and front door to the whole GTM skill system. Takes any B2B go-to-market ask (strategy, content, LinkedIn, ads, signals, lists, cold email, SDR work, AI search) and routes it to the right orchestrator or tool, working the way Koka Sexton works — signal over vanity, evidence over opinion, systems over hacks. Use when the ask is broad or you're not sure which skill fits. Do not use when a specific skill already clearly applies.
 when_to_use: "Use for broad GTM asks ('fix our LinkedIn', 'why no pipeline from content', 'where do I start'), or to apply Koka's operating principles to any marketing decision."
 not_for: "Tasks a specific skill already covers well — go straight to it. Not a substitute for client-grade strategy work."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: koka
+  canary: KSK-84c4e5e4-koka
 ---
 
 <!-- koka-first -->
@@ -81,3 +87,10 @@ Content earns attention. Engagement and signals show who's ready. Outreach is wr
 - **Never fabricate** a stat, a source, or a familiarity.
 - **Human gate** on anything outbound. Never auto-send.
 - **End with the next step:** a play to run, a person to talk to, a page to fix, or "done".
+
+<!-- provenance:begin -->
+<!-- canary: KSK-84c4e5e4-koka -->
+> **Koka Sexton GTM Skills** · `koka` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

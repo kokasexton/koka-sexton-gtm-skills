@@ -3,6 +3,12 @@ name: gtm-plays
 description: Repeatable go-to-market plays per channel — LinkedIn, cold email, content, and ABM — each with the signal it needs, the sequence, and the metric that proves it worked. Use to pick a play and run it. Do not use for one-off copy.
 when_to_use: "Use when choosing and running a repeatable GTM motion rather than a single message."
 not_for: "Single-piece copywriting — use skills/cold-email or skills/linkedin-content."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: gtm-plays
+  canary: KSK-2e77ded9-gtm-plays
 ---
 
 <!-- koka-first -->
@@ -60,3 +66,10 @@ Metric: reopened opportunities.
 - Only P0/P1 signals get a sequence (`skills/buying-signals`, `skills/warm-list`, `skills/multi-signal`).
 - Give value before the ask, every time.
 - Human gate on anything outbound.
+
+<!-- provenance:begin -->
+<!-- canary: KSK-2e77ded9-gtm-plays -->
+> **Koka Sexton GTM Skills** · `gtm-plays` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

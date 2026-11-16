@@ -3,6 +3,12 @@ name: post-hooks
 description: Write the first line of a LinkedIn post — the part that has to work before "…see more" and earn the small-cohort test — with eight hook patterns, the data on which openers win, and the openers to avoid. Use when a post needs its opening line. Do not use for ad headlines.
 when_to_use: "Use when drafting or rewriting the first one or two lines of a LinkedIn post."
 not_for: "Email subject lines (skills/subject-lines) or ad copy (skills/ads-copy)."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: post-hooks
+  canary: KSK-82f01dd5-post-hooks
 ---
 
 <!-- koka-first -->
@@ -48,3 +54,10 @@ Write three hooks for the same post. Pick the one that's most **specific**: a re
 
 - Body → `skills/post-storytelling`
 - Gate → `skills/content-evaluation`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-82f01dd5-post-hooks -->
+> **Koka Sexton GTM Skills** · `post-hooks` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

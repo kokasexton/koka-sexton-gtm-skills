@@ -21,6 +21,8 @@ jobs:
         run: node scripts/scan-secrets.mjs
       - name: Validate skills (frontmatter, koka-first block, brand safety)
         run: node scripts/validate-brand-safety.mjs
+      - name: Provenance (every skill carries origin + canary)
+        run: node scripts/fingerprint.mjs --check
       - name: Content, tool, structure, install, and catalog tests
         run: node tests/run.mjs
       - name: MCP server (tools, search routing, benchmark engine)

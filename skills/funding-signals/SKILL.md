@@ -3,6 +3,12 @@ name: funding-signals
 description: Use funding rounds as signals — read what the round means (stage, amount, stated use of funds), reach the right leader while plans are forming, and lead with their growth plan rather than "congrats on the raise". Use when monitoring funding news. Do not use as a generic congratulations blast.
 when_to_use: "Use when an ICP account announces a round, or when building a funding-triggered play."
 not_for: "Accounts outside the ICP just because they raised. Fit still comes first."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: funding-signals
+  canary: KSK-4cc6008f-funding-signals
 ---
 
 <!-- koka-first -->
@@ -44,3 +50,10 @@ Funding databases and newsletters, press releases, founder posts on LinkedIn, an
 
 - Score → `skills/multi-signal`
 - Write → `skills/first-touch`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-4cc6008f-funding-signals -->
+> **Koka Sexton GTM Skills** · `funding-signals` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

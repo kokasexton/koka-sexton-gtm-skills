@@ -3,6 +3,12 @@ name: atl-messaging
 description: Cold email for above-the-line buyers — VP, C-level, Director, Founder — who own budget and outcomes, not tasks. Leads with a business outcome or a risk, stays under ~80 words, and asks for an opinion, not a meeting. Use when the recipient signs or sponsors the purchase. Do not use for practitioners who live in the tool.
 when_to_use: "Use when writing to an economic buyer or executive sponsor (Director+ by headline)."
 not_for: "Managers and individual contributors who feel the daily pain — use skills/btl-messaging."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: atl-messaging
+  canary: KSK-39e22145-atl-messaging
 ---
 
 <!-- koka-first -->
@@ -53,3 +59,10 @@ Keep it under ~80 words. Executives read on phones.
 - Make it real → `skills/personalization`
 - Lint it → `skills/cold-email` (`lint-email.mjs`)
 - Worked before/after: `skills/atl-messaging/examples/`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-39e22145-atl-messaging -->
+> **Koka Sexton GTM Skills** · `atl-messaging` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

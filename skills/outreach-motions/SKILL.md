@@ -3,6 +3,12 @@ name: outreach-motions
 description: Choose the mix of four outreach motions — inbound (they came to you), warm (they engaged with you), triggered (something changed for them), and cold (fit only, no signal) — with what each needs, what it's good for, and how to move people from cold to warm. Use when planning where pipeline should come from. Do not use to pick a single message.
 when_to_use: "Use when designing the pipeline mix, allocating SDR time, or deciding why a motion underperforms."
 not_for: "Writing individual messages (skills/cold-email)."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: outreach-motions
+  canary: KSK-8a4c9e20-outreach-motions
 ---
 
 <!-- koka-first -->
@@ -35,3 +41,10 @@ Triggered + warm → **priority**: work it this week (see `skills/multi-signal`)
 
 - Plays per motion → `skills/gtm-plays`
 - Triggers → `skills/sales-triggers`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-8a4c9e20-outreach-motions -->
+> **Koka Sexton GTM Skills** · `outreach-motions` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

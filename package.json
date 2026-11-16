@@ -6,8 +6,10 @@
   "type": "module",
   "scripts": {
     "demo": "node demo.mjs",
-    "test": "node scripts/scan-secrets.mjs && node scripts/validate-brand-safety.mjs && node tests/run.mjs && node tests/mcp.test.mjs",
-    "validate": "node scripts/scan-secrets.mjs && node scripts/validate-brand-safety.mjs",
+    "test": "node scripts/scan-secrets.mjs && node scripts/validate-brand-safety.mjs && node scripts/fingerprint.mjs --check && node tests/run.mjs && node tests/mcp.test.mjs",
+    "validate": "node scripts/scan-secrets.mjs && node scripts/validate-brand-safety.mjs && node scripts/fingerprint.mjs --check",
+    "fingerprint": "node scripts/fingerprint.mjs --apply",
+    "fingerprint:check": "node scripts/fingerprint.mjs --check",
     "catalog": "node scripts/build-catalog.mjs",
     "install-skills": "node scripts/install.mjs"
   },
