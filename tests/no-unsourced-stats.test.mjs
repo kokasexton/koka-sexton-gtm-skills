@@ -29,6 +29,10 @@ const ALLOWED = {
     tokens: ["2%", "30%", "75%", "98.5%", "5.1%", "40%"],
     why: "labelled Koka health-threshold defaults (2/30/75%) and worked-example output on fictional counts",
   },
+  "skills/social-selling-routine/SKILL.md": {
+    tokens: ["76%", "33%"],
+    why: "worked-example output of the routine engine on examples/pool.csv (76% Director+); 33% is the report's '1 in 3' baseline restated",
+  },
 };
 
 export function run() {

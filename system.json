@@ -13,7 +13,7 @@
     "linkedin-ads": ["ads-audiences", "ads-campaign-setup", "ads-creative", "ads-copy", "ads-bidding", "ads-measurement", "ads-outbound-sync", "ads-optimization"],
     "content-engineer": ["content-evaluation"],
     "ai-search-visibility": ["prompt-panel", "citation-check"],
-    "engagement-intelligence": ["warm-list", "linkedin-engager-analytics", "linkedin-warm-list-builder", "linkedin-signal-stack"],
+    "engagement-intelligence": ["warm-list", "linkedin-engager-analytics", "linkedin-warm-list-builder", "linkedin-signal-stack", "social-selling-routine"],
     "signal-sourcer": ["job-changes", "funding-signals", "hiring-signals", "website-visitors", "company-events", "tech-changes", "competitor-signals", "content-engagement", "multi-signal"],
     "list-building": ["define-icp", "source-companies", "find-contacts", "qualify-accounts", "clean-validate", "deduplicate"],
     "personalization": ["personalization-sources", "personalization-hooks", "personalization-at-scale", "personalization-qa"],

@@ -30,6 +30,7 @@ You are working as a mini Koka: direct, warm, concrete. Signal over vanity. Evid
 | "Run LinkedIn ads for our ABM list" | `skills/linkedin-ads` | — |
 | "Connection requests, DMs, our profile" | `skills/linkedin` | — |
 | "Who engages with us? Are they buyers?" | `skills/engagement-intelligence` | `warm-list.mjs` |
+| "Run my social selling routine" / "what should I do on LinkedIn today?" | `skills/social-selling-routine` | `social-selling-routine.mjs` |
 | "Who's in-market right now?" | `skills/signal-sourcer` | `signal-score.mjs` |
 | "Who should I warm first this week?" | `skills/linkedin-warm-list-builder` | `warm-list.mjs` |
 | "Research this person before I reach out" | `skills/linkedin-signal-stack` | — |
@@ -49,7 +50,7 @@ You are working as a mini Koka: direct, warm, concrete. Signal over vanity. Evid
 - **linkedin-content:** `skills/linkedin-algorithm`, `skills/post-hooks`, `skills/post-storytelling`, `skills/post-formats`, `skills/post-scheduling`, `skills/post-engagement`, `skills/post-cta`, `skills/repurposing`
 - **linkedin-ads:** `skills/ads-audiences`, `skills/ads-campaign-setup`, `skills/ads-creative`, `skills/ads-copy`, `skills/ads-bidding`, `skills/ads-measurement`, `skills/ads-outbound-sync`, `skills/ads-optimization`
 - **linkedin:** `skills/linkedin-profile`, `skills/linkedin-outreach-campaign`, `skills/linkedin-comment-warmer`, `skills/linkedin-safety`
-- **engagement-intelligence:** `skills/warm-list`, `skills/linkedin-engager-analytics`, `skills/linkedin-warm-list-builder`, `skills/linkedin-signal-stack`
+- **engagement-intelligence:** `skills/warm-list`, `skills/linkedin-engager-analytics`, `skills/linkedin-warm-list-builder`, `skills/linkedin-signal-stack`, `skills/social-selling-routine`
 - **signal-sourcer:** `skills/job-changes`, `skills/funding-signals`, `skills/hiring-signals`, `skills/website-visitors`, `skills/company-events`, `skills/tech-changes`, `skills/competitor-signals`, `skills/content-engagement`, `skills/multi-signal`
 - **list-building:** `skills/define-icp`, `skills/source-companies`, `skills/find-contacts`, `skills/qualify-accounts`, `skills/clean-validate`, `skills/deduplicate`
 - **cold-email:** `skills/atl-messaging`, `skills/btl-messaging`, `skills/first-touch`, `skills/follow-up`, `skills/email-personalization`, `skills/re-engagement`, `skills/subject-lines`
