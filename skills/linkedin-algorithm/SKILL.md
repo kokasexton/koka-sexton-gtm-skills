@@ -3,6 +3,12 @@ name: linkedin-algorithm
 description: The 2026 LinkedIn algorithm data and playbook — cadence, formats, timing, hashtags, comment strategy, funnel metrics, and the 6-rule operating guide. Use for any LinkedIn reach or engagement question. Sourced from the VCO LinkedIn Algorithm Report 2026 (data by SignalScout).
 when_to_use: "Use for LinkedIn strategy, reach/engagement diagnosis, content mix, posting cadence, and client guidance."
 not_for: "Drafting a specific post — use skills/linkedin-content and its sub-skills. This is the data and playbook layer."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: linkedin-algorithm
+  canary: KSK-d48e7fa7-linkedin-algorithm
 ---
 
 <!-- koka-first -->
@@ -50,3 +56,10 @@ Source: **LinkedIn Algorithm Report 2026** (data by SignalScout) — 2,279 posts
 4. Write **long** (1,500+ chars) with whitespace.
 5. **Reply to every comment** — the comment section is your pipeline.
 6. Engage the **repeating engagers** by name; they're your warmest list.
+
+<!-- provenance:begin -->
+<!-- canary: KSK-d48e7fa7-linkedin-algorithm -->
+> **Koka Sexton GTM Skills** · `linkedin-algorithm` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

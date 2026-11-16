@@ -3,6 +3,12 @@ name: ads-bidding
 description: Set LinkedIn ad budgets and bids sensibly — choose between automated delivery, cost cap, and manual bids by campaign goal, allocate budget across funnel layers and account tiers, and avoid starving campaigns before they learn. Use when setting or changing budgets and bids. Do not use to fix bad audiences or creative.
 when_to_use: "Use when launching campaigns, reallocating spend, or when costs spike."
 not_for: "Problems that are really audience or creative issues — check skills/ads-optimization first."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: ads-bidding
+  canary: KSK-781a220a-ads-bidding
 ---
 
 <!-- koka-first -->
@@ -37,3 +43,10 @@ Bids are the last lever, not the first. A cheap click from the wrong person is e
 
 - Diagnose first → `skills/ads-optimization`
 - What "result" means → `skills/ads-measurement`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-781a220a-ads-bidding -->
+> **Koka Sexton GTM Skills** · `ads-bidding` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

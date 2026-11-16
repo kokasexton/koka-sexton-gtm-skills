@@ -3,6 +3,12 @@ name: hiring-signals
 description: Read hiring as a signal — open roles in your function, the tools named in job descriptions, growth or contraction trajectory, and key people leaving — and write to the problem the hire is meant to solve. Use when monitoring job postings and team changes. Do not use to pitch the recruiter.
 when_to_use: "Use when ICP accounts are hiring in the function you serve, or a team is shrinking or churning."
 not_for: "Recruiting outreach, or contacting the person who posted the job just because they posted it."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: hiring-signals
+  canary: KSK-bf09683c-hiring-signals
 ---
 
 <!-- koka-first -->
@@ -42,3 +48,10 @@ Company careers pages, job boards, LinkedIn Jobs, and job-posting aggregators. M
 
 - Score → `skills/multi-signal`
 - Find the hiring manager → `skills/find-contacts`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-bf09683c-hiring-signals -->
+> **Koka Sexton GTM Skills** · `hiring-signals` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

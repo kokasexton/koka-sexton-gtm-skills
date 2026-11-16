@@ -3,6 +3,12 @@ name: linkedin-signal-stack
 description: Research a prospect and build 5+ concrete, sourced signals that make outreach feel researched rather than templated. Use for "research this person", "build a signal stack", "what do I know before reaching out". Do not use to decide who to warm first.
 when_to_use: "Use when a user names a prospect and wants context for personalized outreach."
 not_for: "Deciding target order — use linkedin-warm-list-builder. Writing the message — use cold-email or personalization."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: linkedin-signal-stack
+  canary: KSK-84f07991-linkedin-signal-stack
 ---
 
 <!-- koka-first -->
@@ -34,3 +40,10 @@ A signal stack per target: 5+ sourced signals, plus two or three angles they unl
 - Where each kind of signal comes from → `personalization-sources`, `signal-sourcer`
 - Write with the stack → `personalization`, `cold-email`
 - Warm them first → `linkedin-comment-warmer`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-84f07991-linkedin-signal-stack -->
+> **Koka Sexton GTM Skills** · `linkedin-signal-stack` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

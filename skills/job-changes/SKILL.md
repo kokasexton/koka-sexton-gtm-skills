@@ -3,6 +3,12 @@ name: job-changes
 description: Use job changes as signals — a new leader in your function at an ICP account, a champion who moved to a new company, or a contact who left — with the timing window, the play for each, and messages that congratulate without pitching. Use when monitoring role changes. Do not use to pitch someone on their first day.
 when_to_use: "Use when a target-account leader is new in seat, a past champion or customer user moved companies, or a contact left an open deal."
 not_for: "Generic 'congrats on the new role' blasts to people you've never interacted with."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: job-changes
+  canary: KSK-df9ff961-job-changes
 ---
 
 <!-- koka-first -->
@@ -40,3 +46,10 @@ Make it about **them**, with **one** useful offer, and **no** calendar link.
 
 - Score with other signals → `skills/multi-signal`
 - Re-open a stalled deal → `skills/re-engagement`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-df9ff961-job-changes -->
+> **Koka Sexton GTM Skills** · `job-changes` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

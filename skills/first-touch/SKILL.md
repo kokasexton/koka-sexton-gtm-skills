@@ -3,6 +3,12 @@ name: first-touch
 description: The first cold email — built on one real signal, written in the observation → idea → ask shape, under ~120 words, with no calendar link. Includes four frameworks keyed to the signal you have, plus a pre-send checklist. Use for email 1. Do not use when there is no signal.
 when_to_use: "Use when writing the opening email of a sequence and you have a signal to anchor it."
 not_for: "Follow-ups (skills/follow-up) or a list with no signal (skills/signal-sourcer)."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: first-touch
+  canary: KSK-f51da38a-first-touch
 ---
 
 <!-- koka-first -->
@@ -49,3 +55,10 @@ Subject: <3–5 words about them, lowercase is fine>
 - Next touches → `skills/follow-up`
 - Subject line → `skills/subject-lines`
 - Persona angle → `skills/atl-messaging`, `skills/btl-messaging`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-f51da38a-first-touch -->
+> **Koka Sexton GTM Skills** · `first-touch` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

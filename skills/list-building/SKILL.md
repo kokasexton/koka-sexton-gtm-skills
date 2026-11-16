@@ -3,6 +3,12 @@ name: list-building
 description: Build a target list that deserves outreach — define the ICP, source companies, find the right people, qualify and tier accounts, then clean, verify, and de-duplicate before anything sends. Ships a zero-dependency cleaner (scripts/list-clean.mjs). Use when building or repairing a prospect list. Do not use to buy a giant list and blast it.
 when_to_use: "Use when the ask is 'who should we target?' or 'this list is a mess': ICP, sourcing, contact finding, account tiering, verification, dedupe."
 not_for: "Ranking people who already engaged with you — that's skills/warm-list. A list is the starting point; signals decide who goes first."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: list-building
+  canary: KSK-c9b5e974-list-building
 ---
 
 <!-- koka-first -->
@@ -43,3 +49,10 @@ node <this-skill-dir>/scripts/list-clean.mjs contacts.csv --json
 - Who already engaged → `skills/warm-list`
 - Writing to them → `skills/cold-email`
 - The sub-skills → `skills/define-icp`, `skills/source-companies`, `skills/find-contacts`, `skills/qualify-accounts`, `skills/clean-validate`, `skills/deduplicate`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-c9b5e974-list-building -->
+> **Koka Sexton GTM Skills** · `list-building` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

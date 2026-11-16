@@ -3,6 +3,12 @@ name: personalization-qa
 description: The review gate for personalised outreach — check each line is true, specific, connected, and fresh; catch fake familiarity, hallucinated facts, broken merge fields, and creepy over-reach; and set a sampling plan for AI-generated batches. Use before any personalised batch sends. Do not skip because the copy "looks fine".
 when_to_use: "Use before launching a personalised sequence, after generating AI lines, or when reply quality drops."
 not_for: "Writing the lines (skills/personalization-hooks, skills/personalization-at-scale)."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: personalization-qa
+  canary: KSK-b5895b6e-personalization-qa
 ---
 
 <!-- koka-first -->
@@ -37,3 +43,10 @@ Run `lint-email.mjs` (in `skills/cold-email`). It catches fake familiarity, merg
 
 - Fix the generator → `skills/personalization-at-scale`
 - Linter → `skills/cold-email`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-b5895b6e-personalization-qa -->
+> **Koka Sexton GTM Skills** · `personalization-qa` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

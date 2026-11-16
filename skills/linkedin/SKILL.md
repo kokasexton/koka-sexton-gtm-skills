@@ -3,6 +3,12 @@ name: linkedin
 description: Use LinkedIn as a relationship channel, not a spam channel — a profile that converts, connection and DM campaigns built on real engagement, and a safe pace that protects the account. The person-to-person layer beside skills/linkedin-content (posting) and skills/linkedin-ads (paid). Use for connection requests, DMs, social selling, and profile work. Do not use for automated mass messaging.
 when_to_use: "Use for LinkedIn outreach (connection requests, DMs, follow-ups), profile optimisation, and account safety and limits."
 not_for: "Automation tools that send on your behalf (they break LinkedIn's terms and risk the account) or posting strategy (skills/linkedin-content)."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: linkedin
+  canary: KSK-5a291682-linkedin
 ---
 
 <!-- koka-first -->
@@ -46,3 +52,10 @@ Profile that converts ─▶ post & comment (linkedin-content) ─▶ they engag
 - Who's warm → `skills/warm-list`
 - Paid → `skills/linkedin-ads`
 - The sub-skills → `skills/linkedin-profile`, `skills/linkedin-outreach-campaign`, `skills/linkedin-comment-warmer`, `skills/linkedin-safety`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-5a291682-linkedin -->
+> **Koka Sexton GTM Skills** · `linkedin` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

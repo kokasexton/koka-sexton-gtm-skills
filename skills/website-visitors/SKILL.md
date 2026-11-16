@@ -3,6 +3,12 @@ name: website-visitors
 description: Use website visits as signals responsibly — company-level identification, which pages carry intent (pricing, comparisons, integrations, case studies), visit depth and recency, and outreach that never mentions the tracking. Use when you have visitor identification or analytics. Do not use to message someone because they read one blog post.
 when_to_use: "Use when routing identified website visitors (company or person level) to sales, or deciding which visits count."
 not_for: "Outreach that says 'I saw you on our site'. Talk about the topic they researched, not the surveillance."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: website-visitors
+  canary: KSK-d3032807-website-visitors
 ---
 
 <!-- koka-first -->
@@ -38,3 +44,10 @@ A pricing-page visit from a target account is the closest thing to raising a han
 
 - Score → `skills/multi-signal`
 - Ads to visiting accounts → `skills/ads-audiences`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-d3032807-website-visitors -->
+> **Koka Sexton GTM Skills** · `website-visitors` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

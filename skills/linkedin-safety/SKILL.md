@@ -3,6 +3,12 @@ name: linkedin-safety
 description: Keep a LinkedIn account safe while doing outreach — why LinkedIn limits activity, a conservative warm-up ramp for new or quiet accounts, the behaviours that trigger restrictions, why automation tools risk the account, and what to do if restricted. Use before scaling LinkedIn outreach. Do not use to find ways around LinkedIn's limits.
 when_to_use: "Use when starting or scaling manual LinkedIn outreach, warming up an account, or after a restriction warning."
 not_for: "Evading LinkedIn's detection or limits. If a tactic needs to hide from LinkedIn, don't use it."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: linkedin-safety
+  canary: KSK-97b25838-linkedin-safety
 ---
 
 <!-- koka-first -->
@@ -42,3 +48,10 @@ Stop all outreach, complete any verification LinkedIn asks for, remove any autom
 
 - The campaign → `skills/linkedin-outreach-campaign`
 - Warm targets → `skills/warm-list`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-97b25838-linkedin-safety -->
+> **Koka Sexton GTM Skills** · `linkedin-safety` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

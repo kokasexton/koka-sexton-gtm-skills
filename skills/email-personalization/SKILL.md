@@ -3,6 +3,12 @@ name: email-personalization
 description: Apply real personalisation to an email — where the observation goes, how long it should be, how to connect it to the idea, and how to keep merge fields from breaking. The email-specific layer of skills/personalization. Use while writing or reviewing a cold email. Do not use to invent familiarity.
 when_to_use: "Use when an email draft needs its personal line written, placed, or checked."
 not_for: "Researching the observation in the first place — use skills/personalization."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: email-personalization
+  canary: KSK-615964af-email-personalization
 ---
 
 <!-- koka-first -->
@@ -33,3 +39,10 @@ The personal line is the first sentence, and it has to connect to the reason you
 
 - Sources and hooks → `skills/personalization`
 - Lint the email → `skills/cold-email`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-615964af-email-personalization -->
+> **Koka Sexton GTM Skills** · `email-personalization` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

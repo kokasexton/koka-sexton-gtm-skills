@@ -3,6 +3,12 @@ name: ai-search-visibility
 description: Get a B2B brand found, named, and cited by answer engines (ChatGPT, Perplexity, Gemini, Google AI Overviews, Claude) — AEO/GEO as a measurable loop, not a vibe. Measure share of answer with a prompt panel, fix pages for citation-readiness, earn mentions on the sources engines already trust, then re-measure. Use when the question is "do AI assistants recommend us?". Do not use for classic keyword-rank SEO.
 when_to_use: "Use when a team asks whether AI assistants mention or cite them, why a competitor shows up instead, or how to make content that answer engines quote."
 not_for: "Classic blue-link SEO (rank tracking, backlinks for their own sake) or paid search. Also not for gaming engines with hidden text or prompt injection — that is spam, and it burns the brand."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: ai-search-visibility
+  canary: KSK-bb2c8bf9-ai-search-visibility
 ---
 
 <!-- koka-first -->
@@ -46,3 +52,10 @@ A one-page read: current share of answer by stage and engine, the top 3 gaps wit
 - Fix a page → `skills/citation-check`
 - Produce the content → `skills/content-engineer`
 - Gate the content → `skills/content-evaluation`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-bb2c8bf9-ai-search-visibility -->
+> **Koka Sexton GTM Skills** · `ai-search-visibility` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

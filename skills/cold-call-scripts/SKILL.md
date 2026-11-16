@@ -3,6 +3,12 @@ name: cold-call-scripts
 description: Cold-call scripts that open with the reason for the call — a permission-based opener built on a signal, a 30-second reason, discovery questions, objection handling, a voicemail that pairs with an email, and a no-show recovery script. Use when SDRs call target accounts. Do not use to read a pitch at someone.
 when_to_use: "Use when preparing or coaching cold calls, voicemails, or no-show follow-ups."
 not_for: "Calling where it's not lawful or where people asked not to be called — check the rules in your market."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: cold-call-scripts
+  canary: KSK-ef7f0224-cold-call-scripts
 ---
 
 <!-- koka-first -->
@@ -52,3 +58,10 @@ One follow-up. If there's no reply, go back to the signal-based cadence.
 - The email that pairs with the voicemail → `skills/first-touch`
 - Track connect and conversation rates → `skills/outbound-metrics`
 - Worked before/after: `skills/cold-call-scripts/examples/`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-ef7f0224-cold-call-scripts -->
+> **Koka Sexton GTM Skills** · `cold-call-scripts` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

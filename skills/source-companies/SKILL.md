@@ -3,6 +3,12 @@ name: source-companies
 description: Source the account universe that matches the ICP — from B2B databases, LinkedIn Sales Navigator, maps and directories, review sites, job boards, communities, and your own CRM — and know which source fits which ICP. Use when you need the list of companies to consider. Do not use to find individual contacts.
 when_to_use: "Use when building or expanding the set of target companies."
 not_for: "Finding people inside the companies — use skills/find-contacts."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: source-companies
+  canary: KSK-9e9d5309-source-companies
 ---
 
 <!-- koka-first -->
@@ -40,3 +46,10 @@ The best source is the one where your ICP is **visible by the thing that makes t
 
 - Tier them → `skills/qualify-accounts`
 - Find people → `skills/find-contacts`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-9e9d5309-source-companies -->
+> **Koka Sexton GTM Skills** · `source-companies` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

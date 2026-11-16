@@ -3,6 +3,12 @@ name: sdr-tools
 description: The SDR's working kit — agent prompts for research and drafting, team-wide writing rules, cold-call and no-show scripts, and the outbound metrics with a reverse-funnel calculator (outbound-metrics/scripts/pipeline-math.mjs). Use when setting up or coaching an SDR or BDR function, or when an SDR needs a tool for today's work. Do not use as a substitute for signals and a real ICP.
 when_to_use: "Use for SDR enablement: prompts, writing standards, call scripts, activity and conversion metrics, and capacity planning."
 not_for: "Strategy (skills/gtm-strategy) or a single cold email (skills/cold-email)."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: sdr-tools
+  canary: KSK-14f7d9fe-sdr-tools
 ---
 
 <!-- koka-first -->
@@ -35,3 +41,10 @@ A great SDR is a researcher who writes well and follows up kindly. The tools sho
 - The sub-skills → `skills/sdr-prompts`, `skills/sdr-writing-rules`, `skills/cold-call-scripts`, `skills/outbound-metrics`
 - Email → `skills/cold-email`
 - LinkedIn → `skills/linkedin`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-14f7d9fe-sdr-tools -->
+> **Koka Sexton GTM Skills** · `sdr-tools` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

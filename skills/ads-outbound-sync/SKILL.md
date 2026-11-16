@@ -3,6 +3,12 @@ name: ads-outbound-sync
 description: Turn LinkedIn ad engagement into sales action — export engaged accounts and people, score them alongside other signals, route them to SDRs with context, and coordinate the message so the ad and the outreach tell one story. Use when ads should feed ABM outbound. Do not use to cold-pitch everyone who saw an ad.
 when_to_use: "Use when connecting a LinkedIn Ads program to SDR/AE outreach — the ABM handoff."
 not_for: "Messaging people because they were served an impression. Seeing an ad is not a signal; engaging with one can be."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: ads-outbound-sync
+  canary: KSK-7efdb624-ads-outbound-sync
 ---
 
 <!-- koka-first -->
@@ -35,3 +41,10 @@ Talk about the topic and the help, not about tracking them. Never say "I saw you
 
 - Combine signals → `skills/multi-signal`
 - Write it → `skills/cold-email`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-7efdb624-ads-outbound-sync -->
+> **Koka Sexton GTM Skills** · `ads-outbound-sync` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

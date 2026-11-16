@@ -3,6 +3,12 @@ name: deduplicate
 description: De-duplicate and merge contacts from multiple sources — normalise join keys (email, LinkedIn URL, name + company domain), pick a survivor, and merge fields without losing data — so nobody gets the same email twice. Use whenever data comes from more than one source. Do not use to merge companies by name alone.
 when_to_use: "Use when combining exports from several tools, importing into a CRM or sequencer, or cleaning an old database."
 not_for: "Verifying emails (skills/clean-validate)."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: deduplicate
+  canary: KSK-81750ff3-deduplicate
 ---
 
 <!-- koka-first -->
@@ -38,3 +44,10 @@ Import to the CRM with the key fields set as unique, so the next import doesn't 
 
 - The tool → `skills/list-building` (`list-clean.mjs`)
 - Validate → `skills/clean-validate`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-81750ff3-deduplicate -->
+> **Koka Sexton GTM Skills** · `deduplicate` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

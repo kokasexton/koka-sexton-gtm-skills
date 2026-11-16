@@ -3,6 +3,12 @@ name: personalization-at-scale
 description: Personalise hundreds of messages with AI without fabricating — research inputs first, constrained prompts that may only use supplied facts, a "no observation → no line" rule, and a human review sample before anything sends. Includes the prompt templates. Use when building an AI personalisation workflow or Clay-style enrichment column. Do not use to let a model invent familiarity.
 when_to_use: "Use when designing prompts or workflows that generate personal first lines, hooks, or messages in bulk."
 not_for: "Letting a model 'research' a person from its own memory, or sending generated lines without review."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: personalization-at-scale
+  canary: KSK-426ed4bd-personalization-at-scale
 ---
 
 <!-- koka-first -->
@@ -52,3 +58,10 @@ Write one sentence on what this change usually means for a {persona} — not a c
 
 - Sources → `skills/personalization-sources`
 - QA → `skills/personalization-qa`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-426ed4bd-personalization-at-scale -->
+> **Koka Sexton GTM Skills** · `personalization-at-scale` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

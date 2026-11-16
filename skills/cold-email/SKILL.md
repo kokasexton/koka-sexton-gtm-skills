@@ -3,6 +3,12 @@ name: cold-email
 description: Write and run signal-led cold email — one observation, one idea, one ask — from first touch to follow-up to re-engagement, with persona-specific messaging and a linter (scripts/lint-email.mjs) that catches the template tells before anything sends. Use when the job is an email or an email sequence. Do not use for bulk spray with no signal behind it.
 when_to_use: "Use when drafting, reviewing, or sequencing outbound email: first touch, follow-ups, subject lines, persona messaging, reviving cold leads."
 not_for: "Mass blasts with a first-name merge field and nothing else. If there's no signal, go to skills/signal-sourcer first."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: cold-email
+  canary: KSK-13dc39a2-cold-email
 ---
 
 <!-- koka-first -->
@@ -64,3 +70,10 @@ node <this-skill-dir>/scripts/lint-email.mjs email.txt --touch 2 --json
 - Writing rules for the whole SDR team → `skills/sdr-writing-rules`
 - Persona messaging → `skills/atl-messaging`, `skills/btl-messaging`
 - The sequence → `skills/first-touch`, `skills/follow-up`, `skills/re-engagement`, `skills/subject-lines`, `skills/email-personalization`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-13dc39a2-cold-email -->
+> **Koka Sexton GTM Skills** · `cold-email` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

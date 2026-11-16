@@ -3,6 +3,12 @@ name: content-engineer
 description: Design and run the system that produces, evaluates, distributes, and improves content — the six-layer content loop. Use when the job is to build or operate a content system, not to write one post. Do not use for a single ad-hoc draft — use the standalone writing skills instead.
 when_to_use: "Use when Koka (or a client) wants a repeatable content system: source → knowledge → generation → evaluation → distribution → measurement."
 not_for: "A one-off post or email. Reach for skills/linkedin-content or skills/cold-email."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: content-engineer
+  canary: KSK-3ac8f72d-content-engineer
 ---
 
 <!-- koka-first -->
@@ -46,3 +52,10 @@ Full data: `skills/linkedin-algorithm`. Channel craft for LinkedIn: `skills/link
 - Need AI assistants to find and cite it → `skills/ai-search-visibility`
 - Need who's in the room → `skills/engagement-intelligence`
 - Need outreach from signals → `skills/signal-outbound`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-3ac8f72d-content-engineer -->
+> **Koka Sexton GTM Skills** · `content-engineer` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

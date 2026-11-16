@@ -3,6 +3,12 @@ name: tech-changes
 description: Use technology changes as signals — adopting a tool that pairs with yours, dropping a tool you replace, a stack migration, or a contract coming up — and monitor the stack of ICP accounts. Use for technographic targeting and switch moments. Do not use to bash a competitor's tool.
 when_to_use: "Use when an ICP account adopts, drops, or migrates a tool in or next to your category."
 not_for: "Trash-talking the tool they just chose."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: tech-changes
+  canary: KSK-9e9d7b44-tech-changes
 ---
 
 <!-- koka-first -->
@@ -34,3 +40,10 @@ Technographic lookup tools, job descriptions, integration marketplaces and partn
 
 - Competitor customers → `skills/competitor-signals`
 - Score → `skills/multi-signal`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-9e9d7b44-tech-changes -->
+> **Koka Sexton GTM Skills** · `tech-changes` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

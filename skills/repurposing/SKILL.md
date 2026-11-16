@@ -3,6 +3,12 @@ name: repurposing
 description: Turn one proven idea into several native assets — a winning post into a document carousel, a short video, a newsletter section, an ad, and an AI-citable page — without copy-pasting or posting links. Use when an idea has already earned signal and should travel further. Do not use to recycle ideas that never worked.
 when_to_use: "Use when a post, call, talk, or report has proven it resonates and you want more from it across formats and channels."
 not_for: "Ideas that never earned signal. Repurposing a dud just multiplies it."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: repurposing
+  canary: KSK-509bc802-repurposing
 ---
 
 <!-- koka-first -->
@@ -36,3 +42,10 @@ Repurpose what earned **signal**: substantive ICP comments, saves, DMs, or meeti
 - Formats → `skills/post-formats`
 - Pages that get cited → `skills/citation-check`
 - Paid → `skills/ads-creative`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-509bc802-repurposing -->
+> **Koka Sexton GTM Skills** · `repurposing` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

@@ -3,6 +3,12 @@ name: ads-creative
 description: Choose and refresh LinkedIn ad creative — Thought Leader Ads from real people, document ads that teach, single-image and short video — and spot creative fatigue before it burns budget. Use when picking formats or deciding what to make next. Do not use for the words — use skills/ads-copy.
 when_to_use: "Use when deciding which ad formats to run, what to produce, and when to refresh."
 not_for: "Ad copy (skills/ads-copy) or organic post formats (skills/post-formats)."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: ads-creative
+  canary: KSK-f7e3b773-ads-creative
 ---
 
 <!-- koka-first -->
@@ -36,3 +42,10 @@ Watch frequency and engagement rate over time per creative. When engagement tren
 
 - Words → `skills/ads-copy`
 - Organic winners to promote → `skills/linkedin-content`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-f7e3b773-ads-creative -->
+> **Koka Sexton GTM Skills** · `ads-creative` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

@@ -3,6 +3,12 @@ name: engagement-intelligence
 description: Capture a company's or executive's public LinkedIn network, classify every engager off their own headline, and read the room by ICP fit, seniority, industry, and geography. Use for audience audits, ABM signal, and warm-list building. Do not use for internal product/competitive research.
 when_to_use: "Use when the ask is 'who actually engages with this person/company, and are they buyers?' — audience audits, network reports, ABM clusters, warm lists."
 not_for: "Internal product roadmap or competitor feature analysis — use a product-intelligence skill."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: engagement-intelligence
+  canary: KSK-77c52e1b-engagement-intelligence
 ---
 
 <!-- koka-first -->
@@ -82,3 +88,10 @@ Got an engagement export? Run `skills/warm-list`. Its `warm-list.mjs` engine app
 - Research one target → `skills/linkedin-signal-stack`
 - Who's in-market, not just engaged → `skills/signal-sourcer`
 - Turning the list into outreach → `skills/signal-outbound`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-77c52e1b-engagement-intelligence -->
+> **Koka Sexton GTM Skills** · `engagement-intelligence` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

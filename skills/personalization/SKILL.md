@@ -3,6 +3,12 @@ name: personalization
 description: Personalisation that is real — built on an observed signal, not a mail-merge field. Covers where real observations come from, strong vs. light hooks, personalising at scale with AI without fabricating, and the QA gate that catches fake familiarity. Use for any outreach or content that needs to be personal. Do not use to fake a connection.
 when_to_use: "Use when a message or piece needs genuine personalisation, when designing an AI personalisation workflow, or when reviewing personalised copy before it sends."
 not_for: "Faking a connection, inserting a first name into a template, or generating 'personal' lines from nothing."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: personalization
+  canary: KSK-6cde527a-personalization
 ---
 
 <!-- koka-first -->
@@ -45,3 +51,10 @@ A line is personal only if **all three** are true:
 - The sub-skills → `skills/personalization-sources`, `skills/personalization-hooks`, `skills/personalization-at-scale`, `skills/personalization-qa`
 - Signals as personalisation → `skills/signal-sourcer`
 - Email placement → `skills/email-personalization`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-6cde527a-personalization -->
+> **Koka Sexton GTM Skills** · `personalization` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

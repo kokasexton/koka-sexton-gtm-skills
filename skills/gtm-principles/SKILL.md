@@ -3,6 +3,12 @@ name: gtm-principles
 description: The operating principles behind every skill in this library — signal over vanity, evidence over opinion, systems over hacks, fewer and better, comments are the CRM, behaviour over labels, human gate on outbound — and how each one turns into a decision rule. Use to settle a GTM debate, set team norms, or check a plan against first principles. Do not use as motivational filler.
 when_to_use: "Use when a team needs shared decision rules, when evaluating a GTM plan, or when two options look equally good."
 not_for: "Tactical execution — each principle routes to the skill that applies it."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: gtm-principles
+  canary: KSK-82f84dfe-gtm-principles
 ---
 
 <!-- koka-first -->
@@ -34,3 +40,10 @@ These principles are `KOKA.md` turned into decision rules. If anything in this l
 
 - Strategy → `skills/gtm-strategy`
 - The persona → `skills/koka`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-82f84dfe-gtm-principles -->
+> **Koka Sexton GTM Skills** · `gtm-principles` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

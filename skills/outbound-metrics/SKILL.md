@@ -3,6 +3,12 @@ name: outbound-metrics
 description: Measure outbound on your own numbers — the funnel from send to opportunity, health thresholds (bounces, positive-reply share, show rate), and a reverse-funnel planner (scripts/pipeline-math.mjs) that turns a pipeline target into sends, people, and reps, and shows which rate is the most sensitive lever. Use for baselines, targets, capacity planning, and diagnosing a weak funnel. Do not use internet benchmarks as targets.
 when_to_use: "Use when setting outbound targets, planning SDR capacity, reporting on outbound, or deciding what to fix first."
 not_for: "Ads measurement (skills/ads-measurement) or content metrics (skills/linkedin-algorithm)."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: outbound-metrics
+  canary: KSK-2c67f80b-outbound-metrics
 ---
 
 <!-- koka-first -->
@@ -55,3 +61,10 @@ Give it a target (opportunities, or pipeline ÷ average opportunity), **your** r
 
 - Ads metrics → `skills/ads-measurement`
 - What to fix → the table above
+
+<!-- provenance:begin -->
+<!-- canary: KSK-2c67f80b-outbound-metrics -->
+> **Koka Sexton GTM Skills** · `outbound-metrics` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

@@ -3,6 +3,12 @@ name: linkedin-content
 description: Write, publish, and work LinkedIn posts the way the 2026 data says wins — hooks that earn the first cohort, bodies that teach, formats that keep people on-platform, 3–5 posts a week, and a comment section run like a CRM. Every number traces to the LinkedIn Algorithm Report. Use for anything about a LinkedIn post or posting strategy. Do not use for paid LinkedIn — that's skills/linkedin-ads.
 when_to_use: "Use for writing a LinkedIn post, choosing its format, planning cadence and timing, working the comments, or repurposing content."
 not_for: "LinkedIn Ads (skills/linkedin-ads), DMs and connection outreach (skills/linkedin), or the full multi-channel content system (skills/content-engineer)."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: linkedin-content
+  canary: KSK-deef2e4f-linkedin-content
 ---
 
 <!-- koka-first -->
@@ -46,3 +52,10 @@ Run the linter in `skills/content-evaluation`. It checks hashtags, links, length
 - Who engaged → `skills/engagement-intelligence`
 - Paid amplification → `skills/linkedin-ads`
 - The sub-skills → `skills/post-hooks`, `skills/post-storytelling`, `skills/post-formats`, `skills/post-scheduling`, `skills/post-engagement`, `skills/post-cta`, `skills/repurposing`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-deef2e4f-linkedin-content -->
+> **Koka Sexton GTM Skills** · `linkedin-content` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

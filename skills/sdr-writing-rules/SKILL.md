@@ -3,6 +3,12 @@ name: sdr-writing-rules
 description: One page of writing rules for the whole SDR team — every message built on a signal, observation → idea → ask, short, plain, no slop, no fake familiarity, no auto-send — plus a self-edit checklist and before/after rewrites. Use to onboard SDRs, set a team standard, or review a rep's copy. Do not use as a template library.
 when_to_use: "Use for SDR onboarding, copy reviews, and setting a consistent team voice."
 not_for: "Single-message drafting — use skills/cold-email."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: sdr-writing-rules
+  canary: KSK-af37a682-sdr-writing-rules
 ---
 
 <!-- koka-first -->
@@ -43,3 +49,10 @@ These rules are `KOKA.md`'s voice applied to outbound. The linters in `skills/co
 
 - Email craft → `skills/cold-email`
 - Prompts that follow these rules → `skills/sdr-prompts`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-af37a682-sdr-writing-rules -->
+> **Koka Sexton GTM Skills** · `sdr-writing-rules` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

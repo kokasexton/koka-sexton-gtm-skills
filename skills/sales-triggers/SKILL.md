@@ -3,6 +3,12 @@ name: sales-triggers
 description: A library of reasons to reach out now, organised by where the trigger comes from — their engagement with you, your shared history, their in-market behaviour, visible symptoms of the problem, firmographic changes, and pure fit — with an opening line pattern for each. Use when you need a credible "why now" for a message. Do not use to invent a reason that isn't true.
 when_to_use: "Use when building sequences or plays and you need a true, specific reason to start the conversation."
 not_for: "Fabricating a trigger. If none is true, the honest move is a cold, value-first note or no note."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: sales-triggers
+  canary: KSK-b5445c87-sales-triggers
 ---
 
 <!-- koka-first -->
@@ -49,3 +55,10 @@ The weakest. If you use it, lead with a **genuinely useful idea**: a teardown, a
 
 - Score triggers together → `skills/multi-signal`
 - Write the opener → `skills/first-touch`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-b5445c87-sales-triggers -->
+> **Koka Sexton GTM Skills** · `sales-triggers` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

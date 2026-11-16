@@ -3,6 +3,12 @@ name: company-events
 description: Read company events as signals — mergers and acquisitions, expansion into new regions or segments, new product lines, IPO preparation, restructures, and leadership changes — and know which ones open a buying window and which ones freeze budgets. Use when monitoring company news for ICP accounts. Do not use to pitch during a layoff.
 when_to_use: "Use when an ICP account announces M&A, expansion, a new market, a launch, an IPO path, or a leadership change."
 not_for: "Insensitive outreach during layoffs or crises."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: company-events
+  canary: KSK-92040846-company-events
 ---
 
 <!-- koka-first -->
@@ -38,3 +44,10 @@ Press releases, company newsroom and blog, executive posts on LinkedIn, local bu
 
 - Score → `skills/multi-signal`
 - Write → `skills/first-touch`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-92040846-company-events -->
+> **Koka Sexton GTM Skills** · `company-events` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

@@ -3,6 +3,12 @@ name: ads-measurement
 description: Measure LinkedIn Ads honestly — Insight Tag and Conversions API setup, conversion definitions that mean pipeline, account-level engagement over click-through, and attribution that admits what it can't see. Use when setting up tracking or reporting on ad performance. Do not use to justify spend after the fact with vanity metrics.
 when_to_use: "Use when configuring conversion tracking, choosing KPIs, or building an ads report for leadership."
 not_for: "Cherry-picking a metric that makes a campaign look good."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: ads-measurement
+  canary: KSK-afa93ae0-ads-measurement
 ---
 
 <!-- koka-first -->
@@ -39,3 +45,10 @@ If the report leads with impressions, it's measuring the wrong thing.
 
 - Turning engaged accounts into conversations → `skills/ads-outbound-sync`
 - Pipeline math → `skills/outbound-metrics`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-afa93ae0-ads-measurement -->
+> **Koka Sexton GTM Skills** · `ads-measurement` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

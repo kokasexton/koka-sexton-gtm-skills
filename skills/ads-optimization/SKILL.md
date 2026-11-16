@@ -3,6 +3,12 @@ name: ads-optimization
 description: Diagnose and fix an underperforming LinkedIn campaign in the right order — tracking, audience, creative, offer, then bid — changing one lever at a time and judging against your own baseline. Use when a campaign isn't delivering, costs too much, or produces the wrong leads. Do not use before the campaign has had time to deliver.
 when_to_use: "Use when results are below your baseline: no delivery, high cost per result, low engagement, or leads that sales rejects."
 not_for: "Campaigns live only a few days — give them enough delivery to judge."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: ads-optimization
+  canary: KSK-67005871-ads-optimization
 ---
 
 <!-- koka-first -->
@@ -35,3 +41,10 @@ Diagnose in order. Most "bidding problems" are audience or creative problems.
 - Measurement → `skills/ads-measurement`
 - Audience → `skills/ads-audiences`
 - Creative → `skills/ads-creative`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-67005871-ads-optimization -->
+> **Koka Sexton GTM Skills** · `ads-optimization` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

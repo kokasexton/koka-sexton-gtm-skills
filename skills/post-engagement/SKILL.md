@@ -3,6 +3,12 @@ name: post-engagement
 description: Run the comment section like a CRM — reply to every comment with substance, comment on ICP posts, and move warm commenters to DMs at the right moment without pitching. Grounded in the data that commenters are more senior than likers. Use after posting and for daily engagement. Do not use to run engagement pods.
 when_to_use: "Use for replying to comments, building a daily commenting routine, and deciding when a comment thread becomes a DM."
 not_for: "Engagement pods or automated commenting — both are penalised and fill the room with the wrong people."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: post-engagement
+  canary: KSK-3eea6064-post-engagement
 ---
 
 <!-- koka-first -->
@@ -45,3 +51,10 @@ Never pitch in the first DM.
 
 - Score who engaged → `skills/warm-list`
 - DMs and connection outreach → `skills/linkedin`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-3eea6064-post-engagement -->
+> **Koka Sexton GTM Skills** · `post-engagement` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

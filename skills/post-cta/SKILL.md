@@ -3,6 +3,12 @@ name: post-cta
 description: Close a LinkedIn post with a call to action that earns substantive comments — a specific question the ICP can answer from experience — and make the profile do the converting, instead of formulaic "comment YES" bait the algorithm penalises. Use when ending a post or tuning a profile to convert readers. Do not use for ad CTAs.
 when_to_use: "Use when writing the last lines of a post, or when posts get engagement but no profile visits, follows, or DMs."
 not_for: "Ad CTAs (skills/ads-copy). Full profile rebuild — see skills/linkedin-profile."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: post-cta
+  canary: KSK-205c7171-post-cta
 ---
 
 <!-- koka-first -->
@@ -37,3 +43,10 @@ Readers who like a post click your name. The profile has to answer three questio
 
 - Profile → `skills/linkedin-profile`
 - Gate (catches bait) → `skills/content-evaluation`
+
+<!-- provenance:begin -->
+<!-- canary: KSK-205c7171-post-cta -->
+> **Koka Sexton GTM Skills** · `post-cta` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->

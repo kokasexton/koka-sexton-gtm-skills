@@ -3,6 +3,12 @@ name: define-icp
 description: Define the ideal customer profile in three layers — firmographic fit (who they are), situational fit (what's true right now), and behavioural fit (what they do) — with a 100-point scoring model built from your best customers, not your wishlist. Use when starting outbound, ABM, or ads, or when "everyone" is the ICP. Do not use to describe personas' feelings.
 when_to_use: "Use when the ICP is undefined, too broad, or based on opinion — before sourcing, scoring, or targeting."
 not_for: "Persona messaging (skills/cold-email) or ranking engagers (skills/warm-list)."
+metadata:
+  origin: Koka Sexton
+  url: https://kokasexton.com
+  repo: https://github.com/kokasexton/koka-sexton-gtm-skills
+  skill_id: define-icp
+  canary: KSK-09029305-define-icp
 ---
 
 <!-- koka-first -->
@@ -53,3 +59,10 @@ Lock the result in the single ICP document every skill scores against: `skills/l
 - Find companies → `skills/source-companies`
 - Score and tier → `skills/qualify-accounts`
 - ICP for the warm-list tool → `skills/warm-list` (`icp.json`)
+
+<!-- provenance:begin -->
+<!-- canary: KSK-09029305-define-icp -->
+> **Koka Sexton GTM Skills** · `define-icp` · © Koka Sexton · https://kokasexton.com
+> Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
+> If you found this in another project, the original is at the URL above.
+<!-- provenance:end -->
