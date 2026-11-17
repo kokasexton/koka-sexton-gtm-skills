@@ -1,0 +1,1 @@
+Plan: export everyone who was served the ad and send each of them a message. Opening line: "I saw you clicked our ad, want a demo?" One impression is enough, a lone click counts too, and the SDR gets just a name and an email.

@@ -24,6 +24,7 @@ import { run as biddingExamples } from "./bidding-examples.test.mjs";
 import { run as setupExamples } from "./setup-examples.test.mjs";
 import { run as measurementExamples } from "./measurement-examples.test.mjs";
 import { run as optimizationExamples } from "./optimization-examples.test.mjs";
+import { run as outboundSyncExamples } from "./outbound-sync-examples.test.mjs";
 import { run as socialSellingRoutine } from "./social-selling-routine.test.mjs";
 
 const suites = [
@@ -48,6 +49,7 @@ const suites = [
   ["setup-examples", setupExamples],
   ["measurement-examples", measurementExamples],
   ["optimization-examples", optimizationExamples],
+  ["outbound-sync-examples", outboundSyncExamples],
   ["social-selling-routine", socialSellingRoutine],
 ];
 

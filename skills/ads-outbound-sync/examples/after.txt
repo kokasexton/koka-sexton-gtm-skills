@@ -1,0 +1,4 @@
+Signal: a lead-form open, a fully viewed document, a comment on a Thought Leader Ad, or several people at one account engaging. A single impression or a lone click is not a signal.
+Handoff: weekly export of engaged companies and people, scored with one more signal such as hiring, funding, a website visit or organic engagement. Ads alone rarely justify outreach.
+Route with context: the SDR sees which ad they engaged with and what it taught. If the ad was the SDR-team teardown, the email offers the full teardown, not a demo.
+Message: "Your team spent time with our breakdown of comment-led prospecting this week. Happy to send the full version. Useful?" Talk about the topic and the help, never "I saw you clicked our ad." A human approves every outbound message.

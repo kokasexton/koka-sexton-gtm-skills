@@ -3,6 +3,12 @@
 Human-readable log of what changed and why. Newest first — one entry per daily-loop run.
 Machine-readable cost/run log: `ops/spend.jsonl`.
 
+## 2026-11-17
+
+`ads-outbound-sync` now ships a worked example (`skills/ads-outbound-sync/examples/`): message-everyone-who-saw-the-ad next to real-signal filtering, a second scored signal, context for the SDR and a message about the topic, not the tracking. New test `outbound-sync-examples` pins the rules. Illustrative, no statistics. Model: anthropic/claude-sonnet-5.5 (single run, well under budget).
+
+---
+
 ## 2026-11-16
 
 `ads-optimization` now ships a worked example (`skills/ads-optimization/examples/`): a five-levers-at-once, judge-tomorrow report next to the diagnostic ladder in order, one logged change and an own-baseline comparison. New test `optimization-examples` pins the rules. Illustrative, no statistics. Model: anthropic/claude-sonnet-5.5 (single run, well under budget).

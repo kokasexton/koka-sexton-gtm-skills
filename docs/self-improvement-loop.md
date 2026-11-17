@@ -48,7 +48,9 @@ The repo is test-gated. A change doesn't ship unless:
 - [x] (2026-11-13, tests/bidding-examples.test.mjs) Worked examples for ads-bidding; ads-campaign-setup, ads-measurement, ads-optimization remain
 - [x] (2026-11-14, tests/setup-examples.test.mjs) Worked examples for ads-campaign-setup; ads-measurement, ads-optimization remain
 - [x] (2026-11-15, tests/measurement-examples.test.mjs) Worked examples for ads-measurement; ads-optimization remains
-- [x] (2026-11-16, tests/optimization-examples.test.mjs) Worked examples for ads-optimization — all ads-* skills now covered; next: ads-outbound-sync example
+- [x] (2026-11-16, tests/optimization-examples.test.mjs) Worked examples for ads-optimization — all ads-* skills now covered
+- [x] (2026-11-17, tests/outbound-sync-examples.test.mjs) Worked example for ads-outbound-sync — every ads-* skill covered
+- [ ] Next: benchmark tables (cadence / format / hashtag lookups) as reusable references
 - [x] Expand `engagement-intelligence` with a classification rubric (seniority/function taxonomy) — done 2026-11-03
 - [x] `content-evaluation`, `ai-search-visibility` (`prompt-panel`, `citation-check`), signal scoring (`multi-signal`, `warm-list`)
 - [x] v2 full stack: 13 orchestrators, 8 tools, `system.json`, `no-unsourced-stats` gate
