@@ -3,6 +3,12 @@
 Human-readable log of what changed and why. Newest first — one entry per daily-loop run.
 Machine-readable cost/run log: `ops/spend.jsonl`.
 
+## 2026-11-18 (three-part loop: linkedin-comment-warmer)
+
+First run of the Audit, Improve, Prove loop (documented in `docs/self-improvement-loop.md`). Audit found `linkedin-comment-warmer` was the smallest skill in the library with no worked example or quality check. Improved: a five-question quality check, a failure-pattern list, a "draft nothing if there is no honest angle" rule, the sourced reason comments matter, and a fictional before/after example in `examples/`. Proved: new `tests/comment-examples.test.mjs` pins the example and the skill's checks, wired into `tests/run.mjs`. Uses only figures already in the canonical report. Illustrative fictional names.
+
+---
+
 ## 2026-11-18 (Profile Relevance)
 
 `linkedin-algorithm` gains a Profile Relevance section from LinkedIn Engineering's November 2026 post and Koka's write-up: the reader's profile is the query, posts are embedded from text, titles, transcripts and author metadata, and a post needs one reaction from outside the author's network before it is eligible. It carries LinkedIn's reported experiment results, five actions, a labelled external-research cadence note, and numbered sources. `linkedin-profile` now covers what LinkedIn reads (headline, summary, skills, role descriptions, education), adds a Skills row, a market in the headline example and a two-sentence position in the About, and says plainly that the sources don't show an author's own profile changing their posts' reach. The LinkedIn Engineering page itself could not be opened during this update, so its figures are taken as cited by Koka's article and Tutkit.

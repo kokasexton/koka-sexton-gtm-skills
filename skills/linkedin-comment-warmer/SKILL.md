@@ -28,15 +28,48 @@ If nothing fits, replying where the target is commenting on someone else's post 
 
 ## Writing it
 
-- **2–4 sentences.** One-liners are invisible.
-- **Add something** — a fact, a counterpoint, or a specific experience. Never empty affirmation.
+- **2 to 4 sentences.** One-liners are invisible.
+- **Add something**: a fact, a counterpoint or a specific experience. Never empty affirmation.
+- **Stay on the author's topic.** Use the words the author used. Your product, offer and links stay out.
+- **End on a question** the author can answer in one line, or on a point worth replying to.
 - **Sound like the user**, not a brand.
 - The bar: *would this comment be worth reading even if the author never checked who wrote it?*
+
+## Quality check
+
+Run every draft through these five questions. Any "no" means rewrite.
+
+1. **Specific?** Does it contain something only someone with real experience would say (a number, a mechanism, a named wrinkle)?
+2. **Additive?** Would the author learn or consider something new from it?
+3. **Their topic?** Is it about what they wrote, not what you sell?
+4. **No ask?** No pitch, link, tag, "DM me" or connection request in a public thread.
+5. **True?** Every claim comes from the user. Never invent a client, number or result for a comment. If there's no honest angle, draft nothing and say so.
+
+## What to avoid
+
+- Affirmation openers ("Great post!", "Love this", "So true").
+- Restating the post in different words.
+- Jargon and slogans ("best-in-class", "10x", "leverage").
+- Emoji strings, hashtags, tagging people who haven't joined the thread.
+- A comment that ends in a pitch or a meeting ask.
+
+## Why it works
+
+Commenters skew about 26% more senior than likers, and 78% of comments are substantive (40+ characters), so a real comment sits in a more senior, more attentive crowd (see `skills/linkedin-algorithm`). LinkedIn also describes a post needing at least one reaction from someone outside the author's network before wider distribution, so a thoughtful comment from outside their network does the author a real favor. [1][2]
+
+## Worked example
+
+`examples/` has a fictional target post, the comment this skill blocks and the one it writes, with the five checks applied. Pinned by `tests/comment-examples.test.mjs`.
 
 ## Rules
 
 - Human gate: the user posts it.
 - One comment per target per cycle. Reply to every response.
+
+## References
+
+1. Koka Sexton, *LinkedIn's Algorithm Now Reads Your Profile*: https://kokasexton.com/linkedin-profile-relevance-algorithm/
+2. Koka Sexton, *LinkedIn Algorithm Report 2026*: https://kokasexton.com/linkedin-algorithm-report-2026/
 
 ## Routing
 - The full comment-first routine → `post-engagement`, `linkedin-outreach-campaign`

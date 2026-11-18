@@ -26,6 +26,7 @@ import { run as measurementExamples } from "./measurement-examples.test.mjs";
 import { run as optimizationExamples } from "./optimization-examples.test.mjs";
 import { run as outboundSyncExamples } from "./outbound-sync-examples.test.mjs";
 import { run as socialSellingRoutine } from "./social-selling-routine.test.mjs";
+import { run as commentExamples } from "./comment-examples.test.mjs";
 
 const suites = [
   ["frontmatter", frontmatter],
@@ -51,6 +52,7 @@ const suites = [
   ["optimization-examples", optimizationExamples],
   ["outbound-sync-examples", outboundSyncExamples],
   ["social-selling-routine", socialSellingRoutine],
+  ["comment-examples", commentExamples],
 ];
 
 let failed = false;
