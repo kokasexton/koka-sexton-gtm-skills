@@ -79,6 +79,7 @@ New to it? Pick the line that sounds like you. Each path in the [VCO pack guide]
 | A seller or rep | The key people at one account, and who to warm first | [`signal-model`](skills/signal-model/SKILL.md) → [`committee-map`](skills/committee-map/SKILL.md) |
 | A founder or exec who posts | Who is already paying attention, and how senior they are | [`warm-list`](skills/warm-list/SKILL.md), then [`signal-model`](skills/signal-model/SKILL.md) |
 | A founder or exec setting up LinkedIn | Your profile rebuilt, a clear position, pillars, a 30-day calendar, a month of posts and DM scripts, from your own profile | [`linkedin-launch`](skills/linkedin-launch/SKILL.md), see the [launch kit guide](docs/linkedin-launch.md) |
+| New to the library | The shortest path from profile to booked conversations, one skill per step | The [skills guide](docs/skills-guide.md) |
 | Not sure | A diagnosis before any tactic | Say: *"Use the koka skill. Where should we start?"* |
 
 Try it in one command, no data needed: `node skills/signal-model/scripts/signal-model.mjs skills/signal-model/examples/events.csv --as-of 2026-10-31`
