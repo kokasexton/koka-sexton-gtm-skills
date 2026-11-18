@@ -3,6 +3,12 @@
 Human-readable log of what changed and why. Newest first — one entry per daily-loop run.
 Machine-readable cost/run log: `ops/spend.jsonl`.
 
+## 2026-11-18 (Profile Relevance)
+
+`linkedin-algorithm` gains a Profile Relevance section from LinkedIn Engineering's November 2026 post and Koka's write-up: the reader's profile is the query, posts are embedded from text, titles, transcripts and author metadata, and a post needs one reaction from outside the author's network before it is eligible. It carries LinkedIn's reported experiment results, five actions, a labelled external-research cadence note, and numbered sources. `linkedin-profile` now covers what LinkedIn reads (headline, summary, skills, role descriptions, education), adds a Skills row, a market in the headline example and a two-sentence position in the About, and says plainly that the sources don't show an author's own profile changing their posts' reach. The LinkedIn Engineering page itself could not be opened during this update, so its figures are taken as cited by Koka's article and Tutkit.
+
+---
+
 ## 2026-11-17 (LinkedIn launch kit)
 
 Eight skills added so a user can start one request and get a personalised LinkedIn launch kit. `linkedin-launch` orchestrates `profile-read` (reads the user's own profile in their signed-in browser, or from pasted text or a PDF, read-only), `positioning-statement`, `content-pillars`, `profile-rebuild`, `content-calendar`, `month-of-posts` and `dm-scripts`. Two zero-dependency tools: `content-calendar.mjs` (dates, local times, pillar rotation, no link posts, no Fridays) and `batch-lint.mjs` (per-post verdicts and unfilled placeholders, READY only if approved and clean). A full fictional example kit sits in `skills/linkedin-launch/examples/alex-rivera/`, and `docs/linkedin-launch.md` covers activation, the terms note for the browser step and troubleshooting. Nothing is posted, edited or sent for the user. Cadence and weights are labelled Koka defaults. No statistics.

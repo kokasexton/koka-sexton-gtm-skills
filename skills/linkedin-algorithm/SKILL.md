@@ -1,6 +1,6 @@
 ---
 name: linkedin-algorithm
-description: The 2026 LinkedIn algorithm data and playbook — cadence, formats, timing, hashtags, comment strategy, funnel metrics, and the 6-rule operating guide. Use for any LinkedIn reach or engagement question. Sourced from the VCO LinkedIn Algorithm Report 2026 (data by SignalScout).
+description: The 2026 LinkedIn algorithm data and playbook — cadence, formats, timing, hashtags, comment strategy, funnel metrics, and the 6-rule operating guide. Use for any LinkedIn reach or engagement question. Includes the Profile Relevance system (Nov 2026). Sourced from the VCO LinkedIn Algorithm Report 2026 (data by SignalScout) and LinkedIn Engineering.
 when_to_use: "Use for LinkedIn strategy, reach/engagement diagnosis, content mix, posting cadence, and client guidance."
 not_for: "Drafting a specific post — use skills/linkedin-content and its sub-skills. This is the data and playbook layer."
 metadata:
@@ -31,6 +31,48 @@ Source: **LinkedIn Algorithm Report 2026** (data by SignalScout) — 2,279 posts
 - **Staged filtering:** spam screen → small-cohort test → expand only if dwell/engagement is strong. Posts die early even for big accounts if the first cohort doesn't engage.
 - **Rewarded:** topical relevance (interest graph, not follower graph), profile authority, dwell time, saves, substantive comments, native content.
 - **Penalised:** engagement pods, repetitive hooks, templated generic writing, manipulative link tactics, formulaic CTAs. AI-assisted writing is *not* auto-penalised — generic polished-but-empty output is.
+
+## Profile Relevance (added November 2026)
+
+LinkedIn Engineering described a new retrieval source for the feed called **Profile Relevance**. It uses an LLM to turn each member's profile into a text prompt, turns each post into an embedding, and matches the two in a shared space. It surfaces posts from people the reader isn't connected to. Treat the report data above as the baseline and this as a change layered on top of it.
+
+**How it works**
+
+- **The reader's profile is the query.** Three blocks go into the prompt: profile highlights (headline, summary, key skills), work history (titles, durations, role descriptions) and education. Name and gender are left out. [1][2]
+- **The post is the document.** Its embedding comes from post text, titles, transcripts and author metadata such as location. A video with no transcript gives the system less to match. [1]
+- **An outside reaction opens the door.** A post becomes eligible only after at least one like, comment or share from a member not connected to the author. Reactions from connections, including engagement pods, don't count toward it. [1][3]
+- **Location is added for you.** Country is appended to the prompt automatically, so city, region and vertical have to be written into the profile and the post. [1]
+- **Rollout isn't specified.** LinkedIn doesn't say which countries get it or from when. [3]
+
+**What LinkedIn reported** (online experiments against the previous retrieval source, as cited in [1] and [3]):
+
+| Metric | Change |
+|---|---|
+| Feed updates viewed | +0.54% |
+| Viral rate | +0.94% |
+| Hide rate | −18.8% |
+| Viral engagement for cold-start members | +17.7% |
+| Daily active use for cold-start members | +1.8% |
+
+These gains are small on average and largest for members LinkedIn knows little about. Nothing in the engineering post measures what the change does for an author's reach, so don't promise a reach lift.
+
+**What to do with it**
+
+1. **Write posts in your buyer's vocabulary.** The match runs between your post and the reader's headline, skills and work history. Name the function, system, tool and outcome your ICP would put in their own profile.
+2. **Plan for the first outside reaction.** Post when your unconnected audience is active, and give people outside your network a reason to react (a specific, useful point beats a general one).
+3. **Add transcripts and captions to video** so there is text to index.
+4. **Stop leaning on pods.** Connected peers can't open this route.
+5. **Keep your own profile specific.** It shapes what *you* see, which matters for warming (see `skills/linkedin-profile`). Whether an author's own profile affects how far their posts travel isn't stated in the sources below.
+
+**Cadence note (external research, not from the report):** van der Blom's 2019 data found a second post within two hours needs about 3× the engagement of the first, and waiting more than three hours treats both about equally [4]. Buffer's study of more than two million posts found no specific reach cap tied to posting frequency [5]. Read both as support for the 3–5 posts a week rule and against stacking posts on the same day.
+
+**Sources**
+
+1. Koka Sexton, *LinkedIn's Algorithm Now Reads Your Profile* (Nov 2026): https://kokasexton.com/linkedin-profile-relevance-algorithm/
+2. LinkedIn Engineering, *Profile Relevance* (primary source, as cited in [1]; not independently re-read for this update): https://www.linkedin.com/blog/engineering/feed/profile-relevance-boosting-feed-relevance-with-llms-at-linkedin
+3. Tutkit, *LinkedIn matches your professional profile with posts from strangers*: https://www.tutkit.com/en/news/1023-linkedin-matches-your-professional-profile-with-posts-from-strangers
+4. Richard van der Blom, LinkedIn Algorithm report (2019): https://www.slideshare.net/RichardvdBlom/full-report-linked-in-algorithm-july-2019
+5. Buffer, *How Often Should You Post on LinkedIn?*: https://buffer.com/library/how-often-to-post-on-linkedin/
 
 ## The numbers
 
