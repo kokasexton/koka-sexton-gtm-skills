@@ -4,6 +4,8 @@ New to the library? This page is the shortest route from "I have a LinkedIn prof
 
 Nothing here posts, connects, messages or edits for you. Every skill drafts, and you act.
 
+Prefer to click through it? Open the [interactive walkthrough](https://kokasexton.com/gtm-skills/walkthrough/): nine steps, copy-ready prompts, progress tracking.
+
 ## Quick start
 
 1. **Define who you're targeting.** Everything after this scores against it.
