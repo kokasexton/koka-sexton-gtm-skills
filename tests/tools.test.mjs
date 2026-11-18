@@ -12,6 +12,9 @@ import { lintEmail } from "../skills/cold-email/scripts/lint-email.mjs";
 import { cleanList, parseCsv as parseContacts, normLinkedIn } from "../skills/list-building/scripts/list-clean.mjs";
 import { scoreSignals, parseCsv as parseSignals } from "../skills/multi-signal/scripts/signal-score.mjs";
 import { scoreEvents } from "../skills/signal-model/scripts/signal-model.mjs";
+import { buildCalendar } from "../skills/content-calendar/scripts/content-calendar.mjs";
+import { checkPosts } from "../skills/month-of-posts/scripts/batch-lint.mjs";
+import { readdirSync } from "node:fs";
 import { ratesFromCounts, plan } from "../skills/outbound-metrics/scripts/pipeline-math.mjs";
 
 const CE = "skills/content-evaluation";
@@ -152,6 +155,24 @@ export function run() {
   const nadia = vc.people.find((p) => p.name === "Nadia Rahman");
   eq([nadia.tier, nadia.score], ["WARMING", 15], "Nadia outscores Theo but is capped without a second signal");
   expect(vc.people.find((p) => p.name === "Sofia Petrov").held, "Sofia (strong signal, wrong thesis) is held by fit");
+
+  /* ----------------------------------------------------- content-calendar */
+  const ccCfg = JSON.parse(read("skills/content-calendar/examples/pillars.json"));
+  const cal = buildCalendar(ccCfg, {});
+  eq([cal.total, cal.per_week, cal.from, cal.to, cal.tz], [18, 4, "2026-12-07", "2027-01-05", "America/New_York"], "content-calendar example window");
+  eq(cal.by_pillar, { "Founder finance, plainly": 9, "Fundraising without theatre": 5, "Fractional work, behind the scenes": 4 }, "content-calendar weights the heavier pillar");
+  expect(cal.slots.every((x) => x.local_time === "09:00" && x.local_weekday !== "Fri" && x.format !== "link"), "content-calendar: 09:00 local, no Friday, no link posts");
+  expect(cal.slots.every((x, i, a) => i === 0 || x.pillar !== a[i - 1].pillar), "content-calendar never repeats a pillar back to back");
+  let calThrew = false;
+  try { buildCalendar({ ...ccCfg, per_week: 7 }, {}); } catch { calThrew = true; }
+  expect(calThrew, "content-calendar refuses more than five posts a week");
+
+  /* -------------------------------------------------------- month-of-posts */
+  const postDir = "skills/month-of-posts/examples/posts";
+  const batch = checkPosts(readdirSync(join(ROOT, postDir)).filter((f) => f.endsWith(".md")).sort().map((f) => ({ file: f, text: read(`${postDir}/${f}`) })));
+  eq(batch.counts, { total: 3, approved: 2, ready: 1, blocked: 1, needs_input: 1 }, "batch-lint example counts");
+  eq(batch.rows.map((r) => [r.file, r.verdict, r.ready]), [["01-monday-three-numbers.md", "SHIP", true], ["02-tuesday-data-room.md", "SHIP WITH EDITS", false], ["03-wednesday-blog.md", "BLOCK", false]], "batch-lint example verdicts");
+  eq(batch.approved_but_not_ready, ["03-wednesday-blog.md"], "batch-lint: approval does not override the gate");
 
   /* -------------------------------------------------------- pipeline-math */
   const rt = ratesFromCounts(JSON.parse(read(`${OM}/examples/counts.json`)));

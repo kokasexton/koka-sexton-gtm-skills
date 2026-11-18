@@ -3,7 +3,7 @@
   "entry": "koka",
   "stages": [
     { "stage": "Decide", "orchestrators": ["gtm-strategy"] },
-    { "stage": "Attention", "orchestrators": ["linkedin-content", "linkedin-ads", "content-engineer", "ai-search-visibility"] },
+    { "stage": "Attention", "orchestrators": ["linkedin-content", "linkedin-ads", "content-engineer", "ai-search-visibility", "linkedin-launch"] },
     { "stage": "Who's ready", "orchestrators": ["engagement-intelligence", "signal-sourcer"] },
     { "stage": "Reach", "orchestrators": ["list-building", "personalization", "cold-email", "linkedin", "sdr-tools", "signal-outbound"] }
   ],
@@ -13,6 +13,7 @@
     "linkedin-ads": ["ads-audiences", "ads-campaign-setup", "ads-creative", "ads-copy", "ads-bidding", "ads-measurement", "ads-outbound-sync", "ads-optimization"],
     "content-engineer": ["content-evaluation"],
     "ai-search-visibility": ["prompt-panel", "citation-check"],
+    "linkedin-launch": ["profile-read", "positioning-statement", "content-pillars", "profile-rebuild", "content-calendar", "month-of-posts", "dm-scripts"],
     "engagement-intelligence": ["warm-list", "linkedin-engager-analytics", "linkedin-warm-list-builder", "linkedin-signal-stack", "social-selling-routine", "signal-model"],
     "signal-sourcer": ["job-changes", "funding-signals", "hiring-signals", "website-visitors", "company-events", "tech-changes", "competitor-signals", "content-engagement", "multi-signal"],
     "list-building": ["define-icp", "source-companies", "find-contacts", "qualify-accounts", "clean-validate", "deduplicate", "thesis-fit", "committee-map"],
