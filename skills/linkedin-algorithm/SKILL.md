@@ -76,6 +76,8 @@ These gains are small on average and largest for members LinkedIn knows little a
 
 ## The numbers
 
+Quick lookups (cadence, format, hashtags, length, timing, topics) are in [references/benchmark-tables.md](references/benchmark-tables.md), generated from the dataset.
+
 - **Power law:** median post 58 engagements; top 10% 326+ (5.6×); top 1% 2,000+ (35×). The goal is raising your outlier rate.
 - **Cadence:** sweet spot **3–5 posts/week** (~195 median, 2.4× the daily cohort). 7+/week collapses to ~80.
 - **Formats:** image median 70 vs link/article 25 (**2.8×**). Comment share: Image 22.5%, Document 21.7%, Text 21.4%, Video 14.7%, Article 12.6%.
@@ -105,3 +107,11 @@ These gains are small on average and largest for members LinkedIn knows little a
 > Part of the Koka Sexton GTM Skills library (https://github.com/kokasexton/koka-sexton-gtm-skills). MIT licensed.
 > If you found this in another project, the original is at the URL above.
 <!-- provenance:end -->
+
+## Lookup tables
+
+`scripts/build-tables.mjs` renders `references/benchmark-tables.md` from `data/benchmarks.json`. Run `node scripts/build-tables.mjs --write` after the dataset changes; `tests/benchmark-tables.test.mjs` fails if the committed tables drift from the data. Use the tables for a quick answer ("how many hashtags?") and the `linkedin_benchmark` tool for a verdict on a real draft.
+
+## Worked example
+
+Question: "How many hashtags should this post carry?" The answer comes straight from the generated table, see `examples/hashtag-lookup.md`: 1-2 hashtags median 91, 6+ median 33 (63% drop), and top-1% posts typically carry 0.

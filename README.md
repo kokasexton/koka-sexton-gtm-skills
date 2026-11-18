@@ -9,7 +9,7 @@ built on real data, enforced by tests, and backed by tools your agent can run.</
 <p align="center">
 <a href="https://github.com/kokasexton/koka-sexton-gtm-skills/actions/workflows/ci.yml"><img src="https://github.com/kokasexton/koka-sexton-gtm-skills/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
 <img src="https://img.shields.io/badge/skills-91-6366f1" alt="91 skills">
-<img src="https://img.shields.io/badge/runnable%20tools-12-ec4899" alt="12 tools">
+<img src="https://img.shields.io/badge/runnable%20tools-13-ec4899" alt="13 tools">
 <img src="https://img.shields.io/badge/dependencies-0-38bdf8" alt="zero dependencies">
 <img src="https://img.shields.io/badge/API%20keys%20required-0-22c55e" alt="no API keys">
 <img src="https://img.shields.io/badge/license-MIT-111827" alt="MIT">
@@ -461,7 +461,7 @@ Where there's no data, the skills say so. Scoring weights, timing windows, and t
 | ↳ [gtm-plays](skills/gtm-plays/SKILL.md) | sub-skill | Repeatable go-to-market plays per channel — LinkedIn, cold email, content, and ABM — each with the signal it needs, the sequence, and the metric that proves it worked. | — |
 | **ATTENTION** | | | |
 | [**linkedin-content**](skills/linkedin-content/SKILL.md) | orchestrator | Write, publish, and work LinkedIn posts the way the 2026 data says wins — hooks that earn the first cohort, bodies that teach, formats that keep people on-platform, 3–5 posts a week, and a comment section run like a CRM. | — |
-| ↳ [linkedin-algorithm](skills/linkedin-algorithm/SKILL.md) | sub-skill | The 2026 LinkedIn algorithm data and playbook — cadence, formats, timing, hashtags, comment strategy, funnel metrics, and the 6-rule operating guide. | — |
+| ↳ [linkedin-algorithm](skills/linkedin-algorithm/SKILL.md) | sub-skill | The 2026 LinkedIn algorithm data and playbook — cadence, formats, timing, hashtags, comment strategy, funnel metrics, and the 6-rule operating guide. | `build-tables.mjs` |
 | ↳ [post-hooks](skills/post-hooks/SKILL.md) | sub-skill | Write the first line of a LinkedIn post — the part that has to work before "…see more" and earn the small-cohort test — with eight hook patterns, the data on which openers win, and the openers to avoid. | — |
 | ↳ [post-storytelling](skills/post-storytelling/SKILL.md) | sub-skill | Structure the body of a LinkedIn post so people keep reading — one lesson, three proven structures (Problem→Agitate→Solve, Before→After→Bridge, Attention→Interest→Desire→Action), long-form with whitespace, and a close that invites a real reply. | — |
 | ↳ [post-formats](skills/post-formats/SKILL.md) | sub-skill | Choose the right LinkedIn post format — image, document/carousel, text, video, or link — using the 2026 medians and comment shares, and keep links out of the post body. | — |
@@ -548,7 +548,7 @@ Where there's no data, the skills say so. Scoring weights, timing windows, and t
 | ↳ [outbound-pipeline](skills/outbound-pipeline/SKILL.md) | sub-skill | Run a staged outbound pipeline on a target list — signals → prioritize → profile → hooks → sequences, behind a pre-flight data-quality gate. | — |
 | ↳ [founder-shortlist](skills/founder-shortlist/SKILL.md) | sub-skill | Turn a tiered list into a partner-ready shortlist of founders and operators, each with why now, thesis match, the warmest angle and who should reach out. | — |
 
-_91 skills · 14 orchestrators + 1 entry point · 12 runnable tools · generated from `system.json` by `scripts/build-catalog.mjs`_
+_91 skills · 14 orchestrators + 1 entry point · 13 runnable tools · generated from `system.json` by `scripts/build-catalog.mjs`_
 
 <!-- catalog:end -->
 

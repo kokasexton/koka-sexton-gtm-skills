@@ -3,6 +3,12 @@
 Human-readable log of what changed and why. Newest first — one entry per daily-loop run.
 Machine-readable cost/run log: `ops/spend.jsonl`.
 
+## 2026-11-18 (benchmark lookup tables)
+
+`linkedin-algorithm` now ships `references/benchmark-tables.md`: cadence, format, hashtag, length, timing and topic lookups. They are generated from `data/benchmarks.json` by `scripts/build-tables.mjs`, so they cannot drift from the report data. New `tests/benchmark-tables.test.mjs` fails if the committed tables go stale. Added a worked example and refreshed the README catalog. No new figures; everything comes from the existing dataset. Model: openrouter/anthropic/claude-sonnet-5.5 (single voice; mechanical, deterministic change).
+
+---
+
 ## 2026-11-18 (three-part loop: linkedin-comment-warmer)
 
 First run of the Audit, Improve, Prove loop (documented in `docs/self-improvement-loop.md`). Audit found `linkedin-comment-warmer` was the smallest skill in the library with no worked example or quality check. Improved: a five-question quality check, a failure-pattern list, a "draft nothing if there is no honest angle" rule, the sourced reason comments matter, and a fictional before/after example in `examples/`. Proved: new `tests/comment-examples.test.mjs` pins the example and the skill's checks, wired into `tests/run.mjs`. Uses only figures already in the canonical report. Illustrative fictional names.

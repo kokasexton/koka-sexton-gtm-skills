@@ -50,13 +50,14 @@ The repo is test-gated. A change doesn't ship unless:
 - [x] (2026-11-15, tests/measurement-examples.test.mjs) Worked examples for ads-measurement; ads-optimization remains
 - [x] (2026-11-16, tests/optimization-examples.test.mjs) Worked examples for ads-optimization — all ads-* skills now covered
 - [x] (2026-11-17, tests/outbound-sync-examples.test.mjs) Worked example for ads-outbound-sync — every ads-* skill covered
-- [ ] Next: benchmark tables (cadence / format / hashtag lookups) as reusable references
+- [x] (2026-11-18, tests/benchmark-tables.test.mjs) Benchmark tables (cadence / format / hashtag lookups) generated from the dataset
 - [x] Expand `engagement-intelligence` with a classification rubric (seniority/function taxonomy) — done 2026-11-03
 - [x] `content-evaluation`, `ai-search-visibility` (`prompt-panel`, `citation-check`), signal scoring (`multi-signal`, `warm-list`)
 - [x] v2 full stack: 13 orchestrators, 8 tools, `system.json`, `no-unsourced-stats` gate
 - [x] Expose the 8 tools through the MCP server (so MCP clients can run them, not just read the skills)
 - [x] Make `lint-post.mjs` read thresholds from `skills/linkedin-algorithm/data/benchmarks.json`
-- [ ] Benchmark tables: cadence / format / hashtag lookups as reusable references
+- [x] Benchmark tables: see above
+- [ ] Next: per-role packs (SDR, founder, investor) as a generated install bundle
 - [x] Install paths: MCP server, Claude Code plugin + marketplace, `scripts/install.mjs`
 - [x] (2026-11-05, pinned by tests/threshold-source.test.mjs) `lint_post` / `linkedin_benchmark` share one threshold source (benchmarks.json)
 - [x] (2026-11-06) `lint-email` thresholds + slop list in `skills/cold-email/data/thresholds.json`, pinned by tests/email-threshold.test.mjs; `warm-list` already reads `taxonomy.json`

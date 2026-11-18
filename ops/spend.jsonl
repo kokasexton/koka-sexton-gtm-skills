@@ -15,3 +15,4 @@
 {"date":"2026-11-15","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"ads-measurement worked example","summary":"before/after example + measurement-examples test; backlog updated"}
 {"date":"2026-11-16","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"ads-optimization worked example","summary":"before/after example + optimization-examples test; backlog updated"}
 {"date":"2026-11-17","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"ads-outbound-sync worked example","summary":"before/after example + outbound-sync-examples test; backlog updated"}
+{"date":"2026-11-18","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"benchmark lookup tables","summary":"generated tables from benchmarks.json + stale-check test + worked example; backlog updated"}
