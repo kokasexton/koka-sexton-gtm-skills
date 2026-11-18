@@ -70,7 +70,7 @@ Don't jump tiers. A person who scores 3 today may score 10 in three weeks. Pitch
 
 ## Worked example
 
-`examples/events.csv` (fictional people and companies) with `--as-of 2026-10-31` returns seven people: 1 URGENT, 5 WARMING, 1 COLD, and 2 held by the fit gate.
+`examples/events.csv` (fictional people and companies) with `--as-of 2026-10-31` returns seven people: 1 URGENT, 3 WARMING, 1 COLD, and 2 held by the fit gate (held people are not counted in a tier).
 
 - Dana Okafor scores 25.5 and is URGENT. She follows two of your people, reacted with an Insight, commented, and two colleagues at her company engaged.
 - Omar Haddad scores 17, which would be URGENT, but he never commented, so he is capped at WARMING.

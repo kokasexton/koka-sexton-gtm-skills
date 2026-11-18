@@ -136,7 +136,7 @@ export function scoreEvents(events, opts = {}) {
   const order = { URGENT: 0, HOT: 1, WARMING: 2, COLD: 3 };
   people.sort((a, b) => Number(a.held || 0) - Number(b.held || 0) || order[a.tier] - order[b.tier] || b.score - a.score || (b.fit ?? 0) - (a.fit ?? 0));
   const counts = { URGENT: 0, HOT: 0, WARMING: 0, COLD: 0, held: 0 };
-  for (const p of people) { counts[p.tier]++; if (p.held) counts.held++; }
+  for (const p of people) { if (p.held) counts.held++; else counts[p.tier]++; }
   return { as_of: asOf.toISOString().slice(0, 10), counts, people: people.map(clean) };
 }
 
@@ -163,7 +163,7 @@ export function toMarkdown(r) {
   const c = r.counts;
   const lines = [
     `# Signal model, as of ${r.as_of}`,
-    `${r.people.length} people. URGENT ${c.URGENT}, HOT ${c.HOT}, WARMING ${c.WARMING}, COLD ${c.COLD}. Held by fit gate: ${c.held}.`,
+    `${r.people.length} people. URGENT ${c.URGENT}, HOT ${c.HOT}, WARMING ${c.WARMING}, COLD ${c.COLD}. Held by the fit gate: ${c.held} (not counted in a tier).`,
     "",
     "| # | Name | Company | Tier | Score | Fit | Strongest signal | Last | Notes |",
     "|---|---|---|---|---|---|---|---|---|",

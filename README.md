@@ -54,7 +54,7 @@ It's **83 skills** in one system. A front-door `koka` skill routes every ask to 
     "args": ["/absolute/path/to/koka-sexton-gtm-skills/mcp/server.mjs"] } } }
 ```
 
-Your agent gets `list_skills`, `get_skill`, `search_skills`, `get_persona`, plus the benchmark engine: `linkedin_benchmark` scores a draft against the report, and `linkedin_benchmarks` returns the data. The 8 tools run over MCP too, on text you pass in (no file paths): `lint_post`, `lint_email`, `citation_check`, `pipeline_rates`, `pipeline_plan`, `clean_list`, `score_signals`, `warm_list`, `panel_score`. Every skill is also readable as a `skill://` resource.
+Your agent gets `list_skills`, `get_skill`, `search_skills`, `get_persona`, plus the benchmark engine: `linkedin_benchmark` scores a draft against the report, and `linkedin_benchmarks` returns the data. The tools run over MCP too, on text you pass in (no file paths): `lint_post`, `lint_email`, `citation_check`, `pipeline_rates`, `pipeline_plan`, `clean_list`, `score_signals`, `warm_list`, `panel_score`, `social_selling_routine`, `signal_model`. Every skill is also readable as a `skill://` resource.
 
 **By files**, into any agent that reads `SKILL.md` folders:
 
@@ -68,6 +68,19 @@ node koka-sexton-gtm-skills/scripts/install.mjs --target <dir>   # → anywhere
 You need Node 18 or newer. There's no `npm install`, no account, and no API key. Watch the whole system run with **`npm run demo`**, then start a session and say:
 
 > *"Use the koka skill. Where should we start?"*
+
+## Start here: pick your path
+
+New to it? Pick the line that sounds like you. Each path in the [VCO pack guide](docs/vco-pack.md) has the exact commands, the input columns, a worked example and the output you should see.
+
+| You are… | You want… | Start with |
+|---|---|---|
+| An investor or sourcing lead | Which founders to call this week, and why now | [`thesis-fit`](skills/thesis-fit/SKILL.md) → [`signal-model`](skills/signal-model/SKILL.md) → [`founder-shortlist`](skills/founder-shortlist/SKILL.md) |
+| A seller or rep | The key people at one account, and who to warm first | [`signal-model`](skills/signal-model/SKILL.md) → [`committee-map`](skills/committee-map/SKILL.md) |
+| A founder or exec who posts | Who is already paying attention, and how senior they are | [`warm-list`](skills/warm-list/SKILL.md), then [`signal-model`](skills/signal-model/SKILL.md) |
+| Not sure | A diagnosis before any tactic | Say: *"Use the koka skill. Where should we start?"* |
+
+Try it in one command, no data needed: `node skills/signal-model/scripts/signal-model.mjs skills/signal-model/examples/events.csv --as-of 2026-10-31`
 
 ## Ask it anything
 
@@ -103,13 +116,14 @@ Content earns attention. Engagement and signals show who's ready. Outreach is wr
 
 ## The tools
 
-Eight Node scripts ship inside the skills. They have no dependencies, run offline, and support `--json` for automation. Each one has a worked example (fictional companies, real benchmarks) and tests pinned to its output.
+Ten Node scripts ship inside the skills. They have no dependencies, run offline, and support `--json` for automation. Each one has a worked example (fictional companies, real benchmarks) and tests pinned to its output.
 
 | Tool | Skill | In → out |
 |---|---|---|
 | `lint-post.mjs` | content-evaluation | LinkedIn draft → verdict + fixes, each rule citing the report |
 | `lint-email.mjs` | cold-email | Cold email → DO NOT SEND / READY: merge fields, template openers, fake familiarity, asks, calendar links, spammy subjects |
 | `warm-list.mjs` | warm-list | Engagement CSV + ICP → P0–P3 people with evidence, regulars, account clusters, a read of the room |
+| `signal-model.mjs` | signal-model | Events CSV (follows, reactions, comments) → people tiered Cold / Warming / Hot / Urgent, gated on a second signal and on fit |
 | `signal-score.mjs` | multi-signal | Signals CSV → accounts ranked ACT NOW / WARM UP / WATCH / IGNORE, decayed and stacked |
 | `list-clean.mjs` | list-building | Messy multi-source contacts → one record per person, with a status |
 | `pipeline-math.mjs` | outbound-metrics | Your counts → baseline rates; target + rates → sends, people, reps, best lever |
@@ -549,6 +563,24 @@ _83 skills · 13 orchestrators + 1 entry point · 10 runnable tools · generated
 | `demo` | `npm run demo` runs end to end |
 
 ## FAQ
+
+**What does each tool expect as input?**
+Each skill folder has an `examples/` file in the exact format, and the VCO pack guide has the column table for the event file ([docs/vco-pack.md](docs/vco-pack.md#the-input-file)). The tools rank on whatever columns exist and say what is missing.
+
+**Where do I get the data?**
+From exports you are entitled to hold: your own post and company-page analytics, follower lists, and your CRM, or a tool you are licensed to use. Nothing here scrapes anything.
+
+**Which skill do I use: `warm-list`, `signal-model`, `multi-signal` or `linkedin-warm-list-builder`?**
+`warm-list` for engagement exports (depth, recency, ICP fit). `signal-model` when you also have follow and reaction-type data across several of your people. `multi-signal` for account-level signals like funding and hiring. `linkedin-warm-list-builder` to rank across all your pools. The [VCO pack guide](docs/vco-pack.md#which-skill-when) has the table.
+
+**It's not firing, or it errors. What now?**
+Name the skill in the ask ("Use signal-model on this file"). Check it is installed (`node scripts/install.mjs`, or the plugin). For the tools, run the example first to confirm it works, then check your CSV header against the example. The troubleshooting table is in the [VCO pack guide](docs/vco-pack.md#troubleshooting).
+
+**How do I update?**
+Pull the repo and re-run the installer (`git pull && node scripts/install.mjs`). The plugin updates through `/plugin`.
+
+**Who is this for: investors, sellers, or founders?**
+All three. The engine is the same. Only the definition of fit changes: a thesis for investors, an ICP for sellers.
 
 **Do I need an API key or a paid tool?**
 No. The skills and tools run on files you already have: an engagement export, a contacts CSV, a signals sheet. Vendors are mentioned only as examples of a category.

@@ -135,7 +135,7 @@ export function run() {
 
   /* -------------------------------------------------------- signal-model */
   const sm = scoreEvents(parseContacts(read(`${SM}/examples/events.csv`)), { asOf: "2026-10-31" });
-  eq(sm.counts, { URGENT: 1, HOT: 0, WARMING: 5, COLD: 1, held: 2 }, "signal-model counts");
+  eq(sm.counts, { URGENT: 1, HOT: 0, WARMING: 3, COLD: 1, held: 2 }, "signal-model counts");
   const smp = (n) => sm.people.find((p) => p.name === n);
   eq([smp("Dana Okafor").tier, smp("Dana Okafor").score], ["URGENT", 25.5], "signal-model Dana tier and score");
   eq(smp("Dana Okafor").breakdown, { follow: 3, diversity: 5, recency: 3, coverage: 3, density: 5 }, "signal-model Dana breakdown");
@@ -145,6 +145,13 @@ export function run() {
   eq(smp("Grace Kim").tier, "COLD", "signal-model decays an old comment to COLD");
   eq(sm.people[0].name, "Dana Okafor", "signal-model ranks Dana first");
   expect(sm.people.slice(-2).every((p) => p.held), "signal-model sorts held people last");
+
+  const vc = scoreEvents(parseContacts(read("skills/founder-shortlist/examples/events.csv")), { asOf: "2026-10-31" });
+  eq(vc.counts, { URGENT: 2, HOT: 0, WARMING: 2, COLD: 0, held: 3 }, "signal-model VC example counts");
+  eq(vc.people.slice(0, 2).map((p) => [p.name, p.tier, p.score]), [["Maya Lindgren", "URGENT", 21.5], ["Theo Marchetti", "URGENT", 14.5]], "signal-model VC example top two");
+  const nadia = vc.people.find((p) => p.name === "Nadia Rahman");
+  eq([nadia.tier, nadia.score], ["WARMING", 15], "Nadia outscores Theo but is capped without a second signal");
+  expect(vc.people.find((p) => p.name === "Sofia Petrov").held, "Sofia (strong signal, wrong thesis) is held by fit");
 
   /* -------------------------------------------------------- pipeline-math */
   const rt = ratesFromCounts(JSON.parse(read(`${OM}/examples/counts.json`)));
