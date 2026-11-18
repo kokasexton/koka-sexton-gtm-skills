@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Koka GTM Skills: Interactive Walkthrough</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F0F4F8; --surface:#E2EBF4; --card:#FFFFFF;
+  --blue:#0A66C2; --electric:#3A9FFF; --amber:#F5A623; --signal:#E8453C; --green:#1F9D6B;
+  --text:#1B2A3B; --text2:#3A526A; --muted:#6A7F95; --border:rgba(26,61,102,.14);
+  --shadow:0 1px 2px rgba(26,61,102,.06),0 8px 24px rgba(26,61,102,.08);
+  --ease-out:cubic-bezier(.16,1,.3,1); --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --font-display:'Syne','Space Grotesk',system-ui,sans-serif;
+  --font-body:'Inter','DM Sans',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+html[data-theme="dark"]{
+  --bg:#0D1B2A; --surface:#13273B; --card:#162F47;
+  --text:#EAF2FA; --text2:#B7CBDE; --muted:#8CA4BB; --border:rgba(160,200,240,.16);
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:var(--blue)} html[data-theme="dark"] a{color:var(--electric)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{padding:36px 0 24px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:28px}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+html[data-theme="dark"] .eyebrow{color:var(--electric)}
+h1{font-family:var(--font-display);font-weight:800;font-size:clamp(32px,5vw,56px);line-height:1.05;letter-spacing:-.02em;margin:10px 0 14px}
+h1 em{font-style:normal;color:var(--amber)}
+.lede{color:var(--text2);max-width:640px;font-size:17px}
+.toggle{font-family:var(--font-mono);font-size:12px;background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:8px 14px;cursor:pointer;transition:transform .15s var(--ease-out)}
+.toggle:hover{transform:translateY(-1px)} .toggle:active{transform:scale(.97)}
+
+/* progress */
+.progress{height:6px;background:var(--surface);border-radius:999px;overflow:hidden;margin:26px 0 8px}
+.progress>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--electric));border-radius:999px;transition:width .5s var(--ease-out)}
+.progress-label{font-family:var(--font-mono);font-size:12px;color:var(--muted);display:flex;justify-content:space-between}
+
+/* layout */
+main.layout{display:grid;grid-template-columns:260px 1fr;gap:28px;padding:12px 0 72px;align-items:start}
+nav.rail{position:sticky;top:16px;display:flex;flex-direction:column;gap:6px}
+.rail button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;gap:12px;align-items:center;padding:11px 12px;border-radius:12px;border:1px solid transparent;color:var(--text2);font-size:14px;font-weight:500;transition:background .15s,transform .2s var(--ease-spring)}
+.rail button:hover{background:var(--surface);transform:translateX(3px)}
+.rail button:focus-visible{outline:2px solid var(--electric);outline-offset:2px}
+.rail .num{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-mono);font-size:12px;background:var(--surface);color:var(--text2);border:1px solid var(--border)}
+.rail button[aria-current="step"]{background:var(--card);border-color:var(--border);color:var(--text);box-shadow:var(--shadow)}
+.rail button[aria-current="step"] .num{background:var(--blue);color:#fff;border-color:var(--blue)}
+.rail button.done .num{background:var(--green);color:#fff;border-color:var(--green)}
+
+/* card */
+.card{background:var(--card);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);padding:32px;min-height:520px;animation:enter .5s var(--ease-out)}
+@keyframes enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.kicker{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.card h2{font-family:var(--font-display);font-weight:800;font-size:clamp(26px,3.4vw,38px);line-height:1.1;letter-spacing:-.015em;margin:8px 0 10px}
+.card .why{color:var(--text2);font-size:16px;max-width:620px;margin-bottom:22px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.box{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+.box h3{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;font-weight:500}
+.skill{display:flex;flex-direction:column;gap:2px;padding:8px 0;border-top:1px solid var(--border)}
+.skill:first-of-type{border-top:0;padding-top:0}
+.skill a{font-family:var(--font-mono);font-size:13px;font-weight:500;text-decoration:none}
+.skill a:hover{text-decoration:underline}
+.skill span{font-size:13.5px;color:var(--text2)}
+.prompt{position:relative;background:#0D1B2A;color:#EAF2FA;border-radius:12px;padding:14px 96px 14px 16px;font-family:var(--font-mono);font-size:13.5px;line-height:1.5;margin-bottom:10px}
+.prompt button{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:var(--amber);color:#1B2A3B;border:0;border-radius:8px;padding:7px 12px;font-family:var(--font-mono);font-size:12px;font-weight:500;cursor:pointer;transition:transform .15s var(--ease-spring)}
+.prompt button:hover{transform:translateY(-50%) scale(1.05)} .prompt button:active{transform:translateY(-50%) scale(.96)}
+ul.plain{list-style:none;display:grid;gap:8px}
+ul.plain li{display:flex;gap:10px;font-size:14.5px;color:var(--text2)}
+ul.plain li:before{content:"→";color:var(--blue);font-weight:600}
+html[data-theme="dark"] ul.plain li:before{color:var(--electric)}
+.you{display:flex;gap:10px;align-items:flex-start;background:rgba(245,166,35,.14);border:1px solid rgba(245,166,35,.45);border-radius:12px;padding:12px 14px;margin-top:16px;font-size:14px}
+.you b{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#B3730A;white-space:nowrap;padding-top:2px}
+html[data-theme="dark"] .you b{color:var(--amber)}
+.files{display:grid;gap:6px;margin-top:4px}
+.file{display:grid;grid-template-columns:28px 1fr auto;gap:10px;font-size:13.5px;padding:6px 0;border-top:1px solid var(--border);align-items:center}
+.file:first-child{border-top:0}
+.file code{font-family:var(--font-mono);font-size:12.5px}
+.tag{font-family:var(--font-mono);font-size:10.5px;padding:3px 8px;border-radius:999px;background:rgba(232,69,60,.12);color:var(--signal);letter-spacing:.04em}
+.tag.ok{background:var(--surface);color:var(--muted)}
+
+/* footer controls */
+.controls{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:26px;padding-top:20px;border-top:1px solid var(--border)}
+.btn{font-family:var(--font-body);font-size:15px;font-weight:600;border-radius:12px;padding:12px 22px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;transition:transform .15s var(--ease-out),box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)} .btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.4;cursor:default;transform:none;box-shadow:none}
+.btn.primary{background:var(--amber);color:#1B2A3B;border-color:var(--amber)}
+.hint{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+.check{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text2);cursor:pointer}
+.check input{width:18px;height:18px;accent-color:var(--green)}
+footer{padding:0 0 48px;font-size:13px;color:var(--muted)}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);background:#0D1B2A;color:#fff;font-family:var(--font-mono);font-size:12px;padding:10px 16px;border-radius:999px;opacity:0;pointer-events:none;transition:all .3s var(--ease-out)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (max-width:820px){
+  main.layout{grid-template-columns:1fr}
+  nav.rail{position:static;flex-direction:row;overflow-x:auto;padding-bottom:6px}
+  .rail button{flex:none;padding:8px 10px} .rail .label{display:none}
+  .grid2{grid-template-columns:1fr} .card{padding:22px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="topbar">
+      <span class="eyebrow">Koka Sexton · GTM Skills</span>
+      <button class="toggle" id="theme" aria-label="Toggle dark mode">Dark mode</button>
+    </div>
+    <h1>From profile to <em>booked conversations</em>, one skill at a time.</h1>
+    <p class="lede">An interactive walkthrough of the LinkedIn warming path. Nine steps. Each one names the skill, tells you exactly what to say to your agent, and what you get back. Nothing posts, connects or messages for you.</p>
+    <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="pbar"><i id="pfill"></i></div>
+    <div class="progress-label"><span id="plabel">Step 1 of 9</span><span id="pdone">0 steps completed</span></div>
+  </header>
+
+  <main class="layout">
+    <nav class="rail" id="rail" aria-label="Walkthrough steps"></nav>
+    <section id="stage" aria-live="polite"></section>
+  </main>
+
+  <footer>Skills live at <a href="https://github.com/kokasexton/koka-sexton-gtm-skills" target="_blank" rel="noopener">github.com/kokasexton/koka-sexton-gtm-skills</a>. Reach and cadence figures are sourced in the <a href="https://github.com/kokasexton/koka-sexton-gtm-skills/blob/main/skills/linkedin-algorithm/SKILL.md" target="_blank" rel="noopener">linkedin-algorithm</a> skill. Use ← → keys to move between steps.</footer>
+</div>
+<div class="toast" id="toast">Copied</div>
+
+<script>
+const REPO="https://github.com/kokasexton/koka-sexton-gtm-skills/blob/main/skills/";
+const steps=[
+ {t:"Start here",k:"Orientation",h:"Pick your path",
+  why:"You can run the whole launch in one request, or use a single skill when you only need one job done. Either way, the agent drafts and you approve.",
+  skills:[["koka","The front door. Routes any ask to the right skill."],["linkedin-launch","One request: profile, position, pillars, calendar, posts, DMs."]],
+  say:["Run my LinkedIn launch. My profile is linkedin.com/in/your-name.","Use the koka skill. Where should we start?"],
+  get:["A numbered folder of drafts (01 to 07) for the full launch","A plain-English diagnosis if you are not sure where to begin","Stops at every approval point so nothing goes out unchecked"],
+  you:"Choose one: the full launch (say the first prompt) or the step-by-step path below.",
+  files:[["01","profile-snapshot.md","Check it"],["02","positioning.md","Approve"],["03","pillars.md","Approve"],["04","profile-rebuild.md","Paste in"],["05","calendar.md / .csv","Adjust"],["06","posts/ + review","Approve each"],["07","dm-scripts.md","Send by hand"]]},
+ {t:"Define your ICP",k:"Step 1 · Foundation",h:"Say who you are targeting",
+  why:"Every later skill scores people against this. Skip it and the warm list is guesswork.",
+  skills:[["linkedin-icp-definer","Locks an ICP with explicit disqualifiers."],["define-icp","Broader workflow when you are starting from the product."]],
+  say:["Define my ICP","Who should I be selling to?"],
+  get:["A written ICP: titles, company traits, trigger events","Disqualifiers, so you know who to ignore","A definition other skills reuse automatically"],
+  you:"Read the disqualifiers. If you would take a call with someone on that list, change it."},
+ {t:"Fix your profile",k:"Step 2 · Foundation",h:"Make attention convert",
+  why:"Every comment and connection request sends someone to your profile. It should say who you help and give them one clear next step.",
+  skills:[["linkedin-profile","Treats your profile as a landing page."],["profile-read","Reads your own profile (browser, paste or PDF)."],["profile-rebuild","Three headlines, an About, Featured plan, keyword map."]],
+  say:["Is my profile working?","Rebuild my profile"],
+  get:["Three headline options that say who you help and the outcome","An About that opens on the buyer's problem","A Featured plan with one next step"],
+  you:"Paste each edit into LinkedIn yourself. The agent never edits your profile."},
+ {t:"See who engages",k:"Step 3 · Warming",h:"Find the buyers already paying attention",
+  why:"The people who comment on your posts are your warmest list. Measure how many of them actually fit your ICP.",
+  skills:[["linkedin-engager-analytics","ICP match rate and top buyer-fit engagers for a post."],["warm-list","Ranks a raw engagement export into tiers."]],
+  say:["Who engaged with my post? [paste the post URL]","Turn this export into a warm list"],
+  get:["ICP match rate for the post","The top buyer-fit engagers, by name","Regulars and account clusters flagged"],
+  you:"Skim the top names. Anyone surprising is worth a closer look."},
+ {t:"Rank your list",k:"Step 4 · Warming",h:"Decide who to warm first",
+  why:"A list of 200 is not a plan. Rank by fit, warmth and how recent the signal is, then work the top few.",
+  skills:[["linkedin-warm-list-builder","Ranks any pool by fit, warmth and signal recency."],["signal-model","Scores compound signal; tiers Cold, Warming, Hot, Urgent."]],
+  say:["Who should I warm first?","Score this event file"],
+  get:["An ordered list with the reason each person is there","Tiers so you know who is ready for a message and who needs more touches"],
+  you:"Pick this week's five. Quality of touches beats volume."},
+ {t:"Research and engage",k:"Step 5 · Warming",h:"Earn the right to message",
+  why:"Look for real, sourced signals first. Then add something useful in their comments before you ever pitch.",
+  skills:[["linkedin-signal-stack","Builds 5+ sourced signals on one prospect."],["linkedin-comment-warmer","Drafts value-add comments on their posts."],["buying-signals","Which behaviors actually predict budget."]],
+  say:["Build a signal stack for [name]","Draft a comment for this post"],
+  get:["Signals with a source for each, so outreach reads as homework","A comment that adds something, not \"great post!\""],
+  you:"Edit the comment so it sounds like you, then post it yourself."},
+ {t:"Open conversations",k:"Step 6 · Outreach",h:"Reach out with a real reason",
+  why:"Engage first, connect with a reason, send a value-first DM, then a short follow-up. Each message has a reply path for yes, not now and no.",
+  skills:[["linkedin-outreach-campaign","The full warm campaign with templates and metrics."],["dm-scripts","DM scripts with reply paths."],["first-touch","The first cold email when the channel is email."],["follow-up","Touches 2 and 3 that add something new."]],
+  say:["Plan my outreach campaign","Write my DM scripts"],
+  get:["A sequence you can follow week by week","Message drafts built on the signals from step 5"],
+  you:"Personalize and send every message by hand."},
+ {t:"Run the content engine",k:"Step 7 · Content",h:"Keep the signal flowing",
+  why:"Posting is how you generate engagers to warm. Use the sourced data to pick formats, hooks and cadence.",
+  skills:[["linkedin-algorithm","Sourced 2026 data and operating rules."],["linkedin-content","Write and run posts the way the data says wins."],["post-hooks","The first line before \"see more\"."],["content-calendar","A 30-day calendar on real dates."],["month-of-posts","A drafted, linted month of posts."]],
+  say:["What does the algorithm reward?","Plan my month of posts"],
+  get:["A 30-day calendar and one file per drafted post","Posts checked by the batch linter before you approve them"],
+  you:"Approve each post and fill every [[FILL: ...]] placeholder with a real result."},
+ {t:"Stay safe",k:"Step 8 · Safety",h:"Protect the account the whole way",
+  why:"LinkedIn limits activity, and automation tools put accounts at risk. Ramp up slowly and keep acceptance rates healthy.",
+  skills:[["linkedin-safety","A conservative warm-up ramp and the behaviors that trigger restrictions."]],
+  say:["Is my outreach pace safe?"],
+  get:["A ramp for new or quiet accounts","The behaviors to avoid, and what to do if you get a warning"],
+  you:"Never automate sends. Every post, connect and message is a manual action."}
+];
+const state={i:0,done:new Set()};
+const $=s=>document.querySelector(s);
+const rail=$("#rail"),stage=$("#stage");
+function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function renderRail(){
+  rail.innerHTML=steps.map((s,n)=>`<button data-n="${n}" class="${state.done.has(n)?'done':''}" ${n===state.i?'aria-current="step"':''}><span class="num">${state.done.has(n)?'✓':n+1}</span><span class="label">${esc(s.t)}</span></button>`).join("");
+}
+function renderStage(){
+  const s=steps[state.i];
+  const files=s.files?`<div class="box" style="margin-top:16px"><h3>The launch kit outputs</h3><div class="files">${s.files.map(f=>`<div class="file"><span class="kicker">${f[0]}</span><code>${esc(f[1])}</code><span class="tag ${/Approve/.test(f[2])?'':'ok'}">${esc(f[2])}</span></div>`).join("")}</div></div>`:"";
+  stage.innerHTML=`<article class="card" id="card">
+    <div class="kicker">${esc(s.k)}</div>
+    <h2>${esc(s.h)}</h2>
+    <p class="why">${esc(s.why)}</p>
+    <div class="grid2">
+      <div class="box"><h3>Skills to use</h3>${s.skills.map(k=>`<div class="skill"><a href="${REPO+k[0]}/SKILL.md" target="_blank" rel="noopener">${k[0]}</a><span>${esc(k[1])}</span></div>`).join("")}</div>
+      <div class="box"><h3>Say this to your agent</h3>${s.say.map(p=>`<div class="prompt">${esc(p)}<button data-copy="${esc(p)}">Copy</button></div>`).join("")}</div>
+    </div>
+    <div class="box" style="margin-top:16px"><h3>What you get</h3><ul class="plain">${s.get.map(g=>`<li>${esc(g)}</li>`).join("")}</ul></div>
+    ${files}
+    <div class="you"><b>Your move</b><span>${esc(s.you)}</span></div>
+    <div class="controls">
+      <button class="btn" id="prev" ${state.i===0?'disabled':''}>← Back</button>
+      <label class="check"><input type="checkbox" id="mark" ${state.done.has(state.i)?'checked':''}> Mark step complete</label>
+      <button class="btn primary" id="next">${state.i===steps.length-1?'Finish':'Next →'}</button>
+    </div>
+  </article>`;
+  $("#plabel").textContent=`Step ${state.i+1} of ${steps.length}`;
+  $("#pdone").textContent=`${state.done.size} step${state.done.size===1?'':'s'} completed`;
+  $("#pfill").style.width=((state.i+1)/steps.length*100)+"%";
+}
+function go(n){state.i=Math.max(0,Math.min(steps.length-1,n));renderRail();renderStage();window.scrollTo({top:0,behavior:"smooth"})}
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove("show"),1400)}
+document.addEventListener("click",e=>{
+  const r=e.target.closest("#rail button");if(r)return go(+r.dataset.n);
+  const c=e.target.closest("[data-copy]");
+  if(c){const txt=c.dataset.copy;(navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(()=>toast("Copied"),()=>{const ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");toast("Copied")}catch(_){toast("Select and copy manually")}ta.remove()});return}
+  if(e.target.id==="prev")return go(state.i-1);
+  if(e.target.id==="next"){state.done.add(state.i);if(state.i===steps.length-1){renderRail();renderStage();toast("Walkthrough complete");return}return go(state.i+1)}
+});
+document.addEventListener("change",e=>{if(e.target.id==="mark"){e.target.checked?state.done.add(state.i):state.done.delete(state.i);renderRail();renderStage()}});
+document.addEventListener("keydown",e=>{if(/INPUT|TEXTAREA/.test(e.target.tagName))return;if(e.key==="ArrowRight")go(state.i+1);if(e.key==="ArrowLeft")go(state.i-1)});
+$("#theme").addEventListener("click",()=>{const d=document.documentElement,dark=d.dataset.theme==="dark";d.dataset.theme=dark?"":"dark";$("#theme").textContent=dark?"Dark mode":"Light mode"});
+renderRail();renderStage();
+</script>
+</body>
+</html>
