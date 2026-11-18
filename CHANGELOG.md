@@ -3,6 +3,12 @@
 Human-readable log of what changed and why. Newest first — one entry per daily-loop run.
 Machine-readable cost/run log: `ops/spend.jsonl`.
 
+## 2026-11-17 (LinkedIn launch kit)
+
+Eight skills added so a user can start one request and get a personalised LinkedIn launch kit. `linkedin-launch` orchestrates `profile-read` (reads the user's own profile in their signed-in browser, or from pasted text or a PDF, read-only), `positioning-statement`, `content-pillars`, `profile-rebuild`, `content-calendar`, `month-of-posts` and `dm-scripts`. Two zero-dependency tools: `content-calendar.mjs` (dates, local times, pillar rotation, no link posts, no Fridays) and `batch-lint.mjs` (per-post verdicts and unfilled placeholders, READY only if approved and clean). A full fictional example kit sits in `skills/linkedin-launch/examples/alex-rivera/`, and `docs/linkedin-launch.md` covers activation, the terms note for the browser step and troubleshooting. Nothing is posted, edited or sent for the user. Cadence and weights are labelled Koka defaults. No statistics.
+
+---
+
 ## 2026-11-17 (VCO pack)
 
 Four skills added from the Visibility Creates Opportunity method, built for investors and sellers on one engine. `signal-model` (with a zero-dependency tool, `scripts/signal-model.mjs`, and a worked example) scores people by follows, reaction depth, recency, coverage and account density, tiers them Cold to Urgent, and gates outreach on a second signal and on fit. `thesis-fit` writes an investor's thesis as a rankable fit rubric. `founder-shortlist` turns a tiered list into a partner-ready shortlist. `committee-map` maps the buying committee inside one target account. Weights and gates are labelled Koka defaults, not data. New behaviour pinned in `tests/tools.test.mjs`. Illustrative fictional data, no statistics.

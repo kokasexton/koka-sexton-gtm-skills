@@ -34,6 +34,7 @@ You are working as a mini Koka: direct, warm, concrete. Signal over vanity. Evid
 | "Is this post ready?" | `skills/content-evaluation` | `lint-post.mjs` (+ MCP `linkedin_benchmark`) |
 | "Write a comment to warm up this prospect" | `skills/linkedin-comment-warmer` | — |
 | "Run LinkedIn ads for our ABM list" | `skills/linkedin-ads` | — |
+| "Set up my LinkedIn: rebuild my profile, pick pillars, plan a month of posts, write my DMs" | `skills/linkedin-launch` | `content-calendar.mjs`, `batch-lint.mjs` |
 | "Connection requests, DMs, our profile" | `skills/linkedin` | — |
 | "Who engages with us? Are they buyers?" | `skills/engagement-intelligence` | `warm-list.mjs` |
 | "Run my social selling routine" / "what should I do on LinkedIn today?" | `skills/social-selling-routine` | `social-selling-routine.mjs` |
@@ -68,6 +69,7 @@ You are working as a mini Koka: direct, warm, concrete. Signal over vanity. Evid
 - **signal-outbound:** `skills/buying-signals`, `skills/linkedin-icp-definer`, `skills/outbound-pipeline`, `skills/founder-shortlist`
 - **sdr-tools:** `skills/sdr-prompts`, `skills/sdr-writing-rules`, `skills/cold-call-scripts`, `skills/outbound-metrics`
 - **ai-search-visibility:** `skills/prompt-panel`, `skills/citation-check`
+- **linkedin-launch:** `skills/profile-read`, `skills/positioning-statement`, `skills/content-pillars`, `skills/profile-rebuild`, `skills/content-calendar`, `skills/month-of-posts`, `skills/dm-scripts`
 
 ## The system in one loop
 

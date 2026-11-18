@@ -1,0 +1,54 @@
+{
+  "pillars": [
+    {
+      "name": "Founder finance, plainly",
+      "weight": 2,
+      "formats": [
+        "document",
+        "image"
+      ],
+      "angles": [
+        "The three numbers a seed-stage founder should check every Monday",
+        "Burn multiple, explained without the jargon",
+        "What a board actually wants in a finance update",
+        "Hiring ahead of revenue: the question to ask first",
+        "Cash runway: the number you should be able to say out loud",
+        "Why your monthly close should take days, not weeks",
+        "Pricing changes and what they do to your forecast",
+        "The one-page finance dashboard a founder will actually read",
+        "How to read your own gross margin"
+      ]
+    },
+    {
+      "name": "Fundraising without theatre",
+      "weight": 1,
+      "formats": [
+        "text",
+        "image"
+      ],
+      "angles": [
+        "What a clean data room signals before the first call",
+        "The metric investors ask about that founders skip",
+        "Why a fundraise model should have one honest downside case",
+        "How to answer the question about your burn without flinching",
+        "What to fix in your numbers before you start fundraising"
+      ]
+    },
+    {
+      "name": "Fractional work, behind the scenes",
+      "weight": 1,
+      "formats": [
+        "text"
+      ],
+      "angles": [
+        "What a first 30 days looks like with a fractional CFO",
+        "The finance mistake I see in the first week, every time",
+        "When a fractional CFO is the wrong answer",
+        "How a fractional CFO and a bookkeeper should split the work"
+      ]
+    }
+  ],
+  "start": "2026-12-07",
+  "per_week": 4,
+  "tz": "America/New_York"
+}

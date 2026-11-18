@@ -8,8 +8,8 @@ built on real data, enforced by tests, and backed by tools your agent can run.</
 
 <p align="center">
 <a href="https://github.com/kokasexton/koka-sexton-gtm-skills/actions/workflows/ci.yml"><img src="https://github.com/kokasexton/koka-sexton-gtm-skills/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-<img src="https://img.shields.io/badge/skills-83-6366f1" alt="83 skills">
-<img src="https://img.shields.io/badge/runnable%20tools-10-ec4899" alt="10 tools">
+<img src="https://img.shields.io/badge/skills-91-6366f1" alt="91 skills">
+<img src="https://img.shields.io/badge/runnable%20tools-12-ec4899" alt="12 tools">
 <img src="https://img.shields.io/badge/dependencies-0-38bdf8" alt="zero dependencies">
 <img src="https://img.shields.io/badge/API%20keys%20required-0-22c55e" alt="no API keys">
 <img src="https://img.shields.io/badge/license-MIT-111827" alt="MIT">
@@ -36,7 +36,7 @@ Install it, and your agent stops giving generic marketing advice. It starts work
 > **Systems over hacks.** One good post is luck. A system that produces them is the job.
 > **Comments are the CRM.** Commenters are 26% more senior than likers. Work the thread.
 
-It's **83 skills** in one system. A front-door `koka` skill routes every ask to one of **13 orchestrators**, each with focused sub-skills. **10 zero-dependency tools** do the work on your data (lint the draft, clean the list, score the accounts, plan the pipeline), and a **benchmark engine** scores any post against the report over MCP.
+It's **91 skills** in one system. A front-door `koka` skill routes every ask to one of **14 orchestrators**, each with focused sub-skills. **12 zero-dependency tools** do the work on your data (lint the draft, clean the list, score the accounts, plan the pipeline), and a **benchmark engine** scores any post against the report over MCP.
 
 ## Install
 
@@ -78,6 +78,7 @@ New to it? Pick the line that sounds like you. Each path in the [VCO pack guide]
 | An investor or sourcing lead | Which founders to call this week, and why now | [`thesis-fit`](skills/thesis-fit/SKILL.md) → [`signal-model`](skills/signal-model/SKILL.md) → [`founder-shortlist`](skills/founder-shortlist/SKILL.md) |
 | A seller or rep | The key people at one account, and who to warm first | [`signal-model`](skills/signal-model/SKILL.md) → [`committee-map`](skills/committee-map/SKILL.md) |
 | A founder or exec who posts | Who is already paying attention, and how senior they are | [`warm-list`](skills/warm-list/SKILL.md), then [`signal-model`](skills/signal-model/SKILL.md) |
+| A founder or exec setting up LinkedIn | Your profile rebuilt, a clear position, pillars, a 30-day calendar, a month of posts and DM scripts, from your own profile | [`linkedin-launch`](skills/linkedin-launch/SKILL.md), see the [launch kit guide](docs/linkedin-launch.md) |
 | Not sure | A diagnosis before any tactic | Say: *"Use the koka skill. Where should we start?"* |
 
 Try it in one command, no data needed: `node skills/signal-model/scripts/signal-model.mjs skills/signal-model/examples/events.csv --as-of 2026-10-31`
@@ -116,7 +117,7 @@ Content earns attention. Engagement and signals show who's ready. Outreach is wr
 
 ## The tools
 
-Ten Node scripts ship inside the skills. They have no dependencies, run offline, and support `--json` for automation. Each one has a worked example (fictional companies, real benchmarks) and tests pinned to its output.
+Twelve Node scripts ship inside the skills. They have no dependencies, run offline, and support `--json` for automation. Each one has a worked example (fictional companies, real benchmarks) and tests pinned to its output.
 
 | Tool | Skill | In → out |
 |---|---|---|
@@ -124,6 +125,8 @@ Ten Node scripts ship inside the skills. They have no dependencies, run offline,
 | `lint-email.mjs` | cold-email | Cold email → DO NOT SEND / READY: merge fields, template openers, fake familiarity, asks, calendar links, spammy subjects |
 | `warm-list.mjs` | warm-list | Engagement CSV + ICP → P0–P3 people with evidence, regulars, account clusters, a read of the room |
 | `signal-model.mjs` | signal-model | Events CSV (follows, reactions, comments) → people tiered Cold / Warming / Hot / Urgent, gated on a second signal and on fit |
+| `content-calendar.mjs` | content-calendar | Pillars JSON → 30-day calendar on real dates at local times, pillars rotated, no link posts, no Fridays |
+| `batch-lint.mjs` | month-of-posts | Folder of post files → per-post verdict, unfilled placeholders flagged, READY only if approved and clean |
 | `signal-score.mjs` | multi-signal | Signals CSV → accounts ranked ACT NOW / WARM UP / WATCH / IGNORE, decayed and stacked |
 | `list-clean.mjs` | list-building | Messy multi-source contacts → one record per person, with a status |
 | `pipeline-math.mjs` | outbound-metrics | Your counts → baseline rates; target + rates → sends, people, reps, best lever |
@@ -442,7 +445,7 @@ Where there's no data, the skills say so. Scoring weights, timing windows, and t
 ## Catalog
 
 <details>
-<summary><b>All 83 skills</b>, generated from <code>system.json</code> and the skill files, so this list can't drift</summary>
+<summary><b>All 91 skills</b>, generated from <code>system.json</code> and the skill files, so this list can't drift</summary>
 
 <!-- catalog:start -->
 
@@ -479,6 +482,14 @@ Where there's no data, the skills say so. Scoring weights, timing windows, and t
 | [**ai-search-visibility**](skills/ai-search-visibility/SKILL.md) | orchestrator | Get a B2B brand found, named, and cited by answer engines (ChatGPT, Perplexity, Gemini, Google AI Overviews, Claude) — AEO/GEO as a measurable loop, not a vibe. | — |
 | ↳ [prompt-panel](skills/prompt-panel/SKILL.md) | sub-skill | Measure AI-search visibility with a prompt panel — a fixed set of real buyer questions run across answer engines on a schedule — and score it for mention rate, citation rate, share of voice, gaps, and the sources engines cite. | `panel-score.mjs` |
 | ↳ [citation-check](skills/citation-check/SKILL.md) | sub-skill | Check a page (markdown or HTML) for citation-readiness — the structure that makes it easy for answer engines to extract and quote — and get specific fixes. | `citation-check.mjs` |
+| [**linkedin-launch**](skills/linkedin-launch/SKILL.md) | orchestrator | Orchestrator for a personalised LinkedIn launch kit. | — |
+| ↳ [profile-read](skills/profile-read/SKILL.md) | sub-skill | Read the user's own LinkedIn profile and recent posts in their signed-in browser (or from pasted text or a PDF) and save a verbatim snapshot that the rest of the launch kit works from. | — |
+| ↳ [positioning-statement](skills/positioning-statement/SKILL.md) | sub-skill | Turn a profile snapshot and a few answers into an ICP one-pager and a positioning statement the rest of the profile and content hang from. | — |
+| ↳ [content-pillars](skills/content-pillars/SKILL.md) | sub-skill | Choose three to five content pillars from a position and a profile snapshot, score each against credibility, relevance, leverage and contrast, and write the editorial direction for each: the stance, what you will and won't say, the angles, the proof, and the formats. | — |
+| ↳ [profile-rebuild](skills/profile-rebuild/SKILL.md) | sub-skill | Rewrite a LinkedIn profile from the snapshot, the position and the pillars: three headline options, an About in short paragraphs, a Featured plan with one next step, experience bullets that show outcomes, and a keyword map that shows where each term lands. | — |
+| ↳ [content-calendar](skills/content-calendar/SKILL.md) | sub-skill | Turn pillars into a 30-day posting calendar with dates, local posting times, pillar rotation and a format for each slot, using a script that never repeats a pillar back to back and never schedules link posts. | `content-calendar.mjs` |
+| ↳ [month-of-posts](skills/month-of-posts/SKILL.md) | sub-skill | Draft a month of LinkedIn posts from the calendar and the pillars, one file per post, then check every post with the batch linter and walk the user through approving each one. | `batch-lint.mjs` |
+| ↳ [dm-scripts](skills/dm-scripts/SKILL.md) | sub-skill | Write DM scripts for two outreach scenarios chosen from the user's goal, usually a warm opener for someone who engaged or connected and a follow-up for someone who showed interest, with a reply path for yes, not now and no. | — |
 | **WHO'S READY** | | | |
 | [**engagement-intelligence**](skills/engagement-intelligence/SKILL.md) | orchestrator | Capture a company's or executive's public LinkedIn network, classify every engager off their own headline, and read the room by ICP fit, seniority, industry, and geography. | — |
 | ↳ [warm-list](skills/warm-list/SKILL.md) | sub-skill | Turn a raw export of post engagement into a ranked, tiered warm list. | `warm-list.mjs` |
@@ -536,7 +547,7 @@ Where there's no data, the skills say so. Scoring weights, timing windows, and t
 | ↳ [outbound-pipeline](skills/outbound-pipeline/SKILL.md) | sub-skill | Run a staged outbound pipeline on a target list — signals → prioritize → profile → hooks → sequences, behind a pre-flight data-quality gate. | — |
 | ↳ [founder-shortlist](skills/founder-shortlist/SKILL.md) | sub-skill | Turn a tiered list into a partner-ready shortlist of founders and operators, each with why now, thesis match, the warmest angle and who should reach out. | — |
 
-_83 skills · 13 orchestrators + 1 entry point · 10 runnable tools · generated from `system.json` by `scripts/build-catalog.mjs`_
+_91 skills · 14 orchestrators + 1 entry point · 12 runnable tools · generated from `system.json` by `scripts/build-catalog.mjs`_
 
 <!-- catalog:end -->
 
@@ -578,6 +589,9 @@ Name the skill in the ask ("Use signal-model on this file"). Check it is install
 
 **How do I update?**
 Pull the repo and re-run the installer (`git pull && node scripts/install.mjs`). The plugin updates through `/plugin`.
+
+**Can it set up my LinkedIn from my own profile?**
+Yes. Say "Run my LinkedIn launch" with your profile URL. The agent reads your own profile (browser, paste or PDF), then drafts the profile rebuild, position, pillars, calendar, posts and DMs, and stops for your approval. It never edits, posts or sends. Read the terms note first: [launch kit guide](docs/linkedin-launch.md#read-this-before-you-use-the-browser-step).
 
 **Who is this for: investors, sellers, or founders?**
 All three. The engine is the same. Only the definition of fit changes: a thesis for investors, an ICP for sellers.
