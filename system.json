@@ -13,13 +13,13 @@
     "linkedin-ads": ["ads-audiences", "ads-campaign-setup", "ads-creative", "ads-copy", "ads-bidding", "ads-measurement", "ads-outbound-sync", "ads-optimization"],
     "content-engineer": ["content-evaluation"],
     "ai-search-visibility": ["prompt-panel", "citation-check"],
-    "engagement-intelligence": ["warm-list", "linkedin-engager-analytics", "linkedin-warm-list-builder", "linkedin-signal-stack", "social-selling-routine"],
+    "engagement-intelligence": ["warm-list", "linkedin-engager-analytics", "linkedin-warm-list-builder", "linkedin-signal-stack", "social-selling-routine", "signal-model"],
     "signal-sourcer": ["job-changes", "funding-signals", "hiring-signals", "website-visitors", "company-events", "tech-changes", "competitor-signals", "content-engagement", "multi-signal"],
-    "list-building": ["define-icp", "source-companies", "find-contacts", "qualify-accounts", "clean-validate", "deduplicate"],
+    "list-building": ["define-icp", "source-companies", "find-contacts", "qualify-accounts", "clean-validate", "deduplicate", "thesis-fit", "committee-map"],
     "personalization": ["personalization-sources", "personalization-hooks", "personalization-at-scale", "personalization-qa"],
     "cold-email": ["atl-messaging", "btl-messaging", "first-touch", "follow-up", "email-personalization", "re-engagement", "subject-lines"],
     "linkedin": ["linkedin-profile", "linkedin-outreach-campaign", "linkedin-comment-warmer", "linkedin-safety"],
     "sdr-tools": ["sdr-prompts", "sdr-writing-rules", "cold-call-scripts", "outbound-metrics"],
-    "signal-outbound": ["buying-signals", "linkedin-icp-definer", "outbound-pipeline"]
+    "signal-outbound": ["buying-signals", "linkedin-icp-definer", "outbound-pipeline", "founder-shortlist"]
   }
 }

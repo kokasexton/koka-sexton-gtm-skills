@@ -86,6 +86,7 @@ Got an engagement export? Run `skills/warm-list`. Its `warm-list.mjs` engine app
 - Score a post's engagers → `skills/linkedin-engager-analytics`
 - Rank who to work this week → `skills/linkedin-warm-list-builder`
 - Research one target → `skills/linkedin-signal-stack`
+- Score compound signal (follows, reaction depth, density) with gates → `skills/signal-model`
 - Who's in-market, not just engaged → `skills/signal-sourcer`
 - Turning the list into outreach → `skills/signal-outbound`
 

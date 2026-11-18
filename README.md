@@ -8,8 +8,8 @@ built on real data, enforced by tests, and backed by tools your agent can run.</
 
 <p align="center">
 <a href="https://github.com/kokasexton/koka-sexton-gtm-skills/actions/workflows/ci.yml"><img src="https://github.com/kokasexton/koka-sexton-gtm-skills/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-<img src="https://img.shields.io/badge/skills-79-6366f1" alt="79 skills">
-<img src="https://img.shields.io/badge/runnable%20tools-9-ec4899" alt="9 tools">
+<img src="https://img.shields.io/badge/skills-83-6366f1" alt="83 skills">
+<img src="https://img.shields.io/badge/runnable%20tools-10-ec4899" alt="10 tools">
 <img src="https://img.shields.io/badge/dependencies-0-38bdf8" alt="zero dependencies">
 <img src="https://img.shields.io/badge/API%20keys%20required-0-22c55e" alt="no API keys">
 <img src="https://img.shields.io/badge/license-MIT-111827" alt="MIT">
@@ -36,7 +36,7 @@ Install it, and your agent stops giving generic marketing advice. It starts work
 > **Systems over hacks.** One good post is luck. A system that produces them is the job.
 > **Comments are the CRM.** Commenters are 26% more senior than likers. Work the thread.
 
-It's **78 skills** in one system. A front-door `koka` skill routes every ask to one of **13 orchestrators**, each with focused sub-skills. **8 zero-dependency tools** do the work on your data (lint the draft, clean the list, score the accounts, plan the pipeline), and a **benchmark engine** scores any post against the report over MCP.
+It's **83 skills** in one system. A front-door `koka` skill routes every ask to one of **13 orchestrators**, each with focused sub-skills. **10 zero-dependency tools** do the work on your data (lint the draft, clean the list, score the accounts, plan the pipeline), and a **benchmark engine** scores any post against the report over MCP.
 
 ## Install
 
@@ -428,7 +428,7 @@ Where there's no data, the skills say so. Scoring weights, timing windows, and t
 ## Catalog
 
 <details>
-<summary><b>All 78 skills</b>, generated from <code>system.json</code> and the skill files, so this list can't drift</summary>
+<summary><b>All 83 skills</b>, generated from <code>system.json</code> and the skill files, so this list can't drift</summary>
 
 <!-- catalog:start -->
 
@@ -472,6 +472,7 @@ Where there's no data, the skills say so. Scoring weights, timing windows, and t
 | ↳ [linkedin-warm-list-builder](skills/linkedin-warm-list-builder/SKILL.md) | sub-skill | Build a prioritized warming list — rank a candidate pool by ICP fit, warmth, and signal recency to decide who to work this week. | — |
 | ↳ [linkedin-signal-stack](skills/linkedin-signal-stack/SKILL.md) | sub-skill | Research a prospect and build 5+ concrete, sourced signals that make outreach feel researched rather than templated. | — |
 | ↳ [social-selling-routine](skills/social-selling-routine/SKILL.md) | sub-skill | Run the full daily social-selling routine end to end — read who viewed your profile, who engaged your recent posts in the last 24h, who engaged your company page, new followers, and whether key-account people posted recently — then return one prioritized digest of who to connect with, comment on, and DM, with drafts ready. | `social-selling-routine.mjs` |
+| ↳ [signal-model](skills/signal-model/SKILL.md) | sub-skill | Score people by compound social signal, not by one like. | `signal-model.mjs` |
 | [**signal-sourcer**](skills/signal-sourcer/SKILL.md) | orchestrator | Find the accounts and people who are in-market right now — job changes, funding, hiring, website visits, company events, tech changes, competitor signals, and content engagement — then stack and score them so the team works who's ready, not who's on a list. | — |
 | ↳ [job-changes](skills/job-changes/SKILL.md) | sub-skill | Use job changes as signals — a new leader in your function at an ICP account, a champion who moved to a new company, or a contact who left — with the timing window, the play for each, and messages that congratulate without pitching. | — |
 | ↳ [funding-signals](skills/funding-signals/SKILL.md) | sub-skill | Use funding rounds as signals — read what the round means (stage, amount, stated use of funds), reach the right leader while plans are forming, and lead with their growth plan rather than "congrats on the raise". | — |
@@ -490,6 +491,8 @@ Where there's no data, the skills say so. Scoring weights, timing windows, and t
 | ↳ [qualify-accounts](skills/qualify-accounts/SKILL.md) | sub-skill | Score and tier target accounts — ICP fit plus live signals — into Tier 1 (1:1), Tier 2 (1:few), and Tier 3 (1:many) with a play and an effort budget for each. | — |
 | ↳ [clean-validate](skills/clean-validate/SKILL.md) | sub-skill | Clean and verify contact data before it touches a sending domain — normalise fields, flag invalid syntax, role and free-mail addresses, verify mailboxes, handle catch-alls, and keep a hygiene schedule so bounces stay low. | — |
 | ↳ [deduplicate](skills/deduplicate/SKILL.md) | sub-skill | De-duplicate and merge contacts from multiple sources — normalise join keys (email, LinkedIn URL, name + company domain), pick a survivor, and merge fields without losing data — so nobody gets the same email twice. | — |
+| ↳ [thesis-fit](skills/thesis-fit/SKILL.md) | sub-skill | Turn an investment thesis into a fit score you can rank people against, the investor's version of an ICP. | — |
+| ↳ [committee-map](skills/committee-map/SKILL.md) | sub-skill | Map the buying committee inside one target account from public information: who is the economic buyer, champion, influencer and blocker, who to warm first, and the first touch for each. | — |
 | [**personalization**](skills/personalization/SKILL.md) | orchestrator | Personalisation that is real — built on an observed signal, not a mail-merge field. | — |
 | ↳ [personalization-sources](skills/personalization-sources/SKILL.md) | sub-skill | Where real personalisation comes from, in six buckets ranked by strength — their own words, their engagement with you, a change at their company, their team's public work, a shared context, and their company's public story — with where to find each and how long it stays fresh. | — |
 | ↳ [personalization-hooks](skills/personalization-hooks/SKILL.md) | sub-skill | Turn an observation into an opening line — strong hooks (their words or actions, tied to your reason for writing) vs. light hooks (segment- or company-level, honest about being so) — and know when each is appropriate. | — |
@@ -517,8 +520,9 @@ Where there's no data, the skills say so. Scoring weights, timing windows, and t
 | ↳ [buying-signals](skills/buying-signals/SKILL.md) | sub-skill | Which observable behaviours actually predict budget — engagement depth, seniority of engagement, hiring, funding, tech changes, and comment behaviour. | — |
 | ↳ [linkedin-icp-definer](skills/linkedin-icp-definer/SKILL.md) | sub-skill | Define and lock an Ideal Customer Profile with explicit disqualifiers — the targeting foundation every warming, engagement, and outbound skill scores against. | — |
 | ↳ [outbound-pipeline](skills/outbound-pipeline/SKILL.md) | sub-skill | Run a staged outbound pipeline on a target list — signals → prioritize → profile → hooks → sequences, behind a pre-flight data-quality gate. | — |
+| ↳ [founder-shortlist](skills/founder-shortlist/SKILL.md) | sub-skill | Turn a tiered list into a partner-ready shortlist of founders and operators, each with why now, thesis match, the warmest angle and who should reach out. | — |
 
-_79 skills · 13 orchestrators + 1 entry point · 9 runnable tools · generated from `system.json` by `scripts/build-catalog.mjs`_
+_83 skills · 13 orchestrators + 1 entry point · 10 runnable tools · generated from `system.json` by `scripts/build-catalog.mjs`_
 
 <!-- catalog:end -->
 

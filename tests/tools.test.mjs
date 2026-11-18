@@ -11,6 +11,7 @@ import { scorePanel, parseCsv as parsePanel } from "../skills/prompt-panel/scrip
 import { lintEmail } from "../skills/cold-email/scripts/lint-email.mjs";
 import { cleanList, parseCsv as parseContacts, normLinkedIn } from "../skills/list-building/scripts/list-clean.mjs";
 import { scoreSignals, parseCsv as parseSignals } from "../skills/multi-signal/scripts/signal-score.mjs";
+import { scoreEvents } from "../skills/signal-model/scripts/signal-model.mjs";
 import { ratesFromCounts, plan } from "../skills/outbound-metrics/scripts/pipeline-math.mjs";
 
 const CE = "skills/content-evaluation";
@@ -21,6 +22,7 @@ const CEM = "skills/cold-email";
 const LB = "skills/list-building";
 const MS = "skills/multi-signal";
 const OM = "skills/outbound-metrics";
+const SM = "skills/signal-model";
 const read = (p) => readFileSync(join(ROOT, p), "utf8");
 
 export function run() {
@@ -130,6 +132,19 @@ export function run() {
   eq(act("Quillstack"), "WATCH", "Quillstack (old signals decay) action");
   eq(act("Kestrel Labs"), "IGNORE", "Kestrel (low fit) action");
   eq(ss.accounts[0].account, "Northwind Analytics", "signal-score ranks Northwind first");
+
+  /* -------------------------------------------------------- signal-model */
+  const sm = scoreEvents(parseContacts(read(`${SM}/examples/events.csv`)), { asOf: "2026-10-31" });
+  eq(sm.counts, { URGENT: 1, HOT: 0, WARMING: 5, COLD: 1, held: 2 }, "signal-model counts");
+  const smp = (n) => sm.people.find((p) => p.name === n);
+  eq([smp("Dana Okafor").tier, smp("Dana Okafor").score], ["URGENT", 25.5], "signal-model Dana tier and score");
+  eq(smp("Dana Okafor").breakdown, { follow: 3, diversity: 5, recency: 3, coverage: 3, density: 5 }, "signal-model Dana breakdown");
+  eq([smp("Omar Haddad").tier, smp("Omar Haddad").score], ["WARMING", 17], "signal-model caps a no-comment person at WARMING");
+  expect(smp("Omar Haddad").notes.some((n) => /second signal/.test(n)), "signal-model explains the second-signal cap");
+  expect(smp("Lena Vogel").held && smp("Priya Nair").held, "signal-model holds low-fit people");
+  eq(smp("Grace Kim").tier, "COLD", "signal-model decays an old comment to COLD");
+  eq(sm.people[0].name, "Dana Okafor", "signal-model ranks Dana first");
+  expect(sm.people.slice(-2).every((p) => p.held), "signal-model sorts held people last");
 
   /* -------------------------------------------------------- pipeline-math */
   const rt = ratesFromCounts(JSON.parse(read(`${OM}/examples/counts.json`)));

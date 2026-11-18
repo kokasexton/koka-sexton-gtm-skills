@@ -3,6 +3,12 @@
 Human-readable log of what changed and why. Newest first — one entry per daily-loop run.
 Machine-readable cost/run log: `ops/spend.jsonl`.
 
+## 2026-11-17 (VCO pack)
+
+Four skills added from the Visibility Creates Opportunity method, built for investors and sellers on one engine. `signal-model` (with a zero-dependency tool, `scripts/signal-model.mjs`, and a worked example) scores people by follows, reaction depth, recency, coverage and account density, tiers them Cold to Urgent, and gates outreach on a second signal and on fit. `thesis-fit` writes an investor's thesis as a rankable fit rubric. `founder-shortlist` turns a tiered list into a partner-ready shortlist. `committee-map` maps the buying committee inside one target account. Weights and gates are labelled Koka defaults, not data. New behaviour pinned in `tests/tools.test.mjs`. Illustrative fictional data, no statistics.
+
+---
+
 ## 2026-11-17
 
 `ads-outbound-sync` now ships a worked example (`skills/ads-outbound-sync/examples/`): message-everyone-who-saw-the-ad next to real-signal filtering, a second scored signal, context for the SDR and a message about the topic, not the tracking. New test `outbound-sync-examples` pins the rules. Illustrative, no statistics. Model: anthropic/claude-sonnet-5.5 (single run, well under budget).

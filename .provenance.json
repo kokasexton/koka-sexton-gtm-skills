@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-16T07:34:46.895Z",
+  "generated": "2026-11-18T02:40:13.319Z",
   "origin": "Koka Sexton",
   "url": "https://kokasexton.com",
   "repo": "https://github.com/kokasexton/koka-sexton-gtm-skills",
@@ -20,6 +20,7 @@
     "clean-validate": "KSK-6020c263-clean-validate",
     "cold-call-scripts": "KSK-ef7f0224-cold-call-scripts",
     "cold-email": "KSK-13dc39a2-cold-email",
+    "committee-map": "KSK-0d62aa55-committee-map",
     "company-events": "KSK-92040846-company-events",
     "competitor-signals": "KSK-49d8a5c5-competitor-signals",
     "content-engagement": "KSK-434fdffe-content-engagement",
@@ -32,6 +33,7 @@
     "find-contacts": "KSK-d1b08b56-find-contacts",
     "first-touch": "KSK-f51da38a-first-touch",
     "follow-up": "KSK-108576b9-follow-up",
+    "founder-shortlist": "KSK-fe557f16-founder-shortlist",
     "funding-signals": "KSK-4cc6008f-funding-signals",
     "gtm-plays": "KSK-2e77ded9-gtm-plays",
     "gtm-principles": "KSK-82f84dfe-gtm-principles",
@@ -75,12 +77,14 @@
     "sdr-prompts": "KSK-78d22e3e-sdr-prompts",
     "sdr-tools": "KSK-14f7d9fe-sdr-tools",
     "sdr-writing-rules": "KSK-af37a682-sdr-writing-rules",
+    "signal-model": "KSK-016dc1b4-signal-model",
     "signal-outbound": "KSK-e60b615b-signal-outbound",
     "signal-sourcer": "KSK-1492fb12-signal-sourcer",
     "social-selling-routine": "KSK-b9463b13-social-selling-routine",
     "source-companies": "KSK-9e9d5309-source-companies",
     "subject-lines": "KSK-e1f777d9-subject-lines",
     "tech-changes": "KSK-9e9d7b44-tech-changes",
+    "thesis-fit": "KSK-78309719-thesis-fit",
     "warm-list": "KSK-0ab46ef8-warm-list",
     "website-visitors": "KSK-d3032807-website-visitors"
   }
