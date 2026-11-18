@@ -12,7 +12,7 @@
     {
       "name": "koka-gtm",
       "source": "./",
-      "description": "78 GTM skills (13 orchestrators + the koka front door) with 8 runnable tools: strategy, LinkedIn content and ads, signals, list building, cold email, personalization, SDR tools, AI search. Grounded in the LinkedIn Algorithm Report (2,279 posts / 246 creators).",
+      "description": "83 GTM skills (13 orchestrators + the koka front door) with 10 runnable tools: strategy, LinkedIn content and ads, signals, list building, cold email, personalization, SDR tools, AI search. Grounded in the LinkedIn Algorithm Report (2,279 posts / 246 creators).",
       "version": "2.0.0",
       "author": {
         "name": "Koka Sexton",

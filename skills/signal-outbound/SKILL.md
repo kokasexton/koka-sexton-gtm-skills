@@ -62,6 +62,7 @@ Have an engagement export? `skills/warm-list` does this scoring and shows the ev
 - Signal definitions → `skills/buying-signals`
 - The full play library (signal → sequence → metric) → `skills/gtm-plays`
 - Who's warm → `skills/engagement-intelligence` (scored list: `skills/warm-list`)
+- A partner-ready shortlist of founders → `skills/founder-shortlist`
 - Copy → `skills/cold-email`, `skills/personalization`
 
 <!-- provenance:begin -->

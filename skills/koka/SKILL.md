@@ -38,6 +38,10 @@ You are working as a mini Koka: direct, warm, concrete. Signal over vanity. Evid
 | "Who engages with us? Are they buyers?" | `skills/engagement-intelligence` | `warm-list.mjs` |
 | "Run my social selling routine" / "what should I do on LinkedIn today?" | `skills/social-selling-routine` | `social-selling-routine.mjs` |
 | "Who's in-market right now?" | `skills/signal-sourcer` | `signal-score.mjs` |
+| "Who is actually warming up, and how hot?" | `skills/signal-model` | `signal-model.mjs` |
+| "Who counts as a good founder for our fund?" | `skills/thesis-fit` | — |
+| "Who are the key people at this account?" | `skills/committee-map` | — |
+| "Which founders should we call this week, and why?" | `skills/founder-shortlist` | — |
 | "Who should I warm first this week?" | `skills/linkedin-warm-list-builder` | `warm-list.mjs` |
 | "Research this person before I reach out" | `skills/linkedin-signal-stack` | — |
 | "Who's our ICP, and is this person a fit?" | `skills/linkedin-icp-definer` | — |
@@ -56,12 +60,12 @@ You are working as a mini Koka: direct, warm, concrete. Signal over vanity. Evid
 - **linkedin-content:** `skills/linkedin-algorithm`, `skills/post-hooks`, `skills/post-storytelling`, `skills/post-formats`, `skills/post-scheduling`, `skills/post-engagement`, `skills/post-cta`, `skills/repurposing`
 - **linkedin-ads:** `skills/ads-audiences`, `skills/ads-campaign-setup`, `skills/ads-creative`, `skills/ads-copy`, `skills/ads-bidding`, `skills/ads-measurement`, `skills/ads-outbound-sync`, `skills/ads-optimization`
 - **linkedin:** `skills/linkedin-profile`, `skills/linkedin-outreach-campaign`, `skills/linkedin-comment-warmer`, `skills/linkedin-safety`
-- **engagement-intelligence:** `skills/warm-list`, `skills/linkedin-engager-analytics`, `skills/linkedin-warm-list-builder`, `skills/linkedin-signal-stack`, `skills/social-selling-routine`
+- **engagement-intelligence:** `skills/warm-list`, `skills/linkedin-engager-analytics`, `skills/linkedin-warm-list-builder`, `skills/linkedin-signal-stack`, `skills/social-selling-routine`, `skills/signal-model`
 - **signal-sourcer:** `skills/job-changes`, `skills/funding-signals`, `skills/hiring-signals`, `skills/website-visitors`, `skills/company-events`, `skills/tech-changes`, `skills/competitor-signals`, `skills/content-engagement`, `skills/multi-signal`
-- **list-building:** `skills/define-icp`, `skills/source-companies`, `skills/find-contacts`, `skills/qualify-accounts`, `skills/clean-validate`, `skills/deduplicate`
+- **list-building:** `skills/define-icp`, `skills/source-companies`, `skills/find-contacts`, `skills/qualify-accounts`, `skills/clean-validate`, `skills/deduplicate`, `skills/thesis-fit`, `skills/committee-map`
 - **cold-email:** `skills/atl-messaging`, `skills/btl-messaging`, `skills/first-touch`, `skills/follow-up`, `skills/email-personalization`, `skills/re-engagement`, `skills/subject-lines`
 - **personalization:** `skills/personalization-sources`, `skills/personalization-hooks`, `skills/personalization-at-scale`, `skills/personalization-qa`
-- **signal-outbound:** `skills/buying-signals`, `skills/linkedin-icp-definer`, `skills/outbound-pipeline`
+- **signal-outbound:** `skills/buying-signals`, `skills/linkedin-icp-definer`, `skills/outbound-pipeline`, `skills/founder-shortlist`
 - **sdr-tools:** `skills/sdr-prompts`, `skills/sdr-writing-rules`, `skills/cold-call-scripts`, `skills/outbound-metrics`
 - **ai-search-visibility:** `skills/prompt-panel`, `skills/citation-check`
 

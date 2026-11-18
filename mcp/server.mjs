@@ -11,7 +11,7 @@
  *
  * Tools: list_skills · get_skill · search_skills · get_persona · linkedin_benchmark(s)
  *        · lint_post · lint_email · citation_check · pipeline_rates · pipeline_plan
- *        · clean_list · score_signals · warm_list · panel_score · social_selling_routine
+ *        · clean_list · score_signals · warm_list · panel_score · social_selling_routine · signal_model
  * Resources: skill://<name> for every SKILL.md, plus persona://koka
  */
 import { readdirSync, readFileSync, statSync } from "node:fs";

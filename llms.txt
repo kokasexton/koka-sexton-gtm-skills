@@ -1,6 +1,6 @@
 # Koka Sexton — GTM Skills (mini-Koka)
 
-> A mini Koka you install into a code agent. A Claude Code / MCP skill system for B2B GTM operators — strategy, LinkedIn content and ads, buying signals, list building, cold email, personalization, SDR tools, and AI search — 78 skills, 8 runnable tools, and a benchmark engine, grounded in the LinkedIn Algorithm Report (2,279 posts / 246 creators). No API keys; the skills are free.
+> A mini Koka you install into a code agent. A Claude Code / MCP skill system for B2B GTM operators — strategy, LinkedIn content and ads, buying signals, list building, cold email, personalization, SDR tools, and AI search — 83 skills, 10 runnable tools, and a benchmark engine, grounded in the LinkedIn Algorithm Report (2,279 posts / 246 creators). No API keys; the skills are free.
 
 ## Install
 

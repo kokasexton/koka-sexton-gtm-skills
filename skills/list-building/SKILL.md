@@ -48,7 +48,7 @@ node <this-skill-dir>/scripts/list-clean.mjs contacts.csv --json
 - After the list: who's in-market → `skills/signal-sourcer`
 - Who already engaged → `skills/warm-list`
 - Writing to them → `skills/cold-email`
-- The sub-skills → `skills/define-icp`, `skills/source-companies`, `skills/find-contacts`, `skills/qualify-accounts`, `skills/clean-validate`, `skills/deduplicate`
+- The sub-skills → `skills/define-icp`, `skills/source-companies`, `skills/find-contacts`, `skills/qualify-accounts`, `skills/clean-validate`, `skills/deduplicate`, `skills/thesis-fit`, `skills/committee-map`
 
 <!-- provenance:begin -->
 <!-- canary: KSK-c9b5e974-list-building -->
