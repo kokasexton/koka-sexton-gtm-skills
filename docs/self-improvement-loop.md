@@ -62,6 +62,22 @@ The repo is test-gated. A change doesn't ship unless:
 - [x] (2026-11-06) `lint-email` thresholds + slop list in `skills/cold-email/data/thresholds.json`, pinned by tests/email-threshold.test.mjs; `warm-list` already reads `taxonomy.json`
 - [ ] Accuracy pass: re-verify every stat against the canonical source
 
+## The three-part skill loop
+
+A tighter loop for improving one skill at a time. Run it on any skill; the log below records each run.
+
+| Part | Question | Output |
+|---|---|---|
+| **1. Audit** | Where does this skill fall short of the repo's own bar? Compare it with the skills that ship examples, tools or checks, and with the newest sourced facts. | A short gap list: missing example, missing quality check, stale or unsourced claims, thin routing |
+| **2. Improve** | What is the smallest change that closes the biggest gap? One skill, one change. | Edited `SKILL.md` (rubric, rules, sourced references) and a fictional worked example in `examples/` |
+| **3. Prove** | Does a test fail if the improvement is undone? | A pinned `tests/<name>-examples.test.mjs`, a passing `npm test`, a changelog entry and a log line here |
+
+Rules: never fabricate a number or a source, keep first sentences of descriptions stable so the catalog doesn't churn, and fictional names only in examples.
+
+### Loop log
+
+- **2026-11-18, `linkedin-comment-warmer`.** Audit: smallest skill in the library (about 2 KB), no worked example, no quality check, no list of failure patterns. Improve: added a five-question quality check, a "what to avoid" list, a rule to draft nothing when there is no honest angle, the sourced reason comments matter, and a fictional before/after example. Prove: `tests/comment-examples.test.mjs` pins the example and the skill's checks. Next candidates by size: `linkedin-engager-analytics`, `post-formats`, `tech-changes`.
+
 ## Guardrails
 
 - Never fabricate a statistic or a source.
