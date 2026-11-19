@@ -1,0 +1,18 @@
+{
+  "_note": "Per-role install bundles. Each pack lists the skills a role reaches for first. `koka` (the entry point) and the parent orchestrator of every listed skill are added automatically, so routing never points at a skill that was not installed. Selections are Koka defaults for who needs what, not data.",
+  "sdr": {
+    "title": "SDR / seller",
+    "for": "Someone who sends first touches, follows up and works a warm list every day.",
+    "skills": ["warm-list", "signal-model", "multi-signal", "first-touch", "follow-up", "subject-lines", "email-personalization", "personalization-hooks", "personalization-qa", "cold-call-scripts", "sdr-prompts", "sdr-writing-rules", "outbound-metrics", "linkedin-comment-warmer", "linkedin-safety", "dm-scripts", "re-engagement"]
+  },
+  "founder": {
+    "title": "Founder / personal brand",
+    "for": "Someone building attention on LinkedIn and turning it into conversations.",
+    "skills": ["linkedin-algorithm", "post-hooks", "post-storytelling", "post-formats", "post-scheduling", "post-engagement", "post-cta", "repurposing", "content-evaluation", "linkedin-profile", "linkedin-launch", "profile-read", "positioning-statement", "content-pillars", "profile-rebuild", "content-calendar", "month-of-posts", "dm-scripts", "linkedin-comment-warmer", "linkedin-safety"]
+  },
+  "investor": {
+    "title": "Investor / VC",
+    "for": "Someone sourcing founders and ranking who is warming up against a thesis.",
+    "skills": ["signal-model", "thesis-fit", "founder-shortlist", "committee-map", "funding-signals", "hiring-signals", "job-changes", "multi-signal", "warm-list", "linkedin-signal-stack", "linkedin-comment-warmer", "linkedin-safety", "dm-scripts"]
+  }
+}

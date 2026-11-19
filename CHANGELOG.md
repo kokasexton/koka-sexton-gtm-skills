@@ -3,6 +3,12 @@
 Human-readable log of what changed and why. Newest first — one entry per daily-loop run.
 Machine-readable cost/run log: `ops/spend.jsonl`.
 
+## 2026-11-19 (per-role packs)
+
+New `packs.json` and `node scripts/install.mjs --pack <sdr|founder|investor>` install a role bundle instead of the whole library: 17, 20 and 13 hand-picked skills (plus `koka` and each skill's orchestrator, added automatically so routing never points at a missing skill). Who gets what is a Koka default, not data. New `tests/packs.test.mjs` checks every listed skill exists, each pack is a closed set, a real pack install lands exactly that set, and an unknown pack errors. Model: openrouter/anthropic/claude-sonnet-5.5 (single voice; deterministic code change, no new claims or figures).
+
+---
+
 ## 2026-11-18 (benchmark lookup tables)
 
 `linkedin-algorithm` now ships `references/benchmark-tables.md`: cadence, format, hashtag, length, timing and topic lookups. They are generated from `data/benchmarks.json` by `scripts/build-tables.mjs`, so they cannot drift from the report data. New `tests/benchmark-tables.test.mjs` fails if the committed tables go stale. Added a worked example and refreshed the README catalog. No new figures; everything comes from the existing dataset. Model: openrouter/anthropic/claude-sonnet-5.5 (single voice; mechanical, deterministic change).

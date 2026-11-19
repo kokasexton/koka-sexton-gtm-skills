@@ -1,0 +1,40 @@
+// Role packs: every listed skill exists, packs install a closed set (each skill's
+// orchestrator and `koka` come along), and a real pack install lands only that set.
+import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { ROOT } from "./_util.mjs";
+import { parentOf, skillNames } from "../lib/system.mjs";
+import { install, packSkills } from "../scripts/install.mjs";
+
+export function run() {
+  const fails = [];
+  const packs = JSON.parse(readFileSync(join(ROOT, "packs.json"), "utf8"));
+  const names = Object.keys(packs).filter((k) => !k.startsWith("_"));
+  const all = new Set(skillNames());
+  const parents = parentOf();
+  for (const role of ["sdr", "founder", "investor"]) if (!names.includes(role)) fails.push(`packs: missing role "${role}"`);
+  for (const p of names) {
+    const { skills, title, for: who } = packs[p];
+    if (!title || !who) fails.push(`packs: ${p} needs title and for`);
+    if (new Set(skills).size !== skills.length) fails.push(`packs: ${p} lists a skill twice`);
+    for (const s of skills) if (!all.has(s)) fails.push(`packs: ${p} lists unknown skill "${s}"`);
+    const set = new Set(packSkills(p));
+    if (!set.has("koka")) fails.push(`packs: ${p} closure lacks koka`);
+    for (const s of set) if (parents.get(s) && !set.has(parents.get(s))) fails.push(`packs: ${p} has ${s} without its orchestrator`);
+    if (set.size >= all.size) fails.push(`packs: ${p} is the whole library, not a pack`);
+    const target = mkdtempSync(join(tmpdir(), "koka-pack-"));
+    try {
+      install({ target, pack: p, log: () => {} });
+      const got = readdirSync(target).sort();
+      if (JSON.stringify(got) !== JSON.stringify([...set].sort())) fails.push(`packs: ${p} installed ${got.length}, expected ${set.size}`);
+      if (!existsSync(join(target, "koka", "KOKA.md"))) fails.push(`packs: ${p} lacks persona`);
+    } finally {
+      rmSync(target, { recursive: true, force: true });
+    }
+  }
+  let threw = false;
+  try { packSkills("nope"); } catch { threw = true; }
+  if (!threw) fails.push("packs: unknown pack should throw");
+  return fails;
+}

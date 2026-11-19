@@ -63,6 +63,7 @@ git clone https://github.com/kokasexton/koka-sexton-gtm-skills
 node koka-sexton-gtm-skills/scripts/install.mjs                  # → ~/.claude/skills (every project)
 node koka-sexton-gtm-skills/scripts/install.mjs --project        # → ./.claude/skills (this project)
 node koka-sexton-gtm-skills/scripts/install.mjs --target <dir>   # → anywhere
+node koka-sexton-gtm-skills/scripts/install.mjs --pack sdr         # a role bundle: sdr | founder | investor
 ```
 
 You need Node 18 or newer. There's no `npm install`, no account, and no API key. Watch the whole system run with **`npm run demo`**, then start a session and say:

@@ -28,6 +28,7 @@ import { run as outboundSyncExamples } from "./outbound-sync-examples.test.mjs";
 import { run as socialSellingRoutine } from "./social-selling-routine.test.mjs";
 import { run as commentExamples } from "./comment-examples.test.mjs";
 import { run as benchmarkTables } from "./benchmark-tables.test.mjs";
+import { run as packsTest } from "./packs.test.mjs";
 
 const suites = [
   ["frontmatter", frontmatter],
@@ -55,6 +56,7 @@ const suites = [
   ["social-selling-routine", socialSellingRoutine],
   ["comment-examples", commentExamples],
   ["benchmark-tables", benchmarkTables],
+  ["packs", packsTest],
 ];
 
 let failed = false;

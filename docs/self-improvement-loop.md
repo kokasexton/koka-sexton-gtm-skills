@@ -57,7 +57,8 @@ The repo is test-gated. A change doesn't ship unless:
 - [x] Expose the 8 tools through the MCP server (so MCP clients can run them, not just read the skills)
 - [x] Make `lint-post.mjs` read thresholds from `skills/linkedin-algorithm/data/benchmarks.json`
 - [x] Benchmark tables: see above
-- [ ] Next: per-role packs (SDR, founder, investor) as a generated install bundle
+- [x] (2026-11-19, tests/packs.test.mjs) Per-role packs (SDR, founder, investor) via `install.mjs --pack`
+- [ ] Next: expose packs through the MCP server and the Claude Code plugin; add a pack-specific "start here" note per role
 - [x] Install paths: MCP server, Claude Code plugin + marketplace, `scripts/install.mjs`
 - [x] (2026-11-05, pinned by tests/threshold-source.test.mjs) `lint_post` / `linkedin_benchmark` share one threshold source (benchmarks.json)
 - [x] (2026-11-06) `lint-email` thresholds + slop list in `skills/cold-email/data/thresholds.json`, pinned by tests/email-threshold.test.mjs; `warm-list` already reads `taxonomy.json`
