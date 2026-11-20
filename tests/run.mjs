@@ -29,6 +29,7 @@ import { run as socialSellingRoutine } from "./social-selling-routine.test.mjs";
 import { run as commentExamples } from "./comment-examples.test.mjs";
 import { run as benchmarkTables } from "./benchmark-tables.test.mjs";
 import { run as packsTest } from "./packs.test.mjs";
+import { run as portableRefs } from "./portable-refs.test.mjs";
 
 const suites = [
   ["frontmatter", frontmatter],
@@ -57,6 +58,7 @@ const suites = [
   ["comment-examples", commentExamples],
   ["benchmark-tables", benchmarkTables],
   ["packs", packsTest],
+  ["portable-refs", portableRefs],
 ];
 
 let failed = false;

@@ -3,6 +3,10 @@
 Human-readable log of what changed and why. Newest first — one entry per daily-loop run.
 Machine-readable cost/run log: `ops/spend.jsonl`.
 
+## 2026-11-20 (installed skills stay self-contained)
+
+New test `tests/portable-refs.test.mjs`: a skill may only point at files inside its own folder or at the shipped persona files (`KOKA.md`, `KOKA-FIRST.md`). Anything else breaks once the skill is installed on its own, which is exactly what role packs now do. It caught one real case: `linkedin-algorithm` named `lib/benchmark.mjs`, which isn't shipped with an install; it now points to the MCP tools instead. Model used: Claude Sonnet 5.5.
+
 ## 2026-11-19 (per-role packs)
 
 New `packs.json` and `node scripts/install.mjs --pack <sdr|founder|investor>` install a role bundle instead of the whole library: 17, 20 and 13 hand-picked skills (plus `koka` and each skill's orchestrator, added automatically so routing never points at a missing skill). Who gets what is a Koka default, not data. New `tests/packs.test.mjs` checks every listed skill exists, each pack is a closed set, a real pack install lands exactly that set, and an unknown pack errors. Model: openrouter/anthropic/claude-sonnet-5.5 (single voice; deterministic code change, no new claims or figures).

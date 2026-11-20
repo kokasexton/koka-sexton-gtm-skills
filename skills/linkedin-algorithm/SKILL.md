@@ -16,7 +16,7 @@ Source: **LinkedIn Algorithm Report 2026** (data by SignalScout) — 2,279 posts
 
 # LinkedIn Algorithm 2026
 
-> **Don't just read this — run it.** These numbers power a benchmark engine: the MCP tool `linkedin_benchmark` evaluates any draft against them (length, hashtags, format, line breaks, timing) and returns fixes; `linkedin_benchmarks` returns the raw dataset. Data: `data/benchmarks.json`; engine: `lib/benchmark.mjs`. For a pre-publish gate that also checks voice, slop, and engagement bait, run `lint-post.mjs` in `skills/content-evaluation`.
+> **Don't just read this — run it.** These numbers power a benchmark engine: the MCP tool `linkedin_benchmark` evaluates any draft against them (length, hashtags, format, line breaks, timing) and returns fixes; `linkedin_benchmarks` returns the raw dataset. Data: `data/benchmarks.json`; engine: the repo's benchmark engine, reached through those MCP tools. For a pre-publish gate that also checks voice, slop, and engagement bait, run `lint-post.mjs` in `skills/content-evaluation`.
 
 ## The 5 truths
 
