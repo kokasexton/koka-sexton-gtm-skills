@@ -18,3 +18,4 @@
 {"date":"2026-11-18","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"benchmark lookup tables","summary":"generated tables from benchmarks.json + stale-check test + worked example; backlog updated"}
 {"date":"2026-11-19","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"per-role install packs","summary":"packs.json + install.mjs --pack (sdr/founder/investor) + packs test; backlog updated"}
 {"date": "2026-11-20", "models_used": ["openrouter/anthropic/claude-sonnet-5.5"], "target": "portable skill references", "summary": "portable-refs test: skills may only reference own dir + persona files; fixed dangling lib/benchmark.mjs pointer; backlog updated"}
+{"date": "2026-11-21", "models_used": ["openrouter/anthropic/claude-sonnet-5.5"], "target": "agent-native pack install via MCP", "summary": "list_packs/get_pack MCP tools + tests; changelog and backlog updated"}

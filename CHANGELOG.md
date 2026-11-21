@@ -3,6 +3,10 @@
 Human-readable log of what changed and why. Newest first — one entry per daily-loop run.
 Machine-readable cost/run log: `ops/spend.jsonl`.
 
+## 2026-11-21 (agent-native pack install)
+
+The MCP server gained two tools, `list_packs` and `get_pack`, so an agent can discover the sdr / founder / investor bundles and get the exact skill set plus the install command without reading files (19 tools now). The skill set is computed the same way `install.mjs --pack` does it, and `tests/mcp.test.mjs` checks the two agree. Model: openrouter/anthropic/claude-sonnet-5.5 (single voice; code change, no new claims or figures).
+
 ## 2026-11-20 (installed skills stay self-contained)
 
 New test `tests/portable-refs.test.mjs`: a skill may only point at files inside its own folder or at the shipped persona files (`KOKA.md`, `KOKA-FIRST.md`). Anything else breaks once the skill is installed on its own, which is exactly what role packs now do. It caught one real case: `linkedin-algorithm` named `lib/benchmark.mjs`, which isn't shipped with an install; it now points to the MCP tools instead. Model used: Claude Sonnet 5.5.

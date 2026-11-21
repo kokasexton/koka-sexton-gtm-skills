@@ -9,7 +9,7 @@
  *   { "mcpServers": { "koka-gtm": { "command": "node",
  *       "args": ["/abs/path/koka-sexton-gtm-skills/mcp/server.mjs"] } } }
  *
- * Tools: list_skills · get_skill · search_skills · get_persona · linkedin_benchmark(s)
+ * Tools: list_packs · get_pack · list_skills · get_skill · search_skills · get_persona · linkedin_benchmark(s)
  *        · lint_post · lint_email · citation_check · pipeline_rates · pipeline_plan
  *        · clean_list · score_signals · warm_list · panel_score · social_selling_routine · signal_model
  * Resources: skill://<name> for every SKILL.md, plus persona://koka
@@ -18,6 +18,7 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { SKILL_TOOLS, runSkillTool } from "../lib/tools.mjs";
+import { parentOf } from "../lib/system.mjs";
 import { benchmarkPost, benchmarkData } from "../lib/benchmark.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -129,8 +130,22 @@ const TOOLS = [
     description: "Return the LinkedIn Algorithm Report benchmark dataset, or one metric (e.g. 'cadence', 'craft', 'comments').",
     inputSchema: { type: "object", properties: { metric: { type: "string" } } },
   },
+  {
+    name: "list_packs",
+    description: "List the per-role install packs (sdr, founder, investor): title, who it is for, and how many skills each installs.",
+    inputSchema: { type: "object", properties: {}, additionalProperties: false },
+  },
+  {
+    name: "get_pack",
+    description: "Return one role pack: the exact skills it installs (including koka and each skill's orchestrator) and the install command.",
+    inputSchema: { type: "object", properties: { name: { type: "string", description: "sdr | founder | investor" } }, required: ["name"] },
+  },
   ...SKILL_TOOLS,
 ];
+
+function skillParent(n) {
+  return parentOf().get(n) || null;
+}
 
 function call(name, args = {}) {
   const skillTool = runSkillTool(name, args);
@@ -163,6 +178,25 @@ function call(name, args = {}) {
       .filter((s) => s.score > 0)
       .sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
     return { query: args.query, matches: scored };
+  }
+  if (name === "list_packs" || name === "get_pack") {
+    const packs = JSON.parse(readFileSync(join(ROOT, "packs.json"), "utf8"));
+    const names = Object.keys(packs).filter((k) => !k.startsWith("_"));
+    if (name === "list_packs") {
+      return { packs: names.map((k) => ({ name: k, title: packs[k].title, for: packs[k].for, listed_skills: packs[k].skills.length })) };
+    }
+    if (!names.includes(args.name)) return { error: `unknown pack ${args.name}. Available: ${names.join(", ")}` };
+    const byName = new Map(all.map((x) => [x.name, x]));
+    const set = new Set(["koka", ...packs[args.name].skills]);
+    for (const n of packs[args.name].skills) {
+      const orch = skillParent(n);
+      if (orch) set.add(orch);
+    }
+    return {
+      name: args.name, title: packs[args.name].title, for: packs[args.name].for,
+      install: `node scripts/install.mjs --pack ${args.name}`,
+      skills: [...set].sort().map((n) => ({ name: n, description: byName.get(n)?.description || null })),
+    };
   }
   if (name === "get_persona") {
     return { persona: readDoc("KOKA.md"), defaults: readDoc("KOKA-FIRST.md") };

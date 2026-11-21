@@ -39,13 +39,17 @@ send({ jsonrpc: "2.0", id: 7, method: "tools/call", params: { name: "linkedin_be
 send({ jsonrpc: "2.0", id: 8, method: "tools/call", params: { name: "search_skills", arguments: { query: "who should I warm this week" } } });
 send({ jsonrpc: "2.0", id: 9, method: "tools/call", params: { name: "search_skills", arguments: { query: "score these engagers" } } });
 
+send({ jsonrpc: "2.0", id: 30, method: "tools/call", params: { name: "list_packs", arguments: {} } });
+send({ jsonrpc: "2.0", id: 31, method: "tools/call", params: { name: "get_pack", arguments: { name: "sdr" } } });
+send({ jsonrpc: "2.0", id: 32, method: "tools/call", params: { name: "get_pack", arguments: { name: "nope" } } });
+
 const fails = [];
 const t = (name, cond) => { console.log((cond ? "PASS " : "FAIL ") + name); if (!cond) fails.push(name); };
 
 const init = await wait(1);
 t("initialize -> koka-gtm", init?.result?.serverInfo?.name === "koka-gtm");
 const tl = await wait(2);
-t("tools/list has 17 tools", tl?.result?.tools?.length === 17);
+t("tools/list has 19 tools", tl?.result?.tools?.length === 19);
 const ls = await wait(3);
 const listOut = JSON.parse(ls.result.content[0].text);
 t("list_skills returns skills", listOut.skills?.length >= 8);
@@ -100,6 +104,11 @@ const bad = await out(19); t("missing input is a clean error, not a crash", bad.
 const unk = await out(20); t("unknown tool is an error", unk.err === true);
 const rt = await out(21); t("social_selling_routine returns a ranked digest", !rt.err && Array.isArray(rt.v.ranked) && typeof rt.v.markdown === "string" && rt.v.ranked.every((p) => p.fit >= 0.5));
 const sm = await out(22); t("signal_model returns tiered people", !sm.err && Array.isArray(sm.v.people) && sm.v.people[0].tier === "URGENT" && sm.v.counts.held === 2);
+
+const lpk = await out(30); t("list_packs lists sdr, founder, investor", !lpk.err && ["sdr", "founder", "investor"].every((k) => lpk.v.packs.some((p) => p.name === k)));
+const gpk = await out(31);
+t("get_pack sdr matches the real installer set", !gpk.err && gpk.v.install.includes("--pack sdr") && gpk.v.skills.length === (await import("../scripts/install.mjs")).packSkills("sdr").length && gpk.v.skills.some((x) => x.name === "koka") && gpk.v.skills.every((x) => x.description));
+const bpk = await out(32); t("unknown pack is an error message", /unknown pack/.test(bpk.v.error));
 
 srv.kill();
 console.log(fails.length ? `\nFAILED: ${fails.join(", ")}` : "\nALL PASSED");
