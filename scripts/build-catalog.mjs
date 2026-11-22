@@ -21,8 +21,9 @@ function meta(name) {
   const fm = (body.match(/^---\n([\s\S]*?)\n---/) || [])[1] || "";
   const description = ((fm.match(/^description:\s*(.+)$/m) || [])[1] || "").replace(/^"|"$/g, "").trim();
   const first = description.split(/(?<=[.!?])\s+(?=[A-Z])/)[0];
+  // build-*.mjs scripts regenerate committed files; they are maintenance, not user-facing tools.
   const scripts = join(dir, "scripts");
-  const tools = existsSync(scripts) ? readdirSync(scripts).filter((f) => f.endsWith(".mjs")) : [];
+  const tools = existsSync(scripts) ? readdirSync(scripts).filter((f) => f.endsWith(".mjs") && !f.startsWith("build-")) : [];
   return { name, first, tools };
 }
 

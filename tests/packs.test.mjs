@@ -26,12 +26,28 @@ export function run() {
     const target = mkdtempSync(join(tmpdir(), "koka-pack-"));
     try {
       install({ target, pack: p, log: () => {} });
-      const got = readdirSync(target).sort();
+      const got = readdirSync(target).filter((n) => !n.startsWith(".")).sort();
       if (JSON.stringify(got) !== JSON.stringify([...set].sort())) fails.push(`packs: ${p} installed ${got.length}, expected ${set.size}`);
       if (!existsSync(join(target, "koka", "KOKA.md"))) fails.push(`packs: ${p} lacks persona`);
+      // The installed router must say exactly which skills exist, so it never routes to one that does not.
+      const koka = readFileSync(join(target, "koka", "SKILL.md"), "utf8");
+      const note = koka.split("<!-- koka-pack -->")[1] || "";
+      if (!note) fails.push(`packs: ${p} koka has no installed-pack note`);
+      const listed = [...(note.match(/Installed \(\d+\): (.*)/) || [])[1]?.matchAll(/`([^`]+)`/g) || []].map((m) => m[1]).sort();
+      if (JSON.stringify(listed) !== JSON.stringify(got)) fails.push(`packs: ${p} koka note lists ${listed.length} skills, ${got.length} are installed`);
+      for (const n of listed) if (!existsSync(join(target, n, "SKILL.md"))) fails.push(`packs: ${p} koka note lists ${n}, which is not installed`);
     } finally {
       rmSync(target, { recursive: true, force: true });
     }
+  }
+  // A full install must not carry the pack note, and installing a pack then the full set removes it.
+  const full = mkdtempSync(join(tmpdir(), "koka-pack-"));
+  try {
+    install({ target: full, pack: "sdr", log: () => {} });
+    install({ target: full, log: () => {} });
+    if (readFileSync(join(full, "koka", "SKILL.md"), "utf8").includes("<!-- koka-pack -->")) fails.push("packs: full install after a pack left the pack note behind");
+  } finally {
+    rmSync(full, { recursive: true, force: true });
   }
   let threw = false;
   try { packSkills("nope"); } catch { threw = true; }

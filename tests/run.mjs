@@ -30,6 +30,7 @@ import { run as commentExamples } from "./comment-examples.test.mjs";
 import { run as benchmarkTables } from "./benchmark-tables.test.mjs";
 import { run as packsTest } from "./packs.test.mjs";
 import { run as portableRefs } from "./portable-refs.test.mjs";
+import { run as countsTest } from "./counts.test.mjs";
 
 const suites = [
   ["frontmatter", frontmatter],
@@ -59,6 +60,7 @@ const suites = [
   ["benchmark-tables", benchmarkTables],
   ["packs", packsTest],
   ["portable-refs", portableRefs],
+  ["counts", countsTest],
 ];
 
 let failed = false;
