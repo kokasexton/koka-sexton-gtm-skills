@@ -3,6 +3,10 @@
 Human-readable log of what changed and why. Newest first — one entry per daily-loop run.
 Machine-readable cost/run log: `ops/spend.jsonl`.
 
+## 2026-11-22 (SDR pack walkthrough)
+
+New `docs/sdr-pack.md` walks an SDR through the pack from install to send plan: `--pack sdr` (25 skills), ranking the example engagement export with `warm-list`, the skill-by-skill path from hook to follow-up, and planning volume with `outbound-metrics`. Every figure in it is output from the shipped fictional examples, and the new `tests/sdr-walkthrough.test.mjs` re-runs the engines so the doc fails CI if it drifts. No new external statistics. Model: openrouter/anthropic/claude-sonnet-5.5 (single voice; docs plus test, no new claims, so the cheap-model/second-voice split was not needed).
+
 ## 2026-11-21 (agent-native pack install)
 
 The MCP server gained two tools, `list_packs` and `get_pack`, so an agent can discover the sdr / founder / investor bundles and get the exact skill set plus the install command without reading files (19 tools now). The skill set is computed the same way `install.mjs --pack` does it, and `tests/mcp.test.mjs` checks the two agree. Model: openrouter/anthropic/claude-sonnet-5.5 (single voice; code change, no new claims or figures).

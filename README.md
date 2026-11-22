@@ -65,6 +65,7 @@ node koka-sexton-gtm-skills/scripts/install.mjs --project        # → ./.claude
 node koka-sexton-gtm-skills/scripts/install.mjs --target <dir>   # → anywhere
 node koka-sexton-gtm-skills/scripts/install.mjs --pack sdr         # a role bundle: sdr | founder | investor
 # A pack install tells `koka` exactly which skills are present, so it only routes to those.
+# Worked end to end for sellers: [docs/sdr-pack.md](docs/sdr-pack.md).
 ```
 
 You need Node 18 or newer. There's no `npm install`, no account, and no API key. Watch the whole system run with **`npm run demo`**, then start a session and say:

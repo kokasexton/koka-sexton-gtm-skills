@@ -19,3 +19,4 @@
 {"date":"2026-11-19","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"per-role install packs","summary":"packs.json + install.mjs --pack (sdr/founder/investor) + packs test; backlog updated"}
 {"date": "2026-11-20", "models_used": ["openrouter/anthropic/claude-sonnet-5.5"], "target": "portable skill references", "summary": "portable-refs test: skills may only reference own dir + persona files; fixed dangling lib/benchmark.mjs pointer; backlog updated"}
 {"date": "2026-11-21", "models_used": ["openrouter/anthropic/claude-sonnet-5.5"], "target": "agent-native pack install via MCP", "summary": "list_packs/get_pack MCP tools + tests; changelog and backlog updated"}
+{"date":"2026-11-22","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"SDR pack walkthrough","summary":"docs/sdr-pack.md install-to-send-plan walkthrough with quoted engine output; tests/sdr-walkthrough.test.mjs pins it; backlog updated"}

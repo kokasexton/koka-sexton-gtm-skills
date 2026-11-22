@@ -31,6 +31,7 @@ import { run as benchmarkTables } from "./benchmark-tables.test.mjs";
 import { run as packsTest } from "./packs.test.mjs";
 import { run as portableRefs } from "./portable-refs.test.mjs";
 import { run as countsTest } from "./counts.test.mjs";
+import { run as sdrWalkthrough } from "./sdr-walkthrough.test.mjs";
 
 const suites = [
   ["frontmatter", frontmatter],
@@ -58,6 +59,7 @@ const suites = [
   ["social-selling-routine", socialSellingRoutine],
   ["comment-examples", commentExamples],
   ["benchmark-tables", benchmarkTables],
+  ["sdr-walkthrough", sdrWalkthrough],
   ["packs", packsTest],
   ["portable-refs", portableRefs],
   ["counts", countsTest],
