@@ -32,6 +32,7 @@ import { run as packsTest } from "./packs.test.mjs";
 import { run as portableRefs } from "./portable-refs.test.mjs";
 import { run as countsTest } from "./counts.test.mjs";
 import { run as sdrWalkthrough } from "./sdr-walkthrough.test.mjs";
+import { run as founderWalkthrough } from "./founder-walkthrough.test.mjs";
 
 const suites = [
   ["frontmatter", frontmatter],
@@ -60,6 +61,7 @@ const suites = [
   ["comment-examples", commentExamples],
   ["benchmark-tables", benchmarkTables],
   ["sdr-walkthrough", sdrWalkthrough],
+  ["founder-walkthrough", founderWalkthrough],
   ["packs", packsTest],
   ["portable-refs", portableRefs],
   ["counts", countsTest],
