@@ -41,7 +41,8 @@ The repo is test-gated. A change doesn't ship unless:
 - [x] (2026-11-21, tests/mcp.test.mjs) Agent-native install: `list_packs` / `get_pack` MCP tools, checked against `install.mjs --pack`
 - [x] (2026-11-22, docs/sdr-pack.md, tests/sdr-walkthrough.test.mjs) SDR pack walkthrough, install to send plan, quoted output pinned to the engines
 - [x] (2026-11-23, docs/founder-pack.md, tests/founder-walkthrough.test.mjs) Founder pack walkthrough, install to batch-checked month of posts
-- [ ] Next: investor-pack walkthrough (`docs/investor-pack.md`; `vco-pack.md` already exists, check overlap first)
+- [x] (2026-11-24, docs/investor-pack.md, tests/investor-walkthrough.test.mjs) Investor pack walkthrough, install to shortlist
+- [ ] Next: MCP/agent-native check that every pack walkthrough doc is reachable via `get_pack` (add a `guide` field to packs.json)
 - [x] Worked examples for every skill that ships a tool (`examples/`), pinned by `tests/tools.test.mjs`
 - [x] (2026-11-07, pinned by tests/messaging-examples.test.mjs) Worked examples for ATL/BTL messaging
 - [x] (2026-11-08, tests/call-examples.test.mjs) Worked examples for cold-call-scripts

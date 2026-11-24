@@ -3,6 +3,10 @@
 Human-readable log of what changed and why. Newest first — one entry per daily-loop run.
 Machine-readable cost/run log: `ops/spend.jsonl`.
 
+## 2026-11-24 (investor pack walkthrough)
+
+New `docs/investor-pack.md` walks an investor through the pack: `--pack investor` (20 skills installed), writing the thesis as a rubric, ranking with `signal-model` (2 Urgent, 2 Warming, 3 held by the fit gate on the example), adding account-level signals with `multi-signal`, and turning it into a shortlist. It links to the VCO guide for depth instead of repeating it. Every figure is output from the shipped fictional examples; the new `tests/investor-walkthrough.test.mjs` re-runs the engines so the doc fails CI if it drifts. All three role packs now have a walkthrough. No new external statistics. Model: openrouter/anthropic/claude-sonnet-5.5 (single voice; docs plus test, no new claims).
+
 ## 2026-11-23 (founder pack walkthrough)
 
 New `docs/founder-pack.md` walks a founder through the pack: `--pack founder` (24 skills), the foundations, planning a month with `content-calendar` (18 posts, 4 a week), gating drafts with `content-evaluation` (BLOCK on the bad example, SHIP on the rewrite), and checking a batch with `month-of-posts`. Every figure is output from the shipped fictional examples, and the new `tests/founder-walkthrough.test.mjs` re-runs the engines so the doc fails CI if it drifts. README links it. No new external statistics. Model: openrouter/anthropic/claude-sonnet-5.5 (single voice; docs plus test, no new claims).

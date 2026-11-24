@@ -67,6 +67,7 @@ node koka-sexton-gtm-skills/scripts/install.mjs --pack sdr         # a role bund
 # A pack install tells `koka` exactly which skills are present, so it only routes to those.
 # Worked end to end for sellers: [docs/sdr-pack.md](docs/sdr-pack.md).
 # And for founders: [docs/founder-pack.md](docs/founder-pack.md).
+# And for investors: [docs/investor-pack.md](docs/investor-pack.md).
 ```
 
 You need Node 18 or newer. There's no `npm install`, no account, and no API key. Watch the whole system run with **`npm run demo`**, then start a session and say:
