@@ -14,7 +14,7 @@
  *        · clean_list · score_signals · warm_list · panel_score · social_selling_routine · signal_model
  * Resources: skill://<name> for every SKILL.md, plus persona://koka
  */
-import { readdirSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { SKILL_TOOLS, runSkillTool } from "../lib/tools.mjs";
@@ -183,7 +183,7 @@ function call(name, args = {}) {
     const packs = JSON.parse(readFileSync(join(ROOT, "packs.json"), "utf8"));
     const names = Object.keys(packs).filter((k) => !k.startsWith("_"));
     if (name === "list_packs") {
-      return { packs: names.map((k) => ({ name: k, title: packs[k].title, for: packs[k].for, listed_skills: packs[k].skills.length })) };
+      return { packs: names.map((k) => ({ name: k, title: packs[k].title, for: packs[k].for, guide: packs[k].guide || null, listed_skills: packs[k].skills.length })) };
     }
     if (!names.includes(args.name)) return { error: `unknown pack ${args.name}. Available: ${names.join(", ")}` };
     const byName = new Map(all.map((x) => [x.name, x]));
@@ -195,6 +195,8 @@ function call(name, args = {}) {
     return {
       name: args.name, title: packs[args.name].title, for: packs[args.name].for,
       install: `node scripts/install.mjs --pack ${args.name}`,
+      guide: packs[args.name].guide || null,
+      guide_markdown: packs[args.name].guide && existsSync(join(ROOT, packs[args.name].guide)) ? readFileSync(join(ROOT, packs[args.name].guide), "utf8") : null,
       skills: [...set].sort().map((n) => ({ name: n, description: byName.get(n)?.description || null })),
     };
   }

@@ -108,6 +108,7 @@ const sm = await out(22); t("signal_model returns tiered people", !sm.err && Arr
 const lpk = await out(30); t("list_packs lists sdr, founder, investor", !lpk.err && ["sdr", "founder", "investor"].every((k) => lpk.v.packs.some((p) => p.name === k)));
 const gpk = await out(31);
 t("get_pack sdr matches the real installer set", !gpk.err && gpk.v.install.includes("--pack sdr") && gpk.v.skills.length === (await import("../scripts/install.mjs")).packSkills("sdr").length && gpk.v.skills.some((x) => x.name === "koka") && gpk.v.skills.every((x) => x.description));
+t("get_pack returns its walkthrough guide, matching the file", gpk.v.guide === "docs/sdr-pack.md" && gpk.v.guide_markdown === rf(join(ROOT, "docs/sdr-pack.md"), "utf8") && lpk.v.packs.every((p) => p.guide));
 const bpk = await out(32); t("unknown pack is an error message", /unknown pack/.test(bpk.v.error));
 
 srv.kill();

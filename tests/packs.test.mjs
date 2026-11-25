@@ -17,6 +17,8 @@ export function run() {
   for (const p of names) {
     const { skills, title, for: who } = packs[p];
     if (!title || !who) fails.push(`packs: ${p} needs title and for`);
+    if (!packs[p].guide || !existsSync(join(ROOT, packs[p].guide))) fails.push(`packs: ${p} needs a guide that exists`);
+    else if (!readFileSync(join(ROOT, packs[p].guide), "utf8").includes(`--pack ${p}`)) fails.push(`packs: ${p} guide never shows its install command`);
     if (new Set(skills).size !== skills.length) fails.push(`packs: ${p} lists a skill twice`);
     for (const s of skills) if (!all.has(s)) fails.push(`packs: ${p} lists unknown skill "${s}"`);
     const set = new Set(packSkills(p));

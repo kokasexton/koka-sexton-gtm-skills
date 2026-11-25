@@ -3,6 +3,10 @@
 Human-readable log of what changed and why. Newest first — one entry per daily-loop run.
 Machine-readable cost/run log: `ops/spend.jsonl`.
 
+## 2026-11-25 (pack guides reachable by agents)
+
+Each role pack in `packs.json` now names its walkthrough (`guide`). The MCP tools `list_packs` and `get_pack` return it, and `get_pack` includes the full guide text, so an agent can install a pack and read how to use it without leaving the server. Tests now fail if a pack has no guide, the guide file is missing, or the guide never shows that pack's install command. No new statistics. Model: openrouter/anthropic/claude-sonnet-5.5 (single voice; plumbing plus tests).
+
 ## 2026-11-24 (investor pack walkthrough)
 
 New `docs/investor-pack.md` walks an investor through the pack: `--pack investor` (20 skills installed), writing the thesis as a rubric, ranking with `signal-model` (2 Urgent, 2 Warming, 3 held by the fit gate on the example), adding account-level signals with `multi-signal`, and turning it into a shortlist. It links to the VCO guide for depth instead of repeating it. Every figure is output from the shipped fictional examples; the new `tests/investor-walkthrough.test.mjs` re-runs the engines so the doc fails CI if it drifts. All three role packs now have a walkthrough. No new external statistics. Model: openrouter/anthropic/claude-sonnet-5.5 (single voice; docs plus test, no new claims).
