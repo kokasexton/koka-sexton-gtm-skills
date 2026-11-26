@@ -4,18 +4,125 @@
     "guide": "docs/sdr-pack.md",
     "title": "SDR / seller",
     "for": "Someone who sends first touches, follows up and works a warm list every day.",
-    "skills": ["warm-list", "signal-model", "multi-signal", "first-touch", "follow-up", "subject-lines", "email-personalization", "personalization-hooks", "personalization-qa", "cold-call-scripts", "sdr-prompts", "sdr-writing-rules", "outbound-metrics", "linkedin-comment-warmer", "linkedin-safety", "dm-scripts", "re-engagement"]
+    "first_prompts": [
+      {
+        "say": "Rank my engagement export and tell me who to message first.",
+        "skill": "warm-list"
+      },
+      {
+        "say": "Write a first touch to this person using what they posted this week.",
+        "skill": "first-touch"
+      },
+      {
+        "say": "Draft a follow-up for a prospect who opened but never replied.",
+        "skill": "follow-up"
+      },
+      {
+        "say": "Check this opener for personalization that sounds real, not templated.",
+        "skill": "personalization-qa"
+      }
+    ],
+    "skills": [
+      "warm-list",
+      "signal-model",
+      "multi-signal",
+      "first-touch",
+      "follow-up",
+      "subject-lines",
+      "email-personalization",
+      "personalization-hooks",
+      "personalization-qa",
+      "cold-call-scripts",
+      "sdr-prompts",
+      "sdr-writing-rules",
+      "outbound-metrics",
+      "linkedin-comment-warmer",
+      "linkedin-safety",
+      "dm-scripts",
+      "re-engagement"
+    ]
   },
   "founder": {
     "guide": "docs/founder-pack.md",
     "title": "Founder / personal brand",
     "for": "Someone building attention on LinkedIn and turning it into conversations.",
-    "skills": ["linkedin-algorithm", "post-hooks", "post-storytelling", "post-formats", "post-scheduling", "post-engagement", "post-cta", "repurposing", "content-evaluation", "linkedin-profile", "linkedin-launch", "profile-read", "positioning-statement", "content-pillars", "profile-rebuild", "content-calendar", "month-of-posts", "dm-scripts", "linkedin-comment-warmer", "linkedin-safety"]
+    "first_prompts": [
+      {
+        "say": "Read my LinkedIn profile and tell me what to fix first.",
+        "skill": "profile-read"
+      },
+      {
+        "say": "Plan my next month of posts around my pillars.",
+        "skill": "content-calendar"
+      },
+      {
+        "say": "Score this draft and tell me whether to ship it.",
+        "skill": "content-evaluation"
+      },
+      {
+        "say": "Give me five hooks for this idea.",
+        "skill": "post-hooks"
+      }
+    ],
+    "skills": [
+      "linkedin-algorithm",
+      "post-hooks",
+      "post-storytelling",
+      "post-formats",
+      "post-scheduling",
+      "post-engagement",
+      "post-cta",
+      "repurposing",
+      "content-evaluation",
+      "linkedin-profile",
+      "linkedin-launch",
+      "profile-read",
+      "positioning-statement",
+      "content-pillars",
+      "profile-rebuild",
+      "content-calendar",
+      "month-of-posts",
+      "dm-scripts",
+      "linkedin-comment-warmer",
+      "linkedin-safety"
+    ]
   },
   "investor": {
     "guide": "docs/investor-pack.md",
     "title": "Investor / VC",
     "for": "Someone sourcing founders and ranking who is warming up against a thesis.",
-    "skills": ["signal-model", "thesis-fit", "founder-shortlist", "committee-map", "funding-signals", "hiring-signals", "job-changes", "multi-signal", "warm-list", "linkedin-signal-stack", "linkedin-comment-warmer", "linkedin-safety", "dm-scripts"]
+    "first_prompts": [
+      {
+        "say": "Turn my thesis into a rubric I can score founders against.",
+        "skill": "thesis-fit"
+      },
+      {
+        "say": "Rank these founders by who is warming up.",
+        "skill": "signal-model"
+      },
+      {
+        "say": "Build a shortlist from this list and say why each made it.",
+        "skill": "founder-shortlist"
+      },
+      {
+        "say": "Which of these companies show funding or hiring signals?",
+        "skill": "multi-signal"
+      }
+    ],
+    "skills": [
+      "signal-model",
+      "thesis-fit",
+      "founder-shortlist",
+      "committee-map",
+      "funding-signals",
+      "hiring-signals",
+      "job-changes",
+      "multi-signal",
+      "warm-list",
+      "linkedin-signal-stack",
+      "linkedin-comment-warmer",
+      "linkedin-safety",
+      "dm-scripts"
+    ]
   }
 }

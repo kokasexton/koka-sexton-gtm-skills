@@ -23,3 +23,4 @@
 {"date":"2026-11-23","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"founder pack walkthrough","summary":"docs/founder-pack.md install-to-month-of-posts walkthrough; tests/founder-walkthrough.test.mjs pins engine output; backlog updated"}
 {"date":"2026-11-24","models_used":["openrouter/anthropic/claude-sonnet-5.5"],"target":"investor pack walkthrough","summary":"docs/investor-pack.md install-to-shortlist walkthrough; tests/investor-walkthrough.test.mjs pins engine output; backlog updated"}
 {"date": "2026-11-25", "models_used": ["openrouter/anthropic/claude-sonnet-5.5"], "target": "pack guides via MCP", "summary": "guide field in packs.json; list_packs/get_pack return walkthrough; tests pin it; backlog updated"}
+{"date": "2026-11-26", "models_used": ["openrouter/anthropic/claude-sonnet-5.5"], "target": "pack first_prompts", "summary": "first_prompts in packs.json; get_pack returns them; tests pin them to pack skills; backlog updated"}

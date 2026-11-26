@@ -196,6 +196,7 @@ function call(name, args = {}) {
       name: args.name, title: packs[args.name].title, for: packs[args.name].for,
       install: `node scripts/install.mjs --pack ${args.name}`,
       guide: packs[args.name].guide || null,
+      first_prompts: packs[args.name].first_prompts || [],
       guide_markdown: packs[args.name].guide && existsSync(join(ROOT, packs[args.name].guide)) ? readFileSync(join(ROOT, packs[args.name].guide), "utf8") : null,
       skills: [...set].sort().map((n) => ({ name: n, description: byName.get(n)?.description || null })),
     };

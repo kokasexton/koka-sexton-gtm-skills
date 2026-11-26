@@ -3,6 +3,10 @@
 Human-readable log of what changed and why. Newest first — one entry per daily-loop run.
 Machine-readable cost/run log: `ops/spend.jsonl`.
 
+## 2026-11-26 (first prompts per pack)
+
+Each role pack now carries `first_prompts`: four plain sentences to say right after install (for example, "Rank my engagement export and tell me who to message first"), each tied to the pack skill that handles it. `get_pack` returns them, so an agent can tell a new user what to ask. Tests fail if a pack has fewer than three, a prompt contains a figure, or it points at a skill outside the pack. No statistics. Model: openrouter/anthropic/claude-sonnet-5.5 (single voice; config plus tests, no new claims).
+
 ## 2026-11-25 (pack guides reachable by agents)
 
 Each role pack in `packs.json` now names its walkthrough (`guide`). The MCP tools `list_packs` and `get_pack` return it, and `get_pack` includes the full guide text, so an agent can install a pack and read how to use it without leaving the server. Tests now fail if a pack has no guide, the guide file is missing, or the guide never shows that pack's install command. No new statistics. Model: openrouter/anthropic/claude-sonnet-5.5 (single voice; plumbing plus tests).

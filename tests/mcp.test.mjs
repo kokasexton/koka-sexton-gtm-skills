@@ -109,6 +109,7 @@ const lpk = await out(30); t("list_packs lists sdr, founder, investor", !lpk.err
 const gpk = await out(31);
 t("get_pack sdr matches the real installer set", !gpk.err && gpk.v.install.includes("--pack sdr") && gpk.v.skills.length === (await import("../scripts/install.mjs")).packSkills("sdr").length && gpk.v.skills.some((x) => x.name === "koka") && gpk.v.skills.every((x) => x.description));
 t("get_pack returns its walkthrough guide, matching the file", gpk.v.guide === "docs/sdr-pack.md" && gpk.v.guide_markdown === rf(join(ROOT, "docs/sdr-pack.md"), "utf8") && lpk.v.packs.every((p) => p.guide));
+t("get_pack returns first_prompts tied to pack skills", gpk.v.first_prompts.length >= 3 && gpk.v.first_prompts.every((x) => x.say && gpk.v.skills.some((k) => k.name === x.skill)));
 const bpk = await out(32); t("unknown pack is an error message", /unknown pack/.test(bpk.v.error));
 
 srv.kill();

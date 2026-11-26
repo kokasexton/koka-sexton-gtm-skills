@@ -19,6 +19,12 @@ export function run() {
     if (!title || !who) fails.push(`packs: ${p} needs title and for`);
     if (!packs[p].guide || !existsSync(join(ROOT, packs[p].guide))) fails.push(`packs: ${p} needs a guide that exists`);
     else if (!readFileSync(join(ROOT, packs[p].guide), "utf8").includes(`--pack ${p}`)) fails.push(`packs: ${p} guide never shows its install command`);
+    const fpr = packs[p].first_prompts || [];
+    if (fpr.length < 3) fails.push(`packs: ${p} needs at least 3 first_prompts`);
+    for (const fp of fpr) {
+      if (!fp.say || /\d/.test(fp.say)) fails.push(`packs: ${p} first prompt must be a plain sentence with no figures: "${fp.say}"`);
+      if (!skills.includes(fp.skill)) fails.push(`packs: ${p} first prompt points at "${fp.skill}", which is not in the pack`);
+    }
     if (new Set(skills).size !== skills.length) fails.push(`packs: ${p} lists a skill twice`);
     for (const s of skills) if (!all.has(s)) fails.push(`packs: ${p} lists unknown skill "${s}"`);
     const set = new Set(packSkills(p));
