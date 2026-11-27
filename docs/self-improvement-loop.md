@@ -44,7 +44,8 @@ The repo is test-gated. A change doesn't ship unless:
 - [x] (2026-11-24, docs/investor-pack.md, tests/investor-walkthrough.test.mjs) Investor pack walkthrough, install to shortlist
 - [x] (2026-11-25, tests/mcp.test.mjs, tests/packs.test.mjs) `guide` field in packs.json; `list_packs`/`get_pack` return the walkthrough (path + full markdown)
 - [x] (2026-11-26, packs.json, tests/packs.test.mjs, tests/mcp.test.mjs) Pack-level `first_prompts` surfaced via `get_pack`, pinned to skills in the pack
-- [ ] Next: surface `first_prompts` in each pack walkthrough and the installed `koka` router note
+- [x] (2026-11-27, scripts/install.mjs, docs/*-pack.md, tests/packs.test.mjs) `first_prompts` surfaced in each pack walkthrough and the installed `koka` router note
+- [ ] Next: a `doctor` check (CLI + MCP) that reports which pack an install dir holds and whether it is stale vs the repo
 - [x] Worked examples for every skill that ships a tool (`examples/`), pinned by `tests/tools.test.mjs`
 - [x] (2026-11-07, pinned by tests/messaging-examples.test.mjs) Worked examples for ATL/BTL messaging
 - [x] (2026-11-08, tests/call-examples.test.mjs) Worked examples for cold-call-scripts

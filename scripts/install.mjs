@@ -64,7 +64,10 @@ function hashDir(dir) {
 }
 
 /** The note appended to `koka` in a pack install: which skills exist here. */
-function packNote(packTitle, present) {
+function packNote(packTitle, present, prompts = []) {
+  const first = prompts.length
+    ? ["", "Good first asks for this role (offer these to a new user):", ...prompts.map((f) => `- "${f.say}" (\`${f.skill}\`)`), ""]
+    : [];
   return [
     "",
     PACK_MARK,
@@ -73,6 +76,7 @@ function packNote(packTitle, present) {
     "This is a partial install. The routing table above names the whole library, but **only the skills listed here are installed**. Route only to these. If the ask needs a skill that is not listed, say it is not installed and suggest re-running the installer without `--pack` (or with another pack). Do not improvise its content.",
     "",
     `Installed (${present.length}): ${present.map((n) => `\`${n}\``).join(", ")}`,
+    ...first,
     "",
   ].join("\n");
 }
@@ -105,7 +109,7 @@ export function install({ target, force = false, dryRun = false, pack = null, lo
   const present = wanted
     ? all.filter((n) => wanted.has(n) || existsSync(join(target, n, "SKILL.md")))
     : all;
-  const note = wanted ? packNote(packs[pack].title, present) : null;
+  const note = wanted ? packNote(packs[pack].title, present, packs[pack].first_prompts || []) : null;
 
   const installed = [];
   const updated = [];

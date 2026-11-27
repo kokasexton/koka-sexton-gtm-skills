@@ -63,6 +63,15 @@ On the example counts the end-to-end rate is 0.4%, about 250 sends per opportuni
 
 Those rates are the example's, not a benchmark. Compare to your own history, and re-measure monthly.
 
+## Say this first
+
+After install, these are the asks the pack is built for. The installed `koka` router lists them too, so an agent can offer them to you.
+
+- "Rank my engagement export and tell me who to message first." (`warm-list`)
+- "Write a first touch to this person using what they posted this week." (`first-touch`)
+- "Draft a follow-up for a prospect who opened but never replied." (`follow-up`)
+- "Check this opener for personalization that sounds real, not templated." (`personalization-qa`)
+
 ## Wrong pack?
 
 Founders building a LinkedIn presence want `--pack founder`. Investors ranking founders against a thesis want `--pack investor` and the [VCO pack guide](vco-pack.md). An agent can list and fetch packs through the MCP tools `list_packs` and `get_pack`.

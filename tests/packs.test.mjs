@@ -25,6 +25,10 @@ export function run() {
       if (!fp.say || /\d/.test(fp.say)) fails.push(`packs: ${p} first prompt must be a plain sentence with no figures: "${fp.say}"`);
       if (!skills.includes(fp.skill)) fails.push(`packs: ${p} first prompt points at "${fp.skill}", which is not in the pack`);
     }
+    if (existsSync(join(ROOT, packs[p].guide))) {
+      const g = readFileSync(join(ROOT, packs[p].guide), "utf8");
+      for (const fp of fpr) if (!g.includes(fp.say)) fails.push(`packs: ${p} guide omits first prompt "${fp.say}"`);
+    }
     if (new Set(skills).size !== skills.length) fails.push(`packs: ${p} lists a skill twice`);
     for (const s of skills) if (!all.has(s)) fails.push(`packs: ${p} lists unknown skill "${s}"`);
     const set = new Set(packSkills(p));
@@ -43,6 +47,7 @@ export function run() {
       if (!note) fails.push(`packs: ${p} koka has no installed-pack note`);
       const listed = [...(note.match(/Installed \(\d+\): (.*)/) || [])[1]?.matchAll(/`([^`]+)`/g) || []].map((m) => m[1]).sort();
       if (JSON.stringify(listed) !== JSON.stringify(got)) fails.push(`packs: ${p} koka note lists ${listed.length} skills, ${got.length} are installed`);
+      for (const fp of fpr) if (!note.includes(fp.say)) fails.push(`packs: ${p} koka note omits first prompt "${fp.say}"`);
       for (const n of listed) if (!existsSync(join(target, n, "SKILL.md"))) fails.push(`packs: ${p} koka note lists ${n}, which is not installed`);
     } finally {
       rmSync(target, { recursive: true, force: true });

@@ -48,6 +48,15 @@ For a company you are already looking at, `committee-map` shows who is in the ro
 
 `linkedin-comment-warmer` covers warming a founder in public with real comments. `linkedin-safety` covers what keeps your account out of trouble. `dm-scripts` covers the warm opener and the reply path once they engage. These skills never scrape LinkedIn and never send anything. Every message is a draft for you to read and send.
 
+## Say this first
+
+After install, these are the asks the pack is built for. The installed `koka` router lists them too, so an agent can offer them to you.
+
+- "Turn my thesis into a rubric I can score founders against." (`thesis-fit`)
+- "Rank these founders by who is warming up." (`signal-model`)
+- "Build a shortlist from this list and say why each made it." (`founder-shortlist`)
+- "Which of these companies show funding or hiring signals?" (`multi-signal`)
+
 ## Wrong pack?
 
 Sellers working a list want `--pack sdr` and the [SDR pack guide](sdr-pack.md). Founders building their own attention want `--pack founder` and the [founder pack guide](founder-pack.md). An agent can list and fetch packs through the MCP tools `list_packs` and `get_pack`.

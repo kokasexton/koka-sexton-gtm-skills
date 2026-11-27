@@ -62,6 +62,15 @@ On the three example drafts: 2 approved, 1 ready to post, 1 blocked by the gate,
 
 `linkedin-comment-warmer` covers warming a target in public with real comments. `linkedin-safety` covers what keeps the account out of trouble. `dm-scripts` covers the warm opener and the reply path once someone engages. These skills never scrape LinkedIn and never send anything.
 
+## Say this first
+
+After install, these are the asks the pack is built for. The installed `koka` router lists them too, so an agent can offer them to you.
+
+- "Read my LinkedIn profile and tell me what to fix first." (`profile-read`)
+- "Plan my next month of posts around my pillars." (`content-calendar`)
+- "Score this draft and tell me whether to ship it." (`content-evaluation`)
+- "Give me five hooks for this idea." (`post-hooks`)
+
 ## Wrong pack?
 
 Sellers working a list want `--pack sdr` and the [SDR pack guide](sdr-pack.md). Investors ranking founders against a thesis want `--pack investor` and the [VCO pack guide](vco-pack.md). An agent can list and fetch packs through the MCP tools `list_packs` and `get_pack`.

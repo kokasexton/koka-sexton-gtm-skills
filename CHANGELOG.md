@@ -3,6 +3,10 @@
 Human-readable log of what changed and why. Newest first — one entry per daily-loop run.
 Machine-readable cost/run log: `ops/spend.jsonl`.
 
+## 2026-11-27 (first prompts where users see them)
+
+The four starter prompts per role pack now appear in each pack walkthrough (new "Say this first" section) and in the note a pack install appends to the `koka` router, so an agent that loads the installed router can offer them without reading anything else. Tests fail if a guide or the installed note omits a prompt. No statistics. Model: openrouter/anthropic/claude-sonnet-5.5 (single voice; wording already shipped yesterday, plumbing plus tests).
+
 ## 2026-11-26 (first prompts per pack)
 
 Each role pack now carries `first_prompts`: four plain sentences to say right after install (for example, "Rank my engagement export and tell me who to message first"), each tied to the pack skill that handles it. `get_pack` returns them, so an agent can tell a new user what to ask. Tests fail if a pack has fewer than three, a prompt contains a figure, or it points at a skill outside the pack. No statistics. Model: openrouter/anthropic/claude-sonnet-5.5 (single voice; config plus tests, no new claims).
