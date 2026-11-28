@@ -20,6 +20,8 @@
  *   node scripts/install.mjs --dry-run       # show what would be installed
  *   node scripts/install.mjs --pack sdr      # a role bundle: sdr | founder | investor (see packs.json)
  *   node scripts/install.mjs --force         # overwrite edited/untracked skills (old copy is backed up)
+ *   node scripts/install.mjs --guided        # ask role + MCP client, install, then run the doctor
+ *   node scripts/install.mjs --update        # same as a plain re-run: refreshes skills you have not edited
  *
  * Zero dependencies. Node 18+.
  */
@@ -29,6 +31,7 @@ import { homedir, tmpdir } from "node:os";
 import { basename, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { ROOT, parentOf, skillNames } from "../lib/system.mjs";
+import { starterPrompts, isMain } from "../lib/onboarding.mjs";
 
 const PERSONA_FILES = ["KOKA.md", "KOKA-FIRST.md"];
 const MANIFEST = ".koka-manifest.json";
@@ -170,11 +173,11 @@ export function install({ target, force = false, dryRun = false, pack = null, lo
 }
 
 const VALUE_FLAGS = ["--target", "--pack"];
-const BOOL_FLAGS = ["--project", "--force", "--dry-run", "--help"];
+const BOOL_FLAGS = ["--project", "--force", "--dry-run", "--help", "--guided", "--update"];
 
 /** Parse argv; throws on unknown flags or a value flag with no value. */
 export function parseArgs(args) {
-  const out = { force: false, dryRun: false, project: false, help: false, target: null, pack: null };
+  const out = { force: false, dryRun: false, project: false, help: false, guided: false, update: false, target: null, pack: null };
   for (let i = 0; i < args.length; i++) {
     const a = args[i];
     if (VALUE_FLAGS.includes(a)) {
@@ -188,7 +191,13 @@ export function parseArgs(args) {
   return out;
 }
 
-function main(argv) {
+async function main(argv) {
+  // --guided hands off to the guided setup (role + MCP client + health check).
+  if (argv.slice(2).includes("--guided")) {
+    const rest = argv.slice(2).filter((a) => a !== "--guided");
+    const { main: guided } = await import("./setup.mjs");
+    return guided(rest);
+  }
   let o;
   try {
     o = parseArgs(argv.slice(2));
@@ -197,7 +206,7 @@ function main(argv) {
     process.exit(1);
   }
   if (o.help) {
-    console.log("usage: node scripts/install.mjs [--project | --target <dir>] [--pack sdr|founder|investor] [--force] [--dry-run]\n\nRe-running updates skills you have not edited. --force replaces edited ones (old copy saved under .koka-backup/).");
+    console.log("usage: node scripts/install.mjs [--project | --target <dir>] [--pack sdr|founder|investor] [--force] [--dry-run]\n       node scripts/install.mjs --guided        (asks your role and MCP client, then checks the result)\n\nRe-running updates skills you have not edited (--update says so explicitly). --force replaces edited ones (old copy saved under .koka-backup/).");
     return;
   }
   const target = resolve(o.target || (o.project ? join(process.cwd(), ".claude", "skills") : join(homedir(), ".claude", "skills")));
@@ -207,7 +216,12 @@ function main(argv) {
     console.error(e.message);
     process.exit(1);
   }
-  if (!o.dryRun) console.log('\nDone. Start a new agent session and say: "use the koka skill — where should we start?"');
+  if (!o.dryRun) {
+    const prompts = starterPrompts(o.pack);
+    console.log(`\nDone. Start a new agent session and say${prompts.length > 1 ? " one of these" : ""}:`);
+    for (const p of prompts) console.log(`  "${p}"`);
+    console.log("\nWant the MCP tools too, or a health check? node scripts/setup.mjs   |   node scripts/doctor.mjs");
+  }
 }
 
-if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) main(process.argv);
+if (isMain(import.meta.url)) await main(process.argv);

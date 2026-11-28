@@ -33,6 +33,7 @@ import { run as portableRefs } from "./portable-refs.test.mjs";
 import { run as countsTest } from "./counts.test.mjs";
 import { run as sdrWalkthrough } from "./sdr-walkthrough.test.mjs";
 import { run as founderWalkthrough } from "./founder-walkthrough.test.mjs";
+import { run as onboarding } from "./onboarding.test.mjs";
 import { run as investorWalkthrough } from "./investor-walkthrough.test.mjs";
 
 const suites = [
@@ -64,6 +65,7 @@ const suites = [
   ["sdr-walkthrough", sdrWalkthrough],
   ["founder-walkthrough", founderWalkthrough],
   ["investor-walkthrough", investorWalkthrough],
+  ["onboarding", onboarding],
   ["packs", packsTest],
   ["portable-refs", portableRefs],
   ["counts", countsTest],

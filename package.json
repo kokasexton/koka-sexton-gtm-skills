@@ -2,8 +2,14 @@
   "name": "koka-gtm-skills",
   "version": "2.0.0",
   "private": true,
-  "description": "A mini Koka you install into a code agent \u2014 the full B2B GTM stack as skills (MCP + Claude Code plugin), with runnable zero-dependency tools.",
+  "description": "A mini Koka you install into a code agent — the full B2B GTM stack as skills (MCP + Claude Code plugin), with runnable zero-dependency tools.",
   "type": "module",
+  "bin": {
+    "koka-gtm-skills": "scripts/setup.mjs",
+    "koka-gtm": "scripts/setup.mjs",
+    "koka-gtm-mcp": "mcp/server.mjs",
+    "koka-gtm-doctor": "scripts/doctor.mjs"
+  },
   "scripts": {
     "demo": "node demo.mjs",
     "test": "node scripts/scan-secrets.mjs && node scripts/validate-brand-safety.mjs && node scripts/fingerprint.mjs --check && node tests/run.mjs && node tests/mcp.test.mjs",
@@ -11,7 +17,9 @@
     "fingerprint": "node scripts/fingerprint.mjs --apply",
     "fingerprint:check": "node scripts/fingerprint.mjs --check",
     "catalog": "node scripts/build-catalog.mjs",
-    "install-skills": "node scripts/install.mjs"
+    "install-skills": "node scripts/install.mjs",
+    "setup": "node scripts/setup.mjs",
+    "doctor": "node scripts/doctor.mjs"
   },
   "license": "MIT",
   "engines": {

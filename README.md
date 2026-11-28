@@ -16,6 +16,7 @@ built on real data, enforced by tests, and backed by tools your agent can run.</
 </p>
 
 <p align="center">
+<a href="#quick-start">Quick start</a> ·
 <a href="#install">Install</a> ·
 <a href="#ask-it-anything">Ask it anything</a> ·
 <a href="#the-tools">The tools</a> ·
@@ -38,6 +39,19 @@ Install it, and your agent stops giving generic marketing advice. It starts work
 
 It's **91 skills** in one system. A front-door `koka` skill routes every ask to one of **14 orchestrators**, each with focused sub-skills. **12 zero-dependency tools** do the work on your data (lint the draft, clean the list, score the accounts, plan the pipeline), and a **benchmark engine** scores any post against the report over MCP.
 
+## Quick start
+
+```bash
+git clone https://github.com/kokasexton/koka-sexton-gtm-skills
+node koka-sexton-gtm-skills/scripts/setup.mjs
+```
+
+It asks two questions (your role, and which MCP client to wire up), installs the skills, writes the MCP config with the real path filled in, and runs a health check. Then start a new agent session and say one of the starter prompts it prints. Not sure it worked? `node scripts/doctor.mjs` tells you what's wrong and how to fix it.
+
+No questions, for scripts and CI: `node scripts/setup.mjs --role sdr --client claude-code --yes` (roles: `sdr`, `founder`, `investor`, `all`). Prefer `npx`? `npx github:kokasexton/koka-sexton-gtm-skills` runs the same setup, and `npx -p github:kokasexton/koka-sexton-gtm-skills koka-gtm-doctor` runs the check.
+
+The sections below are the same install done by hand, one route at a time.
+
 ## Install
 
 **As a Claude Code plugin** (one command):
@@ -54,7 +68,18 @@ It's **91 skills** in one system. A front-door `koka` skill routes every ask to 
     "args": ["/absolute/path/to/koka-sexton-gtm-skills/mcp/server.mjs"] } } }
 ```
 
-Your agent gets `list_skills`, `get_skill`, `search_skills`, `get_persona`, plus the benchmark engine: `linkedin_benchmark` scores a draft against the report, and `linkedin_benchmarks` returns the data. The tools run over MCP too, on text you pass in (no file paths): `lint_post`, `lint_email`, `citation_check`, `pipeline_rates`, `pipeline_plan`, `clean_list`, `score_signals`, `warm_list`, `panel_score`, `social_selling_routine`, `signal_model`. Every skill is also readable as a `skill://` resource.
+Where each client keeps its MCP config (the setup script writes these for you with `--client`):
+
+| Client | Config file | `--client` |
+|---|---|---|
+| Claude Code | `.mcp.json` in your project | `claude-code` |
+| Claude Desktop | macOS `~/Library/Application Support/Claude/claude_desktop_config.json`, Windows `%APPDATA%\Claude\claude_desktop_config.json`, Linux `~/.config/Claude/claude_desktop_config.json` | `claude-desktop` |
+| Cursor | `~/.cursor/mcp.json` | `cursor` |
+| ChatGPT and others | wherever that client keeps MCP servers; paste the JSON above | `none` (prints it) |
+
+An existing config is merged, never replaced, and the old copy is saved next to it as `.koka-backup`.
+
+Your agent gets `list_packs`, `get_pack` (a role's skills, guide and starter prompts), `list_skills`, `get_skill`, `search_skills`, `get_persona`, plus the benchmark engine: `linkedin_benchmark` scores a draft against the report, and `linkedin_benchmarks` returns the data. The tools run over MCP too, on text you pass in (no file paths): `lint_post`, `lint_email`, `citation_check`, `pipeline_rates`, `pipeline_plan`, `clean_list`, `score_signals`, `warm_list`, `panel_score`, `social_selling_routine`, `signal_model`. Every skill is also readable as a `skill://` resource.
 
 **By files**, into any agent that reads `SKILL.md` folders:
 
@@ -64,6 +89,7 @@ node koka-sexton-gtm-skills/scripts/install.mjs                  # → ~/.claude
 node koka-sexton-gtm-skills/scripts/install.mjs --project        # → ./.claude/skills (this project)
 node koka-sexton-gtm-skills/scripts/install.mjs --target <dir>   # → anywhere
 node koka-sexton-gtm-skills/scripts/install.mjs --pack sdr         # a role bundle: sdr | founder | investor
+node koka-sexton-gtm-skills/scripts/install.mjs --guided           # ask role + client, install, then check
 # A pack install tells `koka` exactly which skills are present, so it only routes to those.
 # Worked end to end for sellers: [docs/sdr-pack.md](docs/sdr-pack.md).
 # And for founders: [docs/founder-pack.md](docs/founder-pack.md).

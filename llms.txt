@@ -4,14 +4,16 @@
 
 ## Install
 
-**Any MCP client** (Claude Code, Cursor, ChatGPT, Claude Desktop) — one line:
+**Fastest:** `node scripts/setup.mjs` in a clone of the repo (or `npx github:kokasexton/koka-sexton-gtm-skills`). It asks your role (sdr, founder, investor, all) and MCP client, installs the skills, writes the MCP config with the real path, and runs a health check. Non-interactive: `node scripts/setup.mjs --role sdr --client claude-code --yes`. Verify any time with `node scripts/doctor.mjs`.
+
+**Any MCP client** (Claude Code, Cursor, ChatGPT, Claude Desktop):
 
 ```json
 { "mcpServers": { "koka-gtm": { "command": "node",
     "args": ["/absolute/path/to/koka-sexton-gtm-skills/mcp/server.mjs"] } } }
 ```
 
-Tools: `list_skills`, `get_skill`, `search_skills`, `get_persona`, `linkedin_benchmark` (evaluate a draft against the 2026 report), `linkedin_benchmarks` (raw data), and the runnable tools: `lint_post`, `lint_email`, `citation_check`, `pipeline_rates`, `pipeline_plan`, `clean_list`, `score_signals`, `warm_list`, `panel_score`. Every `SKILL.md` is also a resource (`skill://<name>`).
+Tools: `list_packs`, `get_pack` (role bundles with starter prompts), `list_skills`, `get_skill`, `search_skills`, `get_persona`, `linkedin_benchmark` (evaluate a draft against the 2026 report), `linkedin_benchmarks` (raw data), and the runnable tools: `lint_post`, `lint_email`, `citation_check`, `pipeline_rates`, `pipeline_plan`, `clean_list`, `score_signals`, `warm_list`, `panel_score`, `social_selling_routine`, `signal_model`. Every `SKILL.md` is also a resource (`skill://<name>`).
 
 **Claude Code plugin:** `/plugin marketplace add kokasexton/koka-sexton-gtm-skills` then `/plugin install koka-gtm@koka-sexton-gtm-skills`
 

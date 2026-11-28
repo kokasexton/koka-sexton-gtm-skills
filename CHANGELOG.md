@@ -3,6 +3,10 @@
 Human-readable log of what changed and why. Newest first — one entry per daily-loop run.
 Machine-readable cost/run log: `ops/spend.jsonl`.
 
+## 2026-11-28 (one-command onboarding)
+
+New `scripts/setup.mjs` (also `install.mjs --guided`, `npm run setup`, or `npx github:kokasexton/koka-sexton-gtm-skills`): asks the user's role and MCP client, installs that pack, writes the MCP config with this checkout's real path (existing configs are merged and backed up, never replaced), runs a health check, and prints the role's starter prompts. New `scripts/doctor.mjs` checks Node, the checkout, installed skills, that the MCP server answers `tools/list`, and that any client config points at a server that exists, with one fix per failure. `package.json` gains `bin` entries so `npx` works; it stays `private`, so publishing to npm is a separate decision. The `koka` router now has a "First run" section that asks the user's role and offers the starter prompts, so plugin users get them without a pack install. `install.mjs` ends with the role's prompts and accepts `--update`. README leads with a Quick start and a per-client config table; `llms.txt` and the README now list every MCP tool, and a test fails if either drifts from what the server serves. No statistics. Model: openrouter/anthropic/claude-sonnet-5.5 (plumbing, docs and tests; no new claims).
+
 ## 2026-11-27 (first prompts where users see them)
 
 The four starter prompts per role pack now appear in each pack walkthrough (new "Say this first" section) and in the note a pack install appends to the `koka` router, so an agent that loads the installed router can offer them without reading anything else. Tests fail if a guide or the installed note omits a prompt. No statistics. Model: openrouter/anthropic/claude-sonnet-5.5 (single voice; wording already shipped yesterday, plumbing plus tests).
