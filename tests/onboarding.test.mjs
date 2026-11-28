@@ -9,7 +9,7 @@ import { parseSetupArgs, setup } from "../scripts/setup.mjs";
 import { parseArgs } from "../scripts/install.mjs";
 import { SERVER_KEY, SERVER_PATH, clientConfigPath, mcpSnippet, mergeMcpConfig, readPacks, starterPrompts } from "../lib/onboarding.mjs";
 
-export function run() {
+export async function run() {
   const fails = [];
   const tmp = mkdtempSync(join(tmpdir(), "koka-onboard-"));
   const quiet = { log: () => {}, home: join(tmp, "home"), cwd: join(tmp, "proj") };
@@ -67,6 +67,39 @@ export function run() {
     writeFileSync(mcpFile, JSON.stringify({ mcpServers: { [SERVER_KEY]: { command: "node", args: ["/gone/mcp/server.mjs"] } } }));
     const stale = doctor({ target, home: quiet.home, cwd: quiet.cwd, probe: false });
     if (!stale.checks.some((c) => c.id === "mcp-config" && c.status === "fail" && /does not exist/.test(c.message))) fails.push("doctor: a config pointing at a missing server should fail");
+
+    // Pack/staleness check: detects the pack, flags a skill that is behind, separates local edits.
+    {
+      const { install, inspectInstall } = await import("../scripts/install.mjs");
+      const t2 = join(tmp, "inspect");
+      if (inspectInstall(t2).managed) fails.push("inspect: an empty folder is not a managed install");
+      install({ target: t2, pack: "founder", log: () => {} });
+      const a = inspectInstall(t2);
+      if (a.pack !== "founder" || a.stale.length || a.edited.length || a.missing.length) fails.push("inspect: fresh founder install should read as founder and current: " + JSON.stringify(a));
+      const first = JSON.parse(readFileSync(join(t2, ".koka-manifest.json"), "utf8")).skills;
+      const names = Object.keys(first).filter((n) => n !== "koka");
+      writeFileSync(join(t2, names[0], "SKILL.md"), readFileSync(join(t2, names[0], "SKILL.md"), "utf8") + "\nlocal note\n");
+      const b = inspectInstall(t2);
+      if (!b.edited.includes(names[0]) || b.stale.includes(names[0])) fails.push("inspect: a local edit is 'edited', not 'stale'");
+      rmSync(join(t2, names[1]), { recursive: true, force: true });
+      if (!inspectInstall(t2).missing.includes(names[1])) fails.push("inspect: a deleted skill should be reported missing");
+      const man = JSON.parse(readFileSync(join(t2, ".koka-manifest.json"), "utf8"));
+      const t3 = join(tmp, "stale");
+      install({ target: t3, pack: "sdr", log: () => {} });
+      const sn = Object.keys(JSON.parse(readFileSync(join(t3, ".koka-manifest.json"), "utf8")).skills).find((n) => n !== "koka");
+      const mf = JSON.parse(readFileSync(join(t3, ".koka-manifest.json"), "utf8"));
+      // Simulate "repo moved on": the file on disk is what we wrote, but differs from today's source.
+      const f = join(t3, sn, "SKILL.md");
+      writeFileSync(f, readFileSync(f, "utf8") + "\nold\n");
+      const { createHash } = await import("node:crypto");
+      mf.skills[sn].installed = (await import("../scripts/install.mjs")).hashDirForTest(join(t3, sn));
+      writeFileSync(join(t3, ".koka-manifest.json"), JSON.stringify(mf));
+      const c = inspectInstall(t3);
+      if (c.pack !== "sdr" || !c.stale.includes(sn)) fails.push("inspect: an untouched-but-outdated skill should be stale");
+      const d = doctor({ target: t3, home: quiet.home, cwd: quiet.cwd, probe: false });
+      if (!d.checks.some((x) => x.id === "install-pack" && x.status === "warn" && /sdr pack/.test(x.message) && x.fix)) fails.push("doctor: a stale pack should warn with a fix");
+      if (!doctor({ target: t2, home: quiet.home, cwd: quiet.cwd, probe: false }).checks.some((x) => x.id === "install-pack" && x.status === "fail")) fails.push("doctor: a missing skill should fail");
+    }
 
     // The MCP tool list, as served, is what llms.txt and the README tell agents about.
     const probe = probeMcp();

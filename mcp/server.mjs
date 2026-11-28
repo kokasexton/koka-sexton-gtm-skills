@@ -10,7 +10,7 @@
  *       "args": ["/abs/path/koka-sexton-gtm-skills/mcp/server.mjs"] } } }
  *
  * Tools: list_packs · get_pack · list_skills · get_skill · search_skills · get_persona · linkedin_benchmark(s)
- *        · lint_post · lint_email · citation_check · pipeline_rates · pipeline_plan
+ *        · check_install · lint_post · lint_email · citation_check · pipeline_rates · pipeline_plan
  *        · clean_list · score_signals · warm_list · panel_score · social_selling_routine · signal_model
  * Resources: skill://<name> for every SKILL.md, plus persona://koka
  */
@@ -19,6 +19,7 @@ import { join, relative, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { SKILL_TOOLS, runSkillTool } from "../lib/tools.mjs";
 import { parentOf } from "../lib/system.mjs";
+import { inspectInstall } from "../scripts/install.mjs";
 import { benchmarkPost, benchmarkData } from "../lib/benchmark.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -140,6 +141,11 @@ const TOOLS = [
     description: "Return one role pack: the exact skills it installs (including koka and each skill's orchestrator) and the install command.",
     inputSchema: { type: "object", properties: { name: { type: "string", description: "sdr | founder | investor" } }, required: ["name"] },
   },
+  {
+    name: "check_install",
+    description: "Read-only. Given a skills folder (e.g. ~/.claude/skills), report which pack it holds, which skills are behind this repo, which were edited locally, and the command that fixes it. Never writes.",
+    inputSchema: { type: "object", properties: { target: { type: "string", description: "Skills folder to inspect" } }, required: ["target"] },
+  },
   ...SKILL_TOOLS,
 ];
 
@@ -200,6 +206,12 @@ function call(name, args = {}) {
       guide_markdown: packs[args.name].guide && existsSync(join(ROOT, packs[args.name].guide)) ? readFileSync(join(ROOT, packs[args.name].guide), "utf8") : null,
       skills: [...set].sort().map((n) => ({ name: n, description: byName.get(n)?.description || null })),
     };
+  }
+  if (name === "check_install") {
+    if (!args.target || typeof args.target !== "string") return { error: "target (a skills folder path) is required" };
+    const ins = inspectInstall(args.target);
+    const flag = ins.pack && !["full", "custom"].includes(ins.pack) ? ` --pack ${ins.pack}` : "";
+    return { ...ins, ok: ins.managed && !ins.stale.length && !ins.missing.length, fix: ins.managed && (ins.stale.length || ins.missing.length) ? `node scripts/install.mjs --target ${args.target}${flag}` : null };
   }
   if (name === "get_persona") {
     return { persona: readDoc("KOKA.md"), defaults: readDoc("KOKA-FIRST.md") };

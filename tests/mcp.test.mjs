@@ -41,6 +41,8 @@ send({ jsonrpc: "2.0", id: 9, method: "tools/call", params: { name: "search_skil
 
 send({ jsonrpc: "2.0", id: 30, method: "tools/call", params: { name: "list_packs", arguments: {} } });
 send({ jsonrpc: "2.0", id: 31, method: "tools/call", params: { name: "get_pack", arguments: { name: "sdr" } } });
+send({ jsonrpc: "2.0", id: 33, method: "tools/call", params: { name: "check_install", arguments: { target: "/nonexistent/koka-skills" } } });
+send({ jsonrpc: "2.0", id: 34, method: "tools/call", params: { name: "check_install", arguments: {} } });
 send({ jsonrpc: "2.0", id: 32, method: "tools/call", params: { name: "get_pack", arguments: { name: "nope" } } });
 
 const fails = [];
@@ -49,7 +51,7 @@ const t = (name, cond) => { console.log((cond ? "PASS " : "FAIL ") + name); if (
 const init = await wait(1);
 t("initialize -> koka-gtm", init?.result?.serverInfo?.name === "koka-gtm");
 const tl = await wait(2);
-t("tools/list has 19 tools", tl?.result?.tools?.length === 19);
+t("tools/list has 20 tools", tl?.result?.tools?.length === 20);
 const ls = await wait(3);
 const listOut = JSON.parse(ls.result.content[0].text);
 t("list_skills returns skills", listOut.skills?.length >= 8);
@@ -111,6 +113,9 @@ t("get_pack sdr matches the real installer set", !gpk.err && gpk.v.install.inclu
 t("get_pack returns its walkthrough guide, matching the file", gpk.v.guide === "docs/sdr-pack.md" && gpk.v.guide_markdown === rf(join(ROOT, "docs/sdr-pack.md"), "utf8") && lpk.v.packs.every((p) => p.guide));
 t("get_pack returns first_prompts tied to pack skills", gpk.v.first_prompts.length >= 3 && gpk.v.first_prompts.every((x) => x.say && gpk.v.skills.some((k) => k.name === x.skill)));
 const bpk = await out(32); t("unknown pack is an error message", /unknown pack/.test(bpk.v.error));
+
+const ci = await out(33); t("check_install on a missing folder says not managed, writes nothing", !ci.err && ci.v.managed === false && ci.v.ok === false);
+const ci2 = await out(34); t("check_install requires a target", /target/.test(ci2.v.error));
 
 srv.kill();
 console.log(fails.length ? `\nFAILED: ${fails.join(", ")}` : "\nALL PASSED");

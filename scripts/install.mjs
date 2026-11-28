@@ -51,6 +51,8 @@ export function packSkills(pack) {
   return [...set].sort();
 }
 
+export const hashDirForTest = (d) => hashDir(d);
+
 /** Stable content hash of a directory tree (paths + bytes, sorted). */
 function hashDir(dir) {
   const h = createHash("sha256");
@@ -170,6 +172,43 @@ export function install({ target, force = false, dryRun = false, pack = null, lo
   if (backedUp.length) log(`${dryRun ? "would back up" : "backed up"} ${backedUp.length} replaced skill(s) to ${join(target, BACKUP_DIR, dryRun ? "<time>" : stamp)}: ${backedUp.join(", ")}`);
   if (skipped.length) log(`left ${skipped.length} alone (use --force to replace; old copy is backed up): ${skipped.map((s) => `${s.name} (${s.reason})`).join(", ")}`);
   return { installed: [...installed, ...updated], newlyInstalled: installed, updated, unchanged, skipped: skipped.map((s) => s.name), backedUp, target };
+}
+
+/**
+ * Read-only: which pack does this skills folder hold, and is it behind the repo?
+ * Pack = the one whose skill set equals what the manifest lists ("full" = every
+ * skill, "custom" = anything else). stale = we wrote it, nobody edited it, the repo
+ * has since changed it (an update fixes it). edited = changed locally (update skips it).
+ */
+export function inspectInstall(target) {
+  const manifest = readManifest(target);
+  const names = Object.keys(manifest).sort();
+  if (!names.length) return { target, managed: false, pack: null, skills: 0, stale: [], edited: [], missing: [] };
+  const all = skillNames();
+  const packs = JSON.parse(readFileSync(join(ROOT, "packs.json"), "utf8"));
+  let pack = names.length === all.length ? "full" : "custom";
+  for (const k of Object.keys(packs).filter((k) => !k.startsWith("_"))) {
+    const want = packSkills(k);
+    if (want.length === names.length && want.every((n, i) => n === names[i])) pack = k;
+  }
+  const note = packs[pack] ? packNote(packs[pack].title, names, packs[pack].first_prompts || []) : null;
+  const staging = mkdtempSync(join(tmpdir(), "koka-inspect-"));
+  const stale = [], edited = [], missing = [];
+  try {
+    for (const n of names) {
+      const dest = join(target, n);
+      if (!existsSync(join(dest, "SKILL.md"))) { missing.push(n); continue; }
+      if (!all.includes(n)) continue; // removed upstream: nothing to compare
+      const current = hashDir(dest);
+      const wasEdited = current !== manifest[n].installed;
+      const behind = hashDir(stage(n, staging, n === "koka" ? note : null)) !== current;
+      if (wasEdited) edited.push(n);
+      else if (behind) stale.push(n);
+    }
+  } finally {
+    rmSync(staging, { recursive: true, force: true });
+  }
+  return { target, managed: true, pack, skills: names.length, stale, edited, missing };
 }
 
 const VALUE_FLAGS = ["--target", "--pack"];

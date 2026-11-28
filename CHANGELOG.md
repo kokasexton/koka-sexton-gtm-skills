@@ -3,6 +3,10 @@
 Human-readable log of what changed and why. Newest first — one entry per daily-loop run.
 Machine-readable cost/run log: `ops/spend.jsonl`.
 
+## 2026-11-28 (doctor knows which pack you have, and if it is stale)
+
+`scripts/doctor.mjs` now reads the install manifest and says which pack a skills folder holds (founder, sdr, investor, the full library, or a custom set), which skills are behind this checkout, which you edited locally (an update leaves those alone), and which are missing, with the exact update command. New read-only MCP tool `check_install` gives an agent the same answer for any folder, so it can tell a user "your sdr pack is two skills behind" and offer the fix. It never writes. Tests build real installs and cover current, locally edited, outdated and deleted cases, plus the MCP tool; README and `llms.txt` list the tool. No statistics. Model: openrouter/anthropic/claude-sonnet-5.5 (single voice; plumbing and tests, no new claims).
+
 ## 2026-11-28 (one-command onboarding)
 
 New `scripts/setup.mjs` (also `install.mjs --guided`, `npm run setup`, or `npx github:kokasexton/koka-sexton-gtm-skills`): asks the user's role and MCP client, installs that pack, writes the MCP config with this checkout's real path (existing configs are merged and backed up, never replaced), runs a health check, and prints the role's starter prompts. New `scripts/doctor.mjs` checks Node, the checkout, installed skills, that the MCP server answers `tools/list`, and that any client config points at a server that exists, with one fix per failure. `package.json` gains `bin` entries so `npx` works; it stays `private`, so publishing to npm is a separate decision. The `koka` router now has a "First run" section that asks the user's role and offers the starter prompts, so plugin users get them without a pack install. `install.mjs` ends with the role's prompts and accepts `--update`. README leads with a Quick start and a per-client config table; `llms.txt` and the README now list every MCP tool, and a test fails if either drifts from what the server serves. No statistics. Model: openrouter/anthropic/claude-sonnet-5.5 (plumbing, docs and tests; no new claims).

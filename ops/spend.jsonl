@@ -25,3 +25,4 @@
 {"date": "2026-11-25", "models_used": ["openrouter/anthropic/claude-sonnet-5.5"], "target": "pack guides via MCP", "summary": "guide field in packs.json; list_packs/get_pack return walkthrough; tests pin it; backlog updated"}
 {"date": "2026-11-26", "models_used": ["openrouter/anthropic/claude-sonnet-5.5"], "target": "pack first_prompts", "summary": "first_prompts in packs.json; get_pack returns them; tests pin them to pack skills; backlog updated"}
 {"date": "2026-11-27", "models_used": ["openrouter/anthropic/claude-sonnet-5.5"], "target": "first_prompts in guides and router note", "summary": "Say-this-first section in 3 guides; install note lists first prompts; tests pin both; backlog updated"}
+{"date": "2026-11-28", "models_used": ["openrouter/anthropic/claude-sonnet-5.5"], "target": "doctor pack/staleness check", "summary": "inspectInstall; doctor install-pack check; MCP check_install tool; tests; backlog updated"}

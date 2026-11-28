@@ -79,7 +79,7 @@ Where each client keeps its MCP config (the setup script writes these for you wi
 
 An existing config is merged, never replaced, and the old copy is saved next to it as `.koka-backup`.
 
-Your agent gets `list_packs`, `get_pack` (a role's skills, guide and starter prompts), `list_skills`, `get_skill`, `search_skills`, `get_persona`, plus the benchmark engine: `linkedin_benchmark` scores a draft against the report, and `linkedin_benchmarks` returns the data. The tools run over MCP too, on text you pass in (no file paths): `lint_post`, `lint_email`, `citation_check`, `pipeline_rates`, `pipeline_plan`, `clean_list`, `score_signals`, `warm_list`, `panel_score`, `social_selling_routine`, `signal_model`. Every skill is also readable as a `skill://` resource.
+Your agent gets `list_packs`, `get_pack` (a role's skills, guide and starter prompts), `list_skills`, `get_skill`, `search_skills`, `check_install` (is an installed pack behind the repo?), `get_persona`, plus the benchmark engine: `linkedin_benchmark` scores a draft against the report, and `linkedin_benchmarks` returns the data. The tools run over MCP too, on text you pass in (no file paths): `lint_post`, `lint_email`, `citation_check`, `pipeline_rates`, `pipeline_plan`, `clean_list`, `score_signals`, `warm_list`, `panel_score`, `social_selling_routine`, `signal_model`. Every skill is also readable as a `skill://` resource.
 
 **By files**, into any agent that reads `SKILL.md` folders:
 

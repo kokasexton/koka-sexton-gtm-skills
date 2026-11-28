@@ -18,6 +18,7 @@ import { homedir } from "node:os";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { ROOT, skillNames } from "../lib/system.mjs";
+import { inspectInstall } from "./install.mjs";
 import { CLIENTS, SERVER_KEY, SERVER_PATH, clientConfigPath, isMain } from "../lib/onboarding.mjs";
 
 /** Start the MCP server, ask for its tools, return their names (or an error). */
@@ -82,6 +83,15 @@ export function doctor({ target = null, home = homedir(), cwd = process.cwd(), p
       const n = man?.skills ? Object.keys(man.skills).length : skillNames().filter((s) => existsSync(join(d, s, "SKILL.md"))).length;
       if (missing.length) add("skills", "fail", `${d}: koka is missing ${missing.join(", ")}`, `Re-run: node scripts/install.mjs --target ${d} --force`);
       else add("skills", "pass", `${n} skill(s) installed in ${d}`);
+      const ins = inspectInstall(d);
+      if (ins.managed) {
+        const label = ins.pack === "full" ? "the full library" : ins.pack === "custom" ? "a custom set" : `the ${ins.pack} pack`;
+        const packFlag = ins.pack && !["full", "custom"].includes(ins.pack) ? ` --pack ${ins.pack}` : "";
+        const upd = `Run: node scripts/install.mjs --target ${d}${packFlag}   (updates untouched skills)`;
+        if (ins.missing.length) add("install-pack", "fail", `${d} holds ${label}, but ${ins.missing.join(", ")} ${ins.missing.length > 1 ? "are" : "is"} gone`, upd);
+        else if (ins.stale.length) add("install-pack", "warn", `${d} holds ${label}; ${ins.stale.length} skill(s) are behind this checkout: ${ins.stale.join(", ")}`, upd);
+        else add("install-pack", "pass", `${d} holds ${label}, up to date${ins.edited.length ? ` (${ins.edited.length} edited locally, left alone: ${ins.edited.join(", ")})` : ""}`);
+      }
     }
   }
 
